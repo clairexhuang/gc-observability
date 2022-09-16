@@ -1,0 +1,108 @@
+
+Displaying notes found in: .note.gnu.build-id
+  Owner                Data size 	Description
+  GNU                  0x00000014	NT_GNU_BUILD_ID (unique build ID bitstring)
+    Build ID: 4b2166d5e2fa6813e8fd6951b50d165850d12725
+
+Displaying notes found in: .note.stapsdt
+  Owner                Data size 	Description
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockacquired
+    Location: 0x000000000002d341, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x000000000002d40b, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x000000000002d4f2, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x000000000002d781, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockacquired
+    Location: 0x00000000000abc91, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000abd5b, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000abe42, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000ac0d1, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockacquired
+    Location: 0x00000000000afd41, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000afe0b, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000afef2, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000b0181, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockacquired
+    Location: 0x00000000000be0c1, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000be18b, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000be272, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000be501, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockacquired
+    Location: 0x00000000000c5061, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000c512b, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000c5212, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
+  stapsdt              0x00000037	NT_STAPSDT (SystemTap probe descriptors)
+    Provider: mmtk
+    Name: spacelockreleased
+    Location: 0x00000000000c54a1, Base: 0x0000000000183a6c, Semaphore: 0x0000000000000000
+    Arguments: -8@%rax
