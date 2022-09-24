@@ -1,0 +1,105 @@
+# running runbms /home/claireh/ebpf/scaling /home/claireh/ebpf/scaling/configs.yml -p "scaling_exp" -s 2
+includes:
+   - "/home/claireh/running-ng/src/running/config/base/runbms.yml"
+
+benchmarks:
+  dacapochopin-f480064:
+    - avrora
+    - batik
+    - biojava
+    - cassandra
+    - eclipse
+    - fop
+    - graphchi
+    - h2
+    - h2o
+    - jme
+    - jython
+    - luindex
+    - lusearch
+    - pmd
+    - sunflow
+    - tomcat
+    - xalan
+    - zxing
+
+overrides:
+  "suites.dacapochopin-f480064.timing_iteration": 5
+  invocations: 20
+  "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
+  "suites.dacapochopin-f480064.minheap": GenImmix
+  "suites.dacapochopin-f480064.timeout": 600
+  "suites.dacapochopin-f480064.minheap_values.GenImmix": # values are for 29a657f
+    avrora: 10
+    batik: 457
+    biojava: 194
+    cassandra: 136
+    eclipse: 571
+    fop: 30
+    graphchi: 256
+    h2: 2082
+    h2o: 100
+    jme: 236
+    jython: 71
+    luindex: 28
+    lusearch: 30
+    pmd: 289
+    sunflow: 76
+    tomcat: 71
+    # tradebeans: .inf
+    # tradesoap: .inf
+    xalan: 20
+    zxing: 435
+  "suites.dacapochopin-f480064.minheap_values.SemiSpace": # values are for 29a657f
+    avrora: 14
+    batik: 658
+    biojava: 386
+    cassandra: 227
+    eclipse: 1039
+    fop: 44
+    graphchi: 2065
+    h2: 2285
+    h2o: 144
+    jme: 236
+    jython: 108
+    luindex: 54
+    lusearch: 46
+    pmd: 506
+    sunflow: 48
+    tomcat: 111
+    # tradebeans: .inf
+    # tradesoap: .inf
+    xalan: 66
+    zxing: 532
+
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/jdk-11.0.15/fastdebug"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  gc_threads:
+    type: EnvVar
+    var: MMTK_THREADS
+    val: '{0}'
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes|gc_threads-1"
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-2"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes|gc_threads-2"
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-4"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes|gc_threads-4"
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-8"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes|gc_threads-8"
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-16"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes|gc_threads-16"
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-32"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes|gc_threads-32"
