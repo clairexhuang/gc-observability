@@ -1,0 +1,24 @@
+uprobe:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:"_ZN127_$LT$mmtk..util..alloc..bumpallocator..BumpAllocator$LT$VM$GT$$u20$as$u20$mmtk..util..alloc..allocator..Allocator$LT$VM$GT$$GT$15alloc_slow_once17hb0e6dbbd4a128f39E" {
+    @alloc_slow_entry[tid] = nsecs;
+}
+
+uretprobe:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:"_ZN127_$LT$mmtk..util..alloc..bumpallocator..BumpAllocator$LT$VM$GT$$u20$as$u20$mmtk..util..alloc..allocator..Allocator$LT$VM$GT$$GT$15alloc_slow_once17hb0e6dbbd4a128f39E" {
+    $ns = @alloc_slow_entry[tid];
+    if ($ns) {
+        // printf("%lu %d \n", nsecs - $ns, tid);
+        @alloc_slow = hist((nsecs - $ns) / 2000);
+    }
+}
+
+usdt:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:mmtk:spacelockacquired {
+    @lock_acquired[tid] = nsecs;
+    // printf("acquired %d \n", arg0);
+}
+
+usdt:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:mmtk:spacelockreleased {
+    $ns = @lock_acquired[tid];
+    if ($ns) {
+        @lock_held_time[arg0] = hist((nsecs - $ns) / 2000);
+    }
+    // printf("released %d \n", arg0);
+}

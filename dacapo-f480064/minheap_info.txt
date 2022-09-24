@@ -1,0 +1,32 @@
+mmtk.ms.s.c2.mmtk_gc-GenImmix.tph.probes_cp.probes 
+	 dacapochopin-f480064-fop 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M ... minheap inf
+	 dacapochopin-f480064-graphchi 2049M o 1025M o 513M o 257M o 129M ... minheap inf
+	 dacapochopin-f480064-jython 2049M o 1025M o 513M o 257M o 129M o 65M ... minheap inf
+	 dacapochopin-f480064-luindex 2049M o 1025M o 513M ... minheap inf
+	 dacapochopin-f480064-pmd 2049M ... minheap inf
+mmtk.ms.s.c2.mmtk_gc-SemiSpace.tph.probes_cp.probes 
+	 dacapochopin-f480064-fop 2049M o 1025M o 513M o 257M o 129M o 65M o 33M ... minheap inf
+	 dacapochopin-f480064-graphchi 2049M o 1025M o 513M o 257M o 129M ... minheap inf
+	 dacapochopin-f480064-tomcat 2049M o 1025M o 513M o 257M o 129M o 65M ... minheap inf
+mmtk.ms.s.c2.mmtk_gc-GenImmix.tph.probes_cp.probes obtained the most number of smallest minheap sizes: 13
+Minheap configuration to be copied to runbms config files
+dacapochopin-f480064:
+  avrora: 8
+  batik: 407
+  biojava: 196
+  cassandra: 120
+  eclipse: 722
+  fop: .inf
+  graphchi: .inf
+  h2: 1242
+  h2o: 99
+  jme: 236
+  jython: .inf
+  luindex: .inf
+  lusearch: 28
+  pmd: .inf
+  sunflow: 29
+  tomcat: 51
+  xalan: 22
+  zxing: 432
+

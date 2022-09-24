@@ -1,0 +1,51 @@
+# running minheap -a 3 /home/claireh/min-heap.yml /home/claireh/minheap-immix-semispace.yml | tee /home/claireh/minheap_info.txt
+includes:
+  - "/home/claireh/running-ng/src/running/config/base/minheap.yml"
+
+benchmarks:
+  dacapochopin-f480064:
+    - avrora
+    - batik
+    - biojava
+    - cassandra
+    - eclipse
+    - fop
+    - graphchi
+    - h2
+    - h2o
+    - jme
+    - jython
+    - luindex
+    - lusearch
+    - pmd
+    - sunflow
+    - tomcat
+    - xalan
+    - zxing
+
+overrides:
+  "suites.dacapochopin-f480064.timing_iteration": 5
+  "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
+  "suites.dacapochopin-f480064.timeout": 600
+
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/jdk-11.0.15"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
+  - "mmtk|ms|s|c2|mmtk_gc-SemiSpace|tph|probes_cp|probes"
+
+
+
+
