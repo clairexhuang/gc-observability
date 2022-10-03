@@ -1,4 +1,4 @@
-# running runbms /home/claireh/ebpf/scaling /home/claireh/ebpf/scaling/configs_f480064.yml -p "scaling_exp" -s 2
+# running runbms /home/claireh/ebpf/scalability /home/claireh/ebpf/scalability/configs_f480064.yml -p "scaling_exp" -s 2
 includes:
    - "/home/claireh/running-ng/src/running/config/base/runbms.yml"
 
@@ -9,44 +9,44 @@ benchmarks:
     - biojava
     - cassandra
     - eclipse
-    #- fop
-    #- graphchi
+    - fop
+    - graphchi
     - h2
     - h2o
-    - jme
-    #- jython
-    #- luindex
+    # - jme
+    - jython
+    - luindex
     - lusearch
-    #- pmd
+    # - pmd
     - sunflow
-    #- tomcat
+    - tomcat
     - xalan
     - zxing
 
 overrides:
   "suites.dacapochopin-f480064.timing_iteration": 5
-  invocations: 10
+  invocations: 20
   "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
   "suites.dacapochopin-f480064.minheap": GenImmix
   "suites.dacapochopin-f480064.timeout": 1200
-  "suites.dacapochopin-f480064.wrapper": "taskset -c 0-15" #different physical cores
+  # "suites.dacapochopin-f480064.wrapper": "taskset -c 0-15" #different physical cores
   "suites.dacapochopin-f480064.minheap_values.GenImmix": 
     avrora: 8
     batik: 407
     biojava: 196
     cassandra: 120
     eclipse: 722
-    #fop: .inf
-    #graphchi: .inf
+    fop: 21 #manual
+    graphchi: 256 #artificial
     h2: 1242
     h2o: 99
     jme: 236
-    #jython: .inf
-    #luindex: .inf
+    jython: 90 #manual
+    luindex: 28 #manual
     lusearch: 28
     #pmd: .inf
     sunflow: 29
-    #tomcat: 51
+    tomcat: 51
     xalan: 22
     zxing: 432
   "suites.dacapochopin-f480064.minheap_values.SemiSpace": 
@@ -55,17 +55,17 @@ overrides:
     biojava: 384
     cassandra: 206
     eclipse: 1371
-    #fop: .inf
-    #graphchi: .inf
+    fop: 39 #manual
+    graphchi: 256 #artificial
     h2: 2285
     h2o: 194
     jme: 236
-    # jython: 76
-    #luindex: 53
+    jython: 76
+    luindex: 53
     lusearch: 45
-    #pmd: 142
+    pmd: 142
     sunflow: 48
-    #tomcat: .inf
+    tomcat: 86 #manual
     xalan: 33
     zxing: 527
 
