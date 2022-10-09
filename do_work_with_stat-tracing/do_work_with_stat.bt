@@ -1,0 +1,12 @@
+usdt:/home/claireh/openjdk/build/work-probe-basic/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    @startwork[tid] = nsecs;
+    printf("work started");
+}
+
+usdt:/home/claireh/openjdk/build/work-probe-basic/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    $ns = @startwork[tid];
+    if ($ns) {
+        @worktime = hist((nsecs - $ns) / 1000);
+    }
+    // printf("work completed");
+}

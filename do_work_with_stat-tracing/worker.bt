@@ -1,0 +1,13 @@
+usdt:/home/claireh/openjdk/build/worker-probe-basic/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    @startwork[tid] = nsecs;
+}
+
+usdt:/home/claireh/openjdk/build/worker-probe-basic/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    $ns = @startwork[tid];
+    if ($ns) {
+        // gives distribution of the work time
+        @worktime = hist((nsecs - $ns) / 1000);
+        // cumulative work time
+        @acc = sum(nsecs - $ns);
+    }
+}
