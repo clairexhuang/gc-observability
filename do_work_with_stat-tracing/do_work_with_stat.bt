@@ -6,7 +6,7 @@ usdt:/home/claireh/openjdk/build/work-probe-basic/jdk/lib/server/libmmtk_openjdk
 usdt:/home/claireh/openjdk/build/work-probe-basic/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
     $ns = @startwork[tid];
     if ($ns) {
-        @worktime = hist((nsecs - $ns) / 1000);
+        @worktime = hist((nsecs - $ns) / 100);
     }
     // printf("work completed");
 }

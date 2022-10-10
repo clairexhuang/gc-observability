@@ -1,0 +1,72 @@
+Attaching 2 probes...
+Lost 103 events
+Lost 1193 events
+Lost 1495 events
+Lost 1836 events
+Lost 1942 events
+Lost 693 events
+mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w 140737331806120 
+mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w 140737331831803 
+mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w 140737331841361 
+mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche 140737331818974 
+mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche 140737331823891 
+mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche 140737331844273 
+mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w 140737331813174 
+mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w 140737331822230 
+mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w 140737331840546 
+mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_ 140737331796927 
+mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_ 140737331799435 
+mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_ 140737331837477 
+mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc 140737331811755 
+mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc 140737331830100 
+mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc 140737331833987 
+mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_ 140737331801109 
+mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_ 140737331829174 
+mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_ 140737331832671 
+mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu 140737331801606 
+mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu 140737331838779 
+mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu 140737331841107 
+mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc 140737331795142 
+mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc 140737331800862 
+mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc 140737331817952 
+mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule 140737331825729 
+mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule 140737331842454 
+mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule 140737331843772 
+mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo 140737331795617 
+mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo 140737331834914 
+mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo 140737331843528 
+mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo 140737331811573 
+mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo 140737331824765 
+mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo 140737331826345 
+mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler:: 140737331794567 
+mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler:: 140737331814217 
+mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler:: 140737331844774 
+mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_ 140737331829551 
+mmtk::plan::generational::gc_work::ProcessModBuf<mmtk::plan::ge 140737331840791 
+mmtk::plan::generational::gc_work::ProcessRegionModBuf<mmtk::pl 140737331802219 
+mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK> 140737331819857 
+mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk 140737331831501 
+mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD 140737331823509 
+mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD 140737331843320 
+mmtk::scheduler::gc_work::PrepareCollector 140737331825687 
+mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm 140737331793693 
+mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm 140737331815316 
+mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm 140737331838467 
+mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK> 140737331839905 
+mmtk::scheduler::gc_work::ReleaseCollector 140737331800391 
+mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm 140737331805748 
+mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm 140737331832541 
+mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm 140737331839160 
+mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK> 140737331803010 
+mmtk::scheduler::gc_work::ScanStackRoot<mmtk::plan::generationa 140737331815444 
+mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor 140737331812231 
+mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor 140737331824388 
+mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::plan::gener 140737331837723 
+mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler:: 140737331804436 
+mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler:: 140737331823320 
+mmtk::scheduler::gc_work::StopMutators<mmtk::plan::generational 140737331841711 
+mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work 140737331813357 
+mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work 140737331838597 
+mmtk::util::finalizable_processor::Finalization<mmtk::plan::gen 140737331810224 
+mmtk::util::finalizable_processor::Finalization<mmtk::scheduler 140737331825919 
+mmtk::util::finalizable_processor::Finalization<mmtk::scheduler 140737331843129 

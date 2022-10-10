@@ -6,7 +6,7 @@ usdt:/home/claireh/openjdk/build/worker-probe-basic/jdk/lib/server/libmmtk_openj
     $ns = @startwork[tid];
     if ($ns) {
         // gives distribution of the work time
-        @worktime = hist((nsecs - $ns) / 1000);
+        @worktime = hist((nsecs - $ns) / 500);
         // cumulative work time
         @acc = sum(nsecs - $ns);
     }
