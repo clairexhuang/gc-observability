@@ -1,0 +1,68 @@
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/empty-tracing.yml -p "overhead-empty-tracing" -s 2
+includes:
+   - "/home/claireh/running-ng/src/running/config/base/runbms.yml"
+
+benchmarks:
+  dacapochopin-f480064:
+    - avrora
+    - batik
+    - biojava
+    - cassandra
+    - eclipse
+    - fop
+    - graphchi
+    - h2
+    - h2o
+    # - jme
+    - jython
+    - luindex
+    - lusearch
+    # - pmd
+    - sunflow
+    - tomcat
+    - xalan
+    - zxing
+
+overrides:
+  "suites.dacapochopin-f480064.timing_iteration": 5
+  invocations: 20
+  "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
+  "suites.dacapochopin-f480064.minheap": GenImmix
+  "suites.dacapochopin-f480064.timeout": 1200
+  "suites.dacapochopin-f480064.companion": "sudo bpftrace '/home/claireh/ebpf/overhead/empty.bt'"
+  "suites.dacapochopin-f480064.minheap_values.GenImmix": 
+    avrora: 8
+    batik: 407
+    biojava: 196
+    cassandra: 120
+    eclipse: 722
+    fop: 21 #manual
+    graphchi: 256 #artificial
+    h2: 1242
+    h2o: 99
+    jme: 236
+    jython: 90 #manual
+    luindex: 28 #manual
+    lusearch: 28
+    #pmd: .inf
+    sunflow: 29
+    tomcat: 51
+    xalan: 22
+    zxing: 432
+
+runtimes:
+  probed:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/probed/jdk"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+
+configs:
+  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"

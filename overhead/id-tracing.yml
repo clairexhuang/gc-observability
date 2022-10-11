@@ -1,4 +1,4 @@
-# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/tracing.yml -p "overhead-no-tracing" -s 2
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/id-tracing.yml -p "overhead-id-tracing" -s 2
 includes:
    - "/home/claireh/running-ng/src/running/config/base/runbms.yml"
 
@@ -29,6 +29,8 @@ overrides:
   "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
   "suites.dacapochopin-f480064.minheap": GenImmix
   "suites.dacapochopin-f480064.timeout": 1200
+  "suites.dacapochopin-f480064.wrapper": "setarch x86_64 -R"
+  "suites.dacapochopin-f480064.companion": "sudo bpftrace '/home/claireh/ebpf/overhead/tracing.bt'"
   "suites.dacapochopin-f480064.minheap_values.GenImmix": 
     avrora: 8
     batik: 407
@@ -50,22 +52,10 @@ overrides:
     zxing: 432
 
 runtimes:
-  normal:
-    type: OpenJDK
-    release: 11
-    home: "/home/claireh/openjdk/build/normal/jdk"
-  flagged:
-    type: OpenJDK
-    release: 11
-    home: "/home/claireh/openjdk/build/flagged/jdk"
   probed:
     type: OpenJDK
     release: 11
     home: "/home/claireh/openjdk/build/probed/jdk"
-  stat:
-    type: OpenJDK
-    release: 11
-    home: "/home/claireh/openjdk/build/stat/jdk"
 
 modifiers:
   probes_cp:
@@ -76,7 +66,4 @@ modifiers:
     val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
 
 configs:
-  - "normal|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
-  - "flagged|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
   - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
-  - "stat|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
