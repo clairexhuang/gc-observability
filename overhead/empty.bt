@@ -1,0 +1,8 @@
+uprobe:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+}
+
+usdt:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+}
+
+usdt:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+}
