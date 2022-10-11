@@ -1,0 +1,25 @@
+uprobe:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    clear(@acc);
+    clear(@worktime);
+    clear(@startwork);
+}
+
+usdt:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    @startwork[tid] = nsecs;
+}
+
+usdt:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    $ns = @startwork[tid];
+    if ($ns) {
+        //check if key exists
+        if (!(@printed[arg0])) {
+            printf("%ld %s\n", arg0, str(arg0,arg1));
+            @printed[arg0] = 1;
+        }
+        //gives distribution of the work time
+        @worktime[arg0] = hist((nsecs - $ns) / 1000);
+        //cumulative work time
+        @acc[arg0] = sum(nsecs - $ns);
+        //printf("%s %ld \n", str(arg0,arg1), arg0);
+    }
+}
