@@ -1,0 +1,3114 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=GenImmix MMTK_THREADS=2 setarch x86_64 -R /home/claireh/openjdk/build/worker-probe-id/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms198M -Xmx198M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.1
+Tue Oct 11 07:30:12 AM UTC 2022
+
+ 07:30:12 up 22 days,  5:07,  3 users,  load average: 3.44, 2.71, 2.57
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/0    10.0.0.67        03Oct22  8days  0.00s  0.00s tmux a
+claireh  pts/1    tmux(10181).%1   20Sep22 22:11m 46.27s  0.00s w
+claireh  pts/2    tmux(10181).%0   19Sep22 15days  0.01s  0.01s -bash
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0   1536 24222452 1460520 39307424    0    0     0    13    0    0  4  0 96  0  0
+ 0  0   1536 24222892 1460520 39307576    0    0     0     0  144   72  0  0 100  0  0
+
+top - 07:30:13 up 22 days,  5:07,  3 users,  load average: 3.44, 2.71, 2.57
+Tasks: 380 total,   1 running, 379 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  23654.4 free,    750.9 used,  39812.1 buff/cache
+MiB Swap:  65536.0 total,  65534.5 free,      1.5 used.  62660.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 857981 claireh   20   0   10796   4200   3344 R   6.7   0.0   0:00.01 top -bcn 1 -w512
+      1 root      20   0  166152  10200   6824 S   0.0   0.0   0:15.74 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.38 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39064 22
+	SSH_CONNECTION=10.0.0.2 39084 10.0.0.80 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,10181,1
+	TMUX_PANE=%1
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=16
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-47-generic #51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.37 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.37 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.36 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.37 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.39 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.39 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.39 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.39 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.39 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.33 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.33 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.34 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.26 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.34 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.33 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.39 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.35 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.38 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.35 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.34 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.38 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.32 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.25 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.31 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.33 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.36 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.32 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.31 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.30 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+===== DaCapo evaluation-git-f480064 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 1 in 20966 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 2 in 8572 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 3 in 7638 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 4 in 7947 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	majorGC	total-work.time.min	total-work.count	total-work.time.max	total-work.time.total	
+394	4886.23	3037.77	93	inf	0	-inf	0.000	
+Total time: 7923.99 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-f480064 h2o PASSED in 7924 msec =====
+*****
+Attaching 3 probes...
+140737331813357 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331838467 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331825687 mmtk::scheduler::gc_work::PrepareCollector
+140737331812231 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+140737331839905 mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+140737331804436 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+140737331843528 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331837477 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331841107 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331832671 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331833987 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331831803 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331843772 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331823891 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331844774 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331826345 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331840546 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331795142 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331825919 mmtk::util::finalizable_processor::Finalization<mmtk::scheduler
+140737331805748 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331803010 mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+140737331800391 mmtk::scheduler::gc_work::ReleaseCollector
+140737331819857 mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+140737331841711 mmtk::scheduler::gc_work::StopMutators<mmtk::plan::generational
+140737331815316 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331815444 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::plan::generationa
+140737331815444 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::plan::generationa
+140737331837723 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::plan::gener
+140737331834914 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331799435 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331838779 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331829174 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331830100 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331806120 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331825729 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331794567 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331811573 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331813174 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331817952 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331818974 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331829551 mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_
+140737331840791 mmtk::plan::generational::gc_work::ProcessModBuf<mmtk::plan::ge
+140737331810224 mmtk::util::finalizable_processor::Finalization<mmtk::plan::gen
+140737331839160 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331802219 mmtk::plan::generational::gc_work::ProcessRegionModBuf<mmtk::pl
+140737331831501 mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+140737331838597 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331793693 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331824388 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::sche^C
+
+@acc[140737331841361]: 63805
+@acc[140737331801606]: 68567
+@acc[140737331831803]: 70959
+@acc[140737331811755]: 71287
+@acc[140737331802219]: 79061
+@acc[140737331841107]: 83258
+@acc[140737331833987]: 88496
+@acc[140737331796927]: 93789
+@acc[140737331823320]: 98606
+@acc[140737331824765]: 103565
+@acc[140737331801109]: 106839
+@acc[140737331804436]: 118481
+@acc[140737331837477]: 119143
+@acc[140737331832671]: 119913
+@acc[140737331826345]: 129284
+@acc[140737331795617]: 159140
+@acc[140737331843528]: 199667
+@acc[140737331843129]: 234948
+@acc[140737331842454]: 267885
+@acc[140737331825919]: 304051
+@acc[140737331843772]: 320795
+@acc[140737331806120]: 420207
+@acc[140737331838779]: 473533
+@acc[140737331830100]: 489390
+@acc[140737331799435]: 659743
+@acc[140737331814217]: 665161
+@acc[140737331837723]: 702605
+@acc[140737331838467]: 705964
+@acc[140737331829174]: 711128
+@acc[140737331811573]: 739660
+@acc[140737331793693]: 751795
+@acc[140737331844774]: 788968
+@acc[140737331834914]: 892115
+@acc[140737331800391]: 1107022
+@acc[140737331825687]: 1164336
+@acc[140737331810224]: 1264099
+@acc[140737331825729]: 1967351
+@acc[140737331815316]: 3697141
+@acc[140737331800862]: 4127843
+@acc[140737331844273]: 4582056
+@acc[140737331794567]: 4803293
+@acc[140737331823891]: 5031697
+@acc[140737331795142]: 5045709
+@acc[140737331832541]: 5184407
+@acc[140737331805748]: 9348548
+@acc[140737331838597]: 9504670
+@acc[140737331813357]: 10242520
+@acc[140737331822230]: 12472800
+@acc[140737331831501]: 13572333
+@acc[140737331840546]: 14191883
+@acc[140737331839160]: 20100839
+@acc[140737331839905]: 24082325
+@acc[140737331819857]: 28625351
+@acc[140737331817952]: 30922582
+@acc[140737331818974]: 31967159
+@acc[140737331803010]: 41934772
+@acc[140737331841711]: 60343811
+@acc[140737331813174]: 88018206
+@acc[140737331824388]: 89748574
+@acc[140737331812231]: 117017885
+@acc[140737331840791]: 191881396
+@acc[140737331815444]: 673205801
+@acc[140737331843320]: 1149181669
+@acc[140737331829551]: 1269396731
+@acc[140737331823509]: 1423326302
+@printed[140737331800862]: 1
+@printed[140737331834914]: 1
+@printed[140737331832671]: 1
+@printed[140737331829174]: 1
+@printed[140737331824388]: 1
+@printed[140737331824765]: 1
+@printed[140737331817952]: 1
+@printed[140737331819857]: 1
+@printed[140737331799435]: 1
+@printed[140737331812231]: 1
+@printed[140737331803010]: 1
+@printed[140737331794567]: 1
+@printed[140737331844273]: 1
+@printed[140737331843320]: 1
+@printed[140737331830100]: 1
+@printed[140737331833987]: 1
+@printed[140737331795142]: 1
+@printed[140737331842454]: 1
+@printed[140737331838597]: 1
+@printed[140737331840546]: 1
+@printed[140737331832541]: 1
+@printed[140737331825919]: 1
+@printed[140737331815316]: 1
+@printed[140737331837477]: 1
+@printed[140737331811755]: 1
+@printed[140737331810224]: 1
+@printed[140737331840791]: 1
+@printed[140737331796927]: 1
+@printed[140737331802219]: 1
+@printed[140737331801606]: 1
+@printed[140737331838467]: 1
+@printed[140737331814217]: 1
+@printed[140737331795617]: 1
+@printed[140737331823320]: 1
+@printed[140737331813357]: 1
+@printed[140737331839160]: 1
+@printed[140737331837723]: 1
+@printed[140737331800391]: 1
+@printed[140737331823891]: 1
+@printed[140737331838779]: 1
+@printed[140737331793693]: 1
+@printed[140737331831803]: 1
+@printed[140737331801109]: 1
+@printed[140737331839905]: 1
+@printed[140737331843129]: 1
+@printed[140737331841711]: 1
+@printed[140737331843528]: 1
+@printed[140737331825729]: 1
+@printed[140737331822230]: 1
+@printed[140737331826345]: 1
+@printed[140737331831501]: 1
+@printed[140737331841361]: 1
+@printed[140737331818974]: 1
+@printed[140737331843772]: 1
+@printed[140737331815444]: 1
+@printed[140737331805748]: 1
+@printed[140737331804436]: 1
+@printed[140737331844774]: 1
+@printed[140737331811573]: 1
+@printed[140737331813174]: 1
+@printed[140737331829551]: 1
+@printed[140737331841107]: 1
+@printed[140737331806120]: 1
+@printed[140737331823509]: 1
+@printed[140737331825687]: 1
+@startwork[858202]: 1919309923786451
+@startwork[858201]: 1919309923787252
+@worktime[140737331822230]: 
+[256, 512)            41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331843129]: 
+[4, 8)                41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331795617]: 
+[1]                    5 |@@@@@@@@@                                           |
+[2, 4)                27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 8 |@@@@@@@@@@@@@@@                                     |
+[8, 16)                1 |@                                                   |
+
+@worktime[140737331811755]: 
+[0]                    6 |@@@@@@@@                                            |
+[1]                   35 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844273]: 
+[64, 128)             37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             4 |@@@@@                                               |
+
+@worktime[140737331842454]: 
+[4, 8)                40 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                1 |@                                                   |
+
+@worktime[140737331796927]: 
+[1]                   36 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 5 |@@@@@@@                                             |
+
+@worktime[140737331800862]: 
+[64, 128)             39 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             2 |@@                                                  |
+
+@worktime[140737331793693]: 
+[8, 16)               14 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[16, 32)              27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331814217]: 
+[8, 16)               27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              14 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+
+@worktime[140737331823320]: 
+[1]                   30 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                11 |@@@@@@@@@@@@@@@@@@@                                 |
+
+@worktime[140737331801109]: 
+[1]                   18 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            |
+[2, 4)                23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331832541]: 
+[64, 128)             21 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            20 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
+
+@worktime[140737331838597]: 
+[128, 256)            33 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             8 |@@@@@@@@@@@@                                        |
+
+@worktime[140737331841361]: 
+[0]                   37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    2 |@@                                                  |
+[2, 4)                 1 |@                                                   |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331801606]: 
+[0]                   18 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            |
+[1]                   23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331824765]: 
+[1]                   20 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
+[2, 4)                21 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331802219]: 
+[0]                   29 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   17 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
+
+@worktime[140737331844774]: 
+[8, 16)               35 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              16 |@@@@@@@@@@@@@@@@@@@@@@@                             |
+[32, 64)               1 |@                                                   |
+
+@worktime[140737331826345]: 
+[1]                   37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                14 |@@@@@@@@@@@@@@@@@@@                                 |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331843772]: 
+[2, 4)                 3 |@@@                                                 |
+[4, 8)                47 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                2 |@@                                                  |
+
+@worktime[140737331795142]: 
+[64, 128)             48 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             4 |@@@@                                                |
+
+@worktime[140737331843528]: 
+[1]                    7 |@@@@@@@@@@@                                         |
+[2, 4)                33 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                11 |@@@@@@@@@@@@@@@@@                                   |
+[8, 16)                1 |@                                                   |
+
+@worktime[140737331813357]: 
+[64, 128)              3 |@@@                                                 |
+[128, 256)            47 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             1 |@                                                   |
+[512, 1K)              1 |@                                                   |
+
+@worktime[140737331831803]: 
+[0]                   44 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    7 |@@@@@@@@                                            |
+[2, 4)                 1 |@                                                   |
+
+@worktime[140737331833987]: 
+[0]                   22 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[1]                   27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 1 |@                                                   |
+[4, 8)                 2 |@@@                                                 |
+
+@worktime[140737331838467]: 
+[8, 16)               49 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)               2 |@@                                                  |
+[32, 64)               1 |@                                                   |
+
+@worktime[140737331825919]: 
+[2, 4)                 1 |@                                                   |
+[4, 8)                51 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331832671]: 
+[1]                   45 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 6 |@@@@@@                                              |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331823891]: 
+[32, 64)               4 |@@@@                                                |
+[64, 128)             46 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             2 |@@                                                  |
+
+@worktime[140737331841107]: 
+[0]                   26 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   25 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  |
+[2, 4)                 1 |@@                                                  |
+
+@worktime[140737331805748]: 
+[64, 128)              2 |@@                                                  |
+[128, 256)            50 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331804436]: 
+[1]                   45 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 7 |@@@@@@@@                                            |
+
+@worktime[140737331837477]: 
+[1]                   48 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@@@@                                                |
+
+@worktime[140737331840546]: 
+[128, 256)            15 |@@@@@@@@@@@@@@@@@@@@@                               |
+[256, 512)            37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331841711]: 
+[64, 128)             37 |@@@@@@@@                                            |
+[128, 256)           232 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)            29 |@@@@@@                                              |
+[512, 1K)              3 |                                                    |
+
+@worktime[140737331815316]: 
+[4, 8)                34 |@@@@@@@                                             |
+[8, 16)              223 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              42 |@@@@@@@@@                                           |
+[32, 64)               2 |                                                    |
+
+@worktime[140737331837723]: 
+[0]                    1 |                                                    |
+[1]                  248 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                50 |@@@@@@@@@@                                          |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331834914]: 
+[1]                  153 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               136 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      |
+[4, 8)                12 |@@@@                                                |
+[8, 16)                1 |                                                    |
+
+@worktime[140737331818974]: 
+[32, 64)              11 |@@                                                  |
+[64, 128)            268 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            21 |@@@@                                                |
+[256, 512)             2 |                                                    |
+
+@worktime[140737331839160]: 
+[8, 16)                9 |@@@                                                 |
+[16, 32)              33 |@@@@@@@@@@@                                         |
+[32, 64)             105 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                |
+[64, 128)            150 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             5 |@                                                   |
+
+@worktime[140737331829174]: 
+[0]                   12 |@@@                                                 |
+[1]                  206 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                81 |@@@@@@@@@@@@@@@@@@@@                                |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331817952]: 
+[64, 128)            281 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            19 |@@@                                                 |
+[256, 512)             2 |                                                    |
+
+@worktime[140737331810224]: 
+[2, 4)               228 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                74 |@@@@@@@@@@@@@@@@                                    |
+
+@worktime[140737331811573]: 
+[1]                  189 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               109 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
+[4, 8)                 3 |                                                    |
+[8, 16)                1 |                                                    |
+
+@worktime[140737331830100]: 
+[0]                   89 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[1]                  204 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 7 |@                                                   |
+[4, 8)                 2 |                                                    |
+
+@worktime[140737331806120]: 
+[0]                  263 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   35 |@@@@@@                                              |
+[2, 4)                 1 |                                                    |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331813174]: 
+[64, 128)              2 |                                                    |
+[128, 256)            34 |@@@@@@                                              |
+[256, 512)           264 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              2 |                                                    |
+
+@worktime[140737331838779]: 
+[0]                  158 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  139 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
+[2, 4)                 4 |@                                                   |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331825729]: 
+[2, 4)                16 |@@                                                  |
+[4, 8)               278 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                5 |                                                    |
+[16, 32)               3 |                                                    |
+
+@worktime[140737331794567]: 
+[8, 16)              196 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)             104 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
+[32, 64)               2 |                                                    |
+
+@worktime[140737331799435]: 
+[0]                    9 |@                                                   |
+[1]                  268 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                22 |@@@@                                                |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331825687]: 
+[0]                  552 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  228 |@@@@@@@@@@@@@@@@@@@@@                               |
+[2, 4)                 8 |                                                    |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331800391]: 
+[0]                  589 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  197 |@@@@@@@@@@@@@@@@@                                   |
+[2, 4)                 4 |                                                    |
+
+@worktime[140737331831501]: 
+[4, 8)              2157 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)               73 |@                                                   |
+[16, 32)               2 |                                                    |
+
+@worktime[140737331819857]: 
+[1]                   15 |                                                    |
+[2, 4)               194 |@@@@@@@@@@@@                                        |
+[4, 8)               501 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
+[8, 16)              674 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[16, 32)             829 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)              15 |                                                    |
+[64, 128)              4 |                                                    |
+
+@worktime[140737331824388]: 
+[1]                  746 |@@@@@@@@@@@@@@@@@@                                  |
+[2, 4)              2109 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               128 |@@@                                                 |
+[8, 16)               58 |@                                                   |
+[16, 32)             191 |@@@@                                                |
+[32, 64)             216 |@@@@@                                               |
+[64, 128)            702 |@@@@@@@@@@@@@@@@@                                   |
+[128, 256)            46 |@                                                   |
+
+@worktime[140737331812231]: 
+[0]                   28 |                                                    |
+[1]                 1338 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
+[2, 4)              2191 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               247 |@@@@@                                               |
+[8, 16)               67 |@                                                   |
+[16, 32)             241 |@@@@@                                               |
+[32, 64)             272 |@@@@@@                                              |
+[64, 128)            869 |@@@@@@@@@@@@@@@@@@@@                                |
+[128, 256)            69 |@                                                   |
+[256, 512)             9 |                                                    |
+
+@worktime[140737331840791]: 
+[0]                 1817 |@@@@@@@@@@@@@@                                      |
+[1]                 1599 |@@@@@@@@@@@@                                        |
+[2, 4)               390 |@@@                                                 |
+[4, 8)                73 |                                                    |
+[8, 16)             6692 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)            2267 |@@@@@@@@@@@@@@@@@                                   |
+[32, 64)             234 |@                                                   |
+[64, 128)            247 |@                                                   |
+[128, 256)            82 |                                                    |
+[256, 512)             4 |                                                    |
+
+@worktime[140737331815444]: 
+[0]                   94 |                                                    |
+[1]                 9358 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[2, 4)             11350 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1111 |@@@@@                                               |
+[8, 16)              524 |@@                                                  |
+[16, 32)            1410 |@@@@@@                                              |
+[32, 64)            1607 |@@@@@@@                                             |
+[64, 128)           5008 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[128, 256)           410 |@                                                   |
+[256, 512)            39 |                                                    |
+[512, 1K)              5 |                                                    |
+[1K, 2K)               1 |                                                    |
+
+@worktime[140737331839905]: 
+[0]                39750 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  569 |                                                    |
+[2, 4)               118 |                                                    |
+[4, 8)                 5 |                                                    |
+[8, 16)                3 |                                                    |
+
+@worktime[140737331803010]: 
+[0]                35074 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                 5254 |@@@@@@@                                             |
+[2, 4)               111 |                                                    |
+[4, 8)                 6 |                                                    |
+
+@worktime[140737331829551]: 
+[0]                28147 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                18287 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   |
+[2, 4)              8828 |@@@@@@@@@@@@@@@@                                    |
+[4, 8)             21355 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             |
+[8, 16)             7944 |@@@@@@@@@@@@@@                                      |
+[16, 32)           13338 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
+[32, 64)            3697 |@@@@@@                                              |
+[64, 128)           1761 |@@@                                                 |
+[128, 256)           582 |@                                                   |
+[256, 512)           172 |                                                    |
+[512, 1K)            283 |                                                    |
+[1K, 2K)               4 |                                                    |
+
+@worktime[140737331843320]: 
+[0]                50161 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                21745 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[2, 4)             13109 |@@@@@@@@@@@@@                                       |
+[4, 8)             20877 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)            10702 |@@@@@@@@@@@                                         |
+[16, 32)            9152 |@@@@@@@@@                                           |
+[32, 64)            6011 |@@@@@@                                              |
+[64, 128)           1763 |@                                                   |
+[128, 256)           271 |                                                    |
+[256, 512)           111 |                                                    |
+[512, 1K)             35 |                                                    |
+[1K, 2K)              40 |                                                    |
+
+@worktime[140737331823509]: 
+[0]                63755 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                27144 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[2, 4)             16777 |@@@@@@@@@@@@@                                       |
+[4, 8)             26328 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)            13809 |@@@@@@@@@@@                                         |
+[16, 32)           11308 |@@@@@@@@@                                           |
+[32, 64)            7391 |@@@@@@                                              |
+[64, 128)           2189 |@                                                   |
+[128, 256)           297 |                                                    |
+[256, 512)           132 |                                                    |
+[512, 1K)             77 |                                                    |
+[1K, 2K)              22 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=GenImmix MMTK_THREADS=2 setarch x86_64 -R /home/claireh/openjdk/build/worker-probe-id/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms198M -Xmx198M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.1
+Tue Oct 11 07:38:38 AM UTC 2022
+
+ 07:38:38 up 22 days,  5:15,  3 users,  load average: 5.83, 3.64, 2.92
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/0    10.0.0.67        03Oct22  8days  0.00s  0.00s tmux a
+claireh  pts/1    tmux(10181).%1   20Sep22 22:19m 46.65s  0.00s /bin/sh -c w
+claireh  pts/2    tmux(10181).%0   19Sep22 15days  0.01s  0.01s -bash
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0   1536 24231220 1460564 39312740    0    0     0    13    1    0  4  0 96  0  0
+ 0  0   1536 24231472 1460564 39312564    0    0     0     0  156   57  0  0 100  0  0
+
+top - 07:38:39 up 22 days,  5:15,  3 users,  load average: 5.83, 3.64, 2.92
+Tasks: 381 total,   1 running, 380 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  23662.9 free,    738.1 used,  39816.5 buff/cache
+MiB Swap:  65536.0 total,  65534.5 free,      1.5 used.  62673.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  166152  10200   6824 S   0.0   0.0   0:15.74 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.38 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39064 22
+	SSH_CONNECTION=10.0.0.2 39084 10.0.0.80 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,10181,1
+	TMUX_PANE=%1
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=16
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-47-generic #51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.37 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.37 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.38 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.38 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.39 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.39 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.40 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.26 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.27 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.32 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.33 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.33 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.35 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.39 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.37 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.38 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.39 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.36 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.34 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.33 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.34 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.33 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.26 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+===== DaCapo evaluation-git-f480064 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 1 in 21858 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 2 in 8739 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 3 in 7970 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 4 in 7887 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	majorGC	total-work.time.min	total-work.time.total	total-work.time.max	total-work.count	
+384	4825.51	2952.35	95	inf	0.000	-inf	0	
+Total time: 7777.86 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-f480064 h2o PASSED in 7778 msec =====
+*****
+Attaching 3 probes...
+140737331841711 mmtk::scheduler::gc_work::StopMutators<mmtk::plan::generational
+140737331815316 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331825687 mmtk::scheduler::gc_work::PrepareCollector
+140737331815444 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::plan::generationa
+140737331839905 mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+140737331837723 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::plan::gener
+140737331834914 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331799435 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331838779 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331829174 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331830100 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331806120 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331825729 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331818974 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331794567 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331811573 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331813174 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331817952 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331829551 mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_
+140737331829551 mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_
+140737331810224 mmtk::util::finalizable_processor::Finalization<mmtk::plan::gen
+140737331839160 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331800391 mmtk::scheduler::gc_work::ReleaseCollector
+140737331803010 mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+140737331803010 mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+140737331840791 mmtk::plan::generational::gc_work::ProcessModBuf<mmtk::plan::ge
+140737331802219 mmtk::plan::generational::gc_work::ProcessRegionModBuf<mmtk::pl
+140737331813357 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331838467 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331812231 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+140737331804436 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+140737331831501 mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+140737331843528 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331837477 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331841107 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331832671 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331833987 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331831803 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331843772 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331840546 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331795142 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331844774 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331826345 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331823891 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331825919 mmtk::util::finalizable_processor::Finalization<mmtk::scheduler
+140737331805748 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331819857 mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+140737331838597 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331793693 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331824388 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::sche^C
+
+@acc[140737331841361]: 46498
+@acc[140737331801606]: 47752
+@acc[140737331802219]: 61854
+@acc[140737331811755]: 63233
+@acc[140737331796927]: 66572
+@acc[140737331823320]: 75491
+@acc[140737331824765]: 77175
+@acc[140737331831803]: 85191
+@acc[140737331801109]: 88722
+@acc[140737331795617]: 101510
+@acc[140737331841107]: 105249
+@acc[140737331833987]: 111078
+@acc[140737331837477]: 136618
+@acc[140737331804436]: 139104
+@acc[140737331832671]: 146891
+@acc[140737331826345]: 153438
+@acc[140737331843129]: 181593
+@acc[140737331842454]: 186387
+@acc[140737331843528]: 224165
+@acc[140737331806120]: 349527
+@acc[140737331843772]: 356243
+@acc[140737331825919]: 405081
+@acc[140737331838779]: 446567
+@acc[140737331830100]: 479108
+@acc[140737331814217]: 524025
+@acc[140737331799435]: 609409
+@acc[140737331793693]: 623570
+@acc[140737331829174]: 661388
+@acc[140737331837723]: 673850
+@acc[140737331811573]: 702861
+@acc[140737331834914]: 813440
+@acc[140737331838467]: 886481
+@acc[140737331844774]: 926032
+@acc[140737331800391]: 1018598
+@acc[140737331825687]: 1040185
+@acc[140737331810224]: 1232060
+@acc[140737331825729]: 1735873
+@acc[140737331800862]: 3242191
+@acc[140737331815316]: 3435068
+@acc[140737331844273]: 3450117
+@acc[140737331832541]: 3703751
+@acc[140737331794567]: 4480250
+@acc[140737331823891]: 6026772
+@acc[140737331795142]: 6044956
+@acc[140737331838597]: 7196257
+@acc[140737331822230]: 9259535
+@acc[140737331805748]: 11255769
+@acc[140737331813357]: 12644641
+@acc[140737331831501]: 13851549
+@acc[140737331840546]: 17711736
+@acc[140737331839160]: 18865565
+@acc[140737331839905]: 22751494
+@acc[140737331819857]: 27857912
+@acc[140737331817952]: 28882861
+@acc[140737331818974]: 29150679
+@acc[140737331803010]: 38047700
+@acc[140737331841711]: 56481334
+@acc[140737331824388]: 66505827
+@acc[140737331813174]: 83564511
+@acc[140737331812231]: 139450101
+@acc[140737331840791]: 177345966
+@acc[140737331815444]: 622175815
+@acc[140737331843320]: 825928264
+@acc[140737331829551]: 1197312955
+@acc[140737331823509]: 1768301198
+@printed[140737331843772]: 1
+@printed[140737331803010]: 1
+@printed[140737331823509]: 1
+@printed[140737331825729]: 1
+@printed[140737331829174]: 1
+@printed[140737331838467]: 1
+@printed[140737331823320]: 1
+@printed[140737331831501]: 1
+@printed[140737331844273]: 1
+@printed[140737331814217]: 1
+@printed[140737331806120]: 1
+@printed[140737331802219]: 1
+@printed[140737331826345]: 1
+@printed[140737331825919]: 1
+@printed[140737331840791]: 1
+@printed[140737331824765]: 1
+@printed[140737331840546]: 1
+@printed[140737331844774]: 1
+@printed[140737331811755]: 1
+@printed[140737331800862]: 1
+@printed[140737331839160]: 1
+@printed[140737331815316]: 1
+@printed[140737331830100]: 1
+@printed[140737331838779]: 1
+@printed[140737331832541]: 1
+@printed[140737331801109]: 1
+@printed[140737331831803]: 1
+@printed[140737331833987]: 1
+@printed[140737331793693]: 1
+@printed[140737331834914]: 1
+@printed[140737331823891]: 1
+@printed[140737331837477]: 1
+@printed[140737331842454]: 1
+@printed[140737331839905]: 1
+@printed[140737331843528]: 1
+@printed[140737331841107]: 1
+@printed[140737331817952]: 1
+@printed[140737331796927]: 1
+@printed[140737331800391]: 1
+@printed[140737331818974]: 1
+@printed[140737331838597]: 1
+@printed[140737331843320]: 1
+@printed[140737331794567]: 1
+@printed[140737331819857]: 1
+@printed[140737331813357]: 1
+@printed[140737331810224]: 1
+@printed[140737331812231]: 1
+@printed[140737331811573]: 1
+@printed[140737331813174]: 1
+@printed[140737331822230]: 1
+@printed[140737331799435]: 1
+@printed[140737331825687]: 1
+@printed[140737331843129]: 1
+@printed[140737331841361]: 1
+@printed[140737331795617]: 1
+@printed[140737331805748]: 1
+@printed[140737331824388]: 1
+@printed[140737331837723]: 1
+@printed[140737331795142]: 1
+@printed[140737331815444]: 1
+@printed[140737331829551]: 1
+@printed[140737331841711]: 1
+@printed[140737331832671]: 1
+@printed[140737331804436]: 1
+@printed[140737331801606]: 1
+@startwork[860921]: 1919817380068839
+@startwork[860920]: 1919817380069290
+@worktime[140737331822230]: 
+[256, 512)            30 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331843129]: 
+[4, 8)                30 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331795617]: 
+[1]                    9 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[2, 4)                18 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 3 |@@@@@@@@                                            |
+
+@worktime[140737331811755]: 
+[1]                   28 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 0 |                                                    |
+[4, 8)                 2 |@@@                                                 |
+
+@worktime[140737331844273]: 
+[64, 128)             26 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             4 |@@@@@@@@                                            |
+
+@worktime[140737331842454]: 
+[4, 8)                30 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331796927]: 
+[1]                   27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 3 |@@@@@                                               |
+
+@worktime[140737331800862]: 
+[64, 128)             27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             3 |@@@@@                                               |
+
+@worktime[140737331793693]: 
+[8, 16)                7 |@@@@@@@@@@@@@@@                                     |
+[16, 32)              23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331814217]: 
+[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[16, 32)              20 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331823320]: 
+[1]                   22 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 8 |@@@@@@@@@@@@@@@@@@                                  |
+
+@worktime[140737331801109]: 
+[1]                   17 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                12 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                |
+[4, 8)                 0 |                                                    |
+[8, 16)                1 |@@@                                                 |
+
+@worktime[140737331832541]: 
+[64, 128)             19 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
+
+@worktime[140737331838597]: 
+[128, 256)            25 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             5 |@@@@@@@@@@                                          |
+
+@worktime[140737331841361]: 
+[0]                   26 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    3 |@@@@@@                                              |
+[2, 4)                 0 |                                                    |
+[4, 8)                 1 |@@                                                  |
+
+@worktime[140737331801606]: 
+[0]                   13 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             |
+[1]                   17 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331824765]: 
+[1]                   21 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 9 |@@@@@@@@@@@@@@@@@@@@@@                              |
+
+@worktime[140737331802219]: 
+[0]                   19 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   14 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@              |
+
+@worktime[140737331844774]: 
+[8, 16)               53 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              12 |@@@@@@@@@@@                                         |
+
+@worktime[140737331826345]: 
+[1]                   42 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
+
+@worktime[140737331843772]: 
+[2, 4)                 7 |@@@@@@                                              |
+[4, 8)                57 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                1 |                                                    |
+
+@worktime[140737331795142]: 
+[64, 128)             63 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             2 |@                                                   |
+
+@worktime[140737331843528]: 
+[1]                   17 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[2, 4)                40 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 8 |@@@@@@@@@@                                          |
+
+@worktime[140737331813357]: 
+[64, 128)              7 |@@@@@@@                                             |
+[128, 256)            50 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             8 |@@@@@@@@                                            |
+
+@worktime[140737331831803]: 
+[0]                   59 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    5 |@@@@                                                |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331833987]: 
+[0]                   21 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[1]                   42 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 1 |@                                                   |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331838467]: 
+[8, 16)               55 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              10 |@@@@@@@@@                                           |
+
+@worktime[140737331825919]: 
+[4, 8)                65 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331832671]: 
+[1]                   50 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                15 |@@@@@@@@@@@@@@@                                     |
+
+@worktime[140737331823891]: 
+[32, 64)               6 |@@@@@                                               |
+[64, 128)             59 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331841107]: 
+[0]                   41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
+[2, 4)                 1 |@                                                   |
+
+@worktime[140737331805748]: 
+[64, 128)              2 |@                                                   |
+[128, 256)            63 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331804436]: 
+[1]                   62 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 3 |@@                                                  |
+
+@worktime[140737331837477]: 
+[1]                   60 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 5 |@@@@                                                |
+
+@worktime[140737331840546]: 
+[64, 128)              1 |@                                                   |
+[128, 256)            15 |@@@@@@@@@@@@@@@                                     |
+[256, 512)            49 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331841711]: 
+[64, 128)             31 |@@@@@@                                              |
+[128, 256)           232 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)            25 |@@@@@                                               |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331815316]: 
+[4, 8)                50 |@@@@@@@@@@@@                                        |
+[8, 16)              204 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              35 |@@@@@@@@                                            |
+
+@worktime[140737331837723]: 
+[1]                  241 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                49 |@@@@@@@@@@                                          |
+
+@worktime[140737331834914]: 
+[0]                    1 |                                                    |
+[1]                  153 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               121 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           |
+[4, 8)                15 |@@@@@                                               |
+
+@worktime[140737331818974]: 
+[32, 64)              24 |@@@@@                                               |
+[64, 128)            246 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            20 |@@@@                                                |
+
+@worktime[140737331839160]: 
+[8, 16)               11 |@@@                                                 |
+[16, 32)              35 |@@@@@@@@@@@                                         |
+[32, 64)              91 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
+[64, 128)            153 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331829174]: 
+[0]                    6 |@                                                   |
+[1]                  190 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                92 |@@@@@@@@@@@@@@@@@@@@@@@@@                           |
+[4, 8)                 2 |                                                    |
+
+@worktime[140737331817952]: 
+[64, 128)            270 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            20 |@@@                                                 |
+
+@worktime[140737331810224]: 
+[2, 4)               206 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                84 |@@@@@@@@@@@@@@@@@@@@@                               |
+
+@worktime[140737331811573]: 
+[1]                  174 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               114 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
+[4, 8)                 2 |                                                    |
+
+@worktime[140737331830100]: 
+[0]                   80 |@@@@@@@@@@@@@@@@@@@@                                |
+[1]                  205 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@                                                   |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331806120]: 
+[0]                  264 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   25 |@@@@                                                |
+[2, 4)                 0 |                                                    |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331813174]: 
+[64, 128)              1 |                                                    |
+[128, 256)            35 |@@@@@@@                                             |
+[256, 512)           254 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331794567]: 
+[4, 8)                 1 |                                                    |
+[8, 16)              186 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)             103 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
+
+@worktime[140737331838779]: 
+[0]                  154 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  132 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        |
+[2, 4)                 3 |@                                                   |
+[4, 8)                 0 |                                                    |
+[8, 16)                1 |                                                    |
+
+@worktime[140737331825729]: 
+[2, 4)                18 |@@@                                                 |
+[4, 8)               265 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                7 |@                                                   |
+
+@worktime[140737331799435]: 
+[0]                   16 |@@@                                                 |
+[1]                  249 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                24 |@@@@@                                               |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331825687]: 
+[0]                  605 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  160 |@@@@@@@@@@@@@                                       |
+[2, 4)                 3 |                                                    |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331800391]: 
+[0]                  616 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  154 |@@@@@@@@@@@@@                                       |
+
+@worktime[140737331831501]: 
+[2, 4)                 3 |                                                    |
+[4, 8)              2288 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)               59 |@                                                   |
+
+@worktime[140737331819857]: 
+[0]                   18 |@                                                   |
+[1]                  140 |@@@@@@@@@                                           |
+[2, 4)               243 |@@@@@@@@@@@@@@@@                                    |
+[4, 8)               419 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
+[8, 16)              742 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
+[16, 32)             787 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)               3 |                                                    |
+
+@worktime[140737331824388]: 
+[1]                  635 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[2, 4)              1444 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               113 |@@@@                                                |
+[8, 16)               50 |@                                                   |
+[16, 32)             141 |@@@@@                                               |
+[32, 64)             150 |@@@@@                                               |
+[64, 128)            514 |@@@@@@@@@@@@@@@@@@                                  |
+[128, 256)            35 |@                                                   |
+[256, 512)             1 |                                                    |
+
+@worktime[140737331812231]: 
+[0]                   23 |                                                    |
+[1]                 1958 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            |
+[2, 4)              2536 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               228 |@@@@                                                |
+[8, 16)              101 |@@                                                  |
+[16, 32)             302 |@@@@@@                                              |
+[32, 64)             338 |@@@@@@                                              |
+[64, 128)           1109 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[128, 256)            70 |@                                                   |
+
+@worktime[140737331840791]: 
+[0]                 1960 |@@@@@@@@@@@@@@@                                     |
+[1]                 1573 |@@@@@@@@@@@@                                        |
+[2, 4)               317 |@@                                                  |
+[4, 8)                75 |                                                    |
+[8, 16)             6428 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)            2039 |@@@@@@@@@@@@@@@@                                    |
+[32, 64)             239 |@                                                   |
+[64, 128)            200 |@                                                   |
+[128, 256)            77 |                                                    |
+[256, 512)             2 |                                                    |
+
+@worktime[140737331815444]: 
+[0]                   81 |                                                    |
+[1]                10447 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)              9729 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
+[4, 8)               871 |@@@@                                                |
+[8, 16)              469 |@@                                                  |
+[16, 32)            1374 |@@@@@@                                              |
+[32, 64)            1527 |@@@@@@@                                             |
+[64, 128)           4878 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
+[128, 256)           341 |@                                                   |
+[256, 512)             5 |                                                    |
+
+@worktime[140737331839905]: 
+[0]                39194 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  273 |                                                    |
+[2, 4)                 0 |                                                    |
+[4, 8)                 5 |                                                    |
+
+@worktime[140737331803010]: 
+[0]                35611 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                 3851 |@@@@@                                               |
+[2, 4)                 5 |                                                    |
+[4, 8)                 5 |                                                    |
+
+@worktime[140737331843320]: 
+[0]                37213 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                15630 |@@@@@@@@@@@@@@@@@@@@@                               |
+[2, 4)              9810 |@@@@@@@@@@@@@                                       |
+[4, 8)             15201 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)             8118 |@@@@@@@@@@@                                         |
+[16, 32)            6237 |@@@@@@@@                                            |
+[32, 64)            4204 |@@@@@                                               |
+[64, 128)           1233 |@                                                   |
+[128, 256)           199 |                                                    |
+[256, 512)            90 |                                                    |
+[512, 1K)             27 |                                                    |
+[1K, 2K)              26 |                                                    |
+
+@worktime[140737331829551]: 
+[0]                28188 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                16958 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
+[2, 4)              7828 |@@@@@@@@@@@@@@                                      |
+[4, 8)             20172 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               |
+[8, 16)             7793 |@@@@@@@@@@@@@@                                      |
+[16, 32)           12857 |@@@@@@@@@@@@@@@@@@@@@@@                             |
+[32, 64)            3389 |@@@@@@                                              |
+[64, 128)           1612 |@@                                                  |
+[128, 256)           546 |@                                                   |
+[256, 512)           174 |                                                    |
+[512, 1K)            273 |                                                    |
+[1K, 2K)               1 |                                                    |
+
+@worktime[140737331823509]: 
+[0]                82330 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                31753 |@@@@@@@@@@@@@@@@@@@@                                |
+[2, 4)             19691 |@@@@@@@@@@@@                                        |
+[4, 8)             32447 |@@@@@@@@@@@@@@@@@@@@                                |
+[8, 16)            17425 |@@@@@@@@@@@                                         |
+[16, 32)           13746 |@@@@@@@@                                            |
+[32, 64)            9185 |@@@@@                                               |
+[64, 128)           2529 |@                                                   |
+[128, 256)           387 |                                                    |
+[256, 512)           187 |                                                    |
+[512, 1K)            105 |                                                    |
+[1K, 2K)              34 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=GenImmix MMTK_THREADS=2 setarch x86_64 -R /home/claireh/openjdk/build/worker-probe-id/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms198M -Xmx198M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.1
+Tue Oct 11 07:47:05 AM UTC 2022
+
+ 07:47:05 up 22 days,  5:23,  3 users,  load average: 3.40, 2.60, 2.61
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/0    10.0.0.67        03Oct22  8days  0.00s  0.00s tmux a
+claireh  pts/1    tmux(10181).%1   20Sep22 22:28m 47.05s  0.00s /bin/sh -c w
+claireh  pts/2    tmux(10181).%0   19Sep22 15days  0.01s  0.01s -bash
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0   1536 24208272 1460592 39316396    0    0     0    13    1    1  4  0 96  0  0
+ 0  0   1536 24215684 1460592 39315488    0    0     0     0  199  106  0  0 100  0  0
+
+top - 07:47:06 up 22 days,  5:23,  3 users,  load average: 3.40, 2.60, 2.61
+Tasks: 381 total,   1 running, 380 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  23647.4 free,    749.6 used,  39820.4 buff/cache
+MiB Swap:  65536.0 total,  65534.5 free,      1.5 used.  62661.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 863419 claireh   20   0   10784   4280   3420 R   6.7   0.0   0:00.01 top -bcn 1 -w512
+      1 root      20   0  166152  10200   6824 S   0.0   0.0   0:15.75 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.38 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39064 22
+	SSH_CONNECTION=10.0.0.2 39084 10.0.0.80 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,10181,1
+	TMUX_PANE=%1
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=16
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-47-generic #51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.38 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.37 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.37 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.38 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.39 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.36 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.40 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.34 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.34 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.33 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.32 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.33 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.33 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.33 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.25 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.36 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.36 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.37 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.39 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.38 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.36 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.34 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.34 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.34 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.33 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.35 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.35 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+===== DaCapo evaluation-git-f480064 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 1 in 22250 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 2 in 8850 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 3 in 7590 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 4 in 8126 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	majorGC	total-work.time.max	total-work.time.total	total-work.time.min	total-work.count	
+376	4999.69	3074.22	104	-inf	0.000	inf	0	
+Total time: 8073.91 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-f480064 h2o PASSED in 8074 msec =====
+*****
+Attaching 3 probes...
+140737331841711 mmtk::scheduler::gc_work::StopMutators<mmtk::plan::generational
+140737331815316 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331825687 mmtk::scheduler::gc_work::PrepareCollector
+140737331815444 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::plan::generationa
+140737331839905 mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+140737331837723 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::plan::gener
+140737331834914 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331825729 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331799435 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331838779 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331829174 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331830100 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331806120 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331818974 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331794567 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331811573 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331813174 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331817952 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331829551 mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_
+140737331810224 mmtk::util::finalizable_processor::Finalization<mmtk::plan::gen
+140737331839160 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331800391 mmtk::scheduler::gc_work::ReleaseCollector
+140737331803010 mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+140737331800391 mmtk::scheduler::gc_work::ReleaseCollector
+140737331803010 mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+140737331840791 mmtk::plan::generational::gc_work::ProcessModBuf<mmtk::plan::ge
+140737331802219 mmtk::plan::generational::gc_work::ProcessRegionModBuf<mmtk::pl
+140737331813357 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331838467 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331812231 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+140737331804436 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+140737331831501 mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+140737331843528 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331837477 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331841107 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331832671 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331833987 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331831803 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331843772 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331840546 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331795142 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331823891 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331844774 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331826345 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331825919 mmtk::util::finalizable_processor::Finalization<mmtk::scheduler
+140737331805748 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331819857 mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+140737331838597 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331793693 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737^C
+
+@acc[140737331841361]: 63721
+@acc[140737331801606]: 67707
+@acc[140737331831803]: 77231
+@acc[140737331811755]: 81241
+@acc[140737331802219]: 82506
+@acc[140737331841107]: 99091
+@acc[140737331823320]: 99756
+@acc[140737331796927]: 105456
+@acc[140737331833987]: 108275
+@acc[140737331824765]: 116287
+@acc[140737331801109]: 118237
+@acc[140737331804436]: 138741
+@acc[140737331837477]: 140724
+@acc[140737331832671]: 157524
+@acc[140737331826345]: 167794
+@acc[140737331795617]: 170753
+@acc[140737331843528]: 210942
+@acc[140737331842454]: 271349
+@acc[140737331843129]: 277336
+@acc[140737331843772]: 357557
+@acc[140737331806120]: 378932
+@acc[140737331825919]: 393807
+@acc[140737331838779]: 423993
+@acc[140737331830100]: 447764
+@acc[140737331799435]: 588955
+@acc[140737331837723]: 620640
+@acc[140737331829174]: 640105
+@acc[140737331811573]: 701326
+@acc[140737331814217]: 760577
+@acc[140737331834914]: 869179
+@acc[140737331844774]: 892336
+@acc[140737331793693]: 919692
+@acc[140737331800391]: 978247
+@acc[140737331825687]: 1033628
+@acc[140737331810224]: 1150425
+@acc[140737331838467]: 1427694
+@acc[140737331825729]: 1686634
+@acc[140737331815316]: 3242211
+@acc[140737331794567]: 4247555
+@acc[140737331844273]: 4561103
+@acc[140737331800862]: 4742968
+@acc[140737331832541]: 5316520
+@acc[140737331823891]: 5709578
+@acc[140737331795142]: 6210335
+@acc[140737331838597]: 10081605
+@acc[140737331805748]: 10677839
+@acc[140737331813357]: 12132028
+@acc[140737331822230]: 13610206
+@acc[140737331831501]: 15168972
+@acc[140737331840546]: 18064510
+@acc[140737331839160]: 19149489
+@acc[140737331839905]: 22921532
+@acc[140737331818974]: 27476079
+@acc[140737331817952]: 28909908
+@acc[140737331819857]: 29113611
+@acc[140737331803010]: 35063908
+@acc[140737331841711]: 56456774
+@acc[140737331813174]: 82820693
+@acc[140737331824388]: 97397530
+@acc[140737331812231]: 142482238
+@acc[140737331840791]: 181428998
+@acc[140737331815444]: 637600924
+@acc[140737331829551]: 1129471218
+@acc[140737331843320]: 1160166945
+@acc[140737331823509]: 1667529326
+@printed[140737331805748]: 1
+@printed[140737331838467]: 1
+@printed[140737331823320]: 1
+@printed[140737331844273]: 1
+@printed[140737331831803]: 1
+@printed[140737331838597]: 1
+@printed[140737331814217]: 1
+@printed[140737331825687]: 1
+@printed[140737331838779]: 1
+@printed[140737331843129]: 1
+@printed[140737331794567]: 1
+@printed[140737331843772]: 1
+@printed[140737331818974]: 1
+@printed[140737331796927]: 1
+@printed[140737331810224]: 1
+@printed[140737331832671]: 1
+@printed[140737331793693]: 1
+@printed[140737331823509]: 1
+@printed[140737331800862]: 1
+@printed[140737331812231]: 1
+@printed[140737331837477]: 1
+@printed[140737331800391]: 1
+@printed[140737331813357]: 1
+@printed[140737331822230]: 1
+@printed[140737331825919]: 1
+@printed[140737331795617]: 1
+@printed[140737331803010]: 1
+@printed[140737331843320]: 1
+@printed[140737331842454]: 1
+@printed[140737331834914]: 1
+@printed[140737331799435]: 1
+@printed[140737331844774]: 1
+@printed[140737331840546]: 1
+@printed[140737331840791]: 1
+@printed[140737331839905]: 1
+@printed[140737331815316]: 1
+@printed[140737331825729]: 1
+@printed[140737331801606]: 1
+@printed[140737331815444]: 1
+@printed[140737331826345]: 1
+@printed[140737331819857]: 1
+@printed[140737331811573]: 1
+@printed[140737331817952]: 1
+@printed[140737331830100]: 1
+@printed[140737331801109]: 1
+@printed[140737331829174]: 1
+@printed[140737331831501]: 1
+@printed[140737331804436]: 1
+@printed[140737331841711]: 1
+@printed[140737331833987]: 1
+@printed[140737331841107]: 1
+@printed[140737331802219]: 1
+@printed[140737331843528]: 1
+@printed[140737331839160]: 1
+@printed[140737331806120]: 1
+@printed[140737331829551]: 1
+@printed[140737331811755]: 1
+@printed[140737331841361]: 1
+@printed[140737331823891]: 1
+@printed[140737331837723]: 1
+@printed[140737331795142]: 1
+@printed[140737331813174]: 1
+@printed[140737331832541]: 1
+@printed[140737331824765]: 1
+@printed[140737331824388]: 1
+@startwork[863639]: 1920325535977692
+@startwork[863640]: 1920325535979065
+@worktime[140737331802219]: 
+[0]                   33 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    8 |@@@@@@@@@@@@                                        |
+[2, 4)                 1 |@                                                   |
+
+@worktime[140737331844273]: 
+[64, 128)             38 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             5 |@@@@@@                                              |
+
+@worktime[140737331824765]: 
+[1]                   20 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
+[2, 4)                23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331841361]: 
+[0]                   37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    6 |@@@@@@@@                                            |
+
+@worktime[140737331838597]: 
+[128, 256)            34 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             9 |@@@@@@@@@@@@@                                       |
+
+@worktime[140737331814217]: 
+[8, 16)               19 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           |
+[16, 32)              24 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331822230]: 
+[256, 512)            43 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842454]: 
+[4, 8)                43 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331795617]: 
+[1]                    2 |@@@                                                 |
+[2, 4)                31 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                10 |@@@@@@@@@@@@@@@@                                    |
+
+@worktime[140737331843129]: 
+[4, 8)                43 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331811755]: 
+[0]                    4 |@@@@@                                               |
+[1]                   39 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331796927]: 
+[1]                   34 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 9 |@@@@@@@@@@@@@                                       |
+
+@worktime[140737331800862]: 
+[64, 128)             37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             6 |@@@@@@@@                                            |
+
+@worktime[140737331793693]: 
+[8, 16)                6 |@@@@@@@@                                            |
+[16, 32)              36 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)               1 |@                                                   |
+
+@worktime[140737331823320]: 
+[1]                   35 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 8 |@@@@@@@@@@@                                         |
+
+@worktime[140737331801109]: 
+[1]                   25 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                17 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 |
+[4, 8)                 1 |@@                                                  |
+
+@worktime[140737331832541]: 
+[64, 128)             28 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            15 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
+
+@worktime[140737331801606]: 
+[0]                   12 |@@@@@@@@@@@@@@@@@@@@                                |
+[1]                   31 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331843772]: 
+[2, 4)                 6 |@@@@@@                                              |
+[4, 8)                51 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                4 |@@@@                                                |
+
+@worktime[140737331825919]: 
+[4, 8)                61 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331826345]: 
+[1]                   35 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                25 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331844774]: 
+[8, 16)               44 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              17 |@@@@@@@@@@@@@@@@@@@@                                |
+
+@worktime[140737331795142]: 
+[64, 128)             49 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            12 |@@@@@@@@@@@@                                        |
+
+@worktime[140737331843528]: 
+[1]                   16 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
+[2, 4)                34 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                11 |@@@@@@@@@@@@@@@@                                    |
+
+@worktime[140737331813357]: 
+[64, 128)              3 |@@                                                  |
+[128, 256)            53 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             5 |@@@@                                                |
+
+@worktime[140737331831803]: 
+[0]                   54 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    7 |@@@@@@                                              |
+
+@worktime[140737331833987]: 
+[0]                   23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
+[1]                   38 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331838467]: 
+[8, 16)               42 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              18 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[32, 64)               0 |                                                    |
+[64, 128)              0 |                                                    |
+[128, 256)             0 |                                                    |
+[256, 512)             1 |@                                                   |
+
+@worktime[140737331832671]: 
+[1]                   42 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                17 |@@@@@@@@@@@@@@@@@@@@@                               |
+[4, 8)                 1 |@                                                   |
+[8, 16)                1 |@                                                   |
+
+@worktime[140737331823891]: 
+[32, 64)               8 |@@@@@@@@                                            |
+[64, 128)             51 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             2 |@@                                                  |
+
+@worktime[140737331841107]: 
+[0]                   29 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
+[1]                   31 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 1 |@                                                   |
+
+@worktime[140737331805748]: 
+[64, 128)              5 |@@@@                                                |
+[128, 256)            55 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             0 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331804436]: 
+[1]                   51 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 9 |@@@@@@@@@                                           |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331837477]: 
+[1]                   55 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 6 |@@@@@                                               |
+
+@worktime[140737331840546]: 
+[64, 128)              2 |@@                                                  |
+[128, 256)             7 |@@@@@@@                                             |
+[256, 512)            52 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331841711]: 
+[64, 128)             23 |@@@@@                                               |
+[128, 256)           220 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)            26 |@@@@@@                                              |
+[512, 1K)              2 |                                                    |
+[1K, 2K)               0 |                                                    |
+[2K, 4K)               1 |                                                    |
+
+@worktime[140737331815316]: 
+[4, 8)                60 |@@@@@@@@@@@@@@@@@                                   |
+[8, 16)              183 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              26 |@@@@@@@                                             |
+[32, 64)               3 |                                                    |
+
+@worktime[140737331837723]: 
+[1]                  239 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                28 |@@@@@@                                              |
+[4, 8)                 6 |@                                                   |
+
+@worktime[140737331834914]: 
+[1]                  134 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               122 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[4, 8)                15 |@@@@@                                               |
+[8, 16)                1 |                                                    |
+[16, 32)               1 |                                                    |
+
+@worktime[140737331818974]: 
+[32, 64)              28 |@@@@@@                                              |
+[64, 128)            214 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            30 |@@@@@@@                                             |
+[256, 512)             1 |                                                    |
+
+@worktime[140737331839160]: 
+[4, 8)                 1 |                                                    |
+[8, 16)                6 |@@                                                  |
+[16, 32)              28 |@@@@@@@@@                                           |
+[32, 64)              77 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[64, 128)            152 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             9 |@@@                                                 |
+
+@worktime[140737331829174]: 
+[0]                    7 |@                                                   |
+[1]                  196 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                67 |@@@@@@@@@@@@@@@@@                                   |
+[4, 8)                 1 |                                                    |
+[8, 16)                2 |                                                    |
+
+@worktime[140737331817952]: 
+[64, 128)            229 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            42 |@@@@@@@@@                                           |
+[256, 512)             2 |                                                    |
+
+@worktime[140737331810224]: 
+[2, 4)               224 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                47 |@@@@@@@@@@                                          |
+[8, 16)                2 |                                                    |
+
+@worktime[140737331811573]: 
+[1]                  148 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               121 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[4, 8)                 3 |@                                                   |
+[8, 16)                1 |                                                    |
+
+@worktime[140737331830100]: 
+[0]                   83 |@@@@@@@@@@@@@@@@@@@@@@@                             |
+[1]                  185 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@                                                   |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331806120]: 
+[0]                  246 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   24 |@@@@@                                               |
+[2, 4)                 2 |                                                    |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331813174]: 
+[64, 128)              1 |                                                    |
+[128, 256)            27 |@@@@@                                               |
+[256, 512)           243 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              2 |                                                    |
+
+@worktime[140737331838779]: 
+[0]                  134 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  132 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ |
+[2, 4)                 5 |@                                                   |
+[4, 8)                 2 |                                                    |
+
+@worktime[140737331825729]: 
+[2, 4)                20 |@@@@                                                |
+[4, 8)               245 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                6 |@                                                   |
+[16, 32)               2 |                                                    |
+
+@worktime[140737331794567]: 
+[8, 16)              187 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              83 |@@@@@@@@@@@@@@@@@@@@@@@                             |
+[32, 64)               3 |                                                    |
+
+@worktime[140737331799435]: 
+[0]                    7 |@                                                   |
+[1]                  224 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                39 |@@@@@@@@@                                           |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331825687]: 
+[0]                  609 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  135 |@@@@@@@@@@@                                         |
+[2, 4)                 4 |                                                    |
+[4, 8)                 4 |                                                    |
+
+@worktime[140737331800391]: 
+[0]                  655 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   96 |@@@@@@@                                             |
+[2, 4)                 3 |                                                    |
+
+@worktime[140737331831501]: 
+[2, 4)                 1 |                                                    |
+[4, 8)              2533 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)               66 |@                                                   |
+
+@worktime[140737331819857]: 
+[1]                   51 |@@@                                                 |
+[2, 4)               466 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
+[4, 8)               518 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    |
+[8, 16)              729 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
+[16, 32)             833 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)               3 |                                                    |
+
+@worktime[140737331824388]: 
+[1]                  834 |@@@@@@@@@@@@@@@@@@@@                                |
+[2, 4)              2162 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               193 |@@@@                                                |
+[8, 16)               77 |@                                                   |
+[16, 32)             168 |@@@@                                                |
+[32, 64)             211 |@@@@@                                               |
+[64, 128)            707 |@@@@@@@@@@@@@@@@@                                   |
+[128, 256)            84 |@@                                                  |
+
+@worktime[140737331812231]: 
+[0]                   13 |                                                    |
+[1]                 1606 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    |
+[2, 4)              2598 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               277 |@@@@@                                               |
+[8, 16)               90 |@                                                   |
+[16, 32)             227 |@@@@                                                |
+[32, 64)             300 |@@@@@@                                              |
+[64, 128)            964 |@@@@@@@@@@@@@@@@@@@                                 |
+[128, 256)           156 |@@@                                                 |
+[256, 512)             7 |                                                    |
+
+@worktime[140737331840791]: 
+[0]                 2262 |@@@@@@@@@@@@@@@@@@@                                 |
+[1]                 1531 |@@@@@@@@@@@@@                                       |
+[2, 4)               305 |@@                                                  |
+[4, 8)                68 |                                                    |
+[8, 16)             5960 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)            2095 |@@@@@@@@@@@@@@@@@@                                  |
+[32, 64)             368 |@@@                                                 |
+[64, 128)            214 |@                                                   |
+[128, 256)            75 |                                                    |
+[256, 512)             7 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331815444]: 
+[0]                   63 |                                                    |
+[1]                11430 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)              8962 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            |
+[4, 8)              1056 |@@@@                                                |
+[8, 16)              607 |@@                                                  |
+[16, 32)            1043 |@@@@                                                |
+[32, 64)            1347 |@@@@@@                                              |
+[64, 128)           4416 |@@@@@@@@@@@@@@@@@@@@                                |
+[128, 256)           519 |@@                                                  |
+[256, 512)            49 |                                                    |
+[512, 1K)             19 |                                                    |
+
+@worktime[140737331839905]: 
+[0]                37866 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  516 |                                                    |
+[2, 4)               199 |                                                    |
+[4, 8)                 5 |                                                    |
+[8, 16)                3 |                                                    |
+
+@worktime[140737331803010]: 
+[0]                35297 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                 3193 |@@@@                                                |
+[2, 4)                96 |                                                    |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331829551]: 
+[0]                28483 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                14348 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[2, 4)              6643 |@@@@@@@@@@@@                                        |
+[4, 8)             19353 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 |
+[8, 16)             6703 |@@@@@@@@@@@@                                        |
+[16, 32)           11508 |@@@@@@@@@@@@@@@@@@@@@                               |
+[32, 64)            3078 |@@@@@                                               |
+[64, 128)           1671 |@@@                                                 |
+[128, 256)           527 |                                                    |
+[256, 512)           170 |                                                    |
+[512, 1K)            252 |                                                    |
+[1K, 2K)               4 |                                                    |
+
+@worktime[140737331843320]: 
+[0]                57845 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                20105 |@@@@@@@@@@@@@@@@@@                                  |
+[2, 4)             13071 |@@@@@@@@@@@                                         |
+[4, 8)             21008 |@@@@@@@@@@@@@@@@@@                                  |
+[8, 16)            11166 |@@@@@@@@@@                                          |
+[16, 32)            8985 |@@@@@@@@                                            |
+[32, 64)            6032 |@@@@@                                               |
+[64, 128)           1598 |@                                                   |
+[128, 256)           280 |                                                    |
+[256, 512)           125 |                                                    |
+[512, 1K)             50 |                                                    |
+[1K, 2K)              42 |                                                    |
+
+@worktime[140737331823509]: 
+[0]                80231 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                29093 |@@@@@@@@@@@@@@@@@@                                  |
+[2, 4)             18895 |@@@@@@@@@@@@                                        |
+[4, 8)             29461 |@@@@@@@@@@@@@@@@@@@                                 |
+[8, 16)            16653 |@@@@@@@@@@                                          |
+[16, 32)           12845 |@@@@@@@@                                            |
+[32, 64)            8508 |@@@@@                                               |
+[64, 128)           2418 |@                                                   |
+[128, 256)           375 |                                                    |
+[256, 512)           172 |                                                    |
+[512, 1K)             99 |                                                    |
+[1K, 2K)              40 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=GenImmix MMTK_THREADS=2 setarch x86_64 -R /home/claireh/openjdk/build/worker-probe-id/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms198M -Xmx198M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.1
+Tue Oct 11 07:55:31 AM UTC 2022
+
+ 07:55:31 up 22 days,  5:32,  3 users,  load average: 3.67, 4.32, 3.43
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/0    10.0.0.67        03Oct22  8days  0.00s  0.00s tmux a
+claireh  pts/1    tmux(10181).%1   20Sep22 22:36m 47.43s  0.00s /bin/sh -c w
+claireh  pts/2    tmux(10181).%0   19Sep22 15days  0.01s  0.01s -bash
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0   1536 24212668 1460620 39319844    0    0     0    13    0    0  4  0 96  0  0
+ 0  0   1536 24212184 1460620 39318576    0    0     0     0  214  173  0  0 100  0  0
+
+top - 07:55:32 up 22 days,  5:32,  3 users,  load average: 3.67, 4.32, 3.43
+Tasks: 380 total,   1 running, 379 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  23644.7 free,    749.7 used,  39823.1 buff/cache
+MiB Swap:  65536.0 total,  65534.5 free,      1.5 used.  62661.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  166152  10200   6824 S   0.0   0.0   0:15.75 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.38 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39064 22
+	SSH_CONNECTION=10.0.0.2 39084 10.0.0.80 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,10181,1
+	TMUX_PANE=%1
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=16
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-47-generic #51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.38 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.36 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.36 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.36 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.36 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.36 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.39 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.38 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.38 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.38 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.36 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.26 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.26 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.36 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.36 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.39 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.31 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.36 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.34 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.36 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.38 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.33 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.39 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.38 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.39 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+===== DaCapo evaluation-git-f480064 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 1 in 21578 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 2 in 8433 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 3 in 7924 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-f480064 h2o completed warmup 4 in 8077 msec =====
+===== DaCapo evaluation-git-f480064 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	majorGC	total-work.count	total-work.time.min	total-work.time.max	total-work.time.total	
+383	4831.88	3081.72	100	0	inf	-inf	0.000	
+Total time: 7913.59 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-f480064 h2o PASSED in 7913 msec =====
+*****
+Attaching 3 probes...
+140737331841711 mmtk::scheduler::gc_work::StopMutators<mmtk::plan::generational
+140737331815316 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331825687 mmtk::scheduler::gc_work::PrepareCollector
+140737331815444 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::plan::generationa
+140737331839905 mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+140737331837723 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::plan::gener
+140737331834914 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331799435 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331838779 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331829174 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331830100 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331806120 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331825729 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331818974 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331794567 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331811573 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331813174 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331817952 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331829551 mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_
+140737331829551 mmtk::plan::generational::gc_work::GenNurseryProcessEdges<mmtk_
+140737331810224 mmtk::util::finalizable_processor::Finalization<mmtk::plan::gen
+140737331839160 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331800391 mmtk::scheduler::gc_work::ReleaseCollector
+140737331803010 mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+140737331800391 mmtk::scheduler::gc_work::ReleaseCollector
+140737331840791 mmtk::plan::generational::gc_work::ProcessModBuf<mmtk::plan::ge
+140737331813357 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331838467 mmtk::scheduler::gc_work::Prepare<mmtk::plan::generational::imm
+140737331812231 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+140737331804436 mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+140737331831501 mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+140737331843528 mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+140737331837477 mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+140737331841107 mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+140737331832671 mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+140737331833987 mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+140737331831803 mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+140737331843772 mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+140737331844774 mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+140737331826345 mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+140737331840546 mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+140737331795142 mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+140737331823891 mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+140737331802219 mmtk::plan::generational::gc_work::ProcessRegionModBuf<mmtk::pl
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331823509 mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+140737331825919 mmtk::util::finalizable_processor::Finalization<mmtk::scheduler
+140737331805748 mmtk::scheduler::gc_work::Release<mmtk::plan::generational::imm
+140737331819857 mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+140737331838597 mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+140737331824388 mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+140737^C
+
+@acc[140737331841361]: 62315
+@acc[140737331801606]: 70651
+@acc[140737331802219]: 73246
+@acc[140737331811755]: 78980
+@acc[140737331831803]: 86470
+@acc[140737331796927]: 97923
+@acc[140737331823320]: 99421
+@acc[140737331833987]: 101326
+@acc[140737331841107]: 101408
+@acc[140737331801109]: 106480
+@acc[140737331824765]: 107263
+@acc[140737331837477]: 121575
+@acc[140737331832671]: 134820
+@acc[140737331804436]: 141062
+@acc[140737331795617]: 142298
+@acc[140737331826345]: 147716
+@acc[140737331843528]: 208813
+@acc[140737331842454]: 255873
+@acc[140737331843129]: 290077
+@acc[140737331843772]: 338709
+@acc[140737331806120]: 414416
+@acc[140737331825919]: 418264
+@acc[140737331830100]: 469725
+@acc[140737331838779]: 474116
+@acc[140737331799435]: 619213
+@acc[140737331829174]: 666658
+@acc[140737331837723]: 672441
+@acc[140737331814217]: 720946
+@acc[140737331811573]: 745329
+@acc[140737331838467]: 814351
+@acc[140737331793693]: 843116
+@acc[140737331834914]: 849792
+@acc[140737331844774]: 871070
+@acc[140737331825687]: 995888
+@acc[140737331800391]: 1090075
+@acc[140737331810224]: 1308381
+@acc[140737331825729]: 1809710
+@acc[140737331815316]: 3360320
+@acc[140737331844273]: 4391611
+@acc[140737331800862]: 4512815
+@acc[140737331794567]: 4533455
+@acc[140737331832541]: 5042538
+@acc[140737331823891]: 5480907
+@acc[140737331795142]: 5489207
+@acc[140737331838597]: 9859093
+@acc[140737331805748]: 10577977
+@acc[140737331813357]: 11391654
+@acc[140737331822230]: 13432772
+@acc[140737331831501]: 14524528
+@acc[140737331840546]: 16704580
+@acc[140737331839160]: 19106279
+@acc[140737331839905]: 24246356
+@acc[140737331818974]: 28564268
+@acc[140737331817952]: 29632662
+@acc[140737331819857]: 30567439
+@acc[140737331803010]: 36239491
+@acc[140737331841711]: 57151208
+@acc[140737331813174]: 88292999
+@acc[140737331824388]: 95986081
+@acc[140737331812231]: 135522207
+@acc[140737331840791]: 183426836
+@acc[140737331815444]: 666458157
+@acc[140737331843320]: 1122726684
+@acc[140737331829551]: 1234284521
+@acc[140737331823509]: 1601855419
+@printed[140737331844273]: 1
+@printed[140737331815444]: 1
+@printed[140737331810224]: 1
+@printed[140737331814217]: 1
+@printed[140737331817952]: 1
+@printed[140737331843129]: 1
+@printed[140737331841711]: 1
+@printed[140737331825687]: 1
+@printed[140737331806120]: 1
+@printed[140737331838597]: 1
+@printed[140737331843772]: 1
+@printed[140737331794567]: 1
+@printed[140737331842454]: 1
+@printed[140737331796927]: 1
+@printed[140737331803010]: 1
+@printed[140737331825919]: 1
+@printed[140737331805748]: 1
+@printed[140737331832541]: 1
+@printed[140737331838779]: 1
+@printed[140737331815316]: 1
+@printed[140737331840546]: 1
+@printed[140737331837723]: 1
+@printed[140737331837477]: 1
+@printed[140737331838467]: 1
+@printed[140737331844774]: 1
+@printed[140737331800862]: 1
+@printed[140737331801109]: 1
+@printed[140737331834914]: 1
+@printed[140737331818974]: 1
+@printed[140737331826345]: 1
+@printed[140737331793693]: 1
+@printed[140737331801606]: 1
+@printed[140737331822230]: 1
+@printed[140737331839160]: 1
+@printed[140737331795142]: 1
+@printed[140737331839905]: 1
+@printed[140737331823509]: 1
+@printed[140737331841107]: 1
+@printed[140737331799435]: 1
+@printed[140737331825729]: 1
+@printed[140737331829551]: 1
+@printed[140737331811573]: 1
+@printed[140737331823891]: 1
+@printed[140737331819857]: 1
+@printed[140737331830100]: 1
+@printed[140737331841361]: 1
+@printed[140737331833987]: 1
+@printed[140737331843320]: 1
+@printed[140737331824388]: 1
+@printed[140737331832671]: 1
+@printed[140737331840791]: 1
+@printed[140737331824765]: 1
+@printed[140737331795617]: 1
+@printed[140737331813174]: 1
+@printed[140737331843528]: 1
+@printed[140737331800391]: 1
+@printed[140737331823320]: 1
+@printed[140737331831501]: 1
+@printed[140737331802219]: 1
+@printed[140737331804436]: 1
+@printed[140737331811755]: 1
+@printed[140737331831803]: 1
+@printed[140737331829174]: 1
+@printed[140737331813357]: 1
+@printed[140737331812231]: 1
+@startwork[866341]: 1920829904779916
+@startwork[866342]: 1920829904780237
+@worktime[140737331802219]: 
+[0]                   20 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   15 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             |
+[2, 4)                 1 |@@                                                  |
+
+@worktime[140737331844273]: 
+[64, 128)             34 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             7 |@@@@@@@@@@                                          |
+
+@worktime[140737331824765]: 
+[1]                   23 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                18 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            |
+
+@worktime[140737331841361]: 
+[0]                   30 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   10 |@@@@@@@@@@@@@@@@@                                   |
+[2, 4)                 1 |@                                                   |
+
+@worktime[140737331838597]: 
+[128, 256)            28 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)            13 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
+
+@worktime[140737331814217]: 
+[8, 16)               14 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[16, 32)              27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331822230]: 
+[256, 512)            41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842454]: 
+[4, 8)                41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331795617]: 
+[1]                    7 |@@@@@@@@@@@@@@                                      |
+[2, 4)                26 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 8 |@@@@@@@@@@@@@@@@                                    |
+
+@worktime[140737331843129]: 
+[4, 8)                41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331811755]: 
+[0]                    2 |@@                                                  |
+[1]                   37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 1 |@                                                   |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331796927]: 
+[1]                   33 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 8 |@@@@@@@@@@@@                                        |
+
+@worktime[140737331800862]: 
+[64, 128)             37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             4 |@@@@@                                               |
+
+@worktime[140737331793693]: 
+[8, 16)                5 |@@@@@@@                                             |
+[16, 32)              35 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)               1 |@                                                   |
+
+@worktime[140737331823320]: 
+[1]                   30 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                11 |@@@@@@@@@@@@@@@@@@@                                 |
+
+@worktime[140737331801109]: 
+[1]                   21 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                20 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
+
+@worktime[140737331832541]: 
+[64, 128)             24 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            17 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                |
+
+@worktime[140737331801606]: 
+[0]                   13 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
+[1]                   28 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331843772]: 
+[2, 4)                 5 |@@@@@                                               |
+[4, 8)                52 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                2 |@@                                                  |
+
+@worktime[140737331825919]: 
+[4, 8)                55 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)                4 |@@@                                                 |
+
+@worktime[140737331826345]: 
+[1]                   37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                22 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
+
+@worktime[140737331844774]: 
+[8, 16)               45 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              13 |@@@@@@@@@@@@@@@                                     |
+[32, 64)               1 |@                                                   |
+
+@worktime[140737331795142]: 
+[64, 128)             55 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             4 |@@@                                                 |
+
+@worktime[140737331843528]: 
+[1]                   13 |@@@@@@@@@@@@@@@@@@                                  |
+[2, 4)                36 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 9 |@@@@@@@@@@@@@                                       |
+[8, 16)                1 |@                                                   |
+
+@worktime[140737331813357]: 
+[64, 128)              3 |@@@                                                 |
+[128, 256)            50 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             6 |@@@@@@                                              |
+
+@worktime[140737331831803]: 
+[0]                   50 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    6 |@@@@@@                                              |
+[2, 4)                 3 |@@@                                                 |
+
+@worktime[140737331833987]: 
+[0]                   22 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    |
+[1]                   35 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 2 |@@                                                  |
+
+@worktime[140737331838467]: 
+[8, 16)               50 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)               9 |@@@@@@@@@                                           |
+
+@worktime[140737331832671]: 
+[1]                   44 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                15 |@@@@@@@@@@@@@@@@@                                   |
+
+@worktime[140737331823891]: 
+[32, 64)               7 |@@@@@@@                                             |
+[64, 128)             47 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             5 |@@@@@                                               |
+
+@worktime[140737331841107]: 
+[0]                   28 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  |
+[1]                   29 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 1 |@                                                   |
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331805748]: 
+[64, 128)              3 |@@                                                  |
+[128, 256)            54 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)             2 |@                                                   |
+
+@worktime[140737331804436]: 
+[1]                   54 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 5 |@@@@                                                |
+
+@worktime[140737331837477]: 
+[0]                    1 |                                                    |
+[1]                   54 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@@@                                                 |
+
+@worktime[140737331840546]: 
+[64, 128)              1 |@                                                   |
+[128, 256)            10 |@@@@@@@@@@                                          |
+[256, 512)            48 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331841711]: 
+[64, 128)             25 |@@@@@                                               |
+[128, 256)           230 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)            25 |@@@@@                                               |
+[512, 1K)              3 |                                                    |
+
+@worktime[140737331815316]: 
+[4, 8)                50 |@@@@@@@@@@@@                                        |
+[8, 16)              210 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              20 |@@@@                                                |
+[32, 64)               3 |                                                    |
+
+@worktime[140737331837723]: 
+[1]                  225 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                56 |@@@@@@@@@@@@                                        |
+[4, 8)                 2 |                                                    |
+[8, 16)                1 |                                                    |
+
+@worktime[140737331834914]: 
+[1]                  128 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[2, 4)               139 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                15 |@@@@@                                               |
+[8, 16)                2 |                                                    |
+
+@worktime[140737331818974]: 
+[32, 64)              19 |@@@@                                                |
+[64, 128)            230 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            33 |@@@@@@@                                             |
+[256, 512)             2 |                                                    |
+
+@worktime[140737331839160]: 
+[8, 16)                5 |@                                                   |
+[16, 32)              49 |@@@@@@@@@@@@@@@@@                                   |
+[32, 64)              76 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
+[64, 128)            144 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            10 |@@@                                                 |
+
+@worktime[140737331829174]: 
+[0]                    8 |@@                                                  |
+[1]                  174 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)               100 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
+[4, 8)                 2 |                                                    |
+
+@worktime[140737331817952]: 
+[64, 128)            246 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            35 |@@@@@@@                                             |
+[256, 512)             3 |                                                    |
+
+@worktime[140737331810224]: 
+[2, 4)               144 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               138 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
+[8, 16)                2 |                                                    |
+
+@worktime[140737331811573]: 
+[1]                  137 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  |
+[2, 4)               141 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 5 |@                                                   |
+[8, 16)                1 |                                                    |
+
+@worktime[140737331830100]: 
+[0]                   60 |@@@@@@@@@@@@@@                                      |
+[1]                  218 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 5 |@                                                   |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331806120]: 
+[0]                  237 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   41 |@@@@@@@@                                            |
+[2, 4)                 4 |                                                    |
+[4, 8)                 1 |                                                    |
+[8, 16)                0 |                                                    |
+[16, 32)               1 |                                                    |
+
+@worktime[140737331813174]: 
+[64, 128)              3 |                                                    |
+[128, 256)            23 |@@@@                                                |
+[256, 512)           254 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              4 |                                                    |
+
+@worktime[140737331838779]: 
+[0]                   87 |@@@@@@@@@@@@@@@@@@@@@@@                             |
+[1]                  192 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 2 |                                                    |
+[4, 8)                 3 |                                                    |
+
+@worktime[140737331825729]: 
+[2, 4)                13 |@@                                                  |
+[4, 8)               256 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)               13 |@@                                                  |
+[16, 32)               2 |                                                    |
+
+@worktime[140737331794567]: 
+[8, 16)              184 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)              97 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
+[32, 64)               3 |                                                    |
+
+@worktime[140737331799435]: 
+[0]                    5 |@                                                   |
+[1]                  241 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                34 |@@@@@@@                                             |
+[4, 8)                 4 |                                                    |
+
+@worktime[140737331825687]: 
+[0]                  702 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   58 |@@@@                                                |
+[2, 4)                 7 |                                                    |
+
+@worktime[140737331800391]: 
+[0]                  699 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   69 |@@@@@                                               |
+
+@worktime[140737331831501]: 
+[2, 4)                 3 |                                                    |
+[4, 8)              2429 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)               67 |@                                                   |
+[16, 32)               1 |                                                    |
+
+@worktime[140737331819857]: 
+[0]                   21 |@                                                   |
+[1]                   79 |@@@@@                                               |
+[2, 4)               353 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[4, 8)               495 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
+[8, 16)              809 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)             712 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
+[32, 64)              26 |@                                                   |
+[64, 128)              5 |                                                    |
+
+@worktime[140737331824388]: 
+[1]                  687 |@@@@@@@@@@@@@@@@@                                   |
+[2, 4)              2011 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               286 |@@@@@@@                                             |
+[8, 16)               84 |@@                                                  |
+[16, 32)             163 |@@@@                                                |
+[32, 64)             167 |@@@@                                                |
+[64, 128)            713 |@@@@@@@@@@@@@@@@@@                                  |
+[128, 256)            73 |@                                                   |
+
+@worktime[140737331812231]: 
+[0]                   24 |                                                    |
+[1]                 1452 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
+[2, 4)              2580 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)               293 |@@@@@                                               |
+[8, 16)              111 |@@                                                  |
+[16, 32)             215 |@@@@                                                |
+[32, 64)             284 |@@@@@                                               |
+[64, 128)            977 |@@@@@@@@@@@@@@@@@@@                                 |
+[128, 256)           113 |@@                                                  |
+[256, 512)             2 |                                                    |
+
+@worktime[140737331840791]: 
+[0]                 2143 |@@@@@@@@@@@@@@@@@@                                  |
+[1]                 1543 |@@@@@@@@@@@@@                                       |
+[2, 4)               337 |@@                                                  |
+[4, 8)                85 |                                                    |
+[8, 16)             5889 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16, 32)            2252 |@@@@@@@@@@@@@@@@@@@                                 |
+[32, 64)             316 |@@                                                  |
+[64, 128)            222 |@                                                   |
+[128, 256)            65 |                                                    |
+[256, 512)             8 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331815444]: 
+[0]                   40 |                                                    |
+[1]                 8401 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             |
+[2, 4)             11184 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1227 |@@@@@                                               |
+[8, 16)              582 |@@                                                  |
+[16, 32)            1111 |@@@@@                                               |
+[32, 64)            1228 |@@@@@                                               |
+[64, 128)           4848 |@@@@@@@@@@@@@@@@@@@@@@                              |
+[128, 256)           473 |@@                                                  |
+[256, 512)            49 |                                                    |
+[512, 1K)             10 |                                                    |
+[1K, 2K)               1 |                                                    |
+
+@worktime[140737331839905]: 
+[0]                38711 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                  534 |                                                    |
+[2, 4)               139 |                                                    |
+[4, 8)                 5 |                                                    |
+[8, 16)                1 |                                                    |
+[16, 32)               1 |                                                    |
+
+@worktime[140737331803010]: 
+[0]                36129 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                 3169 |@@@@                                                |
+[2, 4)                86 |                                                    |
+[4, 8)                 7 |                                                    |
+
+@worktime[140737331829551]: 
+[0]                27877 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                16325 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
+[2, 4)              7834 |@@@@@@@@@@@@@@                                      |
+[4, 8)             18040 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   |
+[8, 16)             8816 |@@@@@@@@@@@@@@@@                                    |
+[16, 32)           12783 |@@@@@@@@@@@@@@@@@@@@@@@                             |
+[32, 64)            3653 |@@@@@@                                              |
+[64, 128)           1674 |@@@                                                 |
+[128, 256)           563 |@                                                   |
+[256, 512)           163 |                                                    |
+[512, 1K)            260 |                                                    |
+[1K, 2K)              25 |                                                    |
+
+@worktime[140737331843320]: 
+[0]                53644 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                19448 |@@@@@@@@@@@@@@@@@@                                  |
+[2, 4)             12744 |@@@@@@@@@@@@                                        |
+[4, 8)             19133 |@@@@@@@@@@@@@@@@@@                                  |
+[8, 16)            12345 |@@@@@@@@@@@                                         |
+[16, 32)            8861 |@@@@@@@@                                            |
+[32, 64)            5390 |@@@@@                                               |
+[64, 128)           1752 |@                                                   |
+[128, 256)           247 |                                                    |
+[256, 512)           112 |                                                    |
+[512, 1K)             42 |                                                    |
+[1K, 2K)              40 |                                                    |
+
+@worktime[140737331823509]: 
+[0]                76449 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                28054 |@@@@@@@@@@@@@@@@@@@                                 |
+[2, 4)             18307 |@@@@@@@@@@@@                                        |
+[4, 8)             29062 |@@@@@@@@@@@@@@@@@@@                                 |
+[8, 16)            16436 |@@@@@@@@@@@                                         |
+[16, 32)           12674 |@@@@@@@@                                            |
+[32, 64)            7848 |@@@@@                                               |
+[64, 128)           2309 |@                                                   |
+[128, 256)           385 |                                                    |
+[256, 512)           172 |                                                    |
+[512, 1K)             99 |                                                    |
+[1K, 2K)              26 |                                                    |
+[2K, 4K)               1 |                                                    |
+

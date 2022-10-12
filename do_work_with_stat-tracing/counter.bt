@@ -1,7 +1,8 @@
 uretprobe:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
-    clear(@acc);
-    clear(@worktime);
+    // clear(@acc);
+    // clear(@worktime);
     clear(@startwork);
+    clear(@counter);
 }
 
 uretprobe:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:harness_end {
@@ -15,15 +16,16 @@ usdt:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:mmtk:sta
 usdt:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
     $start = @startwork[tid];
     if ($start) {
-        $end = nsecs;
+        //$end = nsecs;
         //check if key exists
         if (!(@decoded[arg0])) {
             @type_names[arg0] = str(arg0,arg1);
             @decoded[arg0] = 1;
         }
         //gives distribution of the work time
-        @worktime[arg0] = hist(($end - $start) / 1000);
+        //@worktime[arg0] = hist(($end - $start) / 1000);
         //cumulative work time
-        @acc[arg0] = sum($end - $start);
+        //@acc[arg0] = sum($end - $start);
+        @counter[arg0] = count();
     }
 }
