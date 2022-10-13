@@ -1,18 +1,22 @@
-uretprobe:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
-    clear(@acc);
-    clear(@worktime);
-    clear(@startwork);
+uretprobe:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    @stats_enabled = 1;
 }
 
-uretprobe:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:harness_end {
-    exit();
+uretprobe:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    @stats_enabled = 0;
 }
 
-usdt:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+usdt:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    if (!@stats_enabled) {
+        return;
+    }
     @startwork[tid] = nsecs;
 }
 
-usdt:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+usdt:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    if (!@stats_enabled) {
+        return;
+    }
     $start = @startwork[tid];
     if ($start) {
         $end = nsecs;
