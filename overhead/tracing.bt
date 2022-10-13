@@ -1,25 +1,33 @@
-uprobe:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
-    clear(@acc);
-    clear(@worktime);
-    clear(@startwork);
+uretprobe:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    @stats_enabled = 1;
 }
 
-usdt:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+uretprobe:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    @stats_enabled = 0;
+}
+
+usdt:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    if (!@stats_enabled) {
+        return;
+    }
     @startwork[tid] = nsecs;
 }
 
-usdt:/home/claireh/openjdk/build/tracing/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
-    $ns = @startwork[tid];
-    if ($ns) {
+usdt:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    if (!@stats_enabled) {
+        return;
+    }
+    $start = @startwork[tid];
+    if ($start) {
+        $end = nsecs;
         //check if key exists
-        if (!(@printed[arg0])) {
-            printf("%ld %s\n", arg0, str(arg0,arg1));
-            @printed[arg0] = 1;
+        if (!(@decoded[arg0])) {
+            @type_names[arg0] = str(arg0,arg1);
+            @decoded[arg0] = 1;
         }
         //gives distribution of the work time
-        @worktime[arg0] = hist((nsecs - $ns) / 1000);
+        @worktime[arg0] = hist(($end - $start) / 1000);
         //cumulative work time
-        @acc[arg0] = sum(nsecs - $ns);
-        //printf("%s %ld \n", str(arg0,arg1), arg0);
+        @acc[arg0] = sum($end - $start);
     }
 }
