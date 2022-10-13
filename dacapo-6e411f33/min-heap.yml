@@ -1,0 +1,55 @@
+# running minheap -a 3 /home/claireh/ebpf/dacapo-6e411f33/min-heap.yml /home/claireh/ebpf/dacapo-6e411f33/minheap-immix.yml | tee /home/claireh/ebpf/dacapo-6e411f33/minheap-info.txt
+includes:
+  - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
+
+benchmarks:
+  dacapo-6e411f33:
+    - avrora
+    - cassandra
+    - graphchi
+    - jme
+    - lib
+    - pmd
+    - tomcat
+    - xalan
+    - batik
+    - eclipse
+    - h2
+    - jython
+    - luindex
+    - spring
+    - tradebeans
+    - zxing
+    - biojava
+    - fop
+    - h2o
+    - kafka
+    - lusearch
+    - sunflow
+    - tradesoap
+
+overrides:
+  "suites.dacapo-6e411f33.timing_iteration": 5
+  "suites.dacapo-6e411f33.callback": "probe.DacapoChopinCallback"
+  "suites.dacapo-6e411f33.timeout": 600
+
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/jdk-11.0.15"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
+
+
+
+
