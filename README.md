@@ -17,4 +17,4 @@ extern crate probe;
 probe!(mmtk,probe_name,arg0,arg1);
 ```
 4. Build MMTk with the instructions in the [OpenJDK binding](https://github.com/mmtk/mmtk-openjdk)
-5. Write the tracing code. An example is the [code](https://github.com/clairexhuang/ebpf/blob/main/do_work_with_stat-tracing/worker_id.bt) which collects statistics about work packets (cumulative time & distribution by packet type). Also, see the `bpftrace` [reference guide](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md) for more information, and the [tools page](https://github.com/iovisor/bpftrace/tree/master/tools) for some sample/existing functionalities. 
+5. Write the tracing code. An example is the [code](https://github.com/clairexhuang/ebpf/blob/main/do_work_with_stat-tracing/worker_id.bt) which collects statistics about work packets (cumulative time & distribution by packet type). Also, see the [reference guide](https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md) for more information, and the [tools page](https://github.com/iovisor/bpftrace/tree/master/tools) for some sample/existing functionalities. 
