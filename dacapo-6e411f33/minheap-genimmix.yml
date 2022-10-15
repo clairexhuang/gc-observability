@@ -1,0 +1,24 @@
+mmtk.ms.s.c2.mmtk_gc-GenImmix.tph.probes_cp.probes:
+  dacapo-6e411f33:
+    avrora: 8
+    batik: 404
+    biojava: 196
+    cassandra: .inf
+    eclipse: 437
+    fop: .inf
+    graphchi: 177
+    h2: 1039
+    h2o: 78
+    jme: 236
+    jython: .inf
+    kafka: 225
+    luindex: .inf
+    lusearch: 25
+    pmd: .inf
+    spring: .inf
+    sunflow: 22
+    tomcat: 45
+    # tradebeans: .inf
+    # tradesoap: .inf
+    xalan: 12
+    zxing: 431
