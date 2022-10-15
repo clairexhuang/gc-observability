@@ -1,12 +1,9 @@
-# running runbms /home/claireh/ebpf/do_work_with_stat-tracing /home/claireh/ebpf/do_work_with_stat-tracing/worker_configs_id.yml -p "new_bpf_worker_id_20inv" -s 2
+# running runbms /home/claireh/ebpf/do_work_with_stat-tracing /home/claireh/ebpf/do_work_with_stat-tracing/worker_configs_id.yml -p "fixed_worker_id_20inv" -s 2
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
 benchmarks:
   dacapochopin-f480064:
-    - avrora
-    - batik
-    - biojava
     - cassandra
     - eclipse
     - fop
@@ -22,6 +19,9 @@ benchmarks:
     - tomcat
     - xalan
     - zxing
+    - avrora
+    - batik
+    - biojava
 
 overrides:
   "suites.dacapochopin-f480064.timing_iteration": 5

@@ -24,13 +24,13 @@ benchmarks:
     # - zxing
 
 overrides:
-  "suites.dacapochopin-f480064.timing_iteration": 5
-  invocations: 2
+  "suites.dacapochopin-f480064.timing_iteration": 3
+  invocations: 1
   "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
   "suites.dacapochopin-f480064.minheap": GenImmix
   "suites.dacapochopin-f480064.timeout": 1200
   "suites.dacapochopin-f480064.wrapper": "setarch x86_64 -R"
-  "suites.dacapochopin-f480064.companion": "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/do_work_with_stat-tracing/worker_id.bt'"
+  "suites.dacapochopin-f480064.companion": "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/do_work_with_stat-tracing/counter.bt'"
   "suites.dacapochopin-f480064.minheap_values.GenImmix": 
     avrora: 8
     batik: 407
