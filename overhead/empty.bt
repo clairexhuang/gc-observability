@@ -1,7 +1,7 @@
-uretprobe:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:harness_begin {}
+uretprobe:/home/claireh/openjdk/build/processedges/jdk/lib/server/libmmtk_openjdk.so:harness_begin {}
 
-uretprobe:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:harness_end {}
+uretprobe:/home/claireh/openjdk/build/processedges/jdk/lib/server/libmmtk_openjdk.so:harness_end {}
 
-usdt:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {}
+usdt:/home/claireh/openjdk/build/processedges/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {}
 
-usdt:/home/claireh/openjdk/build/probed/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {}
+usdt:/home/claireh/openjdk/build/processedges/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {}
