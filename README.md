@@ -1,6 +1,6 @@
 # eBPF Project
 
-This repository contains files from my 2022 semester 2 project on 'Diagnosing Garbage Collection Problems with eBPF' (supervised by Professor Steve Blackburn). See my MMTk-Core `bpfworkprobe` [branch](https://github.com/clairexhuang/mmtk-core/tree/bpfworkprobe) (for the exact changes made to MMTk-Core when investigating work packets (in particular, process edges work packets).
+This repository contains files from my 2022 semester 2 project on 'Diagnosing Garbage Collection Problems with eBPF' (supervised by Professor Steve Blackburn). We use MMTk with the OpenJDK binding. See my MMTk-Core `bpfworkprobe` [branch](https://github.com/clairexhuang/mmtk-core/tree/bpfworkprobe) for the exact changes made to MMTk-Core when investigating work packets (in particular, process edges work packets).
 
 We use [bpftrace](https://github.com/iovisor/bpftrace). To incorporate tracing with probes into MMTk-Core:
 1. Add probe to `[dependencies]` in `Cargo.toml`:
