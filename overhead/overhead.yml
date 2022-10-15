@@ -1,12 +1,9 @@
-# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "overhead-measure" -s 2
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "fixed-overhead" -s 2
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
 benchmarks:
   dacapochopin-f480064:
-    - avrora
-    - batik
-    - biojava
     - cassandra 
     - eclipse
     - fop
@@ -22,6 +19,9 @@ benchmarks:
     - tomcat
     - xalan
     - zxing
+    - avrora
+    - batik
+    - biojava
 
 overrides:
   "suites.dacapochopin-f480064.timing_iteration": 5
