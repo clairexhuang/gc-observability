@@ -1,13 +1,10 @@
-# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/no-tracing.yml -p "overhead-no-tracing" -s 2
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "fixed-overhead" -s 2
 includes:
-   - "/home/claireh/running-ng/src/running/config/base/runbms.yml"
+   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
 benchmarks:
   dacapochopin-f480064:
-    - avrora
-    - batik
-    - biojava
-    - cassandra
+    - cassandra 
     - eclipse
     - fop
     - graphchi
@@ -22,6 +19,9 @@ benchmarks:
     - tomcat
     - xalan
     - zxing
+    - avrora
+    - batik
+    - biojava
 
 overrides:
   "suites.dacapochopin-f480064.timing_iteration": 5
@@ -50,10 +50,6 @@ overrides:
     zxing: 432
 
 runtimes:
-  normal:
-    type: OpenJDK
-    release: 11
-    home: "/home/claireh/openjdk/build/normal/jdk"
   flagged:
     type: OpenJDK
     release: 11
@@ -62,6 +58,10 @@ runtimes:
     type: OpenJDK
     release: 11
     home: "/home/claireh/openjdk/build/probed/jdk"
+  normal:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/normal/jdk"
   stat:
     type: OpenJDK
     release: 11
@@ -74,9 +74,25 @@ modifiers:
   probes:
     type: JVMArg
     val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  gc_threads:
+    type: EnvVar
+    var: MMTK_THREADS
+    val: '{0}'
+  bpftrace:
+    type: Companion
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/overhead/tracing.bt'"
+  notrace:
+    type: Companion
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/overhead/empty.bt'"
+  no_add_rand:
+    type: Wrapper
+    val: "setarch x86_64 -R"
 
 configs:
-  - "normal|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
-  - "flagged|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
-  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
-  - "stat|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes"
+  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1|notrace"
+  - "normal|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "flagged|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "stat|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand"
+  

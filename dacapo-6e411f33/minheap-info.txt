@@ -1,0 +1,49 @@
+mmtk.ms.s.c2.mmtk_gc-Immix.tph.probes_cp.probes 
+	 dacapo-6e411f33-avrora 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M o 9M o 5M x 7M ... minheap inf
+	 dacapo-6e411f33-batik 2049M o 1025M o 513M o 257M x 385M x 449M x 481M o 465M o 457M x 461M x 463M o 462M o minheap 462
+	 dacapo-6e411f33-biojava 2049M o 1025M o 513M o 257M o 129M x 193M t 225M o 209M o 201M o 197M o 195M o 194M t minheap 195
+	 dacapo-6e411f33-cassandra 2049M o 1025M o 513M o 257M o 129M o 65M x 97M x 113M o 105M o 101M x 103M x 104M x minheap 105
+	 dacapo-6e411f33-eclipse 2049M o 1025M o 513M x 769M o 641M o 577M o 545M o 529M o 521M x 525M x 527M o 526M o minheap 526
+	 dacapo-6e411f33-fop 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M ... minheap inf
+	 dacapo-6e411f33-graphchi 2049M o 1025M o 513M o 257M o 129M x 193M o 161M x 177M o 169M x 173M x 175M o 174M t minheap 175
+	 dacapo-6e411f33-h2 2049M o 1025M x 1537M x 1793M o 1665M x 1729M t 1761M o 1745M o 1737M o 1733M o 1731M x 1732M o minheap 1732
+	 dacapo-6e411f33-h2o 2049M o 1025M o 513M o 257M o 129M o 65M x 97M o 81M o 73M x 77M x 79M o 78M x minheap 79
+	 dacapo-6e411f33-jme 2049M o 1025M o 513M o 257M o 129M t 193M t 225M t 241M o 233M t 237M o 235M t 236M o minheap 236
+	 dacapo-6e411f33-jython 2049M o 1025M o 513M o 257M o 129M o 65M o 33M x 49M x 57M x 61M o 59M o 58M o minheap 58
+	 dacapo-6e411f33-kafka 2049M o 1025M o 513M o 257M x 385M o 321M o 289M o 273M o 265M o 261M o 259M o 258M t minheap 259
+	 dacapo-6e411f33-luindex 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M x 25M x 29M o 27M o 26M x minheap 27
+	 dacapo-6e411f33-lusearch 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M x 25M x 29M o 27M o 26M o minheap 26
+	 dacapo-6e411f33-pmd 2049M o 1025M o 513M o 257M o 129M x 193M o 161M x 177M x 185M x 189M o 187M x 188M o minheap 188
+	 dacapo-6e411f33-spring 2049M o 1025M o 513M o 257M o 129M x 193M o 161M o 145M o 137M x 141M x 143M o 142M x minheap 143
+	 dacapo-6e411f33-sunflow 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M x 25M x 29M o 27M x 28M o minheap 28
+	 dacapo-6e411f33-tomcat 2049M o 1025M o 513M o 257M o 129M o 65M o 33M ... minheap inf
+	 dacapo-6e411f33-tradebeans 2049M ... minheap inf
+	 dacapo-6e411f33-tradesoap 2049M ... minheap inf
+	 dacapo-6e411f33-xalan 2049M o 1025M o 513M o 257M o 129M o 65M o 33M o 17M o 9M x 13M o 11M x 12M o minheap 12
+	 dacapo-6e411f33-zxing 2049M o 1025M o 513M o 257M x 385M x 449M o 417M x 433M o 425M x 429M x 431M o 430M o minheap 430
+mmtk.ms.s.c2.mmtk_gc-Immix.tph.probes_cp.probes obtained the most number of smallest minheap sizes: 17
+Minheap configuration to be copied to runbms config files
+dacapo-6e411f33:
+  avrora: .inf
+  batik: 462
+  biojava: 195
+  cassandra: 105
+  eclipse: 526
+  fop: .inf
+  graphchi: 175
+  h2: 1732
+  h2o: 79
+  jme: 236
+  jython: 58
+  kafka: 259
+  luindex: 27
+  lusearch: 26
+  pmd: 188
+  spring: 143
+  sunflow: 28
+  tomcat: .inf
+  tradebeans: .inf
+  tradesoap: .inf
+  xalan: 12
+  zxing: 430
+

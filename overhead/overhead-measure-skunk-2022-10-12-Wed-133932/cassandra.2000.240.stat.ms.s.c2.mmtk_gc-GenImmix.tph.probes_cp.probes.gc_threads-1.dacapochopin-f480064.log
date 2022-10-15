@@ -1,0 +1,183 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=GenImmix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms240M -Xmx240M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default cassandra
+running-ng v0.3.3
+Wed Oct 12 09:04:45 PM UTC 2022
+
+ 21:04:45 up  9:21,  1 user,  load average: 2.06, 1.70, 1.32
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(6780).%0    13:24    7:25m  5.91s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 128996272 344388 2063256    0    0     8    41    4   17  5  1 94  0  0
+ 0  0      0 128996528 344388 2062776    0    0     0     0  305   94  0  0 100  0  0
+
+top - 21:04:47 up  9:21,  1 user,  load average: 1.90, 1.67, 1.32
+Tasks: 229 total,   1 running, 228 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 125972.9 free,    360.4 used,   2350.7 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127078.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165888  11176   8076 S   0.0   0.0   0:01.53 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60488 22
+	SSH_CONNECTION=10.0.0.2 60488 10.0.0.68 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,6780,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=6
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.59 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Cassandra starting...
+YCSB starting...
+===== DaCapo evaluation-git-f480064 cassandra starting warmup 1 =====
+Loading database... 
+    YCSB Client 0.17.0
+    workload: site.ycsb.workloads.CoreWorkload
+    records: 10000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+Running transactions... 
+    operations: 200000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+===== DaCapo evaluation-git-f480064 cassandra completed warmup 1 in 17448 msec =====
+===== DaCapo simple tail latency: 50% 408 usec, 90% 509 usec, 99% 2785 usec, 99.9% 17543 usec, 99.99% 78392 usec, max 157490 usec, measured over 200000 events =====
+===== DaCapo metered tail latency: 50% 196672 usec, 90% 309931 usec, 99% 346280 usec, 99.9% 357764 usec, 99.99% 359691 usec, max 360135 usec, measured over 200000 events =====
+===== DaCapo evaluation-git-f480064 cassandra starting warmup 2 =====
+Loading database... 
+    YCSB Client 0.17.0
+    workload: site.ycsb.workloads.CoreWorkload
+    records: 10000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+Running transactions... 
+    operations: 200000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+===== DaCapo evaluation-git-f480064 cassandra completed warmup 2 in 12189 msec =====
+===== DaCapo simple tail latency: 50% 407 usec, 90% 501 usec, 99% 749 usec, 99.9% 15773 usec, 99.99% 70251 usec, max 74348 usec, measured over 200000 events =====
+===== DaCapo metered tail latency: 50% 48516 usec, 90% 89941 usec, 99% 124874 usec, 99.9% 139144 usec, 99.99% 140415 usec, max 140717 usec, measured over 200000 events =====
+===== DaCapo evaluation-git-f480064 cassandra starting warmup 3 =====
+Loading database... 
+    YCSB Client 0.17.0
+    workload: site.ycsb.workloads.CoreWorkload
+    records: 10000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+Running transactions... 
+    operations: 200000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+===== DaCapo evaluation-git-f480064 cassandra completed warmup 3 in 12062 msec =====
+===== DaCapo simple tail latency: 50% 407 usec, 90% 500 usec, 99% 720 usec, 99.9% 16246 usec, 99.99% 71281 usec, max 78417 usec, measured over 200000 events =====
+===== DaCapo metered tail latency: 50% 431 usec, 90% 14566 usec, 99% 31273 usec, 99.9% 39621 usec, 99.99% 71281 usec, max 78417 usec, measured over 200000 events =====
+===== DaCapo evaluation-git-f480064 cassandra starting warmup 4 =====
+Loading database... 
+    YCSB Client 0.17.0
+    workload: site.ycsb.workloads.CoreWorkload
+    records: 10000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+Running transactions... 
+    operations: 200000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+===== DaCapo evaluation-git-f480064 cassandra completed warmup 4 in 12075 msec =====
+===== DaCapo simple tail latency: 50% 407 usec, 90% 502 usec, 99% 7427 usec, 99.9% 14522 usec, 99.99% 70539 usec, max 73273 usec, measured over 200000 events =====
+===== DaCapo metered tail latency: 50% 23355 usec, 90% 73066 usec, 99% 108481 usec, 99.9% 118899 usec, 99.99% 120588 usec, max 120923 usec, measured over 200000 events =====
+===== DaCapo evaluation-git-f480064 cassandra starting =====
+Loading database... 
+    YCSB Client 0.17.0
+    workload: site.ycsb.workloads.CoreWorkload
+    records: 10000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+Running transactions... 
+    operations: 200000
+    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	majorGC	total-work.time.min	work.ProcessModBuf.count	work.StopMutators.time.max	work.ScanStringTableRoots.time.total	work.ScanWeakProcessorRoots.count	work.ScanVMSpecificRoots.time.min	work.ScanVMSpecificRoots.time.total	work.EndOfGC.time.total	work.ReleaseMutator.time.max	work.ScheduleCollection.count	work.ScanJvmtiExportRoots.time.total	work.EndOfGC.time.max	work.Prepare.count	work.ScanCodeCacheRoots.count	work.ScanClassLoaderDataGraphRoots.time.max	total-work.count	work.ProcessModBuf.time.max	work.StopMutators.time.total	work.Prepare.time.max	work.ScanVMThreadRoots.time.total	work.ScanObjectSynchronizerRoots.time.max	work.ReleaseMutator.time.total	work.ScanStringTableRoots.time.min	work.ProcessRegionModBuf.count	work.PrepareMutator.count	work.ScanJNIHandlesRoots.time.min	work.Release.time.max	work.PrepareCollector.time.total	work.ScanClassLoaderDataGraphRoots.time.min	work.ProcessRegionModBuf.time.max	work.ReleaseMutator.time.min	work.ScanManagementRoots.time.total	work.PrepareCollector.time.min	work.ScanVMSpecificRoots.count	work.ScanObjectSynchronizerRoots.time.min	work.ScanCodeCacheRoots.time.total	work.StopMutators.time.min	work.Finalization.time.max	work.GenNurseryProcessEdges.time.max	work.GenNurseryProcessEdges.time.total	work.ScanJNIHandlesRoots.count	work.ScanCodeCacheRoots.time.min	work.ScanSystemDictionaryRoots.time.max	work.PrepareBlockState.time.total	work.ScanVMSpecificRoots.time.max	work.GenNurseryProcessEdges.count	work.ScanUniverseRoots.time.max	work.ReleaseCollector.count	work.ProcessModBuf.time.min	work.PrepareMutator.time.total	work.ScanObjectSynchronizerRoots.time.total	work.PrepareCollector.count	work.ScanClassLoaderDataGraphRoots.count	work.ReleaseCollector.time.min	work.ScanStackRoot.count	work.ScanAOTLoaderRoots.time.min	work.SweepChunk.time.total	work.PrepareBlockState.count	work.ScanJNIHandlesRoots.time.max	work.PlanProcessEdges.time.total	work.PrepareBlockState.time.min	work.ScanJvmtiExportRoots.time.max	work.GenNurseryProcessEdges.time.min	total-work.time.max	work.ScanStringTableRoots.time.max	work.ProcessRegionModBuf.time.min	work.PlanProcessEdges.time.min	work.ScanObjectSynchronizerRoots.count	work.ScanVMThreadRoots.time.min	work.SweepChunk.time.min	work.ScanSystemDictionaryRoots.time.min	work.ScanVMThreadRoots.count	work.PrepareMutator.time.min	work.EndOfGC.time.min	work.ScanAOTLoaderRoots.count	work.ScanVMThreadRoots.time.max	work.ScheduleCollection.time.min	work.ScanStringTableRoots.count	work.ReleaseCollector.time.total	work.PrepareCollector.time.max	total-work.time.total	work.Finalization.count	work.ScanJvmtiExportRoots.time.min	work.PlanProcessEdges.count	work.ScanUniverseRoots.count	work.SweepChunk.time.max	work.ProcessRegionModBuf.time.total	work.Finalization.time.min	work.StopMutators.count	work.ScanJNIHandlesRoots.time.total	work.ScanWeakProcessorRoots.time.max	work.ProcessModBuf.time.total	work.Release.count	work.ScanAOTLoaderRoots.time.total	work.ScanJvmtiExportRoots.count	work.ScanSystemDictionaryRoots.count	work.ScheduleCollection.time.total	work.Prepare.time.min	work.ScanWeakProcessorRoots.time.min	work.ScanStackRoot.time.max	work.PlanProcessEdges.time.max	work.PrepareMutator.time.max	work.ScanManagementRoots.time.max	work.EndOfGC.count	work.PrepareBlockState.time.max	work.Prepare.time.total	work.Release.time.total	work.Release.time.min	work.ScanStackRoot.time.min	work.ScanCodeCacheRoots.time.max	work.ScanWeakProcessorRoots.time.total	work.SweepChunk.count	work.ScanManagementRoots.time.min	work.ScanManagementRoots.count	work.ScanSystemDictionaryRoots.time.total	work.ScanStackRoot.time.total	work.Finalization.time.total	work.ScanUniverseRoots.time.total	work.ReleaseCollector.time.max	work.ScanAOTLoaderRoots.time.max	work.ScanClassLoaderDataGraphRoots.time.total	work.ScanUniverseRoots.time.min	work.ScheduleCollection.time.max	work.ReleaseMutator.count	
+159	10139.63	2130.97	9	0.000	6370	0.580	61.883	159	0.000	0.186	16.727	0.001	159	0.113	0.293	159	159	0.281	213315	0.070	67.258	0.026	0.197	0.001	3.719	0.000	87	19451	0.000	0.019	0.054	0.000	0.001	0.000	0.227	0.000	159	0.000	68.718	0.000	0.011	1.001	1014.235	159	0.000	0.009	1.556	0.002	105106	0.004	159	0.000	2.583	0.085	159	159	0.000	19451	0.000	7.211	433	0.002	567.193	0.000	0.001	0.000	1.830	0.578	0.000	0.000	159	0.000	0.000	0.000	159	0.000	0.000	159	0.002	0.000	159	0.039	0.001	2102.911	159	0.000	39194	159	0.027	0.015	0.000	159	0.228	0.101	28.841	159	0.079	159	159	1.058	0.000	0.000	0.164	1.830	0.006	0.002	159	0.028	2.176	1.891	0.000	0.000	0.466	9.556	433	0.000	159	1.109	209.927	0.899	0.428	0.001	0.001	34.719	0.000	0.017	19451	
+Total time: 12270.60 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-f480064 cassandra PASSED in 12270 msec =====
+===== DaCapo simple tail latency: 50% 408 usec, 90% 504 usec, 99% 7883 usec, 99.9% 14592 usec, 99.99% 70451 usec, max 73034 usec, measured over 200000 events =====
+===== DaCapo metered tail latency: 50% 435 usec, 90% 21685 usec, 99% 40901 usec, 99.9% 49708 usec, 99.99% 70451 usec, max 73034 usec, measured over 200000 events =====
