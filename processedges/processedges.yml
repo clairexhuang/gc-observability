@@ -1,4 +1,4 @@
-# running runbms /home/claireh/ebpf/processedges /home/claireh/ebpf/processedges/processedges.yml -p "processedges" -s 2
+# running runbms /home/claireh/ebpf/processedges /home/claireh/ebpf/processedges/processedges.yml -p "processedges"
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
@@ -10,32 +10,12 @@ suites:
     timing_iteration: 5
     timeout: 1200
     callback: "probe.DacapoChopinCallback"
-    invocations: 10
-    minheap: Immix
-    minheap_values:
-      Immix:
-        avrora: 8 #manual
-        batik: 462
-        biojava: 195
-        cassandra: 105
-        eclipse: 526
-        fop: 27 #manual
-        graphchi: 175
-        h2: 1732
-        h2o: 79
-        jme: 236
-        jython: 58
-        kafka: 259
-        luindex: 27
-        lusearch: 26
-        pmd: 188
-        spring: 143
-        sunflow: 28
-        tomcat: 61 #manual
-        #tradebeans: .inf
-        #tradesoap: .inf
-        xalan: 12
-        zxing: 430
+    invocations: 1
+
+overrides:
+  "modifiers.c2.excludes.dacapo-6e411f33": 
+    - tradebeans
+    - tradesoap
 
 benchmarks:
   dacapo-6e411f33:
@@ -57,8 +37,8 @@ benchmarks:
     - spring 
     - sunflow 
     - tomcat 
-    # - tradebeans 
-    # - tradesoap 
+    - tradebeans 
+    - tradesoap 
     - xalan 
     - zxing
 
@@ -81,27 +61,23 @@ modifiers:
     val: '{0}'
   bpftrace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/processedges/processedges.bt'"
+    val: "sudo opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/processedges.bt'"
   no_add_rand:
     type: Wrapper
     val: "setarch x86_64 -R"
-  min_nursery:
-    type: EnvVar
-    var: MMTK_MIN_NURSERY
-    val: "{0}"
-  max_nursery:
-    type: EnvVar
-    var: MMTK_MAX_NURSERY
-    val: "{0}"
-  nursery_size:
-    type: ModifierSet
-    val: "max_nursery-{0}|min_nursery-{0}"
   stress:
     type: EnvVar
     var: MMTK_STRESS_FACTOR
     val: "{0}"
+  large_heap:
+    type: JVMArg
+    val: "-Xms10G -Xmx10G"
 
 configs:
-  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|bpftrace|no_add_rand|stress-33554432|large_heap"
   
 
