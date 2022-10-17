@@ -1,53 +1,66 @@
-# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "fixed-overhead" -s 2
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "processedges-overhead" -s 2
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
-benchmarks:
-  dacapochopin-f480064:
-    - cassandra 
-    - eclipse
-    - fop
-    - graphchi
-    - h2
-    - h2o
-    # - jme
-    - jython
-    - luindex
-    - lusearch
-    # - pmd
-    - sunflow
-    - tomcat
-    - xalan
-    - zxing
-    - avrora
-    - batik
-    - biojava
+suites:
+  dacapo-6e411f33:
+    type: DaCapo
+    release: evaluation
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    timing_iteration: 5
+    timeout: 1200
+    callback: "probe.DacapoChopinCallback"
+    invocations: 10
+    minheap: Immix
+    minheap_values:
+      Immix:
+        avrora: 8 #manual
+        batik: 462
+        biojava: 195
+        cassandra: 105
+        eclipse: 526
+        fop: 27 #manual
+        graphchi: 175
+        h2: 1732
+        h2o: 79
+        jme: 236
+        jython: 58
+        kafka: 259
+        luindex: 27
+        lusearch: 26
+        pmd: 188
+        spring: 143
+        sunflow: 28
+        tomcat: 61 #manual
+        #tradebeans: .inf
+        #tradesoap: .inf
+        xalan: 12
+        zxing: 430
 
-overrides:
-  "suites.dacapochopin-f480064.timing_iteration": 5
-  invocations: 20
-  "suites.dacapochopin-f480064.callback": "probe.DacapoChopinCallback"
-  "suites.dacapochopin-f480064.minheap": GenImmix
-  "suites.dacapochopin-f480064.timeout": 1200
-  "suites.dacapochopin-f480064.minheap_values.GenImmix": 
-    avrora: 8
-    batik: 407
-    biojava: 196
-    cassandra: 120
-    eclipse: 722
-    fop: 21 #manual
-    graphchi: 256 #artificial
-    h2: 1242
-    h2o: 99
-    jme: 236
-    jython: 90 #manual
-    luindex: 28 #manual
-    lusearch: 28
-    #pmd: .inf
-    sunflow: 29
-    tomcat: 51
-    xalan: 22
-    zxing: 432
+benchmarks:
+  dacapo-6e411f33:
+    - avrora 
+    - batik 
+    - biojava 
+    - cassandra 
+    - eclipse 
+    - fop 
+    - graphchi 
+    - h2 
+    - h2o 
+    - jme 
+    - jython 
+    - kafka 
+    - luindex 
+    - lusearch 
+    - pmd 
+    - spring 
+    - sunflow 
+    - tomcat 
+    # - tradebeans 
+    # - tradesoap 
+    - xalan 
+    - zxing
 
 runtimes:
   flagged:
@@ -57,7 +70,7 @@ runtimes:
   probed:
     type: OpenJDK
     release: 11
-    home: "/home/claireh/openjdk/build/probed/jdk"
+    home: "/home/claireh/openjdk/build/processedges/jdk"
   normal:
     type: OpenJDK
     release: 11
@@ -89,10 +102,14 @@ modifiers:
     val: "setarch x86_64 -R"
 
 configs:
-  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1|notrace"
-  - "normal|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
-  - "flagged|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
-  - "stat|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
-  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
-  - "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand"
+  - "normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
+  #- "flagged|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "stat|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
+  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|notrace"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand"
+  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-2|bpftrace|no_add_rand"
+  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-4|bpftrace|no_add_rand"
+  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-8|bpftrace|no_add_rand"
+  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-16|bpftrace|no_add_rand"
   
