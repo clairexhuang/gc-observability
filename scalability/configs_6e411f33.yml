@@ -1,0 +1,91 @@
+# running runbms /home/claireh/ebpf/scalability /home/claireh/ebpf/scalability/configs_6e411f33.yml -p "scalability_6e411f33" -s 2
+includes:
+  - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
+
+suites:
+  dacapo-6e411f33:
+    type: DaCapo
+    release: evaluation
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    timing_iteration: 5
+    timeout: 600
+    callback: "probe.DacapoChopinCallback"
+    minheap: Immix
+    minheap_values:
+      Immix:
+        avrora: 8 #manual
+        batik: 462
+        biojava: 195
+        cassandra: 105
+        eclipse: 526
+        fop: 27 #manual
+        graphchi: 175
+        h2: 1732
+        h2o: 79
+        jme: 236
+        jython: 58
+        kafka: 259
+        luindex: 27
+        lusearch: 26
+        pmd: 188
+        spring: 143
+        sunflow: 28
+        tomcat: 61 #manual
+        #tradebeans: .inf
+        #tradesoap: .inf
+        xalan: 12
+        zxing: 430
+
+benchmarks:
+  dacapo-6e411f33:
+    - avrora 
+    - batik 
+    - biojava 
+    - cassandra 
+    - eclipse 
+    - fop 
+    - graphchi 
+    - h2 
+    - h2o 
+    - jme 
+    - jython 
+    - kafka 
+    - luindex 
+    - lusearch 
+    - pmd 
+    - spring 
+    - sunflow 
+    - tomcat 
+    #- tradebeans 
+    #- tradesoap 
+    - xalan 
+    - zxing
+    
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/jdk-11.0.15"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  gc_threads:
+    type: EnvVar
+    var: MMTK_THREADS
+    val: '{0}'
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16"
+
+
+
+
