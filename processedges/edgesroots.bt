@@ -8,33 +8,33 @@ uretprobe:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.
     @stats_enabled = 0;
 }
 
-usdt:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
-    if (!@stats_enabled) {
-        return;
-    }
-    @startwork[tid] = nsecs;
-}
+// usdt:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+//     if (!@stats_enabled) {
+//         return;
+//     }
+//     @startwork[tid] = nsecs;
+// }
 
-usdt:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
-    if (!@stats_enabled) {
-        return;
-    }
-    $start = @startwork[tid];
-    if ($start) {
-        // $end = nsecs;
-        //store type name if not already stored
-        if (!(@decoded[arg0])) {
-            @type_names[arg0] = str(arg0,arg1);
-            @decoded[arg0] = 1;
-        }
-        //collect distribution of the time to process a work packet of this type
-        // @worktime[arg0] = hist(($end - $start) / 1000);
-        //count the number of work packets of this type
-        // @counter[arg0] = count();
-        //cumulative work time over packet type
-        // @acc[arg0] = sum($end - $start);
-    }
-}
+// usdt:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+//     if (!@stats_enabled) {
+//         return;
+//     }
+//     $start = @startwork[tid];
+//     if ($start) {
+//         // $end = nsecs;
+//         //store type name if not already stored
+//         // if (!(@decoded[arg0])) {
+//         //     @type_names[arg0] = str(arg0,arg1);
+//         //     @decoded[arg0] = 1;
+//         // }
+//         //collect distribution of the time to process a work packet of this type
+//         // @worktime[arg0] = hist(($end - $start) / 1000);
+//         //count the number of work packets of this type
+//         // @counter[arg0] = count();
+//         //cumulative work time over packet type
+//         // @acc[arg0] = sum($end - $start);
+//     }
+// }
 
 // start timer for process edges work bucket
 // usdt:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesstart {
