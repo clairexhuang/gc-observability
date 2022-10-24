@@ -1,0 +1,73 @@
+# running runbms /home/claireh/ebpf/processedges /home/claireh/ebpf/processedges/edgesroots.yml -p "processedges-roots"
+includes:
+   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
+
+suites:
+  dacapo-6e411f33:
+    type: DaCapo
+    release: evaluation
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    timing_iteration: 5
+    timeout: 1200
+    callback: "probe.DacapoChopinCallback"
+    invocations: 1
+
+benchmarks:
+  dacapo-6e411f33:
+    - avrora 
+    # - batik 
+    # - biojava 
+    # - cassandra 
+    # - eclipse 
+    # - fop 
+    # - graphchi 
+    # - h2o 
+    # - jme 
+    # - jython 
+    # - luindex 
+    # - lusearch 
+    # - pmd 
+    # - spring 
+    # - sunflow 
+    # - tomcat 
+    # # - tradebeans 
+    # # - tradesoap 
+    # - xalan 
+    # - zxing
+    # - h2 
+    # - kafka 
+
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/edgesroots/jdk"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  gc_threads:
+    type: EnvVar
+    var: MMTK_THREADS
+    val: '{0}'
+  bpftrace:
+    type: Companion
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/edgesroots.bt'"
+  no_add_rand:
+    type: Wrapper
+    val: "setarch x86_64 -R"
+  stress:
+    type: EnvVar
+    var: MMTK_STRESS_FACTOR
+    val: "{0}"
+  large_heap:
+    type: JVMArg
+    val: "-Xms10G -Xmx10G"
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|large_heap|stress-4194304|no_add_rand|bpftrace"
+  

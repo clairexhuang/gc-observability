@@ -39,18 +39,16 @@ suites:
 
 benchmarks:
   dacapo-6e411f33:
-    - avrora 
-    - batik 
-    - biojava 
-    - cassandra 
-    - eclipse 
-    - fop 
-    - graphchi 
-    - h2 
-    - h2o 
-    - jme 
-    - jython 
-    - kafka 
+    # - avrora 
+    # - batik 
+    # - biojava 
+    # - cassandra 
+    # - eclipse 
+    # - fop 
+    # - graphchi 
+    # - h2o 
+    # - jme 
+    # - jython 
     - luindex 
     - lusearch 
     - pmd 
@@ -61,6 +59,8 @@ benchmarks:
     # - tradesoap 
     - xalan 
     - zxing
+    - h2 
+    - kafka 
 
 runtimes:
   flagged:
