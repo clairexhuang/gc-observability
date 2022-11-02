@@ -1,0 +1,1188 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms3464M -Xmx3464M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.3
+Sat Oct 15 08:34:37 PM UTC 2022
+
+ 20:34:37 up 3 days,  8:51,  1 user,  load average: 4.63, 2.97, 2.64
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/2    tmux(795713).%0  11:47    8:25m  5.90s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 103285664 938352 27119572    0    0     5    48    9    7  9  1 90  0  0
+ 0  0      0 103284560 938352 27119528    0    0     0     0  222  104  0  0 100  0  0
+
+top - 20:34:38 up 3 days,  8:51,  1 user,  load average: 4.63, 2.97, 2.64
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 100863.6 free,    420.1 used,  27400.3 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127010.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165888  11180   8076 S   0.0   0.0   0:03.41 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60564 22
+	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,795713,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=124
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.54 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 2.36 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.54 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.53 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.46 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 12035 msec =====
+===== DaCapo simple tail latency: 50% 544 usec, 90% 2818 usec, 99% 6029 usec, 99.9% 1236369 usec, 99.99% 1274912 usec, max 1275748 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1437 usec, 90% 402163 usec, 99% 861244 usec, 99.9% 1236369 usec, 99.99% 1274912 usec, max 1275748 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 11225 msec =====
+===== DaCapo simple tail latency: 50% 548 usec, 90% 2775 usec, 99% 5296 usec, 99.9% 1332760 usec, 99.99% 1386700 usec, max 1389720 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 23357 usec, 90% 972799 usec, 99% 1383895 usec, 99.9% 1465323 usec, 99.99% 1480790 usec, max 1486453 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 12746 msec =====
+===== DaCapo simple tail latency: 50% 542 usec, 90% 2750 usec, 99% 5173 usec, 99.9% 1345632 usec, 99.99% 1432469 usec, max 1434486 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 68119 usec, 90% 714445 usec, 99% 1109213 usec, 99.9% 1345632 usec, 99.99% 1432469 usec, max 1434486 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 14664 msec =====
+===== DaCapo simple tail latency: 50% 547 usec, 90% 2783 usec, 99% 5460 usec, 99.9% 1403079 usec, 99.99% 1482800 usec, max 1483219 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 953 usec, 90% 237328 usec, 99% 795836 usec, 99.9% 1403079 usec, 99.99% 1482800 usec, max 1483219 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	work.ScanStackRoot.time.total	work.ScanSystemDictionaryRoots.count	work.ScanWeakProcessorRoots.time.max	work.ScanWeakProcessorRoots.count	work.Prepare.time.max	work.PrepareCollector.time.min	work.ScanStackRoot.time.max	work.EndOfGC.count	work.PrepareBlockState.time.min	total-work.time.max	work.SweepChunk.time.total	work.ScanStringTableRoots.count	work.ScanJvmtiExportRoots.time.total	work.ScanClassLoaderDataGraphRoots.time.min	total-work.time.min	work.PrepareBlockState.time.total	work.ScanStringTableRoots.time.min	work.ScanWeakProcessorRoots.time.total	total-work.count	work.ScanAOTLoaderRoots.time.total	work.ScanClassLoaderDataGraphRoots.count	work.StopMutators.time.max	work.PrepareMutator.time.max	work.ScanVMSpecificRoots.count	work.ScanCodeCacheRoots.time.total	work.ScanJNIHandlesRoots.count	work.PrepareMutator.count	work.ScanJvmtiExportRoots.count	work.ScanVMThreadRoots.time.total	work.ScanVMSpecificRoots.time.total	work.ScanStackRoot.time.min	work.PrepareMutator.time.total	work.ScanJNIHandlesRoots.time.min	work.ScanVMSpecificRoots.time.min	work.ScanUniverseRoots.count	work.PlanProcessEdges.time.total	total-work.time.total	work.ScanAOTLoaderRoots.count	work.PlanProcessEdges.time.max	work.PlanProcessEdges.time.min	work.ScanUniverseRoots.time.max	work.ScanManagementRoots.time.max	work.ScanStringTableRoots.time.total	work.ReleaseCollector.time.min	work.ScanSystemDictionaryRoots.time.min	work.ScheduleCollection.count	work.ScanManagementRoots.time.total	work.ReleaseMutator.count	work.ScanCodeCacheRoots.time.min	work.ScanVMThreadRoots.count	work.ReleaseCollector.time.max	work.Finalization.count	work.ReleaseMutator.time.min	work.Finalization.time.max	work.ScanClassLoaderDataGraphRoots.time.max	work.ReleaseCollector.count	work.ScanVMSpecificRoots.time.max	work.Prepare.time.min	work.PrepareBlockState.count	work.ReleaseMutator.time.total	work.Release.time.max	work.ScanAOTLoaderRoots.time.min	work.Prepare.time.total	work.ReleaseCollector.time.total	work.StopMutators.time.total	work.ScanUniverseRoots.time.total	work.ScanObjectSynchronizerRoots.time.total	work.PrepareMutator.time.min	work.ScanManagementRoots.count	work.ScanVMThreadRoots.time.max	work.PrepareCollector.time.total	work.Release.count	work.StopMutators.time.min	work.SweepChunk.count	work.ScanJNIHandlesRoots.time.max	work.ScanJvmtiExportRoots.time.max	work.EndOfGC.time.total	work.ScanJNIHandlesRoots.time.total	work.EndOfGC.time.min	work.ScanManagementRoots.time.min	work.ScanObjectSynchronizerRoots.time.max	work.PrepareCollector.count	work.ScanSystemDictionaryRoots.time.total	work.PlanProcessEdges.count	work.ScheduleCollection.time.min	work.ScanStringTableRoots.time.max	work.Finalization.time.total	work.SweepChunk.time.max	work.PrepareBlockState.time.max	work.Release.time.total	work.Release.time.min	work.ScanUniverseRoots.time.min	work.Finalization.time.min	work.ScheduleCollection.time.max	work.ScanJvmtiExportRoots.time.min	work.ScanAOTLoaderRoots.time.max	work.EndOfGC.time.max	work.ScanCodeCacheRoots.count	work.ScanClassLoaderDataGraphRoots.time.total	work.ScanObjectSynchronizerRoots.time.min	work.PrepareCollector.time.max	work.ScanVMThreadRoots.time.min	work.ScanObjectSynchronizerRoots.count	work.ScanWeakProcessorRoots.time.min	work.SweepChunk.time.min	work.Prepare.count	work.StopMutators.count	work.ScanStackRoot.count	work.ScheduleCollection.time.total	work.ScanCodeCacheRoots.time.max	work.ScanSystemDictionaryRoots.time.max	work.ReleaseMutator.time.max	
+5	1946.17	5468.37	1.124	5	0.009	5	0.059	0.000	0.110	5	0.000	1.138	90.343	5	0.004	0.000	0.000	16.314	0.000	0.043	110107	0.003	5	0.289	0.001	5	0.589	5	125	5	0.009	0.005	0.000	0.031	0.000	0.000	5	5329.365	5440.897	5	1.138	0.000	0.021	0.002	0.194	0.000	0.000	5	0.009	125	0.000	5	0.000	5	0.000	0.010	0.043	5	0.001	0.000	4165	0.027	0.049	0.000	0.268	0.001	1.284	0.092	0.004	0.000	5	0.002	0.001	5	0.000	4165	0.001	0.001	0.614	0.005	0.000	0.000	0.001	5	0.020	101297	0.000	0.039	0.046	0.065	0.019	0.241	0.000	0.000	0.000	0.012	0.000	0.001	0.138	5	0.211	0.000	0.000	0.000	5	0.000	0.000	5	5	125	0.051	0.132	0.004	0.001	
+Total time: 7414.54 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-6e411f33 h2 PASSED in 7415 msec =====
+===== DaCapo simple tail latency: 50% 513 usec, 90% 2533 usec, 99% 4564 usec, 99.9% 1115054 usec, 99.99% 1151273 usec, max 1154482 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 607 usec, 90% 3289 usec, 99% 221247 usec, 99.9% 1115054 usec, 99.99% 1151273 usec, max 1154482 usec, measured over 32000 events =====
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms3464M -Xmx3464M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.3
+Sat Oct 15 08:42:42 PM UTC 2022
+
+ 20:42:42 up 3 days,  8:59,  1 user,  load average: 1.91, 2.61, 2.61
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/2    tmux(795713).%0  11:47    8:33m  6.00s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 103282784 938504 27119640    0    0     5    48    0    7  9  1 90  0  0
+ 0  0      0 103282688 938504 27119600    0    0     0     0  186  107  0  0 100  0  0
+
+top - 20:42:43 up 3 days,  8:59,  1 user,  load average: 1.76, 2.56, 2.60
+Tasks: 235 total,   1 running, 234 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 100861.5 free,    422.0 used,  27400.5 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127008.9 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165888  11180   8076 S   0.0   0.0   0:03.42 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60564 22
+	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,795713,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=124
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.41 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.55 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.54 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.53 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 2.51 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 10612 msec =====
+===== DaCapo simple tail latency: 50% 536 usec, 90% 2748 usec, 99% 5742 usec, 99.9% 1174310 usec, 99.99% 1227866 usec, max 1229402 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 68626 usec, 90% 540273 usec, 99% 859712 usec, 99.9% 1174310 usec, 99.99% 1227866 usec, max 1229402 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 12815 msec =====
+===== DaCapo simple tail latency: 50% 550 usec, 90% 2784 usec, 99% 5355 usec, 99.9% 1379715 usec, 99.99% 1393368 usec, max 1396656 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1263 usec, 90% 335616 usec, 99% 806194 usec, 99.9% 1379715 usec, 99.99% 1393368 usec, max 1396656 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 11800 msec =====
+===== DaCapo simple tail latency: 50% 544 usec, 90% 2774 usec, 99% 5337 usec, 99.9% 1416615 usec, 99.99% 1454710 usec, max 1459799 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 185583 usec, 90% 1076891 usec, 99% 1442376 usec, 99.9% 1521738 usec, 99.99% 1535606 usec, max 1552363 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 14767 msec =====
+===== DaCapo simple tail latency: 50% 550 usec, 90% 2791 usec, 99% 5610 usec, 99.9% 1442008 usec, 99.99% 1489697 usec, max 1491743 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 112920 usec, 90% 1116136 usec, 99% 1883565 usec, 99.9% 1994832 usec, 99.99% 2009236 usec, max 2019563 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	work.ScanAOTLoaderRoots.time.min	work.ScanClassLoaderDataGraphRoots.time.min	work.ScheduleCollection.time.max	work.EndOfGC.time.max	work.ReleaseMutator.count	work.Release.time.max	work.ReleaseCollector.time.total	total-work.count	work.SweepChunk.count	work.PlanProcessEdges.time.total	work.ReleaseCollector.count	work.Prepare.count	work.ScanObjectSynchronizerRoots.count	work.ScanJNIHandlesRoots.time.min	work.Prepare.time.min	work.ReleaseCollector.time.max	work.Finalization.time.total	work.EndOfGC.time.total	work.Release.time.total	work.ScanWeakProcessorRoots.time.max	work.ScanJvmtiExportRoots.time.min	work.ScanVMSpecificRoots.count	work.EndOfGC.time.min	work.ReleaseMutator.time.max	total-work.time.min	work.StopMutators.count	work.PrepareBlockState.time.max	work.ScanStringTableRoots.time.max	work.ScanUniverseRoots.time.max	work.ScanWeakProcessorRoots.time.min	work.ScanVMSpecificRoots.time.max	work.ScanSystemDictionaryRoots.time.max	work.PrepareCollector.time.max	work.SweepChunk.time.min	work.ReleaseCollector.time.min	work.PrepareBlockState.count	work.ScanVMSpecificRoots.time.min	work.PrepareMutator.time.min	work.Finalization.count	work.PrepareCollector.time.total	work.ScanVMThreadRoots.time.total	work.ScanVMThreadRoots.count	work.ScanVMThreadRoots.time.min	work.ScanUniverseRoots.count	work.Prepare.time.max	work.ScanUniverseRoots.time.min	work.PlanProcessEdges.count	work.ScanJNIHandlesRoots.count	work.ScheduleCollection.time.total	work.ScanSystemDictionaryRoots.time.min	work.ScanClassLoaderDataGraphRoots.time.total	work.StopMutators.time.max	work.ScanVMThreadRoots.time.max	work.ScanSystemDictionaryRoots.time.total	work.ScanAOTLoaderRoots.count	work.ScanAOTLoaderRoots.time.total	work.Finalization.time.min	work.PrepareBlockState.time.min	work.ScanCodeCacheRoots.time.total	work.ScanManagementRoots.time.max	work.ScanJvmtiExportRoots.time.total	work.PrepareCollector.count	work.Prepare.time.total	work.ScanStackRoot.time.min	work.PrepareBlockState.time.total	work.ScanManagementRoots.count	work.ScanStackRoot.time.total	work.ScanJNIHandlesRoots.time.max	work.ScanStackRoot.time.max	work.ScanStringTableRoots.time.total	work.ScanStackRoot.count	work.ScanAOTLoaderRoots.time.max	work.ScanWeakProcessorRoots.count	work.PlanProcessEdges.time.max	work.PrepareMutator.count	work.SweepChunk.time.max	work.ScanUniverseRoots.time.total	work.PrepareCollector.time.min	work.ScanStringTableRoots.count	work.PlanProcessEdges.time.min	work.ScanClassLoaderDataGraphRoots.time.max	work.ScanObjectSynchronizerRoots.time.min	work.ScanStringTableRoots.time.min	work.ScanCodeCacheRoots.time.min	work.SweepChunk.time.total	work.ReleaseMutator.time.total	work.EndOfGC.count	work.ScanClassLoaderDataGraphRoots.count	work.StopMutators.time.total	work.ScanCodeCacheRoots.time.max	work.Release.count	work.ScanObjectSynchronizerRoots.time.max	work.PrepareMutator.time.total	work.ScanCodeCacheRoots.count	work.ScanWeakProcessorRoots.time.total	work.ScanSystemDictionaryRoots.count	work.ScanJvmtiExportRoots.time.max	work.ScanJvmtiExportRoots.count	total-work.time.max	work.StopMutators.time.min	work.ScanManagementRoots.time.min	work.PrepareMutator.time.max	work.ScanVMSpecificRoots.time.total	work.ReleaseMutator.time.min	work.ScanJNIHandlesRoots.time.total	work.ScheduleCollection.time.min	work.ScheduleCollection.count	work.Finalization.time.max	work.ScanObjectSynchronizerRoots.time.total	work.ScanManagementRoots.time.total	work.Release.time.min	total-work.time.total	
+8	2159.22	11764.00	0.000	0.000	0.012	0.137	200	0.053	0.002	177671	6664	11534.912	8	8	8	0.000	0.000	0.000	0.078	1.001	0.395	0.009	0.000	8	0.000	0.001	0.000	8	0.013	0.054	0.024	0.000	0.003	0.004	0.000	0.000	0.000	6664	0.000	0.000	8	0.002	0.015	8	0.000	8	0.191	0.000	163575	8	0.078	0.000	0.356	0.618	0.002	0.032	8	0.004	0.000	0.000	0.937	0.002	0.005	8	0.694	0.000	26.061	8	1.829	0.001	0.103	0.324	200	0.001	8	1.501	200	0.043	0.170	0.000	8	0.000	0.046	0.000	0.000	0.000	143.422	0.041	8	8	2.538	0.121	8	0.001	0.050	8	0.069	8	0.001	8	1.501	0.000	0.000	0.001	0.011	0.000	0.009	0.000	8	0.011	0.006	0.015	0.000	11713.056	
+Total time: 13923.22 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-6e411f33 h2 PASSED in 13923 msec =====
+===== DaCapo simple tail latency: 50% 551 usec, 90% 2800 usec, 99% 5549 usec, 99.9% 1523928 usec, 99.99% 1554806 usec, max 1557492 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 673 usec, 90% 4153 usec, 99% 509680 usec, 99.9% 1523928 usec, 99.99% 1554806 usec, max 1557492 usec, measured over 32000 events =====
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms3464M -Xmx3464M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.3
+Sat Oct 15 08:50:49 PM UTC 2022
+
+ 20:50:49 up 3 days,  9:07,  1 user,  load average: 3.34, 1.99, 2.19
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/2    tmux(795713).%0  11:47    8:41m  6.12s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 103278888 938604 27119700    0    0     5    48    0    7  9  1 90  0  0
+ 0  0      0 103278720 938604 27119664    0    0     0     0  212  107  0  0 100  0  0
+
+top - 20:50:51 up 3 days,  9:07,  1 user,  load average: 3.34, 1.99, 2.19
+Tasks: 235 total,   1 running, 234 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 100857.9 free,    425.5 used,  27400.7 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127005.4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+     14 root      20   0       0      0      0 I   6.7   0.0   1:18.65 [rcu_sched]
+      1 root      20   0  165888  11180   8076 S   0.0   0.0   0:03.42 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60564 22
+	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,795713,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=124
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 2.36 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.57 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.58 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.55 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 2.38 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 12124 msec =====
+===== DaCapo simple tail latency: 50% 540 usec, 90% 2797 usec, 99% 6664 usec, 99.9% 1203773 usec, 99.99% 1316479 usec, max 1319882 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1482 usec, 90% 482303 usec, 99% 956931 usec, 99.9% 1203773 usec, 99.99% 1316479 usec, max 1319882 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 12722 msec =====
+===== DaCapo simple tail latency: 50% 564 usec, 90% 2863 usec, 99% 5643 usec, 99.9% 1337802 usec, 99.99% 1376268 usec, max 1380772 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1064 usec, 90% 289857 usec, 99% 803180 usec, 99.9% 1337802 usec, 99.99% 1376268 usec, max 1380772 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 12928 msec =====
+===== DaCapo simple tail latency: 50% 543 usec, 90% 2765 usec, 99% 5145 usec, 99.9% 1361420 usec, 99.99% 1514380 usec, max 1521144 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1781 usec, 90% 634176 usec, 99% 1350059 usec, 99.9% 1434921 usec, 99.99% 1514380 usec, max 1521144 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 13389 msec =====
+===== DaCapo simple tail latency: 50% 544 usec, 90% 2766 usec, 99% 5171 usec, 99.9% 1463353 usec, 99.99% 1468219 usec, max 1469132 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 610 usec, 90% 3230 usec, 99% 223780 usec, 99.9% 1463353 usec, 99.99% 1468219 usec, max 1469132 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	work.Release.time.max	work.SweepChunk.count	work.PrepareBlockState.time.total	work.StopMutators.count	work.ScanStackRoot.time.min	work.ScanClassLoaderDataGraphRoots.count	work.Finalization.count	work.ScanAOTLoaderRoots.count	work.ReleaseMutator.time.total	work.ScanJNIHandlesRoots.time.total	work.PrepareMutator.time.total	work.PrepareCollector.count	work.ScanObjectSynchronizerRoots.count	work.ReleaseMutator.time.max	total-work.time.max	work.PrepareMutator.count	work.ScanSystemDictionaryRoots.time.max	work.Prepare.time.max	work.ScanJNIHandlesRoots.time.max	work.EndOfGC.time.total	work.ReleaseCollector.count	total-work.count	work.ScanManagementRoots.time.total	work.ScanObjectSynchronizerRoots.time.max	work.PrepareCollector.time.min	work.ScanJNIHandlesRoots.time.min	work.PrepareBlockState.count	work.ScanJNIHandlesRoots.count	work.ScanClassLoaderDataGraphRoots.time.min	work.ScanJvmtiExportRoots.time.min	work.ScanSystemDictionaryRoots.count	work.ScanAOTLoaderRoots.time.min	work.ScanWeakProcessorRoots.time.total	work.ScanWeakProcessorRoots.time.min	work.ScanVMSpecificRoots.time.max	work.ScanJvmtiExportRoots.time.total	work.ScanVMThreadRoots.time.max	work.ScanAOTLoaderRoots.time.total	work.SweepChunk.time.min	work.ScanStackRoot.count	work.Release.count	work.PrepareBlockState.time.max	work.PrepareMutator.time.max	work.PlanProcessEdges.time.total	total-work.time.min	work.ScanVMThreadRoots.time.total	work.ScanStackRoot.time.total	work.ReleaseMutator.time.min	work.ScheduleCollection.time.min	work.PlanProcessEdges.time.max	work.ReleaseCollector.time.max	work.ScanObjectSynchronizerRoots.time.total	work.ScanManagementRoots.time.max	work.Finalization.time.total	work.ScanAOTLoaderRoots.time.max	work.Finalization.time.min	work.Prepare.count	work.SweepChunk.time.max	work.PlanProcessEdges.count	work.ScanStringTableRoots.time.total	work.ScanCodeCacheRoots.time.max	work.Release.time.min	work.EndOfGC.count	work.ScanWeakProcessorRoots.count	work.ScheduleCollection.count	work.ScanVMSpecificRoots.count	work.ScanCodeCacheRoots.time.min	work.ReleaseCollector.time.total	work.ScanVMThreadRoots.time.min	work.PrepareMutator.time.min	work.ScanSystemDictionaryRoots.time.min	work.ScanStackRoot.time.max	work.PrepareCollector.time.max	work.ScanClassLoaderDataGraphRoots.time.max	work.ReleaseMutator.count	work.EndOfGC.time.min	work.ScanStringTableRoots.count	work.ScanManagementRoots.time.min	work.ScanCodeCacheRoots.count	work.PlanProcessEdges.time.min	work.ScanSystemDictionaryRoots.time.total	work.StopMutators.time.max	work.ScheduleCollection.time.max	work.PrepareBlockState.time.min	work.ScanJvmtiExportRoots.count	work.ScanVMSpecificRoots.time.total	work.ScanManagementRoots.count	work.ScheduleCollection.time.total	work.ScanUniverseRoots.time.min	work.StopMutators.time.total	work.ReleaseCollector.time.min	work.Prepare.time.min	work.ScanUniverseRoots.count	work.ScanJvmtiExportRoots.time.max	work.ScanStringTableRoots.time.max	work.ScanObjectSynchronizerRoots.time.min	work.ScanClassLoaderDataGraphRoots.time.total	total-work.time.total	work.ScanVMSpecificRoots.time.min	work.Prepare.time.total	work.ScanUniverseRoots.time.max	work.ScanWeakProcessorRoots.time.max	work.Release.time.total	work.EndOfGC.time.max	work.ScanVMThreadRoots.count	work.SweepChunk.time.total	work.StopMutators.time.min	work.ScanCodeCacheRoots.time.total	work.Finalization.time.max	work.PrepareCollector.time.total	work.ScanUniverseRoots.time.total	work.ScanStringTableRoots.time.min	
+7	2088.89	9653.49	0.054	5831	23.160	7	0.000	7	7	7	0.038	0.008	0.044	7	7	0.001	1.277	173	0.005	0.200	0.001	0.833	7	163441	0.012	0.001	0.000	0.000	5831	7	0.000	0.000	7	0.000	0.060	0.000	0.003	0.005	0.002	0.004	0.000	173	7	0.017	0.001	9452.756	0.000	0.011	1.570	0.000	0.000	1.277	0.000	0.006	0.002	0.067	0.001	0.000	7	0.045	151113	0.271	0.121	0.000	7	7	7	7	0.000	0.001	0.000	0.000	0.000	0.102	0.000	0.045	173	0.000	7	0.000	7	0.000	0.031	0.466	0.012	0.000	7	0.010	7	0.067	0.000	1.940	0.000	0.000	7	0.001	0.039	0.000	0.296	9608.906	0.000	0.525	0.023	0.010	0.347	0.128	7	125.896	0.000	0.809	0.010	0.002	0.135	0.000	
+Total time: 11742.38 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-6e411f33 h2 PASSED in 11742 msec =====
+===== DaCapo simple tail latency: 50% 534 usec, 90% 2699 usec, 99% 5073 usec, 99.9% 1399301 usec, 99.99% 1495601 usec, max 1498055 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 614 usec, 90% 3348 usec, 99% 255280 usec, 99.9% 1399301 usec, 99.99% 1495601 usec, max 1498055 usec, measured over 32000 events =====
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms3464M -Xmx3464M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.3
+Sat Oct 15 08:58:53 PM UTC 2022
+
+ 20:58:53 up 3 days,  9:15,  1 user,  load average: 1.56, 1.83, 2.06
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/2    tmux(795713).%0  11:47    8:49m  6.22s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 103280912 938828 27119780    0    0     5    48    0    8  9  1 90  0  0
+ 0  0      0 103280904 938828 27119740    0    0     0     0  128   88  0  0 100  0  0
+
+top - 20:58:54 up 3 days,  9:15,  1 user,  load average: 1.44, 1.80, 2.05
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 100859.8 free,    423.3 used,  27400.9 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127007.6 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165888  11180   8076 S   0.0   0.0   0:03.42 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60564 22
+	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,795713,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=124
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 2.66 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.53 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.56 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 10691 msec =====
+===== DaCapo simple tail latency: 50% 532 usec, 90% 2764 usec, 99% 5857 usec, 99.9% 1185796 usec, 99.99% 1240100 usec, max 1242882 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 112722 usec, 90% 569236 usec, 99% 876190 usec, 99.9% 1185796 usec, 99.99% 1240100 usec, max 1242882 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 12638 msec =====
+===== DaCapo simple tail latency: 50% 545 usec, 90% 2795 usec, 99% 5340 usec, 99.9% 1363874 usec, 99.99% 1380486 usec, max 1383967 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1326 usec, 90% 336222 usec, 99% 855789 usec, 99.9% 1363874 usec, 99.99% 1380486 usec, max 1383967 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 11354 msec =====
+===== DaCapo simple tail latency: 50% 543 usec, 90% 2772 usec, 99% 5270 usec, 99.9% 1317089 usec, 99.99% 1451135 usec, max 1456593 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 186720 usec, 90% 913806 usec, 99% 1253381 usec, 99.9% 1321414 usec, 99.99% 1451135 usec, max 1456593 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 13250 msec =====
+===== DaCapo simple tail latency: 50% 539 usec, 90% 2763 usec, 99% 5242 usec, 99.9% 1437274 usec, 99.99% 1468273 usec, max 1469137 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 573174 usec, 90% 1275674 usec, 99% 1831294 usec, 99.9% 1928242 usec, 99.99% 1944634 usec, max 1948955 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	work.ScanJNIHandlesRoots.time.max	work.ScanCodeCacheRoots.count	work.ScanVMThreadRoots.time.total	work.ScanJvmtiExportRoots.time.total	work.PrepareCollector.time.total	work.ScanObjectSynchronizerRoots.time.max	work.SweepChunk.time.max	work.ScanManagementRoots.time.max	total-work.time.max	work.ScanCodeCacheRoots.time.max	work.ScheduleCollection.count	work.ScanSystemDictionaryRoots.time.max	work.ScanUniverseRoots.count	work.ScanWeakProcessorRoots.count	work.ScanClassLoaderDataGraphRoots.count	work.PlanProcessEdges.count	work.ScanManagementRoots.count	work.EndOfGC.time.max	work.PrepareCollector.time.max	work.ScanUniverseRoots.time.min	total-work.count	work.EndOfGC.count	work.ScanWeakProcessorRoots.time.min	work.ScanStringTableRoots.count	work.ScanUniverseRoots.time.max	work.ReleaseMutator.time.min	work.Finalization.time.min	work.PrepareMutator.time.total	work.ScanClassLoaderDataGraphRoots.time.max	work.ScanCodeCacheRoots.time.total	work.Release.time.max	work.EndOfGC.time.total	work.PlanProcessEdges.time.total	work.ScanObjectSynchronizerRoots.count	work.PrepareCollector.time.min	work.ScanStackRoot.time.min	work.ScanAOTLoaderRoots.count	work.EndOfGC.time.min	work.ScanManagementRoots.time.min	work.ScanSystemDictionaryRoots.count	work.PrepareCollector.count	work.ScanVMThreadRoots.time.min	work.StopMutators.time.total	work.ScanStringTableRoots.time.total	work.ScanClassLoaderDataGraphRoots.time.total	work.SweepChunk.time.total	work.ScheduleCollection.time.total	work.PlanProcessEdges.time.max	work.ScanVMSpecificRoots.time.min	work.Finalization.time.total	work.ScanSystemDictionaryRoots.time.total	work.SweepChunk.count	work.ScanVMThreadRoots.time.max	work.ScanClassLoaderDataGraphRoots.time.min	work.ScanSystemDictionaryRoots.time.min	work.PrepareMutator.time.max	work.ScanAOTLoaderRoots.time.min	work.ScanManagementRoots.time.total	work.ScanAOTLoaderRoots.time.total	work.ReleaseCollector.time.total	work.ScanJvmtiExportRoots.time.max	work.Prepare.time.total	work.PrepareMutator.time.min	work.Finalization.time.max	work.SweepChunk.time.min	work.StopMutators.count	work.ScanStringTableRoots.time.min	work.ScanJvmtiExportRoots.time.min	work.ScanVMSpecificRoots.time.max	work.ScanJNIHandlesRoots.count	work.Release.count	work.Finalization.count	work.PlanProcessEdges.time.min	work.ScheduleCollection.time.max	work.ScanUniverseRoots.time.total	work.Prepare.time.max	work.PrepareBlockState.count	work.ScanVMThreadRoots.count	work.PrepareBlockState.time.max	work.ScanStringTableRoots.time.max	work.Prepare.time.min	work.ScanCodeCacheRoots.time.min	work.ReleaseMutator.count	work.ReleaseMutator.time.total	work.Prepare.count	work.StopMutators.time.min	work.ScanVMSpecificRoots.time.total	work.ReleaseCollector.time.max	work.ReleaseMutator.time.max	work.ScanWeakProcessorRoots.time.total	total-work.time.total	work.ScanJvmtiExportRoots.count	work.ReleaseCollector.time.min	work.ScanStackRoot.count	work.ScanJNIHandlesRoots.time.total	work.Release.time.min	work.StopMutators.time.max	total-work.time.min	work.ScanObjectSynchronizerRoots.time.min	work.ScheduleCollection.time.min	work.ScanVMSpecificRoots.count	work.PrepareBlockState.time.total	work.ScanObjectSynchronizerRoots.time.total	work.ScanStackRoot.time.max	work.ScanWeakProcessorRoots.time.max	work.PrepareBlockState.time.min	work.ScanAOTLoaderRoots.time.max	work.ScanJNIHandlesRoots.time.min	work.ReleaseCollector.count	work.PrepareMutator.count	work.ScanStackRoot.time.total	work.Release.time.total	
+8	2134.11	11624.62	0.002	8	0.014	0.006	0.002	0.001	0.059	0.002	2.201	0.139	8	0.005	8	8	8	163786	8	0.139	0.001	0.000	177846	8	0.000	8	0.034	0.000	0.000	0.050	0.045	0.986	0.052	0.914	11395.274	8	0.000	0.000	8	0.000	0.000	8	8	0.000	2.434	0.312	0.348	143.873	0.069	2.201	0.000	0.074	0.033	6664	0.002	0.000	0.000	0.001	0.000	0.015	0.004	0.002	0.001	0.692	0.000	0.011	0.000	8	0.000	0.000	0.003	8	8	8	0.000	0.010	0.175	0.215	6664	8	0.016	0.040	0.000	0.000	188	0.040	8	0.000	0.010	0.000	0.001	0.077	11573.816	8	0.000	188	0.009	0.000	0.618	0.000	0.000	0.000	8	26.207	0.005	0.109	0.011	0.000	0.001	0.000	8	188	1.792	0.393	
+Total time: 13758.73 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-6e411f33 h2 PASSED in 13759 msec =====
+===== DaCapo simple tail latency: 50% 541 usec, 90% 2753 usec, 99% 5195 usec, 99.9% 1501603 usec, 99.99% 1547984 usec, max 1549059 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 880 usec, 90% 230546 usec, 99% 886305 usec, 99.9% 1501603 usec, 99.99% 1547984 usec, max 1549059 usec, measured over 32000 events =====
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms3464M -Xmx3464M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.3
+Sat Oct 15 09:07:00 PM UTC 2022
+
+ 21:07:00 up 3 days,  9:23,  1 user,  load average: 2.90, 1.87, 1.88
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/2    tmux(795713).%0  11:47    8:57m  6.33s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 103282976 938964 27119868    0    0     5    48    0    8  9  1 90  0  0
+ 0  0      0 103282256 938964 27119824    0    0     0     0  168   82  0  0 100  0  0
+
+top - 21:07:02 up 3 days,  9:23,  1 user,  load average: 2.90, 1.87, 1.88
+Tasks: 235 total,   1 running, 234 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 100861.1 free,    421.8 used,  27401.2 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127009.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165888  11180   8076 S   0.0   0.0   0:03.43 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60564 22
+	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,795713,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=124
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 2.35 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.58 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 11825 msec =====
+===== DaCapo simple tail latency: 50% 544 usec, 90% 2834 usec, 99% 6176 usec, 99.9% 1197211 usec, 99.99% 1295577 usec, max 1303900 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1490 usec, 90% 447665 usec, 99% 928423 usec, 99.9% 1197211 usec, 99.99% 1295577 usec, max 1303900 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 12455 msec =====
+===== DaCapo simple tail latency: 50% 555 usec, 90% 2842 usec, 99% 5411 usec, 99.9% 1319039 usec, 99.99% 1341516 usec, max 1342059 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 643 usec, 90% 3527 usec, 99% 313519 usec, 99.9% 1319039 usec, 99.99% 1341516 usec, max 1342059 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 13127 msec =====
+===== DaCapo simple tail latency: 50% 556 usec, 90% 2850 usec, 99% 5681 usec, 99.9% 1402768 usec, 99.99% 1429400 usec, max 1430145 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 257874 usec, 90% 1021815 usec, 99% 1535637 usec, 99.9% 1632795 usec, 99.99% 1646066 usec, max 1658068 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 14997 msec =====
+===== DaCapo simple tail latency: 50% 551 usec, 90% 2840 usec, 99% 5526 usec, 99.9% 1473672 usec, 99.99% 1500579 usec, max 1504341 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 380530 usec, 90% 1213383 usec, 99% 1618783 usec, 99.9% 1731744 usec, 99.99% 1747174 usec, max 1755048 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	work.ScheduleCollection.time.max	work.PrepareCollector.time.max	work.PlanProcessEdges.time.total	work.ScanStackRoot.count	work.ScanJvmtiExportRoots.time.max	work.Finalization.time.max	work.ScheduleCollection.count	work.Prepare.time.total	work.PlanProcessEdges.time.max	work.ScanStackRoot.time.min	work.ScanStackRoot.time.max	work.PrepareMutator.count	work.ScanVMThreadRoots.count	work.ScanStackRoot.time.total	work.SweepChunk.time.min	work.ScanUniverseRoots.time.max	work.Finalization.time.min	work.ScanUniverseRoots.count	work.ScanObjectSynchronizerRoots.count	work.Prepare.time.max	work.ScanObjectSynchronizerRoots.time.min	work.ReleaseMutator.time.total	work.EndOfGC.time.max	work.PrepareBlockState.count	work.ScanAOTLoaderRoots.time.total	work.ScanJNIHandlesRoots.time.total	work.ScanWeakProcessorRoots.time.min	work.ScanAOTLoaderRoots.time.max	work.Release.count	work.Release.time.max	work.PrepareMutator.time.min	work.ScanWeakProcessorRoots.time.total	work.ScanCodeCacheRoots.time.min	work.StopMutators.time.min	work.ScanSystemDictionaryRoots.count	total-work.time.max	work.EndOfGC.count	work.ScanAOTLoaderRoots.time.min	work.SweepChunk.time.total	work.ReleaseCollector.time.min	work.ReleaseCollector.time.max	work.ScanStringTableRoots.count	work.StopMutators.time.total	work.ScanManagementRoots.count	work.ScanJNIHandlesRoots.count	work.ScanVMSpecificRoots.time.total	work.ScanStringTableRoots.time.total	work.ScanUniverseRoots.time.min	work.ScanSystemDictionaryRoots.time.total	total-work.time.total	work.ScanJvmtiExportRoots.count	work.Prepare.time.min	work.ScanVMThreadRoots.time.total	work.SweepChunk.count	work.Finalization.time.total	work.ScanVMThreadRoots.time.min	work.ReleaseMutator.time.min	work.PrepareBlockState.time.max	work.ScanCodeCacheRoots.time.total	work.ScanJNIHandlesRoots.time.max	work.ScanVMSpecificRoots.time.min	work.ScanClassLoaderDataGraphRoots.time.min	work.Finalization.count	total-work.time.min	work.ReleaseCollector.time.total	work.ScanStringTableRoots.time.max	work.ScanObjectSynchronizerRoots.time.max	work.StopMutators.time.max	work.ScanClassLoaderDataGraphRoots.time.max	work.ScanCodeCacheRoots.count	total-work.count	work.ScanManagementRoots.time.max	work.PrepareBlockState.time.total	work.PrepareCollector.count	work.ScanJNIHandlesRoots.time.min	work.PrepareCollector.time.total	work.PlanProcessEdges.count	work.ScanCodeCacheRoots.time.max	work.ReleaseCollector.count	work.Prepare.count	work.PlanProcessEdges.time.min	work.ReleaseMutator.count	work.ScanWeakProcessorRoots.time.max	work.ScheduleCollection.time.total	work.EndOfGC.time.min	work.ScanVMThreadRoots.time.max	work.Release.time.total	work.ScanClassLoaderDataGraphRoots.time.total	work.ScanStringTableRoots.time.min	work.ReleaseMutator.time.max	work.ScanObjectSynchronizerRoots.time.total	work.ScheduleCollection.time.min	work.PrepareMutator.time.total	work.ScanUniverseRoots.time.total	work.SweepChunk.time.max	work.ScanClassLoaderDataGraphRoots.count	work.ScanWeakProcessorRoots.count	work.ScanVMSpecificRoots.count	work.ScanManagementRoots.time.total	work.ScanAOTLoaderRoots.count	work.Release.time.min	work.ScanSystemDictionaryRoots.time.max	work.PrepareCollector.time.min	work.ScanJvmtiExportRoots.time.total	work.ScanJvmtiExportRoots.time.min	work.ScanSystemDictionaryRoots.time.min	work.StopMutators.count	work.ScanVMSpecificRoots.time.max	work.PrepareMutator.time.max	work.PrepareBlockState.time.min	work.EndOfGC.time.total	work.ScanManagementRoots.time.min	
+8	2138.04	11615.52	0.011	0.000	11389.931	199	0.001	0.010	8	0.698	1.984	0.000	0.110	199	8	1.811	0.000	0.022	0.000	8	8	0.238	0.000	0.041	0.129	6664	0.005	0.009	0.000	0.001	8	0.052	0.000	0.069	0.000	0.000	8	1.984	8	0.000	143.574	0.000	0.000	8	2.494	8	8	0.010	0.313	0.000	0.030	11568.144	8	0.000	0.014	6664	0.078	0.000	0.000	0.019	0.939	0.001	0.000	0.000	8	0.000	0.002	0.040	0.001	0.745	0.053	8	176324	0.002	26.179	8	0.000	0.002	162231	0.127	8	8	0.000	199	0.010	0.072	0.000	0.002	0.393	0.353	0.000	0.001	0.006	0.000	0.048	0.155	0.068	8	8	8	0.014	8	0.000	0.004	0.000	0.005	0.000	0.000	8	0.003	0.001	0.000	0.898	0.000	
+Total time: 13753.56 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-6e411f33 h2 PASSED in 13754 msec =====
+===== DaCapo simple tail latency: 50% 548 usec, 90% 2767 usec, 99% 5334 usec, 99.9% 1520687 usec, 99.99% 1612591 usec, max 1617289 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1300 usec, 90% 565142 usec, 99% 1287681 usec, 99.9% 1520687 usec, 99.99% 1612591 usec, max 1617289 usec, measured over 32000 events =====
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/stat/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms3464M -Xmx3464M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.3
+Sat Oct 15 09:15:14 PM UTC 2022
+
+ 21:15:14 up 3 days,  9:32,  1 user,  load average: 2.66, 2.29, 2.13
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/2    tmux(795713).%0  11:47    9:06m  6.44s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 103261392 939124 27119920    0    0     5    48    0    8  9  1 90  0  0
+ 0  0      0 103261200 939124 27119920    0    0     0     0  173   94  0  0 100  0  0
+
+top - 21:15:15 up 3 days,  9:32,  1 user,  load average: 2.66, 2.29, 2.13
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.4 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 100841.0 free,    441.6 used,  27401.4 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 126989.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165888  11180   8076 S   0.0   0.0   0:03.44 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 60564 22
+	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
+	SSH_TTY=/dev/pts/1
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,795713,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=124
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.52 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.47 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 2.77 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.56 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 11981 msec =====
+===== DaCapo simple tail latency: 50% 544 usec, 90% 2822 usec, 99% 6201 usec, 99.9% 1169768 usec, 99.99% 1270579 usec, max 1275420 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1490 usec, 90% 499026 usec, 99% 965352 usec, 99.9% 1169768 usec, 99.99% 1270579 usec, max 1275420 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 11543 msec =====
+===== DaCapo simple tail latency: 50% 550 usec, 90% 2844 usec, 99% 5336 usec, 99.9% 1389353 usec, 99.99% 1443151 usec, max 1446261 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 2583 usec, 90% 872316 usec, 99% 1335474 usec, 99.9% 1403664 usec, 99.99% 1443151 usec, max 1446261 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 14357 msec =====
+===== DaCapo simple tail latency: 50% 557 usec, 90% 2793 usec, 99% 5676 usec, 99.9% 1409777 usec, 99.99% 1427638 usec, max 1428499 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 422476 usec, 90% 1290018 usec, 99% 2072934 usec, 99.9% 2180740 usec, 99.99% 2201421 usec, max 2206695 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 13121 msec =====
+===== DaCapo simple tail latency: 50% 543 usec, 90% 2768 usec, 99% 5335 usec, 99.9% 1418884 usec, 99.99% 1470856 usec, max 1472930 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 1820 usec, 90% 569928 usec, 99% 1198941 usec, 99.9% 1418884 usec, 99.99% 1470856 usec, max 1472930 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	work.ScanWeakProcessorRoots.time.max	work.ScanJvmtiExportRoots.time.total	total-work.count	work.ScanStackRoot.count	total-work.time.total	work.ScanClassLoaderDataGraphRoots.time.min	work.ScanWeakProcessorRoots.time.min	work.ScanUniverseRoots.time.total	work.ScheduleCollection.time.total	work.SweepChunk.time.total	work.Finalization.time.max	work.ScanCodeCacheRoots.time.total	work.ScanWeakProcessorRoots.time.total	work.ScanSystemDictionaryRoots.time.total	work.ScanManagementRoots.time.total	work.ScanClassLoaderDataGraphRoots.time.total	work.ScheduleCollection.time.min	work.ReleaseCollector.time.total	work.ScanObjectSynchronizerRoots.time.min	work.ScanVMThreadRoots.count	work.ScanAOTLoaderRoots.count	work.ReleaseMutator.count	work.ScheduleCollection.count	work.ScanWeakProcessorRoots.count	work.PlanProcessEdges.time.min	work.PrepareMutator.time.max	work.Finalization.time.min	work.EndOfGC.time.min	work.StopMutators.count	work.Prepare.time.total	work.ScanAOTLoaderRoots.time.min	work.ScanStackRoot.time.total	work.ScanJvmtiExportRoots.time.max	work.PrepareCollector.time.min	work.PlanProcessEdges.time.max	work.EndOfGC.count	work.ScanCodeCacheRoots.time.min	work.StopMutators.time.total	work.ScanCodeCacheRoots.time.max	work.Release.time.min	work.EndOfGC.time.total	work.ScanJvmtiExportRoots.time.min	work.SweepChunk.time.max	work.ScanStackRoot.time.max	work.ReleaseCollector.time.min	work.ScanVMThreadRoots.time.max	work.ScanVMSpecificRoots.time.max	work.ScanUniverseRoots.time.min	work.PrepareCollector.time.max	work.PlanProcessEdges.time.total	work.ReleaseMutator.time.min	work.Release.time.max	work.ScanStringTableRoots.time.min	work.SweepChunk.count	work.ScanVMSpecificRoots.time.min	work.ScanStringTableRoots.time.max	work.PrepareMutator.count	work.ScanVMThreadRoots.time.total	work.ScanSystemDictionaryRoots.count	work.EndOfGC.time.max	work.ScanStackRoot.time.min	work.ScanJNIHandlesRoots.time.min	work.PrepareMutator.time.min	work.ScanObjectSynchronizerRoots.count	work.ScanObjectSynchronizerRoots.time.max	work.ScanManagementRoots.time.max	work.StopMutators.time.max	work.ScanJNIHandlesRoots.count	work.ScanStringTableRoots.time.total	work.PlanProcessEdges.count	work.Finalization.count	work.ScanAOTLoaderRoots.time.max	work.Release.count	work.PrepareBlockState.time.total	work.ReleaseCollector.time.max	work.ReleaseCollector.count	work.ScanVMSpecificRoots.count	work.PrepareBlockState.time.min	work.ReleaseMutator.time.total	work.StopMutators.time.min	work.ScanCodeCacheRoots.count	work.PrepareBlockState.time.max	work.PrepareMutator.time.total	work.ScanJvmtiExportRoots.count	work.ScanUniverseRoots.count	work.ReleaseMutator.time.max	work.Prepare.time.min	work.ScanObjectSynchronizerRoots.time.total	work.ScanJNIHandlesRoots.time.max	work.ScanSystemDictionaryRoots.time.min	work.Prepare.count	work.PrepareCollector.time.total	work.Finalization.time.total	work.PrepareCollector.count	work.ScanUniverseRoots.time.max	work.ScanAOTLoaderRoots.time.total	work.ScanClassLoaderDataGraphRoots.time.max	total-work.time.min	work.SweepChunk.time.min	work.ScanSystemDictionaryRoots.time.max	work.Prepare.time.max	work.PrepareBlockState.count	work.ScanJNIHandlesRoots.time.total	work.Release.time.total	work.ScanVMThreadRoots.time.min	work.ScanManagementRoots.time.min	total-work.time.max	work.ScheduleCollection.time.max	work.ScanStringTableRoots.count	work.ScanClassLoaderDataGraphRoots.count	work.ScanVMSpecificRoots.time.total	work.ScanManagementRoots.count	
+8	2136.53	11557.08	0.010	0.006	176590	200	11502.832	0.000	0.000	0.159	0.078	143.128	0.011	0.946	0.072	0.033	0.016	0.341	0.000	0.002	0.000	8	8	200	8	8	0.000	0.002	0.000	0.000	8	0.694	0.000	1.786	0.001	0.000	1.660	8	0.000	2.527	0.123	0.000	1.017	0.000	0.063	0.101	0.000	0.002	0.003	0.000	0.000	11324.848	0.000	0.050	0.000	6664	0.000	0.040	200	0.013	8	0.134	0.000	0.000	0.000	8	0.001	0.002	0.570	8	0.311	162494	8	0.001	8	26.255	0.000	8	8	0.000	0.041	0.000	8	0.019	0.055	8	8	0.001	0.000	0.006	0.002	0.000	8	0.002	0.078	8	0.021	0.004	0.045	0.000	0.000	0.004	0.200	6664	0.009	0.394	0.000	0.000	1.660	0.011	8	8	0.011	8	
+Total time: 13693.61 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-6e411f33 h2 PASSED in 13694 msec =====
+===== DaCapo simple tail latency: 50% 545 usec, 90% 2763 usec, 99% 5346 usec, 99.9% 1471035 usec, 99.99% 1523866 usec, max 1526134 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 642 usec, 90% 3573 usec, 99% 392277 usec, 99.9% 1471035 usec, 99.99% 1523866 usec, max 1526134 usec, measured over 32000 events =====

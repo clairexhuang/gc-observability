@@ -1,0 +1,29 @@
+uretprobe:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    @stats_enabled = 1;
+}
+
+uretprobe:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    @stats_enabled = 0;
+}
+
+usdt:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    if (!@stats_enabled) {
+        return;
+    }
+    @startwork[tid] = nsecs;
+}
+
+usdt:/home/claireh/openjdk/build/stat/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    if (!@stats_enabled) {
+        return;
+    }
+    $start = @startwork[tid];
+    if ($start) {
+        //check if key exists
+        if (!(@decoded[arg0])) {
+            @type_names[arg0] = str(arg0,arg1);
+            @decoded[arg0] = 1;
+        }
+        @counter[arg0] = count();
+    }
+}

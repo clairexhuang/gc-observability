@@ -1,0 +1,33 @@
+uretprobe:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    @stats_enabled = 1;
+}
+
+uretprobe:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    @stats_enabled = 0;
+}
+
+usdt:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+    if (!@stats_enabled) {
+        return;
+    }
+    @startwork[tid] = nsecs;
+}
+
+usdt:/home/claireh/openjdk/build/id/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+    if (!@stats_enabled) {
+        return;
+    }
+    $start = @startwork[tid];
+    if ($start) {
+        $end = nsecs;
+        //check if key exists
+        if (!(@decoded[arg0])) {
+            @type_names[arg0] = str(arg0,arg1);
+            @decoded[arg0] = 1;
+        }
+        //gives distribution of the work time
+        @worktime[arg0] = hist(($end - $start) / 1000);
+        //cumulative work time
+        @acc[arg0] = sum($end - $start);
+    }
+}
