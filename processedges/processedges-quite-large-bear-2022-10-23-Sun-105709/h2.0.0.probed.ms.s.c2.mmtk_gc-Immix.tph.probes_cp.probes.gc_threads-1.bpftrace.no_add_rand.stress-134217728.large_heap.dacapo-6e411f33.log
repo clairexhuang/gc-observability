@@ -1,0 +1,3412 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Sun Oct 23 06:21:07 PM UTC 2022
+
+ 18:21:07 up 6 days, 14:49,  1 user,  load average: 21.27, 21.32, 20.57
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  10:56    7:24m  2.19s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41528744 958588 22660160    0    0     1    30    2    2 25  0 74  0  0
+ 0  0      0 41528744 958588 22660160    0    0     0     0  155   86  0  0 100  0  0
+
+top - 18:21:08 up 6 days, 14:49,  1 user,  load average: 21.27, 21.32, 20.57
+Tasks: 382 total,   1 running, 381 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40555.4 free,    596.9 used,  23065.2 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62886.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11160   8064 S   0.0   0.0   0:03.59 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.31 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.41 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.38 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.37 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.37 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.38 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.38 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.39 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.37 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.37 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.37 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.36 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.36 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.33 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.35 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.37 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.37 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.37 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.37 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.34 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.35 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.39 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 158898 msec =====
+===== DaCapo simple tail latency: 50% 8454 usec, 90% 72843 usec, 99% 1735852 usec, 99.9% 1826750 usec, 99.99% 2081128 usec, max 3631775 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 12451 usec, 90% 959625 usec, 99% 1741455 usec, 99.9% 1874034 usec, 99.99% 2501290 usec, max 3631775 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 178641 msec =====
+===== DaCapo simple tail latency: 50% 10124 usec, 90% 103022 usec, 99% 1910161 usec, 99.9% 2015133 usec, 99.99% 2105933 usec, max 3940630 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 11116 usec, 90% 360572 usec, 99% 1910161 usec, 99.9% 2015133 usec, 99.99% 2105933 usec, max 3940630 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 193568 msec =====
+===== DaCapo simple tail latency: 50% 12042 usec, 90% 126058 usec, 99% 2069413 usec, 99.9% 2188533 usec, 99.99% 2307195 usec, max 4296294 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 13123 usec, 90% 293938 usec, 99% 2069413 usec, 99.9% 2188533 usec, 99.99% 2307195 usec, max 4296294 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 210917 msec =====
+===== DaCapo simple tail latency: 50% 13959 usec, 90% 155377 usec, 99% 2232516 usec, 99.9% 2370650 usec, 99.99% 2539143 usec, max 4319346 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 24412 usec, 90% 1352321 usec, 99% 2233420 usec, 99.9% 2397134 usec, 99.99% 3360829 usec, max 4319346 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 52495
+@acc[140737331839332]: 60446
+@acc[140737331823794]: 61788
+@acc[140737331808518]: 68000
+@acc[140737331844647]: 91170
+@acc[140737331805023]: 110596
+@acc[140737331793256]: 132990
+@acc[140737331817247]: 143369
+@acc[140737331813918]: 163679
+@acc[140737331819762]: 378621
+@acc[140737331825436]: 705649
+@acc[140737331839269]: 1825398
+@acc[140737331820495]: 1866271
+@acc[140737331829237]: 2864881
+@acc[140737331842803]: 3454739
+@acc[140737331813437]: 3981807
+@acc[140737331808222]: 7641085
+@acc[140737331805385]: 9285616
+@acc[140737331807866]: 9920199
+@acc[140737331830333]: 23925269
+@acc[140737331835228]: 28529062
+@acc[140737331821710]: 1131175067
+@acc[140737331830812]: 3334701270
+@acc[140737331834189]: 164090316644
+@counter[140737331799194]: 80
+@counter[140737331805385]: 80
+@counter[140737331813437]: 81
+@counter[140737331839332]: 81
+@counter[140737331829237]: 81
+@counter[140737331813918]: 81
+@counter[140737331825436]: 81
+@counter[140737331808222]: 81
+@counter[140737331805023]: 81
+@counter[140737331844647]: 81
+@counter[140737331808518]: 81
+@counter[140737331823794]: 81
+@counter[140737331807866]: 81
+@counter[140737331842803]: 81
+@counter[140737331819762]: 81
+@counter[140737331793256]: 81
+@counter[140737331817247]: 81
+@counter[140737331835228]: 81
+@counter[140737331820495]: 3280
+@counter[140737331830333]: 3321
+@counter[140737331839269]: 3321
+@counter[140737331830812]: 191192
+@counter[140737331821710]: 193653
+@counter[140737331834189]: 1663594
+@decoded[140737331829237]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331823794]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331839332]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331820495]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331808222]: 1
+@decoded[140737331805385]: 1
+@decoded[140737331807866]: 1
+@decoded[140737331808518]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331819762]: 1
+@processedgeslen: 
+[1]                 1941 |                                                    |
+[2, 4)             10934 |                                                    |
+[4, 8)              8074 |                                                    |
+[8, 16)            10710 |                                                    |
+[16, 32)           19428 |@                                                   |
+[32, 64)           49962 |@@@                                                 |
+[64, 128)          90625 |@@@@@@@                                             |
+[128, 256)         42251 |@@@                                                 |
+[256, 512)         43272 |@@@                                                 |
+[512, 1K)         228941 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          174770 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          330642 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          651964 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)             81 |                                                    |
+
+@processedgestime: 164235585487
+@startprocessedges: 572960401426209
+@startwork[832175]: 572961887105815
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331805385]: 
+[64, 128)             63 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)            14 |@@@@@@@@@@@                                         |
+[256, 512)             2 |@                                                   |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331799194]: 
+[0]                   80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331839332]: 
+[0]                   77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    4 |@@                                                  |
+
+@worktime[140737331829237]: 
+[4, 8)                 2 |@                                                   |
+[8, 16)                0 |                                                    |
+[16, 32)               0 |                                                    |
+[32, 64)              79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              81 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[4, 8)                81 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331823794]: 
+[0]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    2 |@                                                   |
+
+@worktime[140737331807866]: 
+[64, 128)             80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331793256]: 
+[1]                   77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@@                                                  |
+
+@worktime[140737331808518]: 
+[0]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    2 |@                                                   |
+
+@worktime[140737331805023]: 
+[1]                   81 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             3 |@@                                                  |
+[256, 512)            69 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              9 |@@@@@@                                              |
+
+@worktime[140737331813437]: 
+[32, 64)              81 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[1]                   81 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   67 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                14 |@@@@@@@@@@                                          |
+
+@worktime[140737331813918]: 
+[1]                   47 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                34 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               |
+
+@worktime[140737331825436]: 
+[4, 8)                 8 |@@@@@                                               |
+[8, 16)               73 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 3200 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   80 |@                                                   |
+
+@worktime[140737331830333]: 
+[1]                  405 |@@@@@@@@@@@@@@@                                     |
+[2, 4)              1375 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1184 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        |
+[8, 16)              113 |@@@@                                                |
+[16, 32)             163 |@@@@@@                                              |
+[32, 64)               0 |                                                    |
+[64, 128)             81 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3275 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   46 |                                                    |
+
+@worktime[140737331830812]: 
+[0]                    1 |                                                    |
+[1]                    4 |                                                    |
+[2, 4)                10 |                                                    |
+[4, 8)                10 |                                                    |
+[8, 16)               36 |                                                    |
+[16, 32)          190970 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)             153 |                                                    |
+[64, 128)              3 |                                                    |
+[128, 256)             4 |                                                    |
+[256, 512)             1 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            193139 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              441 |                                                    |
+[16, 32)              73 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                 9363 |@                                                   |
+[1]                50101 |@@@@@@                                              |
+[2, 4)             95549 |@@@@@@@@@@@@                                        |
+[4, 8)            166431 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)            36668 |@@@@                                                |
+[16, 32)           89668 |@@@@@@@@@@@                                         |
+[32, 64)          337138 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         368897 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      |
+[128, 256)        411908 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)         95847 |@@@@@@@@@@@@                                        |
+[512, 1K)           2017 |                                                    |
+[1K, 2K)               7 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Sun Oct 23 07:33:19 PM UTC 2022
+
+ 19:33:19 up 6 days, 16:01,  1 user,  load average: 15.97, 15.86, 13.62
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  10:56    8:36m  2.40s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41533592 959576 22660260    0    0     1    30    0    2 25  0 74  0  0
+ 0  0      0 41544596 959576 22660284    0    0     0     0  159   77  0  0 100  0  0
+
+top - 19:33:20 up 6 days, 16:01,  1 user,  load average: 14.69, 15.60, 13.55
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40569.7 free,    581.5 used,  23066.3 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62901.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11160   8064 S   0.0   0.0   0:03.63 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.31 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.38 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.38 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.37 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.40 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.39 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.38 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.37 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.37 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.36 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.38 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.38 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.40 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.37 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.39 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.38 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.38 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.38 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.37 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.39 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.38 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.36 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.35 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.39 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.37 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 155052 msec =====
+===== DaCapo simple tail latency: 50% 8126 usec, 90% 70909 usec, 99% 1701904 usec, 99.9% 1799356 usec, 99.99% 2046935 usec, max 3292561 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 14155 usec, 90% 1074563 usec, 99% 1703837 usec, 99.9% 1847099 usec, 99.99% 2063384 usec, max 3292561 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 176554 msec =====
+===== DaCapo simple tail latency: 50% 9928 usec, 90% 97636 usec, 99% 1890467 usec, 99.9% 1982472 usec, 99.99% 2044772 usec, max 4042702 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 13344 usec, 90% 896727 usec, 99% 1893113 usec, 99.9% 1993850 usec, 99.99% 3062152 usec, max 4042702 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 193394 msec =====
+===== DaCapo simple tail latency: 50% 12075 usec, 90% 127108 usec, 99% 2066538 usec, 99.9% 2193981 usec, 99.99% 3989115 usec, max 4380991 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 16371 usec, 90% 1085468 usec, 99% 2066538 usec, 99.9% 2196078 usec, 99.99% 3989115 usec, max 4380991 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 209961 msec =====
+===== DaCapo simple tail latency: 50% 14022 usec, 90% 155131 usec, 99% 2219311 usec, 99.9% 2364223 usec, 99.99% 2448998 usec, max 2479227 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 27705 usec, 90% 1387604 usec, 99% 2221015 usec, 99.9% 2409096 usec, 99.99% 3234979 usec, max 3622865 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 55610
+@acc[140737331839332]: 62507
+@acc[140737331823794]: 65621
+@acc[140737331808518]: 72865
+@acc[140737331844647]: 94071
+@acc[140737331805023]: 110618
+@acc[140737331793256]: 133534
+@acc[140737331817247]: 155010
+@acc[140737331813918]: 168818
+@acc[140737331819762]: 364897
+@acc[140737331825436]: 736464
+@acc[140737331839269]: 1857232
+@acc[140737331820495]: 1903268
+@acc[140737331829237]: 2967548
+@acc[140737331842803]: 3499388
+@acc[140737331813437]: 4076575
+@acc[140737331805385]: 7163079
+@acc[140737331808222]: 7835952
+@acc[140737331807866]: 10955378
+@acc[140737331830333]: 24907642
+@acc[140737331835228]: 28902436
+@acc[140737331821710]: 1164152496
+@acc[140737331830812]: 3479031112
+@acc[140737331834189]: 170559550202
+@counter[140737331807866]: 84
+@counter[140737331829237]: 84
+@counter[140737331844647]: 84
+@counter[140737331842803]: 84
+@counter[140737331817247]: 84
+@counter[140737331813437]: 84
+@counter[140737331813918]: 84
+@counter[140737331825436]: 84
+@counter[140737331805023]: 84
+@counter[140737331819762]: 84
+@counter[140737331805385]: 84
+@counter[140737331793256]: 84
+@counter[140737331808518]: 84
+@counter[140737331808222]: 84
+@counter[140737331799194]: 84
+@counter[140737331835228]: 84
+@counter[140737331839332]: 84
+@counter[140737331823794]: 84
+@counter[140737331820495]: 3403
+@counter[140737331830333]: 3444
+@counter[140737331839269]: 3444
+@counter[140737331830812]: 199266
+@counter[140737331821710]: 199375
+@counter[140737331834189]: 1726097
+@decoded[140737331839332]: 1
+@decoded[140737331807866]: 1
+@decoded[140737331829237]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331820495]: 1
+@decoded[140737331808518]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331823794]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331819762]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331808222]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331805385]: 1
+@processedgeslen: 
+[1]                 1906 |                                                    |
+[2, 4)             10238 |                                                    |
+[4, 8)              7501 |                                                    |
+[8, 16)            10512 |                                                    |
+[16, 32)           19853 |@                                                   |
+[32, 64)           49170 |@@@                                                 |
+[64, 128)          88828 |@@@@@@                                              |
+[128, 256)         46313 |@@@                                                 |
+[256, 512)         45320 |@@@                                                 |
+[512, 1K)         240171 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          181313 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          344901 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          679987 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)              0 |                                                    |
+[16K, 32K)            84 |                                                    |
+
+@processedgestime: 172282326381
+@startprocessedges: 577292153744632
+@startwork[834421]: 577294278901894
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331839332]: 
+[0]                   78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    6 |@@@@                                                |
+
+@worktime[140737331829237]: 
+[16, 32)               1 |                                                    |
+[32, 64)              83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              84 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[2, 4)                 9 |@@@@@@                                              |
+[4, 8)                75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             84 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331805385]: 
+[64, 128)             83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331823794]: 
+[0]                   82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    2 |@                                                   |
+
+@worktime[140737331799194]: 
+[0]                   83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    1 |                                                    |
+
+@worktime[140737331807866]: 
+[64, 128)              1 |                                                    |
+[128, 256)            83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331793256]: 
+[1]                   84 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808518]: 
+[0]                   82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    2 |@                                                   |
+
+@worktime[140737331805023]: 
+[1]                   84 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             4 |@@                                                  |
+[256, 512)            74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              6 |@@@@                                                |
+
+@worktime[140737331813437]: 
+[32, 64)              84 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[1]                   84 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   66 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                18 |@@@@@@@@@@@@@@                                      |
+
+@worktime[140737331813918]: 
+[1]                   45 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                39 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
+
+@worktime[140737331825436]: 
+[4, 8)                 8 |@@@@@                                               |
+[8, 16)               76 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 3317 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   85 |@                                                   |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331830333]: 
+[1]                  421 |@@@@@@@@@@@@@@@                                     |
+[2, 4)              1393 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1262 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[8, 16)              116 |@@@@                                                |
+[16, 32)             167 |@@@@@@                                              |
+[32, 64)               1 |                                                    |
+[64, 128)             84 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3370 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   73 |@                                                   |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331830812]: 
+[0]                    2 |                                                    |
+[1]                    1 |                                                    |
+[2, 4)                 8 |                                                    |
+[4, 8)                19 |                                                    |
+[8, 16)               42 |                                                    |
+[16, 32)          198950 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)             154 |                                                    |
+[64, 128)             76 |                                                    |
+[128, 256)            11 |                                                    |
+[256, 512)             2 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            198805 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              479 |                                                    |
+[16, 32)              91 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                 7517 |                                                    |
+[1]                48852 |@@@@@                                               |
+[2, 4)             97765 |@@@@@@@@@@@                                         |
+[4, 8)            171508 |@@@@@@@@@@@@@@@@@@@@                                |
+[8, 16)            38952 |@@@@                                                |
+[16, 32)           94775 |@@@@@@@@@@@                                         |
+[32, 64)          351795 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         386946 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[128, 256)        426716 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)         99203 |@@@@@@@@@@@@                                        |
+[512, 1K)           2047 |                                                    |
+[1K, 2K)              21 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Sun Oct 23 08:38:27 PM UTC 2022
+
+ 20:38:27 up 6 days, 17:06,  1 user,  load average: 16.59, 13.68, 9.98
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  10:56    9:41m  2.58s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41531496 960460 22660464    0    0     1    30    1    0 25  0 74  0  0
+ 0  0      0 41542628 960460 22660464    0    0     0     0  139   83  0  0 100  0  0
+
+top - 20:38:28 up 6 days, 17:06,  1 user,  load average: 15.26, 13.45, 9.92
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40567.3 free,    582.9 used,  23067.3 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62900.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11160   8064 S   0.0   0.0   0:03.65 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.32 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.38 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.39 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.38 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.39 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.38 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.39 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.34 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.34 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.39 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.39 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.39 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.39 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.39 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.39 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.38 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.37 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.37 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.36 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.37 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.36 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.40 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.37 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.39 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.38 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.36 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 157922 msec =====
+===== DaCapo simple tail latency: 50% 8257 usec, 90% 71794 usec, 99% 1733869 usec, 99.9% 1832812 usec, 99.99% 2060828 usec, max 3677782 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 10125 usec, 90% 770888 usec, 99% 1735393 usec, 99.9% 1848758 usec, 99.99% 2459231 usec, max 3677782 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 176849 msec =====
+===== DaCapo simple tail latency: 50% 10199 usec, 90% 101572 usec, 99% 1907818 usec, 99.9% 2010316 usec, 99.99% 2085994 usec, max 2122211 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 11730 usec, 90% 403575 usec, 99% 1907818 usec, 99.9% 2010316 usec, 99.99% 2085994 usec, max 2122211 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 194944 msec =====
+===== DaCapo simple tail latency: 50% 12279 usec, 90% 128991 usec, 99% 2081972 usec, 99.9% 2206417 usec, 99.99% 2343190 usec, max 4242768 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 18219 usec, 90% 1187358 usec, 99% 2082324 usec, 99.9% 2219597 usec, 99.99% 2770283 usec, max 4242768 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 214417 msec =====
+===== DaCapo simple tail latency: 50% 13742 usec, 90% 155107 usec, 99% 2247393 usec, 99.9% 2380382 usec, 99.99% 2520334 usec, max 2627420 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 20480 usec, 90% 1085369 usec, 99% 2251079 usec, 99.9% 2398443 usec, 99.99% 2666016 usec, max 3270799 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 47942
+@acc[140737331839332]: 60074
+@acc[140737331823794]: 62345
+@acc[140737331808518]: 72547
+@acc[140737331844647]: 91979
+@acc[140737331805023]: 106252
+@acc[140737331817247]: 134398
+@acc[140737331793256]: 136144
+@acc[140737331813918]: 164769
+@acc[140737331819762]: 402036
+@acc[140737331825436]: 707489
+@acc[140737331839269]: 1821038
+@acc[140737331820495]: 1856273
+@acc[140737331829237]: 2497220
+@acc[140737331842803]: 3395761
+@acc[140737331813437]: 3944826
+@acc[140737331805385]: 7222030
+@acc[140737331808222]: 7585293
+@acc[140737331807866]: 9869481
+@acc[140737331830333]: 23771025
+@acc[140737331835228]: 26974505
+@acc[140737331821710]: 1113979491
+@acc[140737331830812]: 3273564718
+@acc[140737331834189]: 162902335638
+@counter[140737331805385]: 79
+@counter[140737331799194]: 79
+@counter[140737331805023]: 80
+@counter[140737331813437]: 80
+@counter[140737331813918]: 80
+@counter[140737331808222]: 80
+@counter[140737331823794]: 80
+@counter[140737331844647]: 80
+@counter[140737331829237]: 80
+@counter[140737331793256]: 80
+@counter[140737331842803]: 80
+@counter[140737331839332]: 80
+@counter[140737331825436]: 80
+@counter[140737331819762]: 80
+@counter[140737331817247]: 80
+@counter[140737331808518]: 80
+@counter[140737331835228]: 80
+@counter[140737331807866]: 80
+@counter[140737331820495]: 3239
+@counter[140737331839269]: 3280
+@counter[140737331830333]: 3280
+@counter[140737331830812]: 187172
+@counter[140737331821710]: 189633
+@counter[140737331834189]: 1614863
+@decoded[140737331823794]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331808222]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331839332]: 1
+@decoded[140737331829237]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331807866]: 1
+@decoded[140737331805385]: 1
+@decoded[140737331819762]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331820495]: 1
+@decoded[140737331808518]: 1
+@processedgeslen: 
+[1]                 1846 |                                                    |
+[2, 4)              8338 |                                                    |
+[4, 8)              6939 |                                                    |
+[8, 16)             9858 |                                                    |
+[16, 32)           17994 |@                                                   |
+[32, 64)           45316 |@@@                                                 |
+[64, 128)          80365 |@@@@@@                                              |
+[128, 256)         40714 |@@@                                                 |
+[256, 512)         42259 |@@@                                                 |
+[512, 1K)         225412 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          171946 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          324262 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          639535 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)             80 |                                                    |
+
+@processedgestime: 164261892745
+@startprocessedges: 581202061471811
+@startwork[836502]: 581202302437265
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331805385]: 
+[64, 128)             76 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             2 |@                                                   |
+[256, 512)             1 |                                                    |
+
+@worktime[140737331799194]: 
+[0]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331839332]: 
+[0]                   77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    3 |@@                                                  |
+
+@worktime[140737331829237]: 
+[4, 8)                15 |@@@@@@@@@@@@                                        |
+[8, 16)                2 |@                                                   |
+[16, 32)               0 |                                                    |
+[32, 64)              63 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[4, 8)                80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331823794]: 
+[0]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    1 |                                                    |
+
+@worktime[140737331807866]: 
+[64, 128)             80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331793256]: 
+[1]                   74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 6 |@@@@                                                |
+
+@worktime[140737331808518]: 
+[0]                   73 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    7 |@@@@                                                |
+
+@worktime[140737331805023]: 
+[1]                   80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             5 |@@@                                                 |
+[256, 512)            68 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              7 |@@@@@                                               |
+
+@worktime[140737331813437]: 
+[32, 64)              80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[1]                   80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 5 |@@@                                                 |
+
+@worktime[140737331813918]: 
+[1]                   32 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
+[2, 4)                48 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331825436]: 
+[4, 8)                 7 |@@@@                                                |
+[8, 16)               73 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 3157 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   81 |@                                                   |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331830333]: 
+[1]                  402 |@@@@@@@@@@@@@@@                                     |
+[2, 4)              1312 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1218 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
+[8, 16)              108 |@@@@                                                |
+[16, 32)             160 |@@@@@@                                              |
+[32, 64)               0 |                                                    |
+[64, 128)             80 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3210 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   70 |@                                                   |
+
+@worktime[140737331830812]: 
+[0]                    1 |                                                    |
+[1]                    1 |                                                    |
+[2, 4)                 8 |                                                    |
+[4, 8)                15 |                                                    |
+[8, 16)               38 |                                                    |
+[16, 32)          186936 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)              80 |                                                    |
+[64, 128)             12 |                                                    |
+[128, 256)            76 |                                                    |
+[256, 512)             1 |                                                    |
+[512, 1K)              4 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            189057 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              489 |                                                    |
+[16, 32)              87 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                 5853 |                                                    |
+[1]                41258 |@@@@@                                               |
+[2, 4)             89199 |@@@@@@@@@@@                                         |
+[4, 8)            160260 |@@@@@@@@@@@@@@@@@@@@                                |
+[8, 16)            35763 |@@@@                                                |
+[16, 32)           85987 |@@@@@@@@@@@                                         |
+[32, 64)          327849 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         365520 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[128, 256)        397761 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)        103496 |@@@@@@@@@@@@@                                       |
+[512, 1K)           1914 |                                                    |
+[1K, 2K)               3 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Sun Oct 23 09:56:30 PM UTC 2022
+
+ 21:56:30 up 6 days, 18:24,  1 user,  load average: 16.28, 16.19, 13.46
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  10:56   10:59m  2.81s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41540760 961420 22660700    0    0     1    29    2    1 25  0 74  0  0
+ 2  0      0 41544380 961420 22660728    0    0     0     0  134   73  0  0 100  0  0
+
+top - 21:56:31 up 6 days, 18:24,  1 user,  load average: 16.28, 16.19, 13.46
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40570.2 free,    578.7 used,  23068.5 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62904.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11164   8064 S   0.0   0.0   0:03.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.32 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.38 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.37 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.37 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.37 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.38 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.37 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.38 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.37 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.37 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.37 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.36 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.36 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.37 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.37 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.38 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.39 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.39 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.37 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.36 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.36 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.39 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.39 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 159337 msec =====
+===== DaCapo simple tail latency: 50% 8388 usec, 90% 73891 usec, 99% 1738768 usec, 99.9% 1829240 usec, 99.99% 2050375 usec, max 3407741 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 10780 usec, 90% 764397 usec, 99% 1740947 usec, 99.9% 1850867 usec, 99.99% 2168343 usec, max 3407741 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 177490 msec =====
+===== DaCapo simple tail latency: 50% 10272 usec, 90% 100433 usec, 99% 1918419 usec, 99.9% 2034090 usec, 99.99% 3700779 usec, max 3901427 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 11214 usec, 90% 221666 usec, 99% 1918419 usec, 99.9% 2034090 usec, 99.99% 3700779 usec, max 3901427 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 195941 msec =====
+===== DaCapo simple tail latency: 50% 12156 usec, 90% 128843 usec, 99% 2088763 usec, 99.9% 2224701 usec, 99.99% 4066918 usec, max 4474888 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 16351 usec, 90% 847099 usec, 99% 2088984 usec, 99.9% 2226192 usec, 99.99% 4066918 usec, max 4474888 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 213623 msec =====
+===== DaCapo simple tail latency: 50% 14008 usec, 90% 154583 usec, 99% 2254860 usec, 99.9% 2405040 usec, 99.99% 2499477 usec, max 4464638 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 25227 usec, 90% 1338980 usec, 99% 2256765 usec, 99.9% 2436857 usec, 99.99% 2920640 usec, max 4464638 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 52858
+@acc[140737331839332]: 60211
+@acc[140737331823794]: 60746
+@acc[140737331808518]: 69136
+@acc[140737331844647]: 87907
+@acc[140737331805023]: 104226
+@acc[140737331793256]: 131347
+@acc[140737331817247]: 134614
+@acc[140737331813918]: 159680
+@acc[140737331819762]: 364233
+@acc[140737331825436]: 709166
+@acc[140737331839269]: 1751699
+@acc[140737331820495]: 1791929
+@acc[140737331829237]: 3005278
+@acc[140737331842803]: 3351705
+@acc[140737331813437]: 3994971
+@acc[140737331805385]: 7362688
+@acc[140737331808222]: 7749232
+@acc[140737331807866]: 9665716
+@acc[140737331830333]: 23131671
+@acc[140737331835228]: 26275928
+@acc[140737331821710]: 1093208872
+@acc[140737331830812]: 3225327005
+@acc[140737331834189]: 160943418685
+@counter[140737331808518]: 78
+@counter[140737331844647]: 78
+@counter[140737331808222]: 78
+@counter[140737331839332]: 78
+@counter[140737331813437]: 78
+@counter[140737331799194]: 78
+@counter[140737331807866]: 78
+@counter[140737331813918]: 78
+@counter[140737331819762]: 78
+@counter[140737331817247]: 78
+@counter[140737331805385]: 78
+@counter[140737331823794]: 78
+@counter[140737331835228]: 78
+@counter[140737331842803]: 78
+@counter[140737331793256]: 78
+@counter[140737331825436]: 78
+@counter[140737331805023]: 78
+@counter[140737331829237]: 78
+@counter[140737331820495]: 3157
+@counter[140737331830333]: 3198
+@counter[140737331839269]: 3198
+@counter[140737331830812]: 184803
+@counter[140737331821710]: 185984
+@counter[140737331834189]: 1608932
+@decoded[140737331805385]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331823794]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331807866]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331829237]: 1
+@decoded[140737331808518]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331839332]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331819762]: 1
+@decoded[140737331820495]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331808222]: 1
+@processedgeslen: 
+[1]                 1682 |                                                    |
+[2, 4)             11400 |                                                    |
+[4, 8)              8618 |                                                    |
+[8, 16)            11398 |                                                    |
+[16, 32)           19029 |@                                                   |
+[32, 64)           47357 |@@@                                                 |
+[64, 128)          84850 |@@@@@@@                                             |
+[128, 256)         42933 |@@@                                                 |
+[256, 512)         41980 |@@@                                                 |
+[512, 1K)         221816 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          167855 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          319661 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          630275 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)             78 |                                                    |
+
+@processedgestime: 162555429521
+@startprocessedges: 585882830812086
+@startwork[838756]: 585884960542358
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331839332]: 
+[0]                   74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    3 |@@                                                  |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331829237]: 
+[32, 64)              78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[4, 8)                78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             3 |@@                                                  |
+
+@worktime[140737331805385]: 
+[64, 128)             77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             0 |                                                    |
+[256, 512)             0 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331823794]: 
+[0]                   77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    1 |                                                    |
+
+@worktime[140737331799194]: 
+[0]                   78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331807866]: 
+[64, 128)             78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331793256]: 
+[1]                   74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@@                                                  |
+
+@worktime[140737331808518]: 
+[0]                   72 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    6 |@@@@                                                |
+
+@worktime[140737331805023]: 
+[1]                   78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             4 |@@@                                                 |
+[256, 512)            68 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              6 |@@@@                                                |
+
+@worktime[140737331813437]: 
+[32, 64)              78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[1]                   78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   69 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 9 |@@@@@@                                              |
+
+@worktime[140737331813918]: 
+[1]                   41 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                37 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      |
+
+@worktime[140737331825436]: 
+[8, 16)               78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 3075 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   81 |@                                                   |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331830333]: 
+[1]                  393 |@@@@@@@@@@@@@@@@                                    |
+[2, 4)              1275 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1194 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
+[8, 16)              100 |@@@@                                                |
+[16, 32)             158 |@@@@@@                                              |
+[32, 64)               0 |                                                    |
+[64, 128)             78 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3134 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   64 |@                                                   |
+
+@worktime[140737331830812]: 
+[0]                    2 |                                                    |
+[1]                    2 |                                                    |
+[2, 4)                 8 |                                                    |
+[4, 8)                13 |                                                    |
+[8, 16)               41 |                                                    |
+[16, 32)          184576 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)              80 |                                                    |
+[64, 128)              3 |                                                    |
+[128, 256)            77 |                                                    |
+[256, 512)             1 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            185449 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              457 |                                                    |
+[16, 32)              78 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                 9175 |@                                                   |
+[1]                49116 |@@@@@@                                              |
+[2, 4)             91107 |@@@@@@@@@@@@                                        |
+[4, 8)            161428 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)            35871 |@@@@                                                |
+[16, 32)           84393 |@@@@@@@@@@@                                         |
+[32, 64)          321649 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         358551 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[128, 256)        392718 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)        102812 |@@@@@@@@@@@@@                                       |
+[512, 1K)           2106 |                                                    |
+[1K, 2K)               6 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Sun Oct 23 11:36:53 PM UTC 2022
+
+ 23:36:53 up 6 days, 20:05,  1 user,  load average: 16.17, 15.87, 13.31
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  10:56   12:39m  3.02s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41542380 962184 22661476    0    0     1    29    1    1 25  0 74  0  0
+ 0  0      0 41553140 962184 22661492    0    0     0     0  214  173  0  0 100  0  0
+
+top - 23:36:54 up 6 days, 20:05,  1 user,  load average: 16.17, 15.87, 13.31
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.2 si,  0.0 st
+MiB Mem :  64217.5 total,  40577.5 free,    569.9 used,  23070.0 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62913.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11164   8064 S   0.0   0.0   0:03.72 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.32 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.39 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.37 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.37 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.36 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.38 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.37 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.36 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.39 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.39 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.37 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.36 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.37 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.38 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.38 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.38 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.38 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.37 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.37 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.36 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.37 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.36 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.39 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.39 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.42 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 158570 msec =====
+===== DaCapo simple tail latency: 50% 8290 usec, 90% 73007 usec, 99% 1729265 usec, 99.9% 1816100 usec, 99.99% 2082553 usec, max 3572891 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 9994 usec, 90% 772684 usec, 99% 1731330 usec, 99.9% 1850409 usec, 99.99% 2297694 usec, max 3572891 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 177401 msec =====
+===== DaCapo simple tail latency: 50% 10256 usec, 90% 103399 usec, 99% 1915158 usec, 99.9% 2010726 usec, 99.99% 2073059 usec, max 2114027 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 12619 usec, 90% 720201 usec, 99% 1915158 usec, 99.9% 2014068 usec, 99.99% 2097201 usec, max 2286576 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 197863 msec =====
+===== DaCapo simple tail latency: 50% 12240 usec, 90% 132202 usec, 99% 2094129 usec, 99.9% 2207727 usec, 99.99% 2287534 usec, max 4363157 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 15724 usec, 90% 635933 usec, 99% 2094612 usec, 99.9% 2208006 usec, 99.99% 2392079 usec, max 4363157 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 213637 msec =====
+===== DaCapo simple tail latency: 50% 14073 usec, 90% 154184 usec, 99% 2254356 usec, 99.9% 2404204 usec, 99.99% 2520367 usec, max 4777189 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 20729 usec, 90% 1157662 usec, 99% 2254471 usec, 99.9% 2412265 usec, 99.99% 2662710 usec, max 4777189 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 51759
+@acc[140737331839332]: 60184
+@acc[140737331823794]: 62965
+@acc[140737331808518]: 71800
+@acc[140737331844647]: 88098
+@acc[140737331805023]: 104149
+@acc[140737331793256]: 129731
+@acc[140737331817247]: 144064
+@acc[140737331813918]: 165803
+@acc[140737331819762]: 370705
+@acc[140737331825436]: 708683
+@acc[140737331820495]: 1816886
+@acc[140737331839269]: 1823706
+@acc[140737331829237]: 2954789
+@acc[140737331842803]: 3368442
+@acc[140737331813437]: 3954981
+@acc[140737331805385]: 6868092
+@acc[140737331808222]: 7542069
+@acc[140737331807866]: 9638801
+@acc[140737331830333]: 23549997
+@acc[140737331835228]: 26521677
+@acc[140737331821710]: 1108830061
+@acc[140737331830812]: 3252017975
+@acc[140737331834189]: 161411929649
+@counter[140737331805385]: 78
+@counter[140737331799194]: 78
+@counter[140737331808518]: 79
+@counter[140737331817247]: 79
+@counter[140737331808222]: 79
+@counter[140737331819762]: 79
+@counter[140737331813437]: 79
+@counter[140737331842803]: 79
+@counter[140737331839332]: 79
+@counter[140737331823794]: 79
+@counter[140737331835228]: 79
+@counter[140737331825436]: 79
+@counter[140737331805023]: 79
+@counter[140737331829237]: 79
+@counter[140737331844647]: 79
+@counter[140737331793256]: 79
+@counter[140737331807866]: 79
+@counter[140737331813918]: 79
+@counter[140737331820495]: 3198
+@counter[140737331830333]: 3239
+@counter[140737331839269]: 3239
+@counter[140737331830812]: 186301
+@counter[140737331821710]: 188762
+@counter[140737331834189]: 1617092
+@decoded[140737331820495]: 1
+@decoded[140737331807866]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331805385]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331829237]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331819762]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331839332]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331808518]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331823794]: 1
+@decoded[140737331808222]: 1
+@processedgeslen: 
+[1]                 1839 |                                                    |
+[2, 4)             11955 |                                                    |
+[4, 8)              9328 |                                                    |
+[8, 16)            13612 |@                                                   |
+[16, 32)           20681 |@                                                   |
+[32, 64)           47309 |@@@                                                 |
+[64, 128)          86305 |@@@@@@@                                             |
+[128, 256)         39020 |@@@                                                 |
+[256, 512)         42115 |@@@                                                 |
+[512, 1K)         222320 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          169229 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          320491 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          632810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)             79 |                                                    |
+
+@processedgestime: 162227347396
+@startprocessedges: 591907130421267
+@startwork[840984]: 591907945241051
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331805385]: 
+[64, 128)             77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331799194]: 
+[0]                   78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331839332]: 
+[0]                   77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    2 |@                                                   |
+
+@worktime[140737331829237]: 
+[8, 16)                1 |                                                    |
+[16, 32)               0 |                                                    |
+[32, 64)              78 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[4, 8)                79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331823794]: 
+[0]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331807866]: 
+[64, 128)             79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331793256]: 
+[1]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808518]: 
+[0]                   71 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    8 |@@@@@                                               |
+
+@worktime[140737331805023]: 
+[1]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             5 |@@@                                                 |
+[256, 512)            67 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              7 |@@@@@                                               |
+
+@worktime[140737331813437]: 
+[32, 64)              79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[0]                    2 |@                                                   |
+[1]                   77 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   64 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                15 |@@@@@@@@@@@@                                        |
+
+@worktime[140737331813918]: 
+[1]                   27 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
+[2, 4)                52 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331825436]: 
+[8, 16)               79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 3118 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   79 |@                                                   |
+[2, 4)                 0 |                                                    |
+[4, 8)                 1 |                                                    |
+
+@worktime[140737331830333]: 
+[1]                  397 |@@@@@@@@@@@@@@@                                     |
+[2, 4)              1322 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1177 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      |
+[8, 16)              106 |@@@@                                                |
+[16, 32)             158 |@@@@@@                                              |
+[32, 64)               0 |                                                    |
+[64, 128)             79 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3189 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   49 |                                                    |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331830812]: 
+[0]                    1 |                                                    |
+[1]                    4 |                                                    |
+[2, 4)                 4 |                                                    |
+[4, 8)                12 |                                                    |
+[8, 16)               59 |                                                    |
+[16, 32)          186067 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)              75 |                                                    |
+[64, 128)              9 |                                                    |
+[128, 256)            69 |                                                    |
+[256, 512)             0 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            188265 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              424 |                                                    |
+[16, 32)              73 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                10800 |@                                                   |
+[1]                52344 |@@@@@@                                              |
+[2, 4)             90530 |@@@@@@@@@@@                                         |
+[4, 8)            160537 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)            35489 |@@@@                                                |
+[16, 32)           84701 |@@@@@@@@@@@                                         |
+[32, 64)          324545 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         358162 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[128, 256)        395807 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)        102144 |@@@@@@@@@@@@@                                       |
+[512, 1K)           2018 |                                                    |
+[1K, 2K)              15 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Mon Oct 24 12:42:31 AM UTC 2022
+
+ 00:42:31 up 6 days, 21:10,  1 user,  load average: 16.86, 13.84, 9.86
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  Sun10   13:45m  3.22s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41532644 962992 22661492    0    0     1    29    1    1 25  0 74  0  0
+ 0  0      0 41543816 962992 22661516    0    0     0     0  129   77  0  0 100  0  0
+
+top - 00:42:32 up 6 days, 21:10,  1 user,  load average: 16.86, 13.84, 9.86
+Tasks: 373 total,   1 running, 372 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40568.2 free,    578.5 used,  23070.8 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62904.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11164   8064 S   0.0   0.0   0:03.75 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.32 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.37 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.39 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.39 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.39 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.39 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.39 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.38 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.36 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.36 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.37 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.37 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.39 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.38 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.38 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.40 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.38 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.37 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.37 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.33 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.36 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.39 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.36 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.36 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.38 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 160025 msec =====
+===== DaCapo simple tail latency: 50% 10092 usec, 90% 82132 usec, 99% 1723564 usec, 99.9% 1829175 usec, 99.99% 2073411 usec, max 3374350 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 13533 usec, 90% 836969 usec, 99% 1725857 usec, 99.9% 1845461 usec, 99.99% 2272067 usec, max 3374350 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 180102 msec =====
+===== DaCapo simple tail latency: 50% 11886 usec, 90% 107278 usec, 99% 1912668 usec, 99.9% 2027012 usec, 99.99% 2108686 usec, max 3947298 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 12890 usec, 90% 193583 usec, 99% 1912782 usec, 99.9% 2027667 usec, 99.99% 2108686 usec, max 3947298 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 196628 msec =====
+===== DaCapo simple tail latency: 50% 13901 usec, 90% 131981 usec, 99% 2086879 usec, 99.9% 2214936 usec, 99.99% 4040589 usec, max 4177629 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 19013 usec, 90% 1135402 usec, 99% 2086879 usec, 99.9% 2220777 usec, 99.99% 4040589 usec, max 4177629 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 216557 msec =====
+===== DaCapo simple tail latency: 50% 14893 usec, 90% 153927 usec, 99% 2260353 usec, 99.9% 2400305 usec, 99.99% 2558345 usec, max 4527587 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 23085 usec, 90% 1183137 usec, 99% 2261942 usec, 99.9% 2415607 usec, 99.99% 2852901 usec, max 4527587 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 46647
+@acc[140737331839332]: 51555
+@acc[140737331823794]: 57453
+@acc[140737331808518]: 67194
+@acc[140737331844647]: 85260
+@acc[140737331805023]: 99970
+@acc[140737331793256]: 122506
+@acc[140737331817247]: 129897
+@acc[140737331813918]: 149917
+@acc[140737331819762]: 354463
+@acc[140737331825436]: 693263
+@acc[140737331839269]: 1684792
+@acc[140737331820495]: 1711517
+@acc[140737331829237]: 2634415
+@acc[140737331842803]: 3202825
+@acc[140737331813437]: 3755696
+@acc[140737331808222]: 7199211
+@acc[140737331805385]: 7589923
+@acc[140737331807866]: 9156257
+@acc[140737331830333]: 22155274
+@acc[140737331835228]: 24416884
+@acc[140737331821710]: 1041993042
+@acc[140737331830812]: 3091006418
+@acc[140737331834189]: 152582443210
+@counter[140737331799194]: 74
+@counter[140737331805385]: 74
+@counter[140737331839332]: 75
+@counter[140737331844647]: 75
+@counter[140737331807866]: 75
+@counter[140737331793256]: 75
+@counter[140737331823794]: 75
+@counter[140737331829237]: 75
+@counter[140737331819762]: 75
+@counter[140737331817247]: 75
+@counter[140737331813918]: 75
+@counter[140737331808518]: 75
+@counter[140737331825436]: 75
+@counter[140737331808222]: 75
+@counter[140737331842803]: 75
+@counter[140737331835228]: 75
+@counter[140737331813437]: 75
+@counter[140737331805023]: 75
+@counter[140737331820495]: 3034
+@counter[140737331839269]: 3075
+@counter[140737331830333]: 3075
+@counter[140737331830812]: 175214
+@counter[140737331821710]: 177675
+@counter[140737331834189]: 1525151
+@decoded[140737331819762]: 1
+@decoded[140737331805385]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331820495]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331808518]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331829237]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331808222]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331823794]: 1
+@decoded[140737331807866]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331839332]: 1
+@processedgeslen: 
+[1]                 1705 |                                                    |
+[2, 4)             10688 |                                                    |
+[4, 8)              8574 |                                                    |
+[8, 16)            12181 |@                                                   |
+[16, 32)           18647 |@                                                   |
+[32, 64)           46546 |@@@@                                                |
+[64, 128)          79290 |@@@@@@                                              |
+[128, 256)         36391 |@@@                                                 |
+[256, 512)         39235 |@@@                                                 |
+[512, 1K)         210297 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          159315 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          303695 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          598513 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)             75 |                                                    |
+
+@processedgestime: 154013713315
+@startprocessedges: 595846305446661
+@startwork[843167]: 595846407948949
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331805385]: 
+[64, 128)             71 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+[256, 512)             0 |                                                    |
+[512, 1K)              2 |@                                                   |
+
+@worktime[140737331799194]: 
+[0]                   74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331839332]: 
+[0]                   75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331829237]: 
+[4, 8)                 2 |@                                                   |
+[8, 16)                0 |                                                    |
+[16, 32)               0 |                                                    |
+[32, 64)              73 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[4, 8)                75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331823794]: 
+[0]                   75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331807866]: 
+[64, 128)             75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331793256]: 
+[1]                   71 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 4 |@@                                                  |
+
+@worktime[140737331808518]: 
+[0]                   64 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   11 |@@@@@@@@                                            |
+
+@worktime[140737331805023]: 
+[1]                   75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             4 |@@@                                                 |
+[256, 512)            68 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              3 |@@                                                  |
+
+@worktime[140737331813437]: 
+[32, 64)              75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[1]                   75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   70 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 5 |@@@                                                 |
+
+@worktime[140737331813918]: 
+[1]                   44 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                31 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                |
+
+@worktime[140737331825436]: 
+[8, 16)               75 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 2960 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   74 |@                                                   |
+
+@worktime[140737331830333]: 
+[1]                  375 |@@@@@@@@@@@@@@@                                     |
+[2, 4)              1284 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)              1093 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        |
+[8, 16)               98 |@@@                                                 |
+[16, 32)             150 |@@@@@@                                              |
+[32, 64)               0 |                                                    |
+[64, 128)             75 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3018 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   56 |                                                    |
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331830812]: 
+[1]                    2 |                                                    |
+[2, 4)                 7 |                                                    |
+[4, 8)                17 |                                                    |
+[8, 16)               46 |                                                    |
+[16, 32)          174919 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)              74 |                                                    |
+[64, 128)              2 |                                                    |
+[128, 256)            81 |                                                    |
+[256, 512)            58 |                                                    |
+[512, 1K)              8 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            177171 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              421 |                                                    |
+[16, 32)              83 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                 9831 |@                                                   |
+[1]                47155 |@@@@@@                                              |
+[2, 4)             86103 |@@@@@@@@@@@@                                        |
+[4, 8)            151444 |@@@@@@@@@@@@@@@@@@@@@                               |
+[8, 16)            32678 |@@@@                                                |
+[16, 32)           80009 |@@@@@@@@@@@                                         |
+[32, 64)          305613 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         341753 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[128, 256)        371471 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)         97128 |@@@@@@@@@@@@@                                       |
+[512, 1K)           1960 |                                                    |
+[1K, 2K)               6 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Mon Oct 24 02:10:52 AM UTC 2022
+
+ 02:10:52 up 6 days, 22:39,  1 user,  load average: 16.38, 15.98, 13.27
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  Sun10   15:13m  3.43s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41531292 963748 22661652    0    0     1    29    2    2 25  0 74  0  0
+ 0  0      0 41542160 963748 22661680    0    0     0     8  185  148  0  0 100  0  0
+
+top - 02:10:54 up 6 days, 22:39,  1 user,  load average: 15.07, 15.71, 13.20
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40567.8 free,    578.0 used,  23071.7 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62905.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11164   8064 S   0.0   0.0   0:03.77 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.32 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.38 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.40 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.38 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.37 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.37 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.37 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.38 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.39 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.39 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.39 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.39 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.38 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.39 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.38 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.39 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.39 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.36 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.39 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.39 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.39 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,16000]
+Version: h2 2.1.214 derby 10.15.2.0
+Preparing the H2 database...
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 1 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 1 in 157005 msec =====
+===== DaCapo simple tail latency: 50% 8536 usec, 90% 73957 usec, 99% 1709080 usec, 99.9% 1799880 usec, 99.99% 2056634 usec, max 3579478 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 11206 usec, 90% 831130 usec, 99% 1711734 usec, 99.9% 1814888 usec, 99.99% 2635029 usec, max 3579478 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 2 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 2 in 175544 msec =====
+===== DaCapo simple tail latency: 50% 10342 usec, 90% 102875 usec, 99% 1899403 usec, 99.9% 2019147 usec, 99.99% 2094874 usec, max 3683143 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 13549 usec, 90% 768730 usec, 99% 1899413 usec, 99.9% 2019147 usec, 99.99% 2100363 usec, max 3683143 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 3 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 3 in 195350 msec =====
+===== DaCapo simple tail latency: 50% 12083 usec, 90% 128444 usec, 99% 2067431 usec, 99.9% 2195431 usec, 99.99% 2351644 usec, max 4291510 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 15925 usec, 90% 823838 usec, 99% 2069659 usec, 99.9% 2200010 usec, 99.99% 2568304 usec, max 4291510 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting warmup 4 =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
+Completed requests
+	Stock level .............  1277 ( 4.0%)
+	Order status by name ....   765 ( 2.4%)
+	Order status by ID ......   518 ( 1.6%)
+	Payment by name .........  8262 (25.8%)
+	Payment by ID ...........  5489 (17.2%)
+	Delivery schedule .......  1299 ( 4.1%)
+	New order ............... 14241 (44.5%)
+	New order rollback ......   149 ( 0.5%)
+===== DaCapo evaluation-git-6e411f33 h2 completed warmup 4 in 211587 msec =====
+===== DaCapo simple tail latency: 50% 14057 usec, 90% 151240 usec, 99% 2239676 usec, 99.9% 2383511 usec, 99.99% 2516189 usec, max 4516790 usec, measured over 32000 events =====
+===== DaCapo metered tail latency: 50% 16990 usec, 90% 767507 usec, 99% 2239918 usec, 99.9% 2383511 usec, 99.99% 2516189 usec, max 4516790 usec, measured over 32000 events =====
+===== DaCapo evaluation-git-6e411f33 h2 starting =====
+Starting 32000 requests...
+5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%*****
+Attaching 20 probes...
+^C
+
+@acc[140737331799194]: 54241
+@acc[140737331839332]: 64035
+@acc[140737331823794]: 64193
+@acc[140737331808518]: 75992
+@acc[140737331844647]: 87907
+@acc[140737331805023]: 111939
+@acc[140737331793256]: 136575
+@acc[140737331817247]: 141744
+@acc[140737331813918]: 171461
+@acc[140737331819762]: 387035
+@acc[140737331825436]: 734864
+@acc[140737331839269]: 1893064
+@acc[140737331820495]: 1905936
+@acc[140737331829237]: 3062792
+@acc[140737331842803]: 3470677
+@acc[140737331813437]: 4085955
+@acc[140737331805385]: 7699755
+@acc[140737331808222]: 7897713
+@acc[140737331807866]: 10120317
+@acc[140737331830333]: 24682929
+@acc[140737331835228]: 27707022
+@acc[140737331821710]: 1150483994
+@acc[140737331830812]: 3401349906
+@acc[140737331834189]: 167747992263
+@counter[140737331799194]: 82
+@counter[140737331805385]: 82
+@counter[140737331819762]: 83
+@counter[140737331807866]: 83
+@counter[140737331829237]: 83
+@counter[140737331817247]: 83
+@counter[140737331839332]: 83
+@counter[140737331813918]: 83
+@counter[140737331793256]: 83
+@counter[140737331844647]: 83
+@counter[140737331842803]: 83
+@counter[140737331808222]: 83
+@counter[140737331805023]: 83
+@counter[140737331813437]: 83
+@counter[140737331823794]: 83
+@counter[140737331808518]: 83
+@counter[140737331835228]: 83
+@counter[140737331825436]: 83
+@counter[140737331820495]: 3362
+@counter[140737331830333]: 3403
+@counter[140737331839269]: 3403
+@counter[140737331830812]: 194773
+@counter[140737331821710]: 197234
+@counter[140737331834189]: 1706163
+@decoded[140737331839332]: 1
+@decoded[140737331819762]: 1
+@decoded[140737331813437]: 1
+@decoded[140737331813918]: 1
+@decoded[140737331835228]: 1
+@decoded[140737331823794]: 1
+@decoded[140737331793256]: 1
+@decoded[140737331830812]: 1
+@decoded[140737331805385]: 1
+@decoded[140737331830333]: 1
+@decoded[140737331834189]: 1
+@decoded[140737331805023]: 1
+@decoded[140737331808222]: 1
+@decoded[140737331842803]: 1
+@decoded[140737331825436]: 1
+@decoded[140737331799194]: 1
+@decoded[140737331821710]: 1
+@decoded[140737331808518]: 1
+@decoded[140737331844647]: 1
+@decoded[140737331839269]: 1
+@decoded[140737331820495]: 1
+@decoded[140737331817247]: 1
+@decoded[140737331829237]: 1
+@decoded[140737331807866]: 1
+@processedgeslen: 
+[1]                 1775 |                                                    |
+[2, 4)             11393 |                                                    |
+[4, 8)             10407 |                                                    |
+[8, 16)            17442 |@                                                   |
+[16, 32)           27212 |@@                                                  |
+[32, 64)           48680 |@@@                                                 |
+[64, 128)          83602 |@@@@@@                                              |
+[128, 256)         41968 |@@@                                                 |
+[256, 512)         44268 |@@@                                                 |
+[512, 1K)         234465 |@@@@@@@@@@@@@@@@@@                                  |
+[1K, 2K)          178446 |@@@@@@@@@@@@@                                       |
+[2K, 4K)          338580 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
+[4K, 8K)          667843 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8K, 16K)             83 |                                                    |
+
+@processedgestime: 168201056859
+@startprocessedges: 601146511875175
+@startwork[845253]: 601147745317648
+@stats_enabled: 1
+@type_names[140737331793256]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
+@type_names[140737331799194]: mmtk::scheduler::gc_work::ReleaseCollector
+@type_names[140737331805023]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
+@type_names[140737331805385]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
+@type_names[140737331807866]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
+@type_names[140737331808222]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
+@type_names[140737331808518]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
+@type_names[140737331813437]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
+@type_names[140737331813918]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
+@type_names[140737331817247]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
+@type_names[140737331819762]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
+@type_names[140737331820495]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331821710]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
+@type_names[140737331823794]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
+@type_names[140737331825436]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
+@type_names[140737331829237]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
+@type_names[140737331830333]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
+@type_names[140737331830812]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
+@type_names[140737331834189]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
+@type_names[140737331835228]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
+@type_names[140737331839269]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
+@type_names[140737331839332]: mmtk::scheduler::gc_work::PrepareCollector
+@type_names[140737331842803]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
+@type_names[140737331844647]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
+@worktime[140737331805385]: 
+[64, 128)             79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             2 |@                                                   |
+[256, 512)             1 |                                                    |
+
+@worktime[140737331799194]: 
+[0]                   82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331839332]: 
+[0]                   79 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    4 |@@                                                  |
+
+@worktime[140737331829237]: 
+[8, 16)                1 |                                                    |
+[16, 32)               2 |@                                                   |
+[32, 64)              80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331842803]: 
+[32, 64)              83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331819762]: 
+[4, 8)                83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331808222]: 
+[64, 128)             82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331823794]: 
+[0]                   80 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    3 |@                                                   |
+
+@worktime[140737331807866]: 
+[64, 128)             82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[128, 256)             1 |                                                    |
+
+@worktime[140737331793256]: 
+[1]                   82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 1 |                                                    |
+
+@worktime[140737331808518]: 
+[0]                   76 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                    7 |@@@@                                                |
+
+@worktime[140737331805023]: 
+[1]                   83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331835228]: 
+[128, 256)             9 |@@@@@@                                              |
+[256, 512)            69 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[512, 1K)              5 |@@@                                                 |
+
+@worktime[140737331813437]: 
+[32, 64)              83 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331844647]: 
+[0]                   15 |@@@@@@@@@@@                                         |
+[1]                   68 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331817247]: 
+[1]                   74 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[2, 4)                 9 |@@@@@@                                              |
+
+@worktime[140737331813918]: 
+[1]                   40 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
+[2, 4)                42 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[4, 8)                 1 |@                                                   |
+
+@worktime[140737331825436]: 
+[4, 8)                 1 |                                                    |
+[8, 16)               82 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+@worktime[140737331820495]: 
+[0]                 3276 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   86 |@                                                   |
+
+@worktime[140737331830333]: 
+[1]                  420 |@@@@@@@@@@@@@@@@                                    |
+[2, 4)              1287 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  |
+[4, 8)              1331 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              114 |@@@@                                                |
+[16, 32)             168 |@@@@@@                                              |
+[32, 64)               0 |                                                    |
+[64, 128)             83 |@@@                                                 |
+
+@worktime[140737331839269]: 
+[0]                 3350 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[1]                   53 |                                                    |
+
+@worktime[140737331830812]: 
+[0]                    3 |                                                    |
+[1]                    5 |                                                    |
+[2, 4)                 7 |                                                    |
+[4, 8)                10 |                                                    |
+[8, 16)               48 |                                                    |
+[16, 32)          194520 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[32, 64)             160 |                                                    |
+[64, 128)              7 |                                                    |
+[128, 256)            11 |                                                    |
+[256, 512)             1 |                                                    |
+[512, 1K)              1 |                                                    |
+
+@worktime[140737331821710]: 
+[4, 8)            196700 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[8, 16)              452 |                                                    |
+[16, 32)              82 |                                                    |
+
+@worktime[140737331834189]: 
+[0]                12310 |@                                                   |
+[1]                59968 |@@@@@@@                                             |
+[2, 4)             95169 |@@@@@@@@@@@                                         |
+[4, 8)            164946 |@@@@@@@@@@@@@@@@@@@@                                |
+[8, 16)            37162 |@@@@                                                |
+[16, 32)           92171 |@@@@@@@@@@@                                         |
+[32, 64)          345709 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          |
+[64, 128)         379315 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
+[128, 256)        418867 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[256, 512)         98671 |@@@@@@@@@@@@                                        |
+[512, 1K)           1868 |                                                    |
+[1K, 2K)               7 |                                                    |
+
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2
+running-ng v0.3.5
+Mon Oct 24 03:32:40 AM UTC 2022
+
+ 03:32:40 up 7 days, 0 min,  1 user,  load average: 16.56, 13.08, 9.87
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(796505).%0  Sun10   16:35m  3.62s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 41534596 964928 22661812    0    0     1    28    1    2 25  0 74  0  0
+ 0  0      0 41535352 964928 22661812    0    0     0     0  186  133  0  0 100  0  0
+
+top - 03:32:41 up 7 days, 0 min,  1 user,  load average: 16.56, 13.08, 9.87
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  40560.9 free,    583.6 used,  23073.0 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  62899.6 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165844  11164   8064 S   0.0   0.0   0:03.79 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.32 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39564 22
+	SSH_CONNECTION=10.0.0.2 39564 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,796505,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=225
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-50-generic #56-Ubuntu SMP Tue Sep 20 13:23:26 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.37 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.36 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.38 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.40 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.36 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.37 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.36 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.37 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.37 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.38 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.38 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.39 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.38 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.37 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.37 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.38 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.37 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.39 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.39 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.39 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.39 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.39 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.39 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
