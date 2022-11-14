@@ -1,183 +1,0 @@
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=GenImmix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms240M -Xmx240M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default cassandra
-running-ng v0.3.3
-Wed Oct 12 08:59:25 PM UTC 2022
-
- 20:59:25 up  9:16,  1 user,  load average: 1.77, 1.30, 1.11
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/1    tmux(6780).%0    13:24    7:19m  5.85s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 128997880 339596 2051532    0    0     8    41   74   62  5  1 94  0  0
- 0  0      0 128999664 339596 2051528    0    0     0     0  152  105  0  0 100  0  0
-
-top - 20:59:27 up  9:16,  1 user,  load average: 1.63, 1.28, 1.10
-Tasks: 231 total,   1 running, 230 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total, 125976.2 free,    372.7 used,   2335.1 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127066.2 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11172   8076 S   0.0   0.0   0:01.51 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60488 22
-	SSH_CONNECTION=10.0.0.2 60488 10.0.0.68 22
-	SSH_TTY=/dev/pts/0
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,6780,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=6
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Cassandra starting...
-YCSB starting...
-===== DaCapo evaluation-git-f480064 cassandra starting warmup 1 =====
-Loading database... 
-    YCSB Client 0.17.0
-    workload: site.ycsb.workloads.CoreWorkload
-    records: 10000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-Running transactions... 
-    operations: 200000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-===== DaCapo evaluation-git-f480064 cassandra completed warmup 1 in 17141 msec =====
-===== DaCapo simple tail latency: 50% 406 usec, 90% 506 usec, 99% 4070 usec, 99.9% 15361 usec, 99.99% 65473 usec, max 133226 usec, measured over 200000 events =====
-===== DaCapo metered tail latency: 50% 161929 usec, 90% 287580 usec, 99% 306183 usec, 99.9% 317071 usec, 99.99% 318489 usec, max 321773 usec, measured over 200000 events =====
-===== DaCapo evaluation-git-f480064 cassandra starting warmup 2 =====
-Loading database... 
-    YCSB Client 0.17.0
-    workload: site.ycsb.workloads.CoreWorkload
-    records: 10000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-Running transactions... 
-    operations: 200000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-===== DaCapo evaluation-git-f480064 cassandra completed warmup 2 in 12204 msec =====
-===== DaCapo simple tail latency: 50% 406 usec, 90% 499 usec, 99% 758 usec, 99.9% 13998 usec, 99.99% 68746 usec, max 76711 usec, measured over 200000 events =====
-===== DaCapo metered tail latency: 50% 414 usec, 90% 3370 usec, 99% 23226 usec, 99.9% 29307 usec, 99.99% 68746 usec, max 76711 usec, measured over 200000 events =====
-===== DaCapo evaluation-git-f480064 cassandra starting warmup 3 =====
-Loading database... 
-    YCSB Client 0.17.0
-    workload: site.ycsb.workloads.CoreWorkload
-    records: 10000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-Running transactions... 
-    operations: 200000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-===== DaCapo evaluation-git-f480064 cassandra completed warmup 3 in 11876 msec =====
-===== DaCapo simple tail latency: 50% 406 usec, 90% 499 usec, 99% 790 usec, 99.9% 13534 usec, 99.99% 68449 usec, max 72488 usec, measured over 200000 events =====
-===== DaCapo metered tail latency: 50% 418 usec, 90% 5406 usec, 99% 22785 usec, 99.9% 34268 usec, 99.99% 68449 usec, max 72488 usec, measured over 200000 events =====
-===== DaCapo evaluation-git-f480064 cassandra starting warmup 4 =====
-Loading database... 
-    YCSB Client 0.17.0
-    workload: site.ycsb.workloads.CoreWorkload
-    records: 10000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-Running transactions... 
-    operations: 200000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-===== DaCapo evaluation-git-f480064 cassandra completed warmup 4 in 12118 msec =====
-===== DaCapo simple tail latency: 50% 406 usec, 90% 501 usec, 99% 6930 usec, 99.9% 15195 usec, 99.99% 73549 usec, max 77361 usec, measured over 200000 events =====
-===== DaCapo metered tail latency: 50% 473 usec, 90% 63754 usec, 99% 98248 usec, 99.9% 105149 usec, 99.99% 106769 usec, max 107079 usec, measured over 200000 events =====
-===== DaCapo evaluation-git-f480064 cassandra starting =====
-Loading database... 
-    YCSB Client 0.17.0
-    workload: site.ycsb.workloads.CoreWorkload
-    records: 10000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-Running transactions... 
-    operations: 200000
-    5%    10%    15%    20%    25%    30%    35%    40%    45%    50%    55%    60%    65%    70%    75%    80%    85%    90%    95%    100%
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	majorGC	total-work.time.total	total-work.time.max	total-work.time.min	total-work.count	
-121	10097.85	1947.24	12	0.000	-inf	inf	0	
-Total time: 12045.09 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-f480064 cassandra PASSED in 12045 msec =====
-===== DaCapo simple tail latency: 50% 405 usec, 90% 498 usec, 99% 732 usec, 99.9% 15533 usec, 99.99% 73191 usec, max 74687 usec, measured over 200000 events =====
-===== DaCapo metered tail latency: 50% 458 usec, 90% 43570 usec, 99% 79056 usec, 99.9% 87692 usec, 99.99% 89236 usec, max 89723 usec, measured over 200000 events =====
