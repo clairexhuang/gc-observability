@@ -1,0 +1,29 @@
+uretprobe:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    //begin collecting data at harness_begin (start of final iteration)
+    @stats_enabled = 1;
+}
+
+uretprobe:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    //begin collecting data at harness_end (end of final iteration)
+    @stats_enabled = 0;
+}
+
+// start timer for process edges work bucket
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesstart {
+    if (!@stats_enabled) {
+        return;
+    }
+    @startprocessedges = nsecs;
+}
+
+// store time for process edges work bucket
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesend {
+    if (!@stats_enabled) {
+        return;
+    }
+    $start = @startprocessedges;
+    if ($start) {
+        @processedgessum = sum(nsecs - $start);
+    }
+}
+
