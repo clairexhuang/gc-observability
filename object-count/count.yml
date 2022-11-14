@@ -1,0 +1,86 @@
+# running runbms /home/claireh/ebpf/object-count /home/claireh/ebpf/object-count/count.yml -p "object-count" -i 3
+includes:
+   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
+
+suites:
+  dacapo-6e411f33:
+    type: DaCapo
+    release: evaluation
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    timing_iteration: 5
+    timeout: 1200
+    callback: "probe.DacapoChopinCallback"
+    invocations: 5
+
+overrides:
+  "modifiers.c2.excludes.dacapo-6e411f33": 
+    - tradebeans
+    - tradesoap
+
+benchmarks:
+  dacapo-6e411f33:
+    - avrora 
+    - batik 
+    - biojava 
+    - cassandra 
+    - eclipse 
+    - fop 
+    - graphchi 
+    - h2 
+    - h2o 
+    - jme 
+    - jython 
+    - kafka 
+    - luindex 
+    - lusearch 
+    - pmd 
+    - spring 
+    - sunflow 
+    - tomcat 
+    # - tradebeans 
+    # - tradesoap 
+    - xalan 
+    - zxing
+
+runtimes:
+# no defrag, no finalisation, counters for edges and objects
+  probed:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/obj/images/jdk"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  gc_threads:
+    type: EnvVar
+    var: MMTK_THREADS
+    val: '{0}'
+  bpftrace:
+    type: Companion
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/object-count/counter.bt'"
+  no_add_rand:
+    type: Wrapper
+    val: "setarch x86_64 -R"
+  # set stress interval (bytes)
+  stress:
+    type: EnvVar
+    var: MMTK_STRESS_FACTOR
+    val: "{0}"
+  # sufficiently large heap so that GC is never triggered by a full heap
+  large_heap:
+    type: JVMArg
+    val: "-Xms10G -Xmx10G"
+
+configs:
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|bpftrace|no_add_rand|stress-33554432|large_heap"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|bpftrace|no_add_rand|stress-33554432|large_heap"
+  
+

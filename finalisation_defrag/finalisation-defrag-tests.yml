@@ -1,0 +1,97 @@
+# running runbms /home/claireh/ebpf/finalisation /home/claireh/ebpf/finalisation/finalisation.yml -p "unexp-no-finalisation-no-defrag"
+includes:
+   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
+
+suites:
+  dacapo-6e411f33:
+    type: DaCapo
+    release: evaluation
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    timing_iteration: 3
+    timeout: 2400
+    callback: "probe.DacapoChopinCallback"
+    invocations: 5
+    # minheap: Immix
+    # minheap_values:
+    #   Immix:
+    #     avrora: 8 #manual
+    #     batik: 462
+    #     biojava: 195
+    #     cassandra: 105
+    #     eclipse: 526
+    #     fop: 27 #manual
+    #     graphchi: 175
+    #     h2: 1732
+    #     h2o: 79
+    #     jme: 236
+    #     jython: 58
+    #     kafka: 259
+    #     luindex: 27
+    #     lusearch: 26
+    #     pmd: 188
+    #     spring: 143
+    #     sunflow: 28
+    #     tomcat: 61 #manual
+    #     #tradebeans: .inf
+    #     #tradesoap: .inf
+    #     xalan: 12
+    #     zxing: 430
+
+benchmarks:
+  dacapo-6e411f33:
+    - avrora 
+    - batik 
+    - biojava 
+    - cassandra 
+    - eclipse 
+    - fop 
+    - graphchi 
+    - h2 
+    - h2o 
+    - jme 
+    - jython 
+    - kafka 
+    - luindex 
+    - lusearch 
+    - pmd 
+    - spring 
+    - sunflow 
+    - tomcat 
+    # - tradebeans 
+    # - tradesoap 
+    - xalan 
+    - zxing
+
+runtimes:
+  nodefrag:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/nodefrag/images/jdk"
+  normal:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/normal"
+  nofin:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/nofin/images/jdk"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  stress:
+    type: EnvVar
+    var: MMTK_STRESS_FACTOR
+    val: "{0}"
+  large_heap:
+    type: JVMArg
+    val: "-Xms10G -Xmx10G"
+
+configs:
+  - "normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|stress-33554432|large_heap"
+  - "nodefrag|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|stress-33554432|large_heap"
+  - "nofin|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|stress-33554432|large_heap"

@@ -61,6 +61,8 @@ benchmarks:
     # - tradesoap 
     - xalan 
     - zxing
+    - h2 
+    - kafka 
 
 runtimes:
   probed:
