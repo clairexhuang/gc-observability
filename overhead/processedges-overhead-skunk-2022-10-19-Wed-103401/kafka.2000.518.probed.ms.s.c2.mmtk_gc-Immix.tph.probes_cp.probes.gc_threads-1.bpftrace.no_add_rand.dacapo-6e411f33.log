@@ -1,3519 +1,0 @@
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 01:51:09 PM UTC 2022
-
- 13:51:09 up 7 days,  2:07,  1 user,  load average: 1.33, 1.26, 1.12
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:17m  2.27s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99556392 952660 30819568    0    0     3    25    2    1  5  0 95  0  0
- 0  0      0 99555968 952660 30819588    0    0     0     0  143   84  0  0 100  0  0
-
-top - 13:51:10 up 7 days,  2:07,  1 user,  load average: 1.33, 1.26, 1.12
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97222.1 free,    434.3 used,  31027.6 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 126996.6 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.54 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.56 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.57 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 2.31 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19688 msec =====
-===== DaCapo simple tail latency: 50% -15705011 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 6 usec, max 731440 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14598004 usec, 90% 643563 usec, 99% 1608911 usec, 99.9% 1748221 usec, 99.99% 1787563 usec, max 1833399 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6083 msec =====
-===== DaCapo simple tail latency: 50% -2589499 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 54412 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2589499 usec, 90% 1 usec, 99% 44964 usec, 99.9% 74673 usec, 99.99% 88605 usec, max 88999 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5110 msec =====
-===== DaCapo simple tail latency: 50% -2030605 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 109652 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2020903 usec, 90% 1 usec, 99% 50179 usec, 99.9% 84261 usec, 99.99% 101941 usec, max 109652 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1840233 usec, 90% 0 usec, 99% 3 usec, 99.9% 5 usec, 99.99% 9 usec, max 20381 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1840233 usec, 90% 1 usec, 99% 37109 usec, 99.9% 76647 usec, 99.99% 96227 usec, max 101301 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.count	total-work.time.min	total-work.time.max	total-work.time.total	
-10	4450.22	553.72	0	inf	-inf	0.000	
-Total time: 5003.94 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1869218 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 74636 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1869218 usec, 90% 0 usec, 99% 35696 usec, 99.9% 59179 usec, 99.99% 65693 usec, max 74636 usec, measured over 1000000 events =====
-...Agent has completed.
-...Coordinator has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331833879]: 12235
-@acc[140737331808583]: 12243
-@acc[140737331838477]: 13552
-@acc[140737331810965]: 14836
-@acc[140737331806925]: 16379
-@acc[140737331810793]: 19619
-@acc[140737331839766]: 20838
-@acc[140737331808108]: 22531
-@acc[140737331814681]: 25632
-@acc[140737331841360]: 46720
-@acc[140737331834302]: 87402
-@acc[140737331807155]: 196339
-@acc[140737331802212]: 366260
-@acc[140737331812817]: 513812
-@acc[140737331823757]: 1310829
-@acc[140737331848097]: 1496167
-@acc[140737331811202]: 1626520
-@acc[140737331839215]: 2337035
-@acc[140737331839693]: 3804715
-@acc[140737331844181]: 4749264
-@acc[140737331842941]: 5115467
-@acc[140737331828049]: 20978440
-@acc[140737331831346]: 28036206
-@acc[140737331842687]: 431443656
-@counter[140737331802212]: 10
-@counter[140737331839215]: 10
-@counter[140737331806925]: 10
-@counter[140737331808583]: 10
-@counter[140737331834302]: 10
-@counter[140737331833879]: 10
-@counter[140737331810965]: 10
-@counter[140737331810793]: 10
-@counter[140737331823757]: 10
-@counter[140737331844181]: 10
-@counter[140737331807155]: 10
-@counter[140737331838477]: 10
-@counter[140737331808108]: 10
-@counter[140737331839766]: 10
-@counter[140737331812817]: 10
-@counter[140737331841360]: 10
-@counter[140737331842941]: 10
-@counter[140737331814681]: 10
-@counter[140737331839693]: 820
-@counter[140737331828049]: 820
-@counter[140737331811202]: 1410
-@counter[140737331848097]: 1410
-@counter[140737331831346]: 1410
-@counter[140737331842687]: 31841
-@decoded[140737331823757]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331810965]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331807155]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331844181]: 1
-@processedgeslen: 
-[1]                  546 |@@@@@@                                              |
-[2, 4)              1488 |@@@@@@@@@@@@@@@@                                    |
-[4, 8)              1799 |@@@@@@@@@@@@@@@@@@@                                 |
-[8, 16)             2741 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
-[16, 32)            4442 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
-[32, 64)            4724 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3330 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                |
-[128, 256)          2620 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[256, 512)          2533 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
-[512, 1K)           2285 |@@@@@@@@@@@@@@@@@@@@@@@@@                           |
-[1K, 2K)            1935 |@@@@@@@@@@@@@@@@@@@@@                               |
-[2K, 4K)            1476 |@@@@@@@@@@@@@@@@                                    |
-[4K, 8K)            1912 |@@@@@@@@@@@@@@@@@@@@@                               |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 474473007
-@startprocessedges: 612553310990796
-@startwork[1065624]: 612553361929174
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    2 |@@@@@@@@@@@@@                                       |
-[2, 4)                 8 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    7 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 3 |@@@@@@@@@@@@@@@@@@@@@@                              |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               10 |                                                    |
-[16, 32)             810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331811202]: 
-[1]                 1408 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   41 |@@@                                                 |
-[2, 4)               666 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               191 |@@@@@@@@@@@@@@                                      |
-[8, 16)               47 |@@@                                                 |
-[16, 32)             170 |@@@@@@@@@@@@@                                       |
-[32, 64)             146 |@@@@@@@@@@@                                         |
-[64, 128)            140 |@@@@@@@@@@                                          |
-[128, 256)             9 |                                                    |
-
-@worktime[140737331842687]: 
-[1]                    3 |                                                    |
-[2, 4)             17621 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5153 |@@@@@@@@@@@@@@@                                     |
-[8, 16)             3117 |@@@@@@@@@                                           |
-[16, 32)            2538 |@@@@@@@                                             |
-[32, 64)            1916 |@@@@@                                               |
-[64, 128)           1197 |@@@                                                 |
-[128, 256)           250 |                                                    |
-[256, 512)            36 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 01:57:24 PM UTC 2022
-
- 13:57:24 up 7 days,  2:14,  1 user,  load average: 1.08, 1.34, 1.21
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:23m  2.37s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99584616 956776 30819864    0    0     3    26    2    1  5  0 95  0  0
- 0  0      0 99584680 956776 30819868    0    0     0     0  205   66  0  0 100  0  0
-
-top - 13:57:25 up 7 days,  2:14,  1 user,  load average: 1.08, 1.34, 1.21
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97249.9 free,    402.2 used,  31031.9 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127028.6 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.55 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.54 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.53 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.54 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18719 msec =====
-===== DaCapo simple tail latency: 50% -14605519 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 371984 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14018012 usec, 90% 292379 usec, 99% 891009 usec, 99.9% 1001170 usec, 99.99% 1081379 usec, max 1084974 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6093 msec =====
-===== DaCapo simple tail latency: 50% -2623933 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 152604 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2623933 usec, 90% 0 usec, 99% 24855 usec, 99.9% 64606 usec, 99.99% 80156 usec, max 152604 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6034 msec =====
-===== DaCapo simple tail latency: 50% -2152825 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 271297 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2030908 usec, 90% 60550 usec, 99% 131396 usec, 99.9% 177815 usec, 99.99% 198820 usec, max 271297 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5006 msec =====
-===== DaCapo simple tail latency: 50% -1832684 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 73281 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1832684 usec, 90% 1 usec, 99% 51669 usec, 99.9% 75277 usec, 99.99% 84014 usec, max 84408 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.min	total-work.time.max	total-work.count	total-work.time.total	
-10	4465.65	538.33	inf	-inf	0	0.000	
-Total time: 5003.98 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1847512 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 73093 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1847512 usec, 90% 0 usec, 99% 43505 usec, 99.9% 87772 usec, 99.99% 103568 usec, max 107926 usec, measured over 1000000 events =====
-...Agent has completed.
-...Coordinator has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331808583]: 12307
-@acc[140737331833879]: 12436
-@acc[140737331838477]: 13579
-@acc[140737331810965]: 14354
-@acc[140737331806925]: 16666
-@acc[140737331810793]: 19423
-@acc[140737331839766]: 19777
-@acc[140737331808108]: 23380
-@acc[140737331814681]: 24880
-@acc[140737331841360]: 47724
-@acc[140737331834302]: 87753
-@acc[140737331807155]: 193852
-@acc[140737331802212]: 369468
-@acc[140737331812817]: 446059
-@acc[140737331823757]: 1296131
-@acc[140737331848097]: 1506858
-@acc[140737331811202]: 1630150
-@acc[140737331839215]: 2381628
-@acc[140737331839693]: 3810651
-@acc[140737331844181]: 4692447
-@acc[140737331842941]: 4964860
-@acc[140737331828049]: 21041914
-@acc[140737331831346]: 28142301
-@acc[140737331842687]: 415353677
-@counter[140737331834302]: 10
-@counter[140737331833879]: 10
-@counter[140737331842941]: 10
-@counter[140737331810965]: 10
-@counter[140737331841360]: 10
-@counter[140737331808108]: 10
-@counter[140737331808583]: 10
-@counter[140737331812817]: 10
-@counter[140737331839766]: 10
-@counter[140737331838477]: 10
-@counter[140737331839215]: 10
-@counter[140737331844181]: 10
-@counter[140737331814681]: 10
-@counter[140737331806925]: 10
-@counter[140737331810793]: 10
-@counter[140737331802212]: 10
-@counter[140737331807155]: 10
-@counter[140737331823757]: 10
-@counter[140737331828049]: 820
-@counter[140737331839693]: 820
-@counter[140737331831346]: 1410
-@counter[140737331848097]: 1410
-@counter[140737331811202]: 1410
-@counter[140737331842687]: 31906
-@decoded[140737331839693]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331807155]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331810965]: 1
-@processedgeslen: 
-[1]                  597 |@@@@@@                                              |
-[2, 4)              1512 |@@@@@@@@@@@@@@@@                                    |
-[4, 8)              1883 |@@@@@@@@@@@@@@@@@@@@                                |
-[8, 16)             2601 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[16, 32)            4259 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
-[32, 64)            4824 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3256 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 |
-[128, 256)          2619 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[256, 512)          2741 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
-[512, 1K)           2348 |@@@@@@@@@@@@@@@@@@@@@@@@@                           |
-[1K, 2K)            1934 |@@@@@@@@@@@@@@@@@@@@                                |
-[2K, 4K)            1402 |@@@@@@@@@@@@@@@                                     |
-[4K, 8K)            1920 |@@@@@@@@@@@@@@@@@@@@                                |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 458665798
-@startprocessedges: 612928494194986
-@startwork[1066858]: 612928542249946
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    8 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |@@@@@@@@@@@@@                                       |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               13 |                                                    |
-[16, 32)             806 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[32, 64)               1 |                                                    |
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331811202]: 
-[1]                 1408 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   44 |@@@                                                 |
-[2, 4)               645 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               202 |@@@@@@@@@@@@@@@@                                    |
-[8, 16)               57 |@@@@                                                |
-[16, 32)             170 |@@@@@@@@@@@@@                                       |
-[32, 64)             144 |@@@@@@@@@@@                                         |
-[64, 128)            128 |@@@@@@@@@@                                          |
-[128, 256)            20 |@                                                   |
-
-@worktime[140737331842687]: 
-[2, 4)             17699 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5214 |@@@@@@@@@@@@@@@                                     |
-[8, 16)             3227 |@@@@@@@@@                                           |
-[16, 32)            2587 |@@@@@@@                                             |
-[32, 64)            1825 |@@@@@                                               |
-[64, 128)           1080 |@@@                                                 |
-[128, 256)           231 |                                                    |
-[256, 512)            33 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:03:43 PM UTC 2022
-
- 14:03:43 up 7 days,  2:20,  1 user,  load average: 1.40, 1.37, 1.26
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:29m  2.46s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99578240 960332 30820032    0    0     3    27    2    2  5  0 95  0  0
- 0  0      0 99578240 960332 30820032    0    0     0     0  168   73  0  0 100  0  0
-
-top - 14:03:44 up 7 days,  2:20,  1 user,  load average: 1.40, 1.37, 1.26
-Tasks: 237 total,   1 running, 236 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97243.9 free,    404.6 used,  31035.5 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127026.3 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.48 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.58 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 2.44 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.48 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 2.40 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19678 msec =====
-===== DaCapo simple tail latency: 50% -15587659 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 6 usec, max 723559 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14530417 usec, 90% 628132 usec, 99% 1549503 usec, 99.9% 1655037 usec, 99.99% 1760721 usec, max 1799594 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6092 msec =====
-===== DaCapo simple tail latency: 50% -2605479 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 55168 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2587289 usec, 90% 3 usec, 99% 57918 usec, 99.9% 95359 usec, 99.99% 107258 usec, max 110152 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6004 msec =====
-===== DaCapo simple tail latency: 50% -2040681 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 192061 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1981349 usec, 90% 24926 usec, 99% 78230 usec, 99.9% 137652 usec, 99.99% 157581 usec, max 192061 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5005 msec =====
-===== DaCapo simple tail latency: 50% -1848552 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 76618 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1848552 usec, 90% 0 usec, 99% 38259 usec, 99.9% 67076 usec, 99.99% 79042 usec, max 83221 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.min	total-work.count	total-work.time.max	total-work.time.total	
-10	4516.21	487.67	inf	0	-inf	0.000	
-Total time: 5003.89 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1968950 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 70920 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1952899 usec, 90% 0 usec, 99% 47637 usec, 99.9% 75527 usec, 99.99% 93684 usec, max 99942 usec, measured over 1000000 events =====
-...Agent has completed.
-...Coordinator has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331808583]: 12104
-@acc[140737331833879]: 12112
-@acc[140737331838477]: 13324
-@acc[140737331810965]: 14660
-@acc[140737331806925]: 16400
-@acc[140737331839766]: 20821
-@acc[140737331810793]: 21313
-@acc[140737331808108]: 23225
-@acc[140737331814681]: 26014
-@acc[140737331841360]: 47056
-@acc[140737331834302]: 93640
-@acc[140737331807155]: 195112
-@acc[140737331802212]: 373527
-@acc[140737331812817]: 505775
-@acc[140737331823757]: 1301659
-@acc[140737331848097]: 1511694
-@acc[140737331811202]: 1620102
-@acc[140737331839215]: 2354820
-@acc[140737331839693]: 3862482
-@acc[140737331844181]: 4858797
-@acc[140737331842941]: 5006307
-@acc[140737331828049]: 22121258
-@acc[140737331831346]: 28625636
-@acc[140737331842687]: 362640167
-@counter[140737331823757]: 10
-@counter[140737331808583]: 10
-@counter[140737331834302]: 10
-@counter[140737331844181]: 10
-@counter[140737331838477]: 10
-@counter[140737331839215]: 10
-@counter[140737331802212]: 10
-@counter[140737331833879]: 10
-@counter[140737331839766]: 10
-@counter[140737331810793]: 10
-@counter[140737331807155]: 10
-@counter[140737331814681]: 10
-@counter[140737331842941]: 10
-@counter[140737331808108]: 10
-@counter[140737331806925]: 10
-@counter[140737331812817]: 10
-@counter[140737331841360]: 10
-@counter[140737331810965]: 10
-@counter[140737331828049]: 820
-@counter[140737331839693]: 820
-@counter[140737331831346]: 1410
-@counter[140737331811202]: 1410
-@counter[140737331848097]: 1410
-@counter[140737331842687]: 32377
-@decoded[140737331810793]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331810965]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331807155]: 1
-@processedgeslen: 
-[1]                  503 |@@@@@                                               |
-[2, 4)              1551 |@@@@@@@@@@@@@@@@                                    |
-[4, 8)              1984 |@@@@@@@@@@@@@@@@@@@@                                |
-[8, 16)             2462 |@@@@@@@@@@@@@@@@@@@@@@@@@                           |
-[16, 32)            4528 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
-[32, 64)            4990 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3365 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 |
-[128, 256)          2788 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
-[256, 512)          2685 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
-[512, 1K)           2249 |@@@@@@@@@@@@@@@@@@@@@@@                             |
-[1K, 2K)            1925 |@@@@@@@@@@@@@@@@@@@@                                |
-[2K, 4K)            1440 |@@@@@@@@@@@@@@@                                     |
-[4K, 8K)            1897 |@@@@@@@@@@@@@@@@@@@                                 |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 406126125
-@startprocessedges: 613308526483291
-@startwork[1068093]: 613308569828788
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-[2, 4)                 6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    2 |@@@@@@@@@@@@@                                       |
-[2, 4)                 8 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[64, 128)              1 |@@@@@                                               |
-[128, 256)             9 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[4, 8)                 2 |                                                    |
-[8, 16)               17 |@                                                   |
-[16, 32)             801 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331811202]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   46 |@@@                                                 |
-[2, 4)               641 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               207 |@@@@@@@@@@@@@@@@                                    |
-[8, 16)               48 |@@@                                                 |
-[16, 32)             173 |@@@@@@@@@@@@@@                                      |
-[32, 64)             148 |@@@@@@@@@@@@                                        |
-[64, 128)            129 |@@@@@@@@@@                                          |
-[128, 256)            18 |@                                                   |
-
-@worktime[140737331842687]: 
-[2, 4)             18792 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5159 |@@@@@@@@@@@@@@                                      |
-[8, 16)             3176 |@@@@@@@@                                            |
-[16, 32)            2572 |@@@@@@@                                             |
-[32, 64)            1827 |@@@@@                                               |
-[64, 128)            692 |@                                                   |
-[128, 256)           131 |                                                    |
-[256, 512)            18 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:09:57 PM UTC 2022
-
- 14:09:57 up 7 days,  2:26,  1 user,  load average: 1.61, 1.54, 1.36
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:35m  2.55s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99569080 963728 30819932    0    0     3    28    3    2  5  0 95  0  0
- 0  0      0 99568336 963728 30819932    0    0     0     0  235   61  0  0 100  0  0
-
-top - 14:09:58 up 7 days,  2:26,  1 user,  load average: 1.61, 1.54, 1.36
-Tasks: 237 total,   1 running, 236 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97234.5 free,    410.8 used,  31038.7 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127020.0 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.54 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.49 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.54 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.42 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19778 msec =====
-===== DaCapo simple tail latency: 50% -15848474 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 5 usec, max 733085 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14787499 usec, 90% 556408 usec, 99% 1522778 usec, 99.9% 1742798 usec, 99.99% 1779648 usec, max 1828084 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6081 msec =====
-===== DaCapo simple tail latency: 50% -2984968 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 9 usec, max 385301 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2883796 usec, 90% 1 usec, 99% 123758 usec, 99.9% 185614 usec, 99.99% 204748 usec, max 385301 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5005 msec =====
-===== DaCapo simple tail latency: 50% -1896789 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 67051 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1896789 usec, 90% 0 usec, 99% 39091 usec, 99.9% 66513 usec, 99.99% 82626 usec, max 83034 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1749955 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 69739 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1749955 usec, 90% 0 usec, 99% 35305 usec, 99.9% 56640 usec, 99.99% 64457 usec, max 69739 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.count	total-work.time.max	total-work.time.min	total-work.time.total	
-10	4489.59	514.08	0	-inf	inf	0.000	
-Total time: 5003.66 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1881471 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 69403 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1881471 usec, 90% 0 usec, 99% 40757 usec, 99.9% 69337 usec, 99.99% 82268 usec, max 82624 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331808583]: 12048
-@acc[140737331833879]: 12348
-@acc[140737331838477]: 13502
-@acc[140737331810965]: 14981
-@acc[140737331806925]: 17123
-@acc[140737331839766]: 19285
-@acc[140737331810793]: 19300
-@acc[140737331808108]: 21779
-@acc[140737331814681]: 23557
-@acc[140737331841360]: 48391
-@acc[140737331834302]: 88558
-@acc[140737331807155]: 197832
-@acc[140737331802212]: 362158
-@acc[140737331812817]: 408418
-@acc[140737331823757]: 1312411
-@acc[140737331848097]: 1521349
-@acc[140737331811202]: 1642803
-@acc[140737331839215]: 2404134
-@acc[140737331839693]: 3895113
-@acc[140737331844181]: 4578223
-@acc[140737331842941]: 5205671
-@acc[140737331828049]: 21614259
-@acc[140737331831346]: 28390174
-@acc[140737331842687]: 389031409
-@counter[140737331812817]: 10
-@counter[140737331839215]: 10
-@counter[140737331810965]: 10
-@counter[140737331839766]: 10
-@counter[140737331807155]: 10
-@counter[140737331838477]: 10
-@counter[140737331833879]: 10
-@counter[140737331802212]: 10
-@counter[140737331808108]: 10
-@counter[140737331842941]: 10
-@counter[140737331810793]: 10
-@counter[140737331806925]: 10
-@counter[140737331834302]: 10
-@counter[140737331844181]: 10
-@counter[140737331841360]: 10
-@counter[140737331823757]: 10
-@counter[140737331808583]: 10
-@counter[140737331814681]: 10
-@counter[140737331839693]: 820
-@counter[140737331828049]: 820
-@counter[140737331848097]: 1410
-@counter[140737331831346]: 1410
-@counter[140737331811202]: 1410
-@counter[140737331842687]: 32341
-@decoded[140737331839215]: 1
-@decoded[140737331810965]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331807155]: 1
-@processedgeslen: 
-[1]                  502 |@@@@@                                               |
-[2, 4)              1415 |@@@@@@@@@@@@@@@                                     |
-[4, 8)              1833 |@@@@@@@@@@@@@@@@@@@                                 |
-[8, 16)             3082 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   |
-[16, 32)            4462 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
-[32, 64)            4774 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3476 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               |
-[128, 256)          2647 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[256, 512)          2478 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
-[512, 1K)           2347 |@@@@@@@@@@@@@@@@@@@@@@@@@                           |
-[1K, 2K)            1927 |@@@@@@@@@@@@@@@@@@@@                                |
-[2K, 4K)            1491 |@@@@@@@@@@@@@@@@                                    |
-[4K, 8K)            1897 |@@@@@@@@@@@@@@@@@@@@                                |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 433341804
-@startprocessedges: 613681501174814
-@startwork[1069327]: 613681546273931
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    8 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |@@@@@@@@@@@@@                                       |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                    9 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 1 |@@@@@                                               |
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               11 |                                                    |
-[16, 32)             807 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[32, 64)               2 |                                                    |
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               809 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[8, 16)                0 |                                                    |
-[16, 32)               1 |                                                    |
-
-@worktime[140737331811202]: 
-[1]                 1408 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   47 |@@@                                                 |
-[2, 4)               630 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               213 |@@@@@@@@@@@@@@@@@                                   |
-[8, 16)               50 |@@@@                                                |
-[16, 32)             176 |@@@@@@@@@@@@@@                                      |
-[32, 64)             138 |@@@@@@@@@@@                                         |
-[64, 128)            149 |@@@@@@@@@@@@                                        |
-[128, 256)             7 |                                                    |
-
-@worktime[140737331842687]: 
-[2, 4)             18645 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              4881 |@@@@@@@@@@@@@                                       |
-[8, 16)             3270 |@@@@@@@@@                                           |
-[16, 32)            2625 |@@@@@@@                                             |
-[32, 64)            1745 |@@@@                                                |
-[64, 128)           1010 |@@                                                  |
-[128, 256)           126 |                                                    |
-[256, 512)            29 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:16:19 PM UTC 2022
-
- 14:16:19 up 7 days,  2:33,  1 user,  load average: 1.21, 1.41, 1.36
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:42m  2.65s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99557296 968328 30820256    0    0     3    29    3    2  5  0 95  0  0
- 0  0      0 99557440 968328 30820224    0    0     0     0  147   89  0  0 100  0  0
-
-top - 14:16:20 up 7 days,  2:33,  1 user,  load average: 1.12, 1.39, 1.35
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97223.8 free,    416.7 used,  31043.5 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127014.2 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 2.36 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.45 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19736 msec =====
-===== DaCapo simple tail latency: 50% -15779247 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 723865 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14678475 usec, 90% 636883 usec, 99% 1560750 usec, 99.9% 1666406 usec, 99.99% 1760115 usec, max 1807532 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6136 msec =====
-===== DaCapo simple tail latency: 50% -2642394 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 29607 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2642394 usec, 90% 0 usec, 99% 9774 usec, 99.9% 36345 usec, 99.99% 45195 usec, max 45394 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1953082 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 165706 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1953082 usec, 90% 1 usec, 99% 61135 usec, 99.9% 113715 usec, 99.99% 133196 usec, max 165706 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5015 msec =====
-===== DaCapo simple tail latency: 50% -1836933 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 87076 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1836933 usec, 90% 0 usec, 99% 41302 usec, 99.9% 72812 usec, 99.99% 86843 usec, max 90447 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.max	total-work.time.min	total-work.time.total	total-work.count	
-10	4440.63	563.08	-inf	inf	0.000	0	
-Total time: 5003.71 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1845003 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 73950 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1845003 usec, 90% 0 usec, 99% 42756 usec, 99.9% 71524 usec, 99.99% 82395 usec, max 82786 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331808583]: 12099
-@acc[140737331833879]: 12337
-@acc[140737331838477]: 13523
-@acc[140737331810965]: 14796
-@acc[140737331806925]: 15908
-@acc[140737331810793]: 19396
-@acc[140737331839766]: 20181
-@acc[140737331808108]: 21577
-@acc[140737331814681]: 25720
-@acc[140737331841360]: 46134
-@acc[140737331834302]: 89230
-@acc[140737331807155]: 195561
-@acc[140737331802212]: 365622
-@acc[140737331812817]: 497166
-@acc[140737331823757]: 1309437
-@acc[140737331848097]: 1503722
-@acc[140737331811202]: 1621776
-@acc[140737331839215]: 2362261
-@acc[140737331839693]: 3848386
-@acc[140737331844181]: 4730143
-@acc[140737331842941]: 5112690
-@acc[140737331828049]: 20855422
-@acc[140737331831346]: 28425723
-@acc[140737331842687]: 438543036
-@counter[140737331838477]: 10
-@counter[140737331810793]: 10
-@counter[140737331807155]: 10
-@counter[140737331839766]: 10
-@counter[140737331844181]: 10
-@counter[140737331842941]: 10
-@counter[140737331808583]: 10
-@counter[140737331802212]: 10
-@counter[140737331808108]: 10
-@counter[140737331834302]: 10
-@counter[140737331841360]: 10
-@counter[140737331810965]: 10
-@counter[140737331806925]: 10
-@counter[140737331814681]: 10
-@counter[140737331823757]: 10
-@counter[140737331812817]: 10
-@counter[140737331833879]: 10
-@counter[140737331839215]: 10
-@counter[140737331828049]: 820
-@counter[140737331839693]: 820
-@counter[140737331811202]: 1410
-@counter[140737331831346]: 1410
-@counter[140737331848097]: 1410
-@counter[140737331842687]: 32720
-@decoded[140737331812817]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331807155]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331810965]: 1
-@processedgeslen: 
-[1]                  598 |@@@@@@                                              |
-[2, 4)              1581 |@@@@@@@@@@@@@@@@                                    |
-[4, 8)              1837 |@@@@@@@@@@@@@@@@@@                                  |
-[8, 16)             2730 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
-[16, 32)            4521 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       |
-[32, 64)            5116 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3516 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 |
-[128, 256)          2688 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
-[256, 512)          2584 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
-[512, 1K)           2278 |@@@@@@@@@@@@@@@@@@@@@@@                             |
-[1K, 2K)            1877 |@@@@@@@@@@@@@@@@@@@                                 |
-[2K, 4K)            1455 |@@@@@@@@@@@@@@                                      |
-[4K, 8K)            1929 |@@@@@@@@@@@@@@@@@@@                                 |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 483127447
-@startprocessedges: 614063822445448
-@startwork[1070560]: 614063873790629
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    3 |@@@@@@@@@@@@@@@@@@@@@@                              |
-[2, 4)                 7 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    8 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |@@@@@@@@@@@@@                                       |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               11 |                                                    |
-[16, 32)             807 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[32, 64)               2 |                                                    |
-
-@worktime[140737331839693]: 
-[2, 4)                 9 |                                                    |
-[4, 8)               810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[8, 16)                1 |                                                    |
-
-@worktime[140737331811202]: 
-[1]                 1408 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   47 |@@@                                                 |
-[2, 4)               658 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               191 |@@@@@@@@@@@@@@@                                     |
-[8, 16)               47 |@@@                                                 |
-[16, 32)             172 |@@@@@@@@@@@@@                                       |
-[32, 64)             157 |@@@@@@@@@@@@                                        |
-[64, 128)            130 |@@@@@@@@@@                                          |
-[128, 256)             8 |                                                    |
-
-@worktime[140737331842687]: 
-[1]                    5 |                                                    |
-[2, 4)             18400 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5080 |@@@@@@@@@@@@@@                                      |
-[8, 16)             3386 |@@@@@@@@@                                           |
-[16, 32)            2453 |@@@@@@                                              |
-[32, 64)            1868 |@@@@@                                               |
-[64, 128)           1205 |@@@                                                 |
-[128, 256)           278 |                                                    |
-[256, 512)            35 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:22:33 PM UTC 2022
-
- 14:22:33 up 7 days,  2:39,  1 user,  load average: 1.24, 1.38, 1.36
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:48m  2.74s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99520552 974176 30820284    0    0     3    30    3    2  5  0 95  0  0
- 0  0      0 99520352 974176 30820288    0    0     0     0  178   90  0  0 100  0  0
-
-top - 14:22:34 up 7 days,  2:39,  1 user,  load average: 1.24, 1.38, 1.36
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97187.6 free,    447.2 used,  31049.2 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 126983.7 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 1.80 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.47 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.49 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 2.31 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.51 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 2.28 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.54 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 17711 msec =====
-===== DaCapo simple tail latency: 50% -14330158 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 369389 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -13651646 usec, 90% 363369 usec, 99% 928720 usec, 99.9% 1039886 usec, 99.99% 1060770 usec, max 1071082 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6101 msec =====
-===== DaCapo simple tail latency: 50% -2629920 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 9 usec, max 129981 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2629920 usec, 90% 1 usec, 99% 58659 usec, 99.9% 99413 usec, 99.99% 118075 usec, max 129981 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6006 msec =====
-===== DaCapo simple tail latency: 50% -1957541 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 184915 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1957541 usec, 90% 20139 usec, 99% 68029 usec, 99.9% 105405 usec, 99.99% 118101 usec, max 184915 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5006 msec =====
-===== DaCapo simple tail latency: 50% -1798592 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 36090 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1798592 usec, 90% 0 usec, 99% 1629 usec, 99.9% 37940 usec, 99.99% 48030 usec, max 52672 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.total	total-work.time.min	total-work.time.max	total-work.count	
-10	4493.41	510.53	0.000	inf	-inf	0	
-Total time: 5003.94 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1775266 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 66932 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1775266 usec, 90% 0 usec, 99% 42628 usec, 99.9% 66712 usec, 99.99% 84518 usec, max 89866 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331808583]: 12118
-@acc[140737331833879]: 12329
-@acc[140737331838477]: 12964
-@acc[140737331810965]: 14925
-@acc[140737331806925]: 16270
-@acc[140737331839766]: 19034
-@acc[140737331810793]: 19933
-@acc[140737331808108]: 22767
-@acc[140737331814681]: 26793
-@acc[140737331841360]: 45555
-@acc[140737331834302]: 93868
-@acc[140737331807155]: 192732
-@acc[140737331802212]: 378668
-@acc[140737331812817]: 514777
-@acc[140737331823757]: 1317823
-@acc[140737331848097]: 1521619
-@acc[140737331811202]: 1641023
-@acc[140737331839215]: 2410674
-@acc[140737331839693]: 3852158
-@acc[140737331844181]: 4854524
-@acc[140737331842941]: 5307356
-@acc[140737331828049]: 21976398
-@acc[140737331831346]: 27380876
-@acc[140737331842687]: 384798288
-@counter[140737331844181]: 10
-@counter[140737331808583]: 10
-@counter[140737331839215]: 10
-@counter[140737331807155]: 10
-@counter[140737331823757]: 10
-@counter[140737331810965]: 10
-@counter[140737331834302]: 10
-@counter[140737331833879]: 10
-@counter[140737331842941]: 10
-@counter[140737331802212]: 10
-@counter[140737331841360]: 10
-@counter[140737331812817]: 10
-@counter[140737331810793]: 10
-@counter[140737331808108]: 10
-@counter[140737331814681]: 10
-@counter[140737331839766]: 10
-@counter[140737331838477]: 10
-@counter[140737331806925]: 10
-@counter[140737331839693]: 820
-@counter[140737331828049]: 820
-@counter[140737331831346]: 1410
-@counter[140737331848097]: 1410
-@counter[140737331811202]: 1410
-@counter[140737331842687]: 33622
-@decoded[140737331807155]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331810965]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331808583]: 1
-@processedgeslen: 
-[1]                  557 |@@@@@                                               |
-[2, 4)              2546 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
-[4, 8)              1915 |@@@@@@@@@@@@@@@@@@@@                                |
-[8, 16)             3143 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   |
-[16, 32)            4505 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     |
-[32, 64)            4946 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3097 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    |
-[128, 256)          2742 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[256, 512)          2549 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
-[512, 1K)           2295 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
-[1K, 2K)            1952 |@@@@@@@@@@@@@@@@@@@@                                |
-[2K, 4K)            1435 |@@@@@@@@@@@@@@@                                     |
-[4K, 8K)            1930 |@@@@@@@@@@@@@@@@@@@@                                |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 429964705
-@startprocessedges: 614436207604649
-@startwork[1071798]: 614436253476382
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    9 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 1 |@@@@@                                               |
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    7 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 3 |@@@@@@@@@@@@@@@@@@@@@@                              |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[4, 8)                 1 |                                                    |
-[8, 16)               15 |                                                    |
-[16, 32)             804 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839693]: 
-[2, 4)                 9 |                                                    |
-[4, 8)               811 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331811202]: 
-[1]                 1407 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 3 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   44 |@@@                                                 |
-[2, 4)               661 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               190 |@@@@@@@@@@@@@@                                      |
-[8, 16)               45 |@@@                                                 |
-[16, 32)             175 |@@@@@@@@@@@@@                                       |
-[32, 64)             159 |@@@@@@@@@@@@                                        |
-[64, 128)            119 |@@@@@@@@@                                           |
-[128, 256)            17 |@                                                   |
-
-@worktime[140737331842687]: 
-[2, 4)             19870 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5198 |@@@@@@@@@@@@@                                       |
-[8, 16)             3181 |@@@@@@@@                                            |
-[16, 32)            2489 |@@@@@@                                              |
-[32, 64)            1756 |@@@@                                                |
-[64, 128)            956 |@@                                                  |
-[128, 256)           133 |                                                    |
-[256, 512)            29 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:28:41 PM UTC 2022
-
- 14:28:41 up 7 days,  2:45,  1 user,  load average: 1.41, 1.37, 1.35
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:54m  2.84s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99579760 978868 30820240    0    0     3    31    3    2  5  0 95  0  0
- 0  0      0 99579504 978868 30820244    0    0     0   460  245  108  0  0 100  0  0
-
-top - 14:28:42 up 7 days,  2:45,  1 user,  load average: 1.41, 1.37, 1.35
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.4 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97244.6 free,    385.5 used,  31053.8 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127045.3 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 2.27 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.54 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.46 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.56 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18748 msec =====
-===== DaCapo simple tail latency: 50% -15415881 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 723754 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14247726 usec, 90% 659353 usec, 99% 1635356 usec, 99.9% 1754352 usec, 99.99% 1812329 usec, max 1823148 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6089 msec =====
-===== DaCapo simple tail latency: 50% -2731301 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 77492 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2678037 usec, 90% 2 usec, 99% 56917 usec, 99.9% 94718 usec, 99.99% 104030 usec, max 104365 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5005 msec =====
-===== DaCapo simple tail latency: 50% -1905441 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 73994 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1905441 usec, 90% 0 usec, 99% 37706 usec, 99.9% 61511 usec, 99.99% 71022 usec, max 73994 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5059 msec =====
-===== DaCapo simple tail latency: 50% -1919270 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 77736 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1919270 usec, 90% 1 usec, 99% 45940 usec, 99.9% 81250 usec, 99.99% 96655 usec, max 97048 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.min	total-work.count	total-work.time.max	total-work.time.total	
-10	4465.23	538.45	inf	0	-inf	0.000	
-Total time: 5003.67 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1852994 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 69803 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1852994 usec, 90% 1 usec, 99% 41062 usec, 99.9% 63226 usec, 99.99% 68227 usec, max 69803 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331833879]: 12072
-@acc[140737331808583]: 12158
-@acc[140737331838477]: 13414
-@acc[140737331810965]: 14393
-@acc[140737331806925]: 16106
-@acc[140737331839766]: 18894
-@acc[140737331810793]: 19333
-@acc[140737331808108]: 22510
-@acc[140737331814681]: 26272
-@acc[140737331841360]: 49191
-@acc[140737331834302]: 91546
-@acc[140737331807155]: 195624
-@acc[140737331802212]: 369125
-@acc[140737331812817]: 528603
-@acc[140737331823757]: 1312987
-@acc[140737331848097]: 1519520
-@acc[140737331811202]: 1631800
-@acc[140737331839215]: 2422776
-@acc[140737331839693]: 3847999
-@acc[140737331844181]: 4846345
-@acc[140737331842941]: 5208061
-@acc[140737331828049]: 21249601
-@acc[140737331831346]: 27234400
-@acc[140737331842687]: 415739254
-@counter[140737331838477]: 10
-@counter[140737331844181]: 10
-@counter[140737331839215]: 10
-@counter[140737331810965]: 10
-@counter[140737331834302]: 10
-@counter[140737331810793]: 10
-@counter[140737331806925]: 10
-@counter[140737331842941]: 10
-@counter[140737331841360]: 10
-@counter[140737331823757]: 10
-@counter[140737331814681]: 10
-@counter[140737331812817]: 10
-@counter[140737331833879]: 10
-@counter[140737331808108]: 10
-@counter[140737331807155]: 10
-@counter[140737331802212]: 10
-@counter[140737331808583]: 10
-@counter[140737331839766]: 10
-@counter[140737331839693]: 820
-@counter[140737331828049]: 820
-@counter[140737331848097]: 1410
-@counter[140737331811202]: 1410
-@counter[140737331831346]: 1410
-@counter[140737331842687]: 31667
-@decoded[140737331802212]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331807155]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331810965]: 1
-@processedgeslen: 
-[1]                  591 |@@@@@@                                              |
-[2, 4)              1436 |@@@@@@@@@@@@@@@                                     |
-[4, 8)              1849 |@@@@@@@@@@@@@@@@@@@                                 |
-[8, 16)             2657 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[16, 32)            4361 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      |
-[32, 64)            4841 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3202 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-[128, 256)          2575 |@@@@@@@@@@@@@@@@@@@@@@@@@@@                         |
-[256, 512)          2641 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[512, 1K)           2232 |@@@@@@@@@@@@@@@@@@@@@@@                             |
-[1K, 2K)            1848 |@@@@@@@@@@@@@@@@@@@                                 |
-[2K, 4K)            1500 |@@@@@@@@@@@@@@@@                                    |
-[4K, 8K)            1924 |@@@@@@@@@@@@@@@@@@@@                                |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 458820426
-@startprocessedges: 614803910149413
-@startwork[1073028]: 614803959320329
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    9 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 1 |@@@@@                                               |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               11 |                                                    |
-[16, 32)             808 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[32, 64)               1 |                                                    |
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331811202]: 
-[1]                 1408 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   45 |@@@                                                 |
-[2, 4)               638 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               210 |@@@@@@@@@@@@@@@@@                                   |
-[8, 16)               49 |@@@                                                 |
-[16, 32)             175 |@@@@@@@@@@@@@@                                      |
-[32, 64)             158 |@@@@@@@@@@@@                                        |
-[64, 128)            118 |@@@@@@@@@                                           |
-[128, 256)            17 |@                                                   |
-
-@worktime[140737331842687]: 
-[2, 4)             17828 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              4855 |@@@@@@@@@@@@@@                                      |
-[8, 16)             3289 |@@@@@@@@@                                           |
-[16, 32)            2427 |@@@@@@@                                             |
-[32, 64)            1883 |@@@@@                                               |
-[64, 128)           1153 |@@@                                                 |
-[128, 256)           190 |                                                    |
-[256, 512)            32 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:34:57 PM UTC 2022
-
- 14:34:57 up 7 days,  2:51,  1 user,  load average: 1.33, 1.38, 1.36
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    4:00m  2.93s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99546160 984244 30820260    0    0     3    32    3    2  5  0 95  0  0
- 0  0      0 99546608 984244 30820264    0    0     0     0  136   69  0  0 100  0  0
-
-top - 14:34:58 up 7 days,  2:51,  1 user,  load average: 1.33, 1.38, 1.36
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97213.2 free,    411.7 used,  31059.1 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127019.2 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 2.35 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.49 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.51 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.40 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.37 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 2.68 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18715 msec =====
-===== DaCapo simple tail latency: 50% -15447773 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 727716 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14384127 usec, 90% 546188 usec, 99% 1535765 usec, 99.9% 1729056 usec, 99.99% 1772089 usec, max 1817266 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6099 msec =====
-===== DaCapo simple tail latency: 50% -2541556 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 7 usec, max 85662 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2541556 usec, 90% 1 usec, 99% 47733 usec, 99.9% 85137 usec, 99.99% 101495 usec, max 103642 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6010 msec =====
-===== DaCapo simple tail latency: 50% -1953444 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 79586 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1953444 usec, 90% 0 usec, 99% 5937 usec, 99.9% 45146 usec, 99.99% 57249 usec, max 79586 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1837774 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 55226 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1837774 usec, 90% 0 usec, 99% 42875 usec, 99.9% 88609 usec, 99.99% 101847 usec, max 102177 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.max	total-work.time.min	total-work.count	total-work.time.total	
-10	4500.58	534.79	-inf	inf	0	0.000	
-Total time: 5035.37 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5035 msec =====
-===== DaCapo simple tail latency: 50% -1797825 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 74637 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1797825 usec, 90% 1 usec, 99% 49277 usec, 99.9% 87956 usec, 99.99% 101362 usec, max 105460 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331833879]: 12101
-@acc[140737331808583]: 12182
-@acc[140737331838477]: 13696
-@acc[140737331810965]: 15056
-@acc[140737331806925]: 16772
-@acc[140737331810793]: 19378
-@acc[140737331839766]: 19475
-@acc[140737331808108]: 22013
-@acc[140737331814681]: 25741
-@acc[140737331841360]: 47187
-@acc[140737331834302]: 88095
-@acc[140737331807155]: 191313
-@acc[140737331802212]: 363340
-@acc[140737331812817]: 507531
-@acc[140737331823757]: 1314309
-@acc[140737331848097]: 1505533
-@acc[140737331811202]: 1611875
-@acc[140737331839215]: 2387734
-@acc[140737331839693]: 3861521
-@acc[140737331844181]: 4766731
-@acc[140737331842941]: 4860775
-@acc[140737331828049]: 21342419
-@acc[140737331831346]: 28445545
-@acc[140737331842687]: 410785319
-@counter[140737331833879]: 10
-@counter[140737331812817]: 10
-@counter[140737331844181]: 10
-@counter[140737331842941]: 10
-@counter[140737331814681]: 10
-@counter[140737331810965]: 10
-@counter[140737331841360]: 10
-@counter[140737331808583]: 10
-@counter[140737331834302]: 10
-@counter[140737331806925]: 10
-@counter[140737331802212]: 10
-@counter[140737331838477]: 10
-@counter[140737331810793]: 10
-@counter[140737331839215]: 10
-@counter[140737331808108]: 10
-@counter[140737331807155]: 10
-@counter[140737331839766]: 10
-@counter[140737331823757]: 10
-@counter[140737331828049]: 820
-@counter[140737331839693]: 820
-@counter[140737331848097]: 1410
-@counter[140737331831346]: 1410
-@counter[140737331811202]: 1410
-@counter[140737331842687]: 32331
-@decoded[140737331808108]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331807155]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331810965]: 1
-@decoded[140737331828049]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331834302]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331839215]: 1
-@processedgeslen: 
-[1]                  643 |@@@@@@@                                             |
-[2, 4)              1737 |@@@@@@@@@@@@@@@@@@@                                 |
-[4, 8)              1883 |@@@@@@@@@@@@@@@@@@@@@                               |
-[8, 16)             2808 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
-[16, 32)            4254 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    |
-[32, 64)            4582 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3448 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             |
-[128, 256)          2642 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
-[256, 512)          2839 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                    |
-[512, 1K)           2202 |@@@@@@@@@@@@@@@@@@@@@@@@                            |
-[1K, 2K)            1943 |@@@@@@@@@@@@@@@@@@@@@@                              |
-[2K, 4K)            1430 |@@@@@@@@@@@@@@@@                                    |
-[4K, 8K)            1910 |@@@@@@@@@@@@@@@@@@@@@                               |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            10 |                                                    |
-
-@processedgestime: 454489698
-@startprocessedges: 615180895419090
-@startwork[1074261]: 615180941826594
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    9 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 1 |@@@@@                                               |
-
-@worktime[140737331839215]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331806925]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  |
-
-@worktime[140737331808108]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               10 |                                                    |
-[16, 32)             810 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               809 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[8, 16)                1 |                                                    |
-
-@worktime[140737331811202]: 
-[1]                 1407 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 3 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1410 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331831346]: 
-[1]                   45 |@@@                                                 |
-[2, 4)               640 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               209 |@@@@@@@@@@@@@@@@                                    |
-[8, 16)               50 |@@@@                                                |
-[16, 32)             174 |@@@@@@@@@@@@@@                                      |
-[32, 64)             135 |@@@@@@@@@@                                          |
-[64, 128)            148 |@@@@@@@@@@@@                                        |
-[128, 256)             9 |                                                    |
-
-@worktime[140737331842687]: 
-[1]                   19 |                                                    |
-[2, 4)             18206 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5100 |@@@@@@@@@@@@@@                                      |
-[8, 16)             3388 |@@@@@@@@@                                           |
-[16, 32)            2488 |@@@@@@@                                             |
-[32, 64)            1787 |@@@@@                                               |
-[64, 128)           1123 |@@@                                                 |
-[128, 256)           176 |                                                    |
-[256, 512)            34 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              10 |                                                    |
-
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 setarch x86_64 -R /home/claireh/openjdk/build/processedges/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:41:19 PM UTC 2022
-
- 14:41:19 up 7 days,  2:58,  1 user,  load average: 1.33, 1.42, 1.38
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    4:07m  3.03s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99537776 990080 30820844    0    0     3    33    3    2  5  0 95  0  0
- 0  0      0 99537280 990080 30820844    0    0     0     0  118   55  0  0 100  0  0
-
-top - 14:41:21 up 7 days,  2:58,  1 user,  load average: 1.33, 1.42, 1.38
-Tasks: 237 total,   1 running, 236 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97204.2 free,    414.4 used,  31065.4 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127016.4 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 2.21 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 2.38 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.55 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.56 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18750 msec =====
-===== DaCapo simple tail latency: 50% -15506538 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 6 usec, max 721798 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14440350 usec, 90% 549928 usec, 99% 1560291 usec, 99.9% 1665216 usec, 99.99% 1769160 usec, max 1813988 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6128 msec =====
-===== DaCapo simple tail latency: 50% -2643869 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 33776 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2643869 usec, 90% 0 usec, 99% 3 usec, 99.9% 34875 usec, 99.99% 47488 usec, max 51939 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6006 msec =====
-===== DaCapo simple tail latency: 50% -1941948 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 74426 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1941948 usec, 90% 0 usec, 99% 2588 usec, 99.9% 43465 usec, 99.99% 53334 usec, max 74426 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1840561 usec, 90% 0 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 8 usec, max 74111 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1840561 usec, 90% 1 usec, 99% 37609 usec, 99.9% 87191 usec, 99.99% 105207 usec, max 105486 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.total	total-work.count	total-work.time.min	total-work.time.max	
-11	4436.68	592.44	0.000	0	inf	-inf	
-Total time: 5029.12 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5029 msec =====
-===== DaCapo simple tail latency: 50% -1790018 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 99078 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1790018 usec, 90% 0 usec, 99% 6907 usec, 99.9% 47235 usec, 99.99% 61250 usec, max 99078 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-*****
-Attaching 19 probes...
-^C
-
-@acc[140737331808583]: 13159
-@acc[140737331833879]: 13310
-@acc[140737331838477]: 14385
-@acc[140737331810965]: 15348
-@acc[140737331806925]: 18234
-@acc[140737331810793]: 21597
-@acc[140737331839766]: 21991
-@acc[140737331808108]: 23948
-@acc[140737331814681]: 28053
-@acc[140737331841360]: 51421
-@acc[140737331834302]: 103785
-@acc[140737331807155]: 217195
-@acc[140737331802212]: 412690
-@acc[140737331812817]: 566932
-@acc[140737331823757]: 1467417
-@acc[140737331848097]: 1672026
-@acc[140737331811202]: 1800047
-@acc[140737331839215]: 2641424
-@acc[140737331839693]: 4281488
-@acc[140737331844181]: 5293963
-@acc[140737331842941]: 5738778
-@acc[140737331828049]: 22963644
-@acc[140737331831346]: 30377779
-@acc[140737331842687]: 457621247
-@counter[140737331842941]: 11
-@counter[140737331838477]: 11
-@counter[140737331844181]: 11
-@counter[140737331839215]: 11
-@counter[140737331839766]: 11
-@counter[140737331808108]: 11
-@counter[140737331814681]: 11
-@counter[140737331834302]: 11
-@counter[140737331808583]: 11
-@counter[140737331833879]: 11
-@counter[140737331806925]: 11
-@counter[140737331807155]: 11
-@counter[140737331810965]: 11
-@counter[140737331810793]: 11
-@counter[140737331812817]: 11
-@counter[140737331841360]: 11
-@counter[140737331823757]: 11
-@counter[140737331802212]: 11
-@counter[140737331839693]: 902
-@counter[140737331828049]: 902
-@counter[140737331848097]: 1551
-@counter[140737331811202]: 1551
-@counter[140737331831346]: 1551
-@counter[140737331842687]: 34750
-@decoded[140737331834302]: 1
-@decoded[140737331848097]: 1
-@decoded[140737331802212]: 1
-@decoded[140737331823757]: 1
-@decoded[140737331808583]: 1
-@decoded[140737331807155]: 1
-@decoded[140737331839693]: 1
-@decoded[140737331839215]: 1
-@decoded[140737331810965]: 1
-@decoded[140737331841360]: 1
-@decoded[140737331806925]: 1
-@decoded[140737331810793]: 1
-@decoded[140737331844181]: 1
-@decoded[140737331842941]: 1
-@decoded[140737331833879]: 1
-@decoded[140737331812817]: 1
-@decoded[140737331814681]: 1
-@decoded[140737331831346]: 1
-@decoded[140737331839766]: 1
-@decoded[140737331811202]: 1
-@decoded[140737331808108]: 1
-@decoded[140737331838477]: 1
-@decoded[140737331842687]: 1
-@decoded[140737331828049]: 1
-@processedgeslen: 
-[1]                  613 |@@@@@@                                              |
-[2, 4)              1663 |@@@@@@@@@@@@@@@@@                                   |
-[4, 8)              2081 |@@@@@@@@@@@@@@@@@@@@@                               |
-[8, 16)             2744 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@                        |
-[16, 32)            4728 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   |
-[32, 64)            4933 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)           3828 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            |
-[128, 256)          2949 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                     |
-[256, 512)          2890 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                      |
-[512, 1K)           2506 |@@@@@@@@@@@@@@@@@@@@@@@@@@                          |
-[1K, 2K)            2060 |@@@@@@@@@@@@@@@@@@@@@                               |
-[2K, 4K)            1649 |@@@@@@@@@@@@@@@@@                                   |
-[4K, 8K)            2095 |@@@@@@@@@@@@@@@@@@@@@@                              |
-[8K, 16K)              0 |                                                    |
-[16K, 32K)             0 |                                                    |
-[32K, 64K)            11 |                                                    |
-
-@processedgestime: 504862475
-@startprocessedges: 615563891292802
-@startwork[1075494]: 615563936303141
-@stats_enabled: 0
-@type_names[140737331802212]: mmtk::scheduler::gc_work::Release<mmtk::plan::immix::gc_work::I
-@type_names[140737331806925]: mmtk_openjdk::gc_work::ScanJvmtiExportRoots<mmtk::scheduler::gc
-@type_names[140737331807155]: mmtk::scheduler::gc_work::Prepare<mmtk::plan::immix::gc_work::I
-@type_names[140737331808108]: mmtk_openjdk::gc_work::ScanVMThreadRoots<mmtk::scheduler::gc_wo
-@type_names[140737331808583]: mmtk::scheduler::gc_work::ReleaseCollector
-@type_names[140737331810793]: mmtk::scheduler::gc_work::ScanVMSpecificRoots<mmtk::scheduler::
-@type_names[140737331810965]: mmtk_openjdk::gc_work::ScanObjectSynchronizerRoots<mmtk::schedu
-@type_names[140737331811202]: mmtk::scheduler::gc_work::ReleaseMutator<mmtk_openjdk::OpenJDK>
-@type_names[140737331812817]: mmtk_openjdk::gc_work::ScanWeakProcessorRoots<mmtk::scheduler::
-@type_names[140737331814681]: mmtk_openjdk::gc_work::ScanManagementRoots<mmtk::scheduler::gc_
-@type_names[140737331823757]: mmtk_openjdk::gc_work::ScanStringTableRoots<mmtk::scheduler::gc
-@type_names[140737331828049]: mmtk::policy::immix::chunk::SweepChunk<mmtk_openjdk::OpenJDK>
-@type_names[140737331831346]: mmtk::scheduler::gc_work::ScanStackRoot<mmtk::scheduler::gc_wor
-@type_names[140737331833879]: mmtk::scheduler::gc_work::PrepareCollector
-@type_names[140737331834302]: mmtk_openjdk::gc_work::ScanSystemDictionaryRoots<mmtk::schedule
-@type_names[140737331838477]: mmtk_openjdk::gc_work::ScanAOTLoaderRoots<mmtk::scheduler::gc_w
-@type_names[140737331839215]: mmtk_openjdk::gc_work::ScanClassLoaderDataGraphRoots<mmtk::sche
-@type_names[140737331839693]: mmtk::policy::immix::immixspace::PrepareBlockState<mmtk_openjdk
-@type_names[140737331839766]: mmtk_openjdk::gc_work::ScanJNIHandlesRoots<mmtk::scheduler::gc_
-@type_names[140737331841360]: mmtk_openjdk::gc_work::ScanUniverseRoots<mmtk::scheduler::gc_wo
-@type_names[140737331842687]: mmtk::scheduler::gc_work::PlanProcessEdges<mmtk_openjdk::OpenJD
-@type_names[140737331842941]: mmtk::scheduler::gc_work::StopMutators<mmtk::scheduler::gc_work
-@type_names[140737331844181]: mmtk_openjdk::gc_work::ScanCodeCacheRoots<mmtk::scheduler::gc_w
-@type_names[140737331848097]: mmtk::scheduler::gc_work::PrepareMutator<mmtk_openjdk::OpenJDK>
-@worktime[140737331839766]: 
-[1]                    7 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 4 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                       |
-
-@worktime[140737331839215]: 
-[128, 256)            11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810793]: 
-[1]                    9 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |@@@@@@@@@@@                                         |
-
-@worktime[140737331812817]: 
-[32, 64)              10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[64, 128)              1 |@@@@@                                               |
-
-@worktime[140737331806925]: 
-[1]                   11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331834302]: 
-[8, 16)               11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331807155]: 
-[16, 32)              11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331810965]: 
-[1]                   11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331823757]: 
-[128, 256)            11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331842941]: 
-[256, 512)             6 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[512, 1K)              5 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@         |
-
-@worktime[140737331808108]: 
-[1]                    1 |@@@@@                                               |
-[2, 4)                10 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331802212]: 
-[32, 64)              11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331844181]: 
-[256, 512)            11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331841360]: 
-[4, 8)                11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331808583]: 
-[1]                   11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331814681]: 
-[2, 4)                11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331833879]: 
-[1]                   11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331838477]: 
-[1]                   11 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-
-@worktime[140737331828049]: 
-[8, 16)               11 |                                                    |
-[16, 32)             885 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[32, 64)               6 |                                                    |
-
-@worktime[140737331839693]: 
-[2, 4)                10 |                                                    |
-[4, 8)               889 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[8, 16)                2 |                                                    |
-[16, 32)               1 |                                                    |
-
-@worktime[140737331811202]: 
-[1]                 1549 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 2 |                                                    |
-
-@worktime[140737331848097]: 
-[1]                 1550 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[2, 4)                 0 |                                                    |
-[4, 8)                 1 |                                                    |
-
-@worktime[140737331831346]: 
-[1]                   51 |@@@                                                 |
-[2, 4)               702 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)               225 |@@@@@@@@@@@@@@@@                                    |
-[8, 16)               59 |@@@@                                                |
-[16, 32)             187 |@@@@@@@@@@@@@                                       |
-[32, 64)             176 |@@@@@@@@@@@@@                                       |
-[64, 128)            139 |@@@@@@@@@@                                          |
-[128, 256)            12 |                                                    |
-
-@worktime[140737331842687]: 
-[2, 4)             18956 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
-[4, 8)              5891 |@@@@@@@@@@@@@@@@                                    |
-[8, 16)             3553 |@@@@@@@@@                                           |
-[16, 32)            2746 |@@@@@@@                                             |
-[32, 64)            2090 |@@@@@                                               |
-[64, 128)           1268 |@@@                                                 |
-[128, 256)           194 |                                                    |
-[256, 512)            41 |                                                    |
-[512, 1K)              0 |                                                    |
-[1K, 2K)              11 |                                                    |
-
