@@ -44,7 +44,7 @@ benchmarks:
 
 runtimes:
 # no defrag, no finalisation, probes for work packet stats + processedges stats
-  probed:
+  after:
     type: OpenJDK
     release: 11
     home: "/home/claireh/openjdk/build/processedges/images/jdk"
@@ -60,9 +60,12 @@ modifiers:
     type: EnvVar
     var: MMTK_THREADS
     val: '{0}'
-  bpftrace:
+  # bpftrace:
+  #   type: Companion
+  #   val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/sc_before.bt'"
+  fixedtrace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/processedges.bt'"
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/scale.bt'"
   no_add_rand:
     type: Wrapper
     val: "setarch x86_64 -R"

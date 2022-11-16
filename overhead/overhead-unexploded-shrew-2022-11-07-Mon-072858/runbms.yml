@@ -1,0 +1,353 @@
+benchmarks:
+  dacapo-6e411f33:
+  - avrora
+  - batik
+  - biojava
+  - cassandra
+  - eclipse
+  - fop
+  - graphchi
+  - h2
+  - h2o
+  - jme
+  - jython
+  - kafka
+  - luindex
+  - lusearch
+  - pmd
+  - spring
+  - sunflow
+  - tomcat
+  - xalan
+  - zxing
+configs:
+- normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1
+- flagged|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1
+- stat|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|notrace
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand
+- normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|notrace
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|bpftrace|no_add_rand
+- normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|notrace
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|bpftrace|no_add_rand
+- normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|notrace
+- probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|bpftrace|no_add_rand
+heap_range: 6
+invocations: 10
+minheap_multiplier: 1.0
+modifiers:
+  bpftrace:
+    type: Companion
+    val: sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/overhead/tracing.bt'
+  c2:
+    excludes:
+      dacapochopin-29a657f:
+      - tradebeans
+      - tradesoap
+      dacapochopin-f480064:
+      - tradebeans
+      - tradesoap
+    type: JVMArg
+    val: -XX:-TieredCompilation -Xcomp
+  cms:
+    type: JVMArg
+    val: -XX:-UseCompressedOops -XX:+UseConcMarkSweepGC -XX:TLABSize=32K -XX:-ResizeTLAB
+  epsilon:
+    type: JVMArg
+    val: -XX:-UseCompressedOops -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC
+      -XX:-EpsilonElasticTLAB -XX:TLABSize=32K -XX:-ResizeTLAB
+  g1:
+    type: JVMArg
+    val: -XX:-UseCompressedOops -XX:+UseG1GC
+  gc_threads:
+    type: EnvVar
+    val: '{0}'
+    var: MMTK_THREADS
+  hotspot_gc:
+    type: JVMArg
+    val: -XX:-UseCompressedOops -XX:+UnlockExperimentalVMOptions -XX:+Use{0}GC
+  ix:
+    type: EnvVar
+    val: Immix
+    var: MMTK_PLAN
+  mmtk_gc:
+    type: EnvVar
+    val: '{0}'
+    var: MMTK_PLAN
+  ms:
+    type: JVMArg
+    val: -XX:MetaspaceSize=500M -XX:+DisableExplicitGC
+  no_add_rand:
+    type: Wrapper
+    val: setarch x86_64 -R
+  notrace:
+    type: Companion
+    val: sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/overhead/empty.bt'
+  probes:
+    type: JVMArg
+    val: -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk
+  probes_cp:
+    type: JVMClasspath
+    val: /home/claireh/probes /home/claireh/probes.jar
+  s:
+    type: JVMArg
+    val: -server
+  sgc:
+    type: JVMArg
+    val: -XX:+UseSerialGC
+  ss:
+    type: EnvVar
+    val: SemiSpace
+    var: MMTK_PLAN
+  tph:
+    type: JVMArg
+    val: -XX:+UseThirdPartyHeap
+remote_host: squirrel.moma
+runtimes:
+  flagged:
+    home: /home/claireh/openjdk/build/flagged/images/jdk
+    release: 11
+    type: OpenJDK
+  normal:
+    home: /home/claireh/openjdk/build/normal/images/jdk
+    release: 11
+    type: OpenJDK
+  probed:
+    home: /home/claireh/openjdk/build/probed/images/jdk
+    release: 11
+    type: OpenJDK
+  stat:
+    home: /home/claireh/openjdk/build/stat/images/jdk
+    release: 11
+    type: OpenJDK
+  temurin-11:
+    home: /usr/lib/jvm/temurin-11-jdk-amd64
+    release: 11
+    type: OpenJDK
+  temurin-17:
+    home: /usr/lib/jvm/temurin-17-jdk-amd64
+    release: 17
+    type: OpenJDK
+  temurin-8:
+    home: /usr/lib/jvm/temurin-8-jdk-amd64
+    release: 8
+    type: OpenJDK
+spread_factor: 1
+suites:
+  dacapo-6e411f33:
+    callback: probe.DacapoChopinCallback
+    invocations: 5
+    minheap: Immix
+    minheap_values:
+      Immix:
+        avrora: 8
+        batik: 462
+        biojava: 195
+        cassandra: 105
+        eclipse: 526
+        fop: 27
+        graphchi: 175
+        h2: 1732
+        h2o: 79
+        jme: 236
+        jython: 58
+        kafka: 259
+        luindex: 27
+        lusearch: 26
+        pmd: 188
+        spring: 143
+        sunflow: 28
+        tomcat: 61
+        xalan: 12
+        zxing: 430
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    release: evaluation
+    timeout: 1200
+    timing_iteration: 5
+    type: DaCapo
+  dacapo2006:
+    minheap: adoptopenjdk-15-G1
+    minheap_values:
+      adoptopenjdk-15-G1:
+        antlr: 5
+        chart: 21
+        eclipse: 25
+        hsqldb: 135
+    path: /usr/share/benchmarks/dacapo/dacapo-2006-10-MR2.jar
+    release: '2006'
+    timeout: 120
+    timing_iteration: 3
+    type: DaCapo
+  dacapobach:
+    minheap: adoptopenjdk-15-G1
+    minheap_values:
+      adoptopenjdk-15-G1:
+        avrora: 5
+        fop: 37
+        jython: 31
+        luindex: 7
+        pmd: 41
+        sunflow: 17
+        xalan: 8
+    path: /usr/share/benchmarks/dacapo/dacapo-9.12-bach.jar
+    release: '9.12'
+    timeout: 120
+    timing_iteration: 3
+    type: DaCapo
+  dacapobach-mr1:
+    minheap: adoptopenjdk-15-G1
+    minheap_values:
+      adoptopenjdk-15-G1:
+        avrora: 5
+        fop: 39
+        jython: 32
+        luindex: 9
+        pmd: 41
+        sunflow: 17
+        xalan: 10
+    path: /usr/share/benchmarks/dacapo/dacapo-9.12-MR1-bach.jar
+    release: '9.12'
+    timeout: 120
+    timing_iteration: 3
+    type: DaCapo
+  dacapobach-mr1-java6:
+    minheap_values: {}
+    path: /usr/share/benchmarks/dacapo/dacapo-9.12-MR1-bach-java6.jar
+    release: '9.12'
+    timeout: 120
+    timing_iteration: 3
+    type: DaCapo
+  dacapochopin-29a657f:
+    minheap: adoptopenjdk-15-G1
+    minheap_values:
+      adoptopenjdk-15-G1:
+        avrora: 7
+        batik: 253
+        biojava: 191
+        cassandra: 89
+        eclipse: 437
+        fop: 19
+        graphchi: 255
+        h2: 1154
+        h2o: 73
+        jme: 55
+        jython: 37
+        luindex: 42
+        lusearch: 23
+        pmd: 243
+        sunflow: 33
+        tomcat: 25
+        tradebeans: 169
+        tradesoap: 133
+        xalan: 9
+        zxing: 96
+      temurin-11-G1:
+        avrora: 5
+        batik: 185
+        biojava: 95
+        cassandra: 1026
+        eclipse: 423
+        fop: 13
+        graphchi: 255
+        h2: 771
+        h2o: 62
+        jme: 29
+        jython: 27
+        luindex: 40
+        lusearch: 25
+        pmd: 158
+        sunflow: 27
+        tomcat: 19
+        tradebeans: 129
+        tradesoap: 101
+        xalan: 7
+        zxing: 96
+      temurin-17-G1:
+        avrora: 7
+        batik: 189
+        biojava: 95
+        eclipse: 411
+        fop: 15
+        graphchi: 255
+        h2: 773
+        jme: 29
+        jython: 25
+        luindex: 42
+        lusearch: 21
+        lusearch_huge: 122
+        lusearch_large: 142
+        pmd: 156
+        sunflow: 29
+        tomcat: 21
+        tradebeans: 131
+        tradesoap: 103
+        xalan: 8
+        zxing: 97
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-29a657f.jar
+    release: evaluation
+    timeout: 120
+    timing_iteration: 3
+    type: DaCapo
+  dacapochopin-f480064:
+    minheap: temurin-11-G1
+    minheap_values:
+      temurin-11-G1:
+        avrora: 5
+        batik: 186
+        biojava: 96
+        cassandra: 87
+        eclipse: 423
+        fop: 13
+        graphchi: 255
+        h2: 771
+        h2o: 83
+        jme: 29
+        jython: 27
+        kafka: 201
+        luindex: 41
+        lusearch: 26
+        pmd: 43
+        sunflow: 27
+        tomcat: 19
+        tradebeans: 129
+        tradesoap: 113
+        xalan: 7
+        zxing: 98
+      temurin-17-G1:
+        avrora: 7
+        batik: 190
+        biojava: 95
+        eclipse: 411
+        fop: 15
+        graphchi: 255
+        h2: 773
+        jme: 29
+        jython: 25
+        kafka: 197
+        luindex: 42
+        lusearch: 25
+        pmd: 45
+        sunflow: 27
+        tomcat: 21
+        tradebeans: 131
+        tradesoap: 103
+        xalan: 7
+        zxing: 101
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-f480064.jar
+    release: evaluation
+    timeout: 120
+    timing_iteration: 3
+    type: DaCapo
+  specjbb2015:
+    path: /usr/share/benchmarks/SPECjbb2015/specjbb2015.jar
+    release: '1.03'
+    type: SPECjbb2015
+  specjvm98:
+    path: /usr/share/benchmarks/SPECjvm98
+    release: '1.03_05'
+    timing_iteration: 3
+    type: SPECjvm98

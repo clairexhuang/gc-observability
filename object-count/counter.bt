@@ -1,0 +1,26 @@
+uretprobe:/home/claireh/openjdk/build/obj/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    //begin collecting data at harness_begin (start of final iteration)
+    @stats_enabled = 1;
+}
+
+uretprobe:/home/claireh/openjdk/build/obj/images/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    //begin collecting data at harness_end (end of final iteration)
+    @stats_enabled = 0;
+}
+
+
+usdt:/home/claireh/openjdk/build/obj/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgeslen {
+    if (!@stats_enabled) {
+        return;
+    }
+    // arg0 gives number of edges in the work packet, so this gives the total number of edges processed
+    @edgecount = sum(arg0);
+}
+
+usdt:/home/claireh/openjdk/build/obj/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processobject {
+    if (!@stats_enabled) {
+        return;
+    }
+    // counts number of objects
+    @objcount = count();
+}
