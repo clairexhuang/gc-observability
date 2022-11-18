@@ -1,4 +1,4 @@
-# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "processedges-overhead" -s 2
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/overhead.yml -p "overhead-unexploded" -s 2
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
@@ -10,7 +10,7 @@ suites:
     timing_iteration: 5
     timeout: 1200
     callback: "probe.DacapoChopinCallback"
-    invocations: 10
+    invocations: 5
     minheap: Immix
     minheap_values:
       Immix:
@@ -39,16 +39,18 @@ suites:
 
 benchmarks:
   dacapo-6e411f33:
-    # - avrora 
-    # - batik 
-    # - biojava 
-    # - cassandra 
-    # - eclipse 
-    # - fop 
-    # - graphchi 
-    # - h2o 
-    # - jme 
-    # - jython 
+    - avrora 
+    - batik 
+    - biojava 
+    - cassandra 
+    - eclipse 
+    - fop 
+    - graphchi 
+    - h2 
+    - h2o 
+    - jme 
+    - jython
+    - kafka 
     - luindex 
     - lusearch 
     - pmd 
@@ -63,22 +65,22 @@ benchmarks:
     - kafka 
 
 runtimes:
-  flagged:
-    type: OpenJDK
-    release: 11
-    home: "/home/claireh/openjdk/build/flagged/jdk"
   probed:
     type: OpenJDK
     release: 11
-    home: "/home/claireh/openjdk/build/processedges/jdk"
+    home: "/home/claireh/openjdk/build/probed/images/jdk"
   normal:
     type: OpenJDK
     release: 11
-    home: "/home/claireh/openjdk/build/normal/jdk"
+    home: "/home/claireh/openjdk/build/normal/images/jdk"
   stat:
     type: OpenJDK
     release: 11
-    home: "/home/claireh/openjdk/build/stat/jdk"
+    home: "/home/claireh/openjdk/build/stat/images/jdk"
+  flagged:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/flagged/images/jdk"
 
 modifiers:
   probes_cp:
@@ -93,23 +95,34 @@ modifiers:
     val: '{0}'
   bpftrace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/overhead/tracing.bt'"
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/overhead/tracing.bt'"
   notrace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-llvm-14 '/home/claireh/ebpf/overhead/empty.bt'"
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/overhead/empty.bt'"
   no_add_rand:
     type: Wrapper
     val: "setarch x86_64 -R"
 
 configs:
+# normal
   - "normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
-  #- "flagged|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+# force rust pointers
+  - "flagged|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
+# rust stats
   - "stat|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
-  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-1"
+# no ops
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1"
+# empty tracing code
   - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|notrace"
+# tracing
   - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|bpftrace|no_add_rand"
-  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-2|bpftrace|no_add_rand"
-  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-4|bpftrace|no_add_rand"
-  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-8|bpftrace|no_add_rand"
-  #- "probed|ms|s|c2|mmtk_gc-GenImmix|tph|probes_cp|probes|gc_threads-16|bpftrace|no_add_rand"
-  
+# scaling of overhead wrt number of threads
+  - "normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|notrace"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|bpftrace|no_add_rand"
+  - "normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|notrace"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|bpftrace|no_add_rand"
+  - "normal|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|notrace"
+  - "probed|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|bpftrace|no_add_rand"
