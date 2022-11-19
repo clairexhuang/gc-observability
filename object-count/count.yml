@@ -8,7 +8,7 @@ suites:
     release: evaluation
     path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
     timing_iteration: 5
-    timeout: 1200
+    timeout: 5000
     callback: "probe.DacapoChopinCallback"
     invocations: 5
 
@@ -19,28 +19,28 @@ overrides:
 
 benchmarks:
   dacapo-6e411f33:
-    - avrora 
-    - batik 
-    - biojava 
+    # - avrora 
+    # - batik 
+    # - biojava 
     - cassandra 
     - eclipse 
-    - fop 
+    # - fop 
     - graphchi 
     - h2 
-    - h2o 
-    - jme 
-    - jython 
-    - kafka 
-    - luindex 
+    # - h2o 
+    # - jme 
+    # - jython 
+    # - kafka 
+    # - luindex 
     - lusearch 
     - pmd 
     - spring 
     - sunflow 
-    - tomcat 
+    # - tomcat 
     # - tradebeans 
     # - tradesoap 
-    - xalan 
-    - zxing
+    # - xalan 
+    # - zxing
 
 runtimes:
 # no defrag, no finalisation, counters for edges and objects
