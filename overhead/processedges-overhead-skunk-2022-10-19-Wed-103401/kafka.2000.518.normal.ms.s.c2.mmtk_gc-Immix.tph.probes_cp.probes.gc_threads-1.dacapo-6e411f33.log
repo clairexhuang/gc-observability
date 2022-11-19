@@ -1,1730 +1,0 @@
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 01:46:11 PM UTC 2022
-
- 13:46:11 up 7 days,  2:02,  1 user,  load average: 1.02, 1.00, 1.00
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:12m  2.20s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 102365528 948668 28068668    0    0     3    24    2    1  5  0 95  0  0
- 0  0      0 102365280 948668 28068668    0    0     0     0  147   55  0  0 100  0  0
-
-top - 13:46:13 up 7 days,  2:02,  1 user,  load average: 1.02, 1.00, 1.00
-Tasks: 235 total,   1 running, 234 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  99965.4 free,    381.4 used,  28337.2 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127049.5 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.54 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.46 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 2.33 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 2.33 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.47 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.53 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.52 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19666 msec =====
-===== DaCapo simple tail latency: 50% -15720800 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 5 usec, max 726423 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14680281 usec, 90% 542243 usec, 99% 1505875 usec, 99.9% 1726684 usec, 99.99% 1788512 usec, max 1812176 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6087 msec =====
-===== DaCapo simple tail latency: 50% -2538513 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 10 usec, max 61624 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2538513 usec, 90% 0 usec, 99% 34449 usec, 99.9% 59780 usec, 99.99% 67907 usec, max 71578 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6043 msec =====
-===== DaCapo simple tail latency: 50% -1984844 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 65460 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1984844 usec, 90% 0 usec, 99% 12417 usec, 99.9% 45268 usec, 99.99% 59500 usec, max 65460 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5008 msec =====
-===== DaCapo simple tail latency: 50% -1850072 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 30736 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1850072 usec, 90% 0 usec, 99% 37863 usec, 99.9% 66310 usec, 99.99% 81326 usec, max 81707 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.count	total-work.time.total	total-work.time.min	total-work.time.max	
-10	4602.14	401.60	0	0.000	inf	-inf	
-Total time: 5003.74 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1888184 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 58989 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1888184 usec, 90% 0 usec, 99% 40334 usec, 99.9% 75857 usec, 99.99% 92159 usec, max 94910 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 01:52:44 PM UTC 2022
-
- 13:52:44 up 7 days,  2:09,  1 user,  load average: 1.30, 1.29, 1.14
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:18m  2.29s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99557632 954008 30819628    0    0     3    25    2    1  5  0 95  0  0
- 0  0      0 99559464 954008 30819628    0    0     0     0  147   71  0  0 100  0  0
-
-top - 13:52:45 up 7 days,  2:09,  1 user,  load average: 1.30, 1.29, 1.14
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97226.0 free,    429.0 used,  31028.9 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127001.8 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.54 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.55 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 2.45 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.52 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 2.64 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19739 msec =====
-===== DaCapo simple tail latency: 50% -15547971 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 8 usec, max 732026 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14460030 usec, 90% 476219 usec, 99% 1554000 usec, 99.9% 1683232 usec, 99.99% 1792597 usec, max 1837004 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6090 msec =====
-===== DaCapo simple tail latency: 50% -2707564 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 7 usec, max 147754 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2707564 usec, 90% 0 usec, 99% 23956 usec, 99.9% 50866 usec, 99.99% 67759 usec, max 147754 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1954338 usec, 90% 0 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 7 usec, max 58516 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1954338 usec, 90% 0 usec, 99% 39518 usec, 99.9% 65345 usec, 99.99% 84855 usec, max 89699 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1837063 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 43120 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1837063 usec, 90% 0 usec, 99% 39919 usec, 99.9% 72993 usec, 99.99% 86350 usec, max 86751 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.max	total-work.time.total	total-work.count	total-work.time.min	
-10	4591.18	412.47	-inf	0.000	0	inf	
-Total time: 5003.66 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1803298 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 59993 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1803298 usec, 90% 1 usec, 99% 42411 usec, 99.9% 66588 usec, 99.99% 76520 usec, max 76906 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 01:58:59 PM UTC 2022
-
- 13:58:59 up 7 days,  2:15,  1 user,  load average: 1.06, 1.27, 1.20
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:24m  2.39s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99561200 957636 30819872    0    0     3    26    2    1  5  0 95  0  0
- 0  0      0 99565136 957636 30819888    0    0     0     0  215   75  0  0 100  0  0
-
-top - 13:59:00 up 7 days,  2:15,  1 user,  load average: 1.06, 1.27, 1.20
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97231.1 free,    420.2 used,  31032.7 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127010.7 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.55 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.51 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18739 msec =====
-===== DaCapo simple tail latency: 50% -15423934 usec, 90% 0 usec, 99% 3 usec, 99.9% 5 usec, 99.99% 8 usec, max 727696 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14370899 usec, 90% 200577 usec, 99% 1480739 usec, 99.9% 1725764 usec, 99.99% 1780569 usec, max 1822861 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6082 msec =====
-===== DaCapo simple tail latency: 50% -2880988 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 145484 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2753467 usec, 90% 2 usec, 99% 66425 usec, 99.9% 117502 usec, 99.99% 134621 usec, max 145484 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6047 msec =====
-===== DaCapo simple tail latency: 50% -2324726 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 308892 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2133670 usec, 90% 28574 usec, 99% 153323 usec, 99.9% 207784 usec, 99.99% 227834 usec, max 308892 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5032 msec =====
-===== DaCapo simple tail latency: 50% -1792294 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 64196 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1792294 usec, 90% 1 usec, 99% 42680 usec, 99.9% 77985 usec, 99.99% 91566 usec, max 96205 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.min	total-work.count	total-work.time.max	total-work.time.total	
-10	4610.43	393.29	inf	0	-inf	0.000	
-Total time: 5003.72 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1813295 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 57043 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1813295 usec, 90% 1 usec, 99% 44968 usec, 99.9% 84876 usec, 99.99% 101097 usec, max 106081 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:05:18 PM UTC 2022
-
- 14:05:18 up 7 days,  2:22,  1 user,  load average: 1.48, 1.38, 1.27
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:31m  2.49s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99569856 961216 30819816    0    0     3    27    3    2  5  0 95  0  0
- 0  0      0 99582160 961216 30819832    0    0     0   224  164   95  0  0 100  0  0
-
-top - 14:05:19 up 7 days,  2:22,  1 user,  load average: 1.48, 1.38, 1.27
-Tasks: 237 total,   1 running, 236 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97248.2 free,    399.6 used,  31036.2 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127031.2 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.55 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.55 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.56 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18746 msec =====
-===== DaCapo simple tail latency: 50% -15413003 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 733728 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14304165 usec, 90% 628336 usec, 99% 1519667 usec, 99.9% 1746873 usec, 99.99% 1783044 usec, max 1829095 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6085 msec =====
-===== DaCapo simple tail latency: 50% -2728301 usec, 90% 0 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 8 usec, max 139659 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2698034 usec, 90% 2 usec, 99% 51203 usec, 99.9% 76437 usec, 99.99% 92886 usec, max 139659 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6056 msec =====
-===== DaCapo simple tail latency: 50% -2062250 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 187921 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2062250 usec, 90% 0 usec, 99% 61947 usec, 99.9% 94710 usec, 99.99% 106227 usec, max 187921 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5005 msec =====
-===== DaCapo simple tail latency: 50% -1855836 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 64157 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1855836 usec, 90% 0 usec, 99% 36223 usec, 99.9% 64456 usec, 99.99% 75696 usec, max 76074 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.count	total-work.time.total	total-work.time.max	total-work.time.min	
-10	4572.58	431.15	0	0.000	-inf	inf	
-Total time: 5003.73 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1902727 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 60189 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1902727 usec, 90% 1 usec, 99% 43423 usec, 99.9% 70404 usec, 99.99% 89916 usec, max 92670 usec, measured over 1000000 events =====
-...Agent has completed.
-...Coordinator has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:11:35 PM UTC 2022
-
- 14:11:35 up 7 days,  2:28,  1 user,  load average: 1.25, 1.43, 1.34
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:37m  2.58s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 2  0      0 99550832 964588 30819784    0    0     3    28    3    2  5  0 95  0  0
- 0  0      0 99554864 964588 30819800    0    0     0     0  149   83  0  0 100  0  0
-
-top - 14:11:36 up 7 days,  2:28,  1 user,  load average: 1.25, 1.43, 1.34
-Tasks: 237 total,   1 running, 236 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97221.5 free,    423.0 used,  31039.4 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127007.8 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.53 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 2.32 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 1.81 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.56 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.55 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 2.19 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19707 msec =====
-===== DaCapo simple tail latency: 50% -15652603 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 8 usec, max 727211 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14556720 usec, 90% 650626 usec, 99% 1609783 usec, 99.9% 1700565 usec, 99.99% 1770019 usec, max 1815620 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 7120 msec =====
-===== DaCapo simple tail latency: 50% -3550343 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 7 usec, max 511674 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2975503 usec, 90% 144974 usec, 99% 467260 usec, 99.9% 597368 usec, 99.99% 623147 usec, max 633335 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5011 msec =====
-===== DaCapo simple tail latency: 50% -1878830 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 53871 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1878830 usec, 90% 1 usec, 99% 46166 usec, 99.9% 83789 usec, 99.99% 97605 usec, max 100331 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1763160 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 17691 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1763160 usec, 90% 0 usec, 99% 40756 usec, 99.9% 77607 usec, 99.99% 89264 usec, max 89654 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.max	total-work.count	total-work.time.min	total-work.time.total	
-11	4495.42	508.30	-inf	0	inf	0.000	
-Total time: 5003.72 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1855426 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 65796 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1855426 usec, 90% 1 usec, 99% 44250 usec, 99.9% 68922 usec, 99.99% 82882 usec, max 83265 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:17:54 PM UTC 2022
-
- 14:17:54 up 7 days,  2:34,  1 user,  load average: 1.27, 1.38, 1.35
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:43m  2.67s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99558096 969816 30820036    0    0     3    29    3    2  5  0 95  0  0
- 0  0      0 99570192 969816 30820048    0    0     0     0  176  114  0  0 100  0  0
-
-top - 14:17:55 up 7 days,  2:34,  1 user,  load average: 1.17, 1.36, 1.35
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97236.0 free,    403.2 used,  31044.8 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127027.7 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 2.32 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.55 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 2.33 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19713 msec =====
-===== DaCapo simple tail latency: 50% -15696552 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 8 usec, max 726013 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14478270 usec, 90% 648668 usec, 99% 1523677 usec, 99.9% 1709703 usec, 99.99% 1761208 usec, max 1806862 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6087 msec =====
-===== DaCapo simple tail latency: 50% -2604713 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 6 usec, max 115048 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2604713 usec, 90% 1 usec, 99% 52354 usec, 99.9% 97638 usec, 99.99% 117719 usec, max 125425 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6008 msec =====
-===== DaCapo simple tail latency: 50% -2031675 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 220099 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2031675 usec, 90% 30488 usec, 99% 93494 usec, 99.9% 130720 usec, 99.99% 153700 usec, max 220099 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1916376 usec, 90% 0 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 8 usec, max 62905 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1904263 usec, 90% 2 usec, 99% 48791 usec, 99.9% 69285 usec, 99.99% 78020 usec, max 78428 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.min	total-work.count	total-work.time.total	total-work.time.max	
-10	4574.50	429.37	inf	0	0.000	-inf	
-Total time: 5003.87 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1975272 usec, 90% 0 usec, 99% 2 usec, 99.9% 5 usec, 99.99% 9 usec, max 59697 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1975272 usec, 90% 0 usec, 99% 35295 usec, 99.9% 72948 usec, 99.99% 90596 usec, max 96518 usec, measured over 1000000 events =====
-...Agent has completed.
-...Coordinator has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:24:07 PM UTC 2022
-
- 14:24:07 up 7 days,  2:40,  1 user,  load average: 1.15, 1.30, 1.34
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:50m  2.77s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99540664 975360 30820260    0    0     3    30    3    2  5  0 95  0  0
- 0  0      0 99553216 975360 30820232    0    0     0     0  150   94  0  0 100  0  0
-
-top - 14:24:08 up 7 days,  2:40,  1 user,  load average: 1.15, 1.30, 1.34
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97219.9 free,    413.7 used,  31050.4 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127017.2 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.37 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.45 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 2.47 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.60 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 2.35 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.50 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.57 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18674 msec =====
-===== DaCapo simple tail latency: 50% -15387101 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 5 usec, max 731995 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14270393 usec, 90% 631033 usec, 99% 1525372 usec, 99.9% 1749347 usec, 99.99% 1787120 usec, max 1830980 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6083 msec =====
-===== DaCapo simple tail latency: 50% -2622613 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 93873 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2622613 usec, 90% 0 usec, 99% 6706 usec, 99.9% 45232 usec, 99.99% 64178 usec, max 93873 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5033 msec =====
-===== DaCapo simple tail latency: 50% -1886501 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 4 usec, max 135860 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1886501 usec, 90% 1 usec, 99% 49403 usec, 99.9% 71359 usec, 99.99% 81718 usec, max 135860 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1829302 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 62218 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1829302 usec, 90% 0 usec, 99% 36732 usec, 99.9% 62316 usec, 99.99% 76702 usec, max 77114 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.count	total-work.time.min	total-work.time.total	total-work.time.max	
-11	4567.57	475.38	0	inf	0.000	-inf	
-Total time: 5042.96 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5043 msec =====
-===== DaCapo simple tail latency: 50% -1831521 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 7 usec, max 15508 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1831521 usec, 90% 0 usec, 99% 3962 usec, 99.9% 29183 usec, 99.99% 40345 usec, max 40754 usec, measured over 1000000 events =====
-...Agent has completed.
-...Coordinator has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:30:21 PM UTC 2022
-
- 14:30:21 up 7 days,  2:47,  1 user,  load average: 1.30, 1.36, 1.35
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    3:56m  2.86s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99536048 979984 30820420    0    0     3    31    3    2  5  0 95  0  0
- 0  0      0 99535616 979984 30820452    0    0     0     0  206  115  0  0 100  0  0
-
-top - 14:30:22 up 7 days,  2:47,  1 user,  load average: 1.30, 1.36, 1.35
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97202.3 free,    426.6 used,  31055.1 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127004.2 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 2.40 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.52 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.43 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 2.39 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.55 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.54 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18715 msec =====
-===== DaCapo simple tail latency: 50% -15259683 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 733069 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14168376 usec, 90% 618447 usec, 99% 1529556 usec, 99.9% 1753583 usec, 99.99% 1791396 usec, max 1836187 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6101 msec =====
-===== DaCapo simple tail latency: 50% -2731849 usec, 90% 0 usec, 99% 2 usec, 99.9% 5 usec, 99.99% 8 usec, max 51955 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2731849 usec, 90% 0 usec, 99% 41587 usec, 99.9% 80518 usec, 99.99% 97833 usec, max 101487 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5036 msec =====
-===== DaCapo simple tail latency: 50% -1995656 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 166718 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1995656 usec, 90% 1 usec, 99% 53641 usec, 99.9% 83339 usec, 99.99% 95333 usec, max 166718 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5006 msec =====
-===== DaCapo simple tail latency: 50% -1916831 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 241461 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1890106 usec, 90% 2 usec, 99% 53739 usec, 99.9% 78894 usec, 99.99% 88512 usec, max 241461 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.min	total-work.time.max	total-work.count	total-work.time.total	
-10	4576.60	427.36	inf	-inf	0	0.000	
-Total time: 5003.96 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1858723 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 61162 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1858723 usec, 90% 0 usec, 99% 38829 usec, 99.9% 67991 usec, 99.99% 81825 usec, max 82164 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:36:37 PM UTC 2022
-
- 14:36:37 up 7 days,  2:53,  1 user,  load average: 1.62, 1.43, 1.38
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    4:02m  2.96s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99556408 985652 30820388    0    0     3    32    3    2  5  0 95  0  0
- 0  0      0 99556696 985652 30820404    0    0     0     0  175  117  0  0 100  0  0
-
-top - 14:36:39 up 7 days,  2:53,  1 user,  load average: 1.62, 1.43, 1.38
-Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.4 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97223.1 free,    400.3 used,  31060.6 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127030.5 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.55 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 3.52 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.49 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.41 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.55 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 19761 msec =====
-===== DaCapo simple tail latency: 50% -15596343 usec, 90% 1 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 725479 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14523346 usec, 90% 643947 usec, 99% 1577897 usec, 99.9% 1723638 usec, 99.99% 1763106 usec, max 1809142 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6093 msec =====
-===== DaCapo simple tail latency: 50% -2616862 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 7 usec, max 66040 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2595807 usec, 90% 1 usec, 99% 51350 usec, 99.9% 75520 usec, 99.99% 85411 usec, max 85815 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 6010 msec =====
-===== DaCapo simple tail latency: 50% -1951748 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 162208 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1951748 usec, 90% 0 usec, 99% 48180 usec, 99.9% 81824 usec, 99.99% 101984 usec, max 162208 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5010 msec =====
-===== DaCapo simple tail latency: 50% -1838766 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 45170 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1838766 usec, 90% 0 usec, 99% 951 usec, 99.9% 30843 usec, 99.99% 42569 usec, max 45170 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.count	total-work.time.max	total-work.time.total	total-work.time.min	
-10	4631.17	372.46	0	-inf	0.000	inf	
-Total time: 5003.63 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5003 msec =====
-===== DaCapo simple tail latency: 50% -1909834 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 55770 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1881193 usec, 90% 0 usec, 99% 39015 usec, 99.9% 58585 usec, 99.99% 66540 usec, max 70130 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.
-
------
-mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 /home/claireh/openjdk/build/normal/jdk/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk -Xms518M -Xmx518M --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar:/home/claireh/probes:/home/claireh/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default kafka
-running-ng v0.3.3
-Wed Oct 19 02:42:55 PM UTC 2022
-
- 14:42:55 up 7 days,  2:59,  1 user,  load average: 1.28, 1.35, 1.36
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-claireh  pts/2    tmux(795713).%0  Sat11    4:08m  3.05s  0.00s /bin/sh -c w
-
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0 99534208 991504 30821140    0    0     3    33    3    2  5  0 95  0  0
- 0  0      0 99534280 991504 30821156    0    0     0     0  130   67  0  0 100  0  0
-
-top - 14:42:56 up 7 days,  2:59,  1 user,  load average: 1.18, 1.33, 1.35
-Tasks: 237 total,   1 running, 236 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.4 us,  0.0 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem : 128684.0 total,  97201.5 free,    415.5 used,  31067.1 buff/cache
-MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127015.4 avail Mem 
-
-    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  165888  11228   8076 S   0.0   0.0   0:04.56 /sbin/init
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.15 [kthreadd]
-      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
-      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
-      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [netns]
-
-Environment variables: 
-	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
-	HOME=/home/claireh
-	LANG=en_US.UTF-8
-	LOGNAME=claireh
-	MOTD_SHOWN=pam
-	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
-	PWD=/home/claireh
-	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
-	SHELL=/bin/bash
-	SHLVL=2
-	SSH_CLIENT=10.0.0.2 60564 22
-	SSH_CONNECTION=10.0.0.2 60564 10.0.0.68 22
-	SSH_TTY=/dev/pts/1
-	TERM=screen
-	TERM_PROGRAM=tmux
-	TERM_PROGRAM_VERSION=3.2a
-	TMUX=/tmp/tmux-1239/default,795713,0
-	TMUX_PANE=%0
-	USER=claireh
-	XDG_RUNTIME_DIR=/run/user/1239
-	XDG_SESSION_CLASS=user
-	XDG_SESSION_ID=124
-	XDG_SESSION_TYPE=tty
-	_=/usr/local/bin/running
-OS: Linux skunk 5.15.0-48-generic #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
-number of cores: 16
-Frequency of cpu 0: 3.60 GHz
-Governor of cpu 0: performance
-Scaling_min_freq of cpu 0: 0.80 GHz
-Frequency of cpu 1: 3.60 GHz
-Governor of cpu 1: performance
-Scaling_min_freq of cpu 1: 0.80 GHz
-Frequency of cpu 2: 3.60 GHz
-Governor of cpu 2: performance
-Scaling_min_freq of cpu 2: 0.80 GHz
-Frequency of cpu 3: 3.60 GHz
-Governor of cpu 3: performance
-Scaling_min_freq of cpu 3: 0.80 GHz
-Frequency of cpu 4: 3.60 GHz
-Governor of cpu 4: performance
-Scaling_min_freq of cpu 4: 0.80 GHz
-Frequency of cpu 5: 3.60 GHz
-Governor of cpu 5: performance
-Scaling_min_freq of cpu 5: 0.80 GHz
-Frequency of cpu 6: 3.60 GHz
-Governor of cpu 6: performance
-Scaling_min_freq of cpu 6: 0.80 GHz
-Frequency of cpu 7: 3.60 GHz
-Governor of cpu 7: performance
-Scaling_min_freq of cpu 7: 0.80 GHz
-Frequency of cpu 8: 3.60 GHz
-Governor of cpu 8: performance
-Scaling_min_freq of cpu 8: 0.80 GHz
-Frequency of cpu 9: 2.25 GHz
-Governor of cpu 9: performance
-Scaling_min_freq of cpu 9: 0.80 GHz
-Frequency of cpu 10: 3.60 GHz
-Governor of cpu 10: performance
-Scaling_min_freq of cpu 10: 0.80 GHz
-Frequency of cpu 11: 3.60 GHz
-Governor of cpu 11: performance
-Scaling_min_freq of cpu 11: 0.80 GHz
-Frequency of cpu 12: 3.60 GHz
-Governor of cpu 12: performance
-Scaling_min_freq of cpu 12: 0.80 GHz
-Frequency of cpu 13: 3.60 GHz
-Governor of cpu 13: performance
-Scaling_min_freq of cpu 13: 0.80 GHz
-Frequency of cpu 14: 3.60 GHz
-Governor of cpu 14: performance
-Scaling_min_freq of cpu 14: 0.80 GHz
-Frequency of cpu 15: 3.60 GHz
-Governor of cpu 15: performance
-Scaling_min_freq of cpu 15: 0.80 GHz
---------------------------------------------------------------------------------
-IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
-Since it is not an official release of the DaCapo suite, care must be taken when
-using the suite, and any use of the build must be sure to note that it is not an
-offical release, and should note the relevant git hash.
-
-Feedback is greatly appreciated.   The preferred mode of feedback is via github.
-Please use our github page to create an issue or a pull request.
-    https://github.com/dacapobench/dacapobench.
---------------------------------------------------------------------------------
-
-Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
-Version: kafka 3.2.3
-Starting Zookeeper...
-Starting Kafka Server...
-Starting Agent...
-Starting Coordinator...
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 1 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 1 in 18736 msec =====
-===== DaCapo simple tail latency: 50% -15332431 usec, 90% 1 usec, 99% 2 usec, 99.9% 4 usec, 99.99% 6 usec, max 735935 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -14249704 usec, 90% 646710 usec, 99% 1549924 usec, 99.9% 1759236 usec, 99.99% 1808756 usec, max 1838218 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 2 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 2 in 6084 msec =====
-===== DaCapo simple tail latency: 50% -2686224 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 66041 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -2686224 usec, 90% 1 usec, 99% 48718 usec, 99.9% 85117 usec, 99.99% 104629 usec, max 109373 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 3 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 3 in 5005 msec =====
-===== DaCapo simple tail latency: 50% -1914025 usec, 90% 0 usec, 99% 1 usec, 99.9% 3 usec, 99.99% 5 usec, max 134003 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1914025 usec, 90% 0 usec, 99% 3015 usec, 99.9% 44290 usec, 99.99% 63024 usec, max 134003 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting warmup 4 =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-===== DaCapo evaluation-git-6e411f33 kafka completed warmup 4 in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1818030 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 6 usec, max 17112 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1818030 usec, 90% 1 usec, 99% 48793 usec, 99.9% 74882 usec, 99.99% 85843 usec, max 86229 usec, measured over 1000000 events =====
-===== DaCapo evaluation-git-6e411f33 kafka starting =====
-Trogdor is running the workload....
-Starting 1000000 requests...
-5%10%15%20%25%30%35%40%45%50%55%60%65%70%75%80%85%90%95%100%
-Completed requests
-Finished
-============================ MMTk Statistics Totals ============================
-GC	time.other	time.stw	total-work.time.total	total-work.time.max	total-work.time.min	total-work.count	
-10	4594.46	409.48	0.000	-inf	inf	0	
-Total time: 5003.94 ms
------------------------------- End MMTk Statistics -----------------------------
-===== DaCapo evaluation-git-6e411f33 kafka PASSED in 5004 msec =====
-===== DaCapo simple tail latency: 50% -1845179 usec, 90% 0 usec, 99% 2 usec, 99.9% 3 usec, 99.99% 5 usec, max 59726 usec, measured over 1000000 events =====
-===== DaCapo metered tail latency: 50% -1845179 usec, 90% 0 usec, 99% 37098 usec, 99.9% 57008 usec, 99.99% 65377 usec, max 68984 usec, measured over 1000000 events =====
-...Coordinator has completed.
-...Agent has completed.

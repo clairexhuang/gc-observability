@@ -1,4 +1,5 @@
-# running runbms /home/claireh/ebpf/processedges /home/claireh/ebpf/processedges/processedges.yml -p "pe-scalability-64mb" -i 3
+# running runbms /home/claireh/ebpf/overhead /home/claireh/ebpf/overhead/scale_overhead.yml -p "overhead-pe-scaling" -i 5
+
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
@@ -8,7 +9,7 @@ suites:
     release: evaluation
     path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
     timing_iteration: 5
-    timeout: 8000
+    timeout: 1200
     callback: "probe.DacapoChopinCallback"
     invocations: 5
 
@@ -30,10 +31,10 @@ benchmarks:
     # - h2o 
     # - jme 
     # - jython 
-    # - kafka 
+    - kafka 
     # - luindex 
     # - lusearch 
-    - pmd 
+    # - pmd 
     # - spring 
     # - sunflow 
     # - tomcat 
@@ -44,10 +45,10 @@ benchmarks:
 
 runtimes:
 # no defrag, no finalisation, probes for work packet stats + processedges stats
-  after:
+  scale:
     type: OpenJDK
     release: 11
-    home: "/home/claireh/openjdk/build/fixedsc/images/jdk"
+    home: "/home/claireh/openjdk/build/scale/images/jdk"
 
 modifiers:
   probes_cp:
@@ -62,7 +63,7 @@ modifiers:
     val: '{0}'
   fixedtrace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/scale.bt'"
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/overhead/scale.bt'"
   no_add_rand:
     type: Wrapper
     val: "setarch x86_64 -R"
@@ -77,10 +78,7 @@ modifiers:
     val: "-Xms10G -Xmx10G"
 
 configs:
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|fixedtrace|no_add_rand|stress-67108864|large_heap"
+  - "scale|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|fixedtrace|no_add_rand|stress-33554432|large_heap"
+  - "scale|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|stress-33554432|large_heap"
   
 
