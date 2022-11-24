@@ -1,3 +1,4 @@
+# measures GC scalability of MMTk
 # running runbms /home/claireh/ebpf/scalability /home/claireh/ebpf/scalability/configs_6e411f33.yml -p "scalability_6e411f33" -s 2
 includes:
   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"

@@ -1,3 +1,5 @@
+// counts number of edges and number of objects (via number of calls to scan_object)
+
 uretprobe:/home/claireh/openjdk/build/obj/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
     //begin collecting data at harness_begin (start of final iteration)
     @stats_enabled = 1;

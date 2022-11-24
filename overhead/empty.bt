@@ -1,3 +1,6 @@
+// attaches probes but does no actual tracing
+// used to estimate the overhead of userspace/kernel transitions
+
 uretprobe:/home/claireh/openjdk/build/probed/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
 }
 

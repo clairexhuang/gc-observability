@@ -1,3 +1,5 @@
+// collects distribution for the number of outgoing edges for each objects
+
 uretprobe:/home/claireh/openjdk/build/objects/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
     //begin collecting data at harness_begin (start of final iteration)
     @stats_enabled = 1;
@@ -13,7 +15,7 @@ usdt:/home/claireh/openjdk/build/objects/images/jdk/lib/server/libmmtk_openjdk.s
         return;
     }
 
-    // number of outgoing edges
+    // distribution for the number of outgoing edges
     @outgoingedges = hist(arg0);
     @average = avg(arg0);
 }

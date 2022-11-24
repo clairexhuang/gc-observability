@@ -1,3 +1,5 @@
+// collects distributions for work packet sizes of root packets
+
 uretprobe:/home/claireh/openjdk/build/edgesroots/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
     //begin collecting data at harness_begin (start of final iteration)
     @stats_enabled = 1;

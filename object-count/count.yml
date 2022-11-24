@@ -1,3 +1,4 @@
+# counts the number of calls to scan_object and the number of edges processed
 # running runbms /home/claireh/ebpf/object-count /home/claireh/ebpf/object-count/count.yml -p "object-count" -i 3
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"

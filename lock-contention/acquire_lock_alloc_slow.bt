@@ -1,7 +1,11 @@
+// tracing code used for lock contention case study
+
+// store start time for allocation slow path
 uprobe:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:"_ZN127_$LT$mmtk..util..alloc..bumpallocator..BumpAllocator$LT$VM$GT$$u20$as$u20$mmtk..util..alloc..allocator..Allocator$LT$VM$GT$$GT$15alloc_slow_once17hb0e6dbbd4a128f39E" {
     @alloc_slow_entry[tid] = nsecs;
 }
 
+// collect distribution of allocation slow path time
 uretprobe:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:"_ZN127_$LT$mmtk..util..alloc..bumpallocator..BumpAllocator$LT$VM$GT$$u20$as$u20$mmtk..util..alloc..allocator..Allocator$LT$VM$GT$$GT$15alloc_slow_once17hb0e6dbbd4a128f39E" {
     $ns = @alloc_slow_entry[tid];
     if ($ns) {
@@ -10,11 +14,13 @@ uretprobe:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk
     }
 }
 
+// store time where the lock is acquired
 usdt:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:mmtk:spacelockacquired {
     @lock_acquired[tid] = nsecs;
     // printf("acquired %d \n", arg0);
 }
 
+// collect distribution of lock held time for each space
 usdt:/home/claireh/openjdk/build/release-bug/jdk/lib/server/libmmtk_openjdk.so:mmtk:spacelockreleased {
     $ns = @lock_acquired[tid];
     if ($ns) {

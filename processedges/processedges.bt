@@ -1,3 +1,5 @@
+// collects distributions for ProcessEdges packet sizes (overall and by thread) and root packet sizes
+
 uretprobe:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
     //begin collecting data at harness_begin (start of final iteration)
     @stats_enabled = 1;

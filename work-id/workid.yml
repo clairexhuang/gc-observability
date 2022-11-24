@@ -1,3 +1,4 @@
+# runs the work packet experiment
 # running runbms /home/claireh/ebpf/work-id /home/claireh/ebpf/work-id/workid.yml -p "work-packets-by-id" -i 1
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"

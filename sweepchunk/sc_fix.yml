@@ -1,3 +1,4 @@
+# measures the effectiveness of the sweepchunk fix by rerunning the work packet experiment 
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
