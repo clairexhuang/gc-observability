@@ -1,0 +1,83 @@
+# running runbms /home/claireh/ebpf/object-count /home/claireh/ebpf/object-count/dist.yml -p "outgoing_edges" -i 1 -s 2
+includes:
+   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
+
+suites:
+  dacapo-6e411f33:
+    type: DaCapo
+    release: evaluation
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    timing_iteration: 5
+    timeout: 1200
+    callback: "probe.DacapoChopinCallback"
+    minheap: Immix
+    minheap_values:
+      Immix:
+        avrora: 8 #manual
+        batik: 462
+        biojava: 195
+        cassandra: 105
+        eclipse: 526
+        fop: 27 #manual
+        graphchi: 175
+        h2: 1732
+        h2o: 79
+        jme: 236
+        jython: 58
+        kafka: 259
+        luindex: 27
+        lusearch: 26
+        pmd: 188
+        spring: 143
+        sunflow: 28
+        tomcat: 61 #manual
+        #tradebeans: .inf
+        #tradesoap: .inf
+        xalan: 12
+        zxing: 430
+
+benchmarks:
+  dacapo-6e411f33:
+    - avrora 
+    - batik 
+    - biojava 
+    - cassandra 
+    - eclipse 
+    - fop 
+    - graphchi 
+    - h2o 
+    - jme 
+    - jython 
+    - luindex 
+    - lusearch 
+    - pmd 
+    - spring 
+    - sunflow 
+    - tomcat 
+    # - tradebeans 
+    # - tradesoap 
+    - xalan 
+    - zxing
+    - h2 
+    - kafka 
+
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: "/home/claireh/openjdk/build/objects/images/jdk"
+
+modifiers:
+  probes_cp:
+    type: JVMClasspath
+    val: "/home/claireh/probes /home/claireh/probes.jar"
+  probes:
+    type: JVMArg
+    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+  bpftrace:
+    type: Companion
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/object-count/dist.bt'"
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|bpftrace"
+  

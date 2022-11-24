@@ -26,7 +26,7 @@ benchmarks:
     # - graphchi 
     # - h2o 
     # - jme 
-    # - jython 
+    - jython 
     # - luindex 
     # - lusearch 
     # - pmd 
@@ -44,7 +44,7 @@ runtimes:
   mmtk:
     type: OpenJDK
     release: 11
-    home: "/home/claireh/openjdk/build/edgesroots/jdk"
+    home: "/home/claireh/openjdk/build/edgesroots/images/jdk"
 
 modifiers:
   probes_cp:

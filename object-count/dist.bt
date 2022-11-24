@@ -1,0 +1,19 @@
+uretprobe:/home/claireh/openjdk/build/objects/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+    //begin collecting data at harness_begin (start of final iteration)
+    @stats_enabled = 1;
+}
+
+uretprobe:/home/claireh/openjdk/build/objects/images/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+    //begin collecting data at harness_end (end of final iteration)
+    @stats_enabled = 0;
+}
+
+usdt:/home/claireh/openjdk/build/objects/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:scan_object {
+    if (!@stats_enabled) {
+        return;
+    }
+
+    // number of outgoing edges
+    @outgoingedges = hist(arg0);
+    @average = avg(arg0);
+}
