@@ -1,4 +1,4 @@
-# running runbms /home/claireh/ebpf/processedges /home/claireh/ebpf/processedges/processedges.yml -p "pe-scalability-64mb" -i 3
+# running runbms /home/claireh/ebpf/processedges /home/claireh/ebpf/processedges/processedges.yml -p "process-edges-32mb" -i 3
 includes:
    - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
@@ -30,10 +30,10 @@ benchmarks:
     # - h2o 
     # - jme 
     # - jython 
-    # - kafka 
+    - kafka 
     # - luindex 
     # - lusearch 
-    - pmd 
+    # - pmd 
     # - spring 
     # - sunflow 
     # - tomcat 
@@ -62,7 +62,7 @@ modifiers:
     val: '{0}'
   fixedtrace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/scale.bt'"
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/processedges/processedges.bt'"
   no_add_rand:
     type: Wrapper
     val: "setarch x86_64 -R"
@@ -77,10 +77,10 @@ modifiers:
     val: "-Xms10G -Xmx10G"
 
 configs:
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|fixedtrace|no_add_rand|stress-67108864|large_heap"
-  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|fixedtrace|no_add_rand|stress-67108864|large_heap"
+  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|fixedtrace|no_add_rand|stress-33554432|large_heap"
+  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|fixedtrace|no_add_rand|stress-33554432|large_heap"
+  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|fixedtrace|no_add_rand|stress-33554432|large_heap"
+  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|fixedtrace|no_add_rand|stress-33554432|large_heap"
+  - "after|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|fixedtrace|no_add_rand|stress-33554432|large_heap"
   
 

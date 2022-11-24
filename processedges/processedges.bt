@@ -1,21 +1,21 @@
-uretprobe:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
+uretprobe:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:harness_begin {
     //begin collecting data at harness_begin (start of final iteration)
     @stats_enabled = 1;
 }
 
-uretprobe:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:harness_end {
+uretprobe:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:harness_end {
     //begin collecting data at harness_end (end of final iteration)
     @stats_enabled = 0;
 }
 
-usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:startwork {
     if (!@stats_enabled) {
         return;
     }
     @startwork[tid] = nsecs;
 }
 
-usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:endwork {
     if (!@stats_enabled) {
         return;
     }
@@ -28,7 +28,7 @@ usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_open
 }
 
 // start timer for process edges work bucket
-usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesstart {
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesstart {
     if (!@stats_enabled) {
         return;
     }
@@ -36,7 +36,7 @@ usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_open
 }
 
 // store time for process edges work bucket
-usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesend {
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgesend {
     if (!@stats_enabled) {
         return;
     }
@@ -46,7 +46,7 @@ usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_open
     }
 }
 
-usdt:/home/claireh/openjdk/build/processedges/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgeslen {
+usdt:/home/claireh/openjdk/build/fixedsc/images/jdk/lib/server/libmmtk_openjdk.so:mmtk:processedgeslen {
     if (!@stats_enabled) {
         return;
     }
