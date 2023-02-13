@@ -1,5 +1,5 @@
 includes:
-  - /Users/clairehuang/Desktop/ebpf/configs/scalability/scalability_base.yml
+  - /home/claireh/ebpf/configs/scalability/scalability_base.yml
 
 benchmarks:
   dacapo-6e411f33:
