@@ -16,7 +16,7 @@ plugins:
       topic: "[claireh] 2023-02-ebpf-processedgesscalability"
 
 overrides:
-  "modifiers.c2.excludes.dacapo-6e411f33": 
+  "modifiers.c2.excludes.dacapo-0d047f55": 
     - tradebeans
     - tradesoap
 

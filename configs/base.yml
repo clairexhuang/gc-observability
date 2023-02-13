@@ -2,51 +2,14 @@ includes:
   - "$RUNNING_NG_PACKAGE_DATA/base/runbms.yml"
 
 suites:
-  dacapo-6e411f33:
+  dacapo-0d047f55:
     type: DaCapo
     release: evaluation
-    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-6e411f33.jar
+    path: /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar
     timing_iteration: 5
     timeout: 1200
     callback: "probe.DacapoChopinCallback"
-    minheap: Immix
-    minheap_values:
-      Immix:
-        avrora: 8 #manual
-        batik: 462
-        biojava: 195
-        cassandra: 105
-        eclipse: 526
-        fop: 27 #manual
-        graphchi: 175
-        h2: 1732
-        h2o: 79
-        jme: 236
-        jython: 58
-        kafka: 259
-        luindex: 27
-        lusearch: 26
-        pmd: 188
-        spring: 143
-        sunflow: 28
-        tomcat: 61 #manual
-        #tradebeans: .inf
-        #tradesoap: .inf
-        xalan: 12
-        zxing: 430
     invocations: 10
-
-modifiers:
-  probes_cp:
-    type: JVMClasspath
-    val: "/home/claireh/probes /home/claireh/probes/probes.jar"
-  probes:
-    type: JVMArg
-    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
-  gc_threads:
-    type: EnvVar
-    var: MMTK_THREADS
-    val: '{0}'
 
 modifiers:
   probes_cp:
