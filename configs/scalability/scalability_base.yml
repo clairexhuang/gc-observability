@@ -1,0 +1,26 @@
+includes:
+  - /Users/clairehuang/Desktop/ebpf/configs/base.yml
+
+runtimes:
+  mmtk:
+    type: OpenJDK
+    release: 11
+    home: TODO
+
+plugins:
+  zulip:
+    type: Zulip
+    request:
+      type: stream
+      to: "running-ng bots"
+      topic: "[claireh] 2023-02-ebpf-processedgesscalability"
+
+overrides:
+  "modifiers.c2.excludes.dacapo-6e411f33": 
+    - tradebeans
+    - tradesoap
+
+modifiers:
+  scalability_trace:
+    type: Companion
+    val: TODO

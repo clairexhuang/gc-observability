@@ -1,0 +1,14 @@
+includes:
+  - /Users/clairehuang/Desktop/ebpf/configs/scalability/scalability_base.yml
+
+benchmarks:
+  dacapo-6e411f33:
+    - lusearch
+    - xalan
+
+configs:
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|mmtk|no_add_rand|stress-268435456|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|mmtk|no_add_rand|stress-268435456|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|mmtk|no_add_rand|stress-268435456|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|mmtk|no_add_rand|stress-268435456|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|mmtk|no_add_rand|stress-268435456|large_heap"
