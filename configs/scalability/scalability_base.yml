@@ -5,7 +5,7 @@ runtimes:
   mmtk:
     type: OpenJDK
     release: 11
-    home: TODO
+    home: "/home/claireh/builds/process_edges_scalability"
 
 plugins:
   zulip:
@@ -21,6 +21,6 @@ overrides:
     - tradesoap
 
 modifiers:
-  scalability_trace:
+  trace:
     type: Companion
-    val: TODO
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/configs/scalability/scale.bt'"

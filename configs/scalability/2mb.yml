@@ -7,8 +7,8 @@ benchmarks:
     - jme
 
 configs:
-  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|mmtk|no_add_rand|stress-2097152|large_heap"
-  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|mmtk|no_add_rand|stress-2097152|large_heap"
-  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|mmtk|no_add_rand|stress-2097152|large_heap"
-  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|mmtk|no_add_rand|stress-2097152|large_heap"
-  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|mmtk|no_add_rand|stress-2097152|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-1|trace|no_add_rand|stress-2097152|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|trace|no_add_rand|stress-2097152|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|trace|no_add_rand|stress-2097152|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|trace|no_add_rand|stress-2097152|large_heap"
+  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|trace|no_add_rand|stress-2097152|large_heap"
