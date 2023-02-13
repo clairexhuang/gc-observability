@@ -51,10 +51,10 @@ modifiers:
 modifiers:
   probes_cp:
     type: JVMClasspath
-    val: "/home/claireh/probes /home/claireh/probes.jar"
+    val: "/home/claireh/probes/out /home/claireh/probes/out/probes.jar"
   probes:
     type: JVMArg
-    val: "-Djava.library.path=/home/claireh/probes -Dprobes=RustMMTk"
+    val: "-Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk"
   gc_threads:
     type: EnvVar
     var: MMTK_THREADS
