@@ -23,4 +23,4 @@ overrides:
 modifiers:
   trace:
     type: Companion
-    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static '/home/claireh/ebpf/configs/scalability/scale.bt'"
+    val: "sudo /opt/bpftrace/bpftrace-0.16.0-static -f json '/home/claireh/ebpf/configs/scalability/scale.bt'"

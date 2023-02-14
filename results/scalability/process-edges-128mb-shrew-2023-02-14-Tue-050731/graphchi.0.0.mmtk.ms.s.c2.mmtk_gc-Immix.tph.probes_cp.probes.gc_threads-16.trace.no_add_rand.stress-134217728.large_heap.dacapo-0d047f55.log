@@ -1,0 +1,1360 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 10:13:06 AM UTC 2023
+
+ 10:13:06 up 1 day,  7:25,  1 user,  load average: 2.77, 2.36, 1.74
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    5:05m  0.93s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124986192 781092 5653948    0    0     5    84   22   19  2  0 98  0  0
+ 0  0      0 124986192 781092 5653948    0    0     0     0  108   76  0  0 100  0  0
+
+top - 10:13:07 up 1 day,  7:25,  1 user,  load average: 2.55, 2.32, 1.73
+Tasks: 238 total,   1 running, 237 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122056.1 free,    343.7 used,   6284.2 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127095.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.66 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.56 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.55 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.55 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.55 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 2.74 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 24733 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20149 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20241 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 19995 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.max	total-work.time.min	total-work.time.total	
+94	19622.26	424.44	0	-inf	inf	0.000	
+Total time: 20046.69 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20047 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 253191266
+@startprocessedges: 113265058834731
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 10:23:55 AM UTC 2023
+
+ 10:23:55 up 1 day,  7:36,  1 user,  load average: 4.33, 3.76, 2.71
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    5:16m  1.01s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124987520 781516 5654056    0    0     5    84   22   19  2  0 98  0  0
+ 0  0      0 124987520 781516 5654056    0    0     0     0  109   43  0  0 100  0  0
+
+top - 10:23:56 up 1 day,  7:36,  1 user,  load average: 4.33, 3.76, 2.71
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122057.6 free,    341.7 used,   6284.7 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127097.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.67 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 2.55 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 2.30 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 24938 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20203 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20282 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 20072 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.total	total-work.time.max	total-work.time.min	total-work.count	
+94	19639.41	446.44	0.000	-inf	inf	0	
+Total time: 20085.85 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20086 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 251359999
+@startprocessedges: 113914863908834
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 10:34:49 AM UTC 2023
+
+ 10:34:49 up 1 day,  7:47,  1 user,  load average: 3.50, 3.41, 3.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    5:27m  1.09s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124990320 781916 5654192    0    0     5    83   23   19  2  0 98  0  0
+ 0  0      0 124989824 781916 5654192    0    0     0     0   93   37  0  0 100  0  0
+
+top - 10:34:50 up 1 day,  7:47,  1 user,  load average: 3.50, 3.41, 3.05
+Tasks: 233 total,   1 running, 232 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122059.6 free,    339.1 used,   6285.3 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127099.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 2.29 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.53 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.51 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.44 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.54 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 24728 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20196 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20242 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 19976 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.min	total-work.time.max	total-work.time.total	total-work.count	
+94	19600.52	422.70	inf	-inf	0.000	0	
+Total time: 20023.22 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20023 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 253663353
+@startprocessedges: 114568564429411
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 10:45:39 AM UTC 2023
+
+ 10:45:39 up 1 day,  7:58,  1 user,  load average: 2.05, 2.71, 2.84
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    5:38m  1.16s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124987480 782336 5654240    0    0     5    83   23   19  2  0 97  0  0
+ 0  0      0 124987480 782336 5654240    0    0     0     0   91   50  0  0 100  0  0
+
+top - 10:45:40 up 1 day,  7:58,  1 user,  load average: 2.05, 2.71, 2.84
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.4 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122057.6 free,    340.7 used,   6285.7 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127098.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.57 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.53 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.55 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.52 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 24660 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20047 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20104 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 19901 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.max	total-work.time.min	total-work.time.total	
+94	19575.18	440.14	0	-inf	inf	0.000	
+Total time: 20015.32 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20016 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 255640848
+@startprocessedges: 115218152854380
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 10:56:27 AM UTC 2023
+
+ 10:56:27 up 1 day,  8:09,  1 user,  load average: 4.50, 3.81, 3.32
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    5:48m  1.23s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124988528 782736 5654308    0    0     5    82   23   19  2  0 97  0  0
+ 0  0      0 124988528 782736 5654308    0    0     0     0  121   59  0  0 100  0  0
+
+top - 10:56:28 up 1 day,  8:09,  1 user,  load average: 4.50, 3.81, 3.32
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122058.4 free,    339.5 used,   6286.2 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127099.4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 2.25 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.53 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.56 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.55 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.60 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.49 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 25078 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20322 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20473 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 20180 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.max	total-work.count	total-work.time.total	total-work.time.min	
+94	19825.68	446.82	-inf	0	0.000	inf	
+Total time: 20272.51 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20273 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 254378252
+@startprocessedges: 115868075014293
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 11:07:16 AM UTC 2023
+
+ 11:07:16 up 1 day,  8:19,  1 user,  load average: 6.13, 4.00, 3.46
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    5:59m  1.31s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124978032 783140 5654384    0    0     5    82    0   20  2  0 97  0  0
+ 0  0      0 124977776 783140 5654384    0    0     0     0   94   44  0  0 100  0  0
+
+top - 11:07:17 up 1 day,  8:19,  1 user,  load average: 6.13, 4.00, 3.46
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122048.6 free,    348.8 used,   6286.6 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127090.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 2.06 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.51 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.34 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 2.25 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 2.28 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.51 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.50 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.49 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 24873 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20328 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20380 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 20148 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.total	total-work.time.min	total-work.count	total-work.time.max	
+94	19748.11	427.31	0.000	inf	0	-inf	
+Total time: 20175.42 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20176 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 252681059
+@startprocessedges: 116516678584819
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 11:18:09 AM UTC 2023
+
+ 11:18:09 up 1 day,  8:30,  1 user,  load average: 4.20, 3.61, 3.33
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    6:10m  1.38s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124981168 783564 5654524    0    0     5    81    0   20  3  0 97  0  0
+ 0  0      0 124981168 783564 5654524    0    0     0     0  103   49  0  0 100  0  0
+
+top - 11:18:10 up 1 day,  8:30,  1 user,  load average: 3.87, 3.55, 3.31
+Tasks: 234 total,   1 running, 233 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122051.4 free,    345.4 used,   6287.2 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127093.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 2.40 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 2.09 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.60 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.50 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 2.38 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 25003 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20395 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20446 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 20209 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.min	total-work.time.max	total-work.time.total	
+94	19819.80	445.61	0	inf	-inf	0.000	
+Total time: 20265.41 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20265 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 254007835
+@startprocessedges: 117169590930346
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default graphchi
+running-ng v0.3.6
+Tue Feb 14 11:29:03 AM UTC 2023
+
+ 11:29:03 up 1 day,  8:41,  1 user,  load average: 4.08, 3.44, 3.23
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20958).%0   Mon11    6:21m  1.45s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 124981680 783968 5654592    0    0     5    81    1   20  3  0 97  0  0
+ 0  0      0 124981680 783968 5654592    0    0     0     0   78   44  0  0 100  0  0
+
+top - 11:29:04 up 1 day,  8:41,  1 user,  load average: 4.08, 3.44, 3.23
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 122052.2 free,    344.2 used,   6287.7 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127094.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165912  11400   8284 S   0.0   0.0   0:01.68 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 48820 22
+	SSH_CONNECTION=10.0.0.2 48820 10.0.0.67 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20958,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux shrew 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 2.32 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.60 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.38 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 2.44 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.49 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+Nominal stats: NAL: 1212, NAS: 0, NEF: 12, NET: 5, NEW: 1, NGF: 5071, NMH: 193, NML: 0, NMR: 1534, NMS: 3, NMT: 36, NOA: 97, NOL: 96, NOM: 24, NOS: 16, NPF: 23, NUB: 8, NUC: 1
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 1 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 1 in 24828 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 2 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 2 in 20243 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 3 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 3 in 20279 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting warmup 4 =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+===== DaCapo evaluation-git-0d047f55 graphchi completed warmup 4 in 20059 msec =====
+===== DaCapo evaluation-git-0d047f55 graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+Total edges: 1000000
+5700980 elements, check: 3
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.max	total-work.time.total	total-work.count	total-work.time.min	
+94	19665.59	442.93	-inf	0.000	0	inf	
+Total time: 20108.53 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 graphchi PASSED in 20108 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 251691652
+@startprocessedges: 117823044431903
+@stats_enabled: 0
