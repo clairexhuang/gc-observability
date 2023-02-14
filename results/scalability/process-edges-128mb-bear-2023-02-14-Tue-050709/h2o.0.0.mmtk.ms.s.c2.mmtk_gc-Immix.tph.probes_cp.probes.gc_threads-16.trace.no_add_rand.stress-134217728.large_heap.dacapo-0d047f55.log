@@ -1,0 +1,1308 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.6
+Tue Feb 14 10:45:56 AM UTC 2023
+
+ 10:45:56 up 23:05,  1 user,  load average: 2.42, 3.53, 4.18
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(2474).%0    Mon11    5:38m  2.40s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 59871648 271372 5085420    0    0     2    50    2    5  2  0 97  0  0
+ 0  0      0 59871148 271384 5085420    0    0     0   344  154   99  0  0 99  1  0
+
+top - 10:45:57 up 23:05,  1 user,  load average: 2.42, 3.53, 4.18
+Tasks: 369 total,   1 running, 368 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  58467.2 free,    519.0 used,   5231.3 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  63046.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165848  11328   8284 S   0.0   0.0   0:00.91 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39924 22
+	SSH_CONNECTION=10.0.0.2 39924 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,2474,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=5
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.38 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.39 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.35 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.34 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.38 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.31 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.39 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.39 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.38 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.39 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.33 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.35 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.36 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.35 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.39 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.38 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.36 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.38 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.34 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.35 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.39 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.38 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.38 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.31 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.33 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2o 3.38.0.3
+Nominal stats: NET: 10, NEW: 2, NMH: 113, NMR: 1136, NMS: 4, NMT: 91, NOA: 142, NOL: 152, NOM: 16, NOS: 16
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 1 in 22832 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 2 in 11888 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 3 in 10785 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 4 in 11339 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.min	total-work.time.total	total-work.time.max	
+120	9809.43	1364.60	0	inf	0.000	-inf	
+Total time: 11174.03 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 h2o PASSED in 11174 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 799031170
+@startprocessedges: 83256520437561
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.6
+Tue Feb 14 10:54:44 AM UTC 2023
+
+ 10:54:44 up 23:14,  1 user,  load average: 4.79, 3.87, 4.01
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(2474).%0    Mon11    5:47m  2.51s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 59863032 272240 5088232    0    0     2    50    3    7  3  0 97  0  0
+ 0  0      0 59863460 272240 5087884    0    0     0     0  127   93  0  0 100  0  0
+
+top - 10:54:45 up 23:14,  1 user,  load average: 4.41, 3.81, 3.99
+Tasks: 372 total,   1 running, 371 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  58460.2 free,    522.8 used,   5234.5 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  63043.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165848  11328   8284 S   0.0   0.0   0:00.92 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39924 22
+	SSH_CONNECTION=10.0.0.2 39924 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,2474,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=5
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.39 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.34 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.36 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.37 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.35 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.37 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.34 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.35 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.35 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.36 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.36 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.35 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.38 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.39 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.39 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.39 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.39 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.39 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.39 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.34 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.38 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.38 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.33 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.38 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.38 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.29 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.38 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.33 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2o 3.38.0.3
+Nominal stats: NET: 10, NEW: 2, NMH: 113, NMR: 1136, NMS: 4, NMT: 91, NOA: 142, NOL: 152, NOM: 16, NOS: 16
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 1 in 22967 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 2 in 11647 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 3 in 10995 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 4 in 10984 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.max	total-work.count	total-work.time.total	total-work.time.min	
+122	9857.48	1382.20	-inf	0	0.000	inf	
+Total time: 11239.68 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 h2o PASSED in 11240 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 838761095
+@startprocessedges: 83784559055107
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.6
+Tue Feb 14 11:03:30 AM UTC 2023
+
+ 11:03:30 up 23:23,  1 user,  load average: 4.42, 4.21, 4.28
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(2474).%0    Mon11    5:56m  2.61s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 59857164 273076 5092300    0    0     2    50    4    8  3  0 97  0  0
+ 0  0      0 59856660 273076 5092300    0    0     0    64  118   61  0  0 100  0  0
+
+top - 11:03:32 up 23:23,  1 user,  load average: 4.42, 4.21, 4.28
+Tasks: 376 total,   1 running, 375 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  58453.5 free,    524.3 used,   5239.6 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  63041.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165848  11328   8284 S   0.0   0.0   0:00.92 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39924 22
+	SSH_CONNECTION=10.0.0.2 39924 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,2474,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=5
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.39 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.39 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.39 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.35 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.35 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.36 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.35 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.35 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.35 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.39 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.38 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.38 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.39 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.38 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.39 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.35 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.36 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.34 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.35 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.34 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.36 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.36 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.37 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.35 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.34 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.38 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.33 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.35 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.35 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2o 3.38.0.3
+Nominal stats: NET: 10, NEW: 2, NMH: 113, NMR: 1136, NMS: 4, NMT: 91, NOA: 142, NOL: 152, NOM: 16, NOS: 16
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 1 in 23141 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 2 in 11443 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 3 in 11319 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 4 in 11582 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.max	total-work.time.total	total-work.time.min	
+123	10136.99	1356.08	0	-inf	0.000	inf	
+Total time: 11493.07 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 h2o PASSED in 11493 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 787440303
+@startprocessedges: 84312041747392
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.6
+Tue Feb 14 11:12:18 AM UTC 2023
+
+ 11:12:18 up 23:32,  1 user,  load average: 6.31, 4.30, 4.14
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(2474).%0    Mon11    6:05m  2.72s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 59852144 273872 5095272    0    0     2    50    5   10  3  0 97  0  0
+ 0  0      0 59851892 273872 5095272    0    0     0     0   97   46  0  0 100  0  0
+
+top - 11:12:19 up 23:32,  1 user,  load average: 6.31, 4.30, 4.14
+Tasks: 376 total,   1 running, 375 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.6 id,  0.2 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  58448.9 free,    525.3 used,   5243.3 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  63040.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  93778 claireh   20   0   10792   4296   3436 R   6.7   0.0   0:00.01 top -bcn 1 -w512
+      1 root      20   0  165848  11328   8284 S   0.0   0.0   0:00.92 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39924 22
+	SSH_CONNECTION=10.0.0.2 39924 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,2474,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=5
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.38 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.36 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.38 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.39 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.39 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.38 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.40 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.38 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.38 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.39 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.35 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.35 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.35 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.38 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.38 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.39 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.38 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.39 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.38 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.35 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.34 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.34 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.36 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.37 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.35 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.35 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.35 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.36 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.35 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.37 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.30 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2o 3.38.0.3
+Nominal stats: NET: 10, NEW: 2, NMH: 113, NMR: 1136, NMS: 4, NMT: 91, NOA: 142, NOL: 152, NOM: 16, NOS: 16
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 1 in 22916 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 2 in 11637 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 3 in 11226 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 4 in 10895 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.max	total-work.count	total-work.time.total	total-work.time.min	
+124	10071.53	1395.71	-inf	0	0.000	inf	
+Total time: 11467.24 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 h2o PASSED in 11467 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 805304564
+@startprocessedges: 84839099187482
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.6
+Tue Feb 14 11:21:05 AM UTC 2023
+
+ 11:21:05 up 23:41,  1 user,  load average: 2.05, 3.55, 4.02
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(2474).%0    Mon11    6:14m  2.84s  0.00s w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 59859316 274696 5097940    0    0     2    51    7   12  3  0 97  0  0
+ 0  0      0 59858816 274708 5097940    0    0     0   216  152  134  0  0 100  0  0
+
+top - 11:21:06 up 23:41,  1 user,  load average: 1.89, 3.49, 4.00
+Tasks: 369 total,   1 running, 368 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  58454.6 free,    516.1 used,   5246.7 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  63049.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165848  11328   8284 S   0.0   0.0   0:00.92 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39924 22
+	SSH_CONNECTION=10.0.0.2 39924 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,2474,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=5
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.40 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.39 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.39 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.38 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.38 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.35 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.38 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.39 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.33 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.33 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.38 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.34 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.33 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.34 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.34 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.34 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.38 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.36 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.37 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.35 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.36 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.35 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.38 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.39 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.35 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.37 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.38 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.39 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.39 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.38 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.40 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.39 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2o 3.38.0.3
+Nominal stats: NET: 10, NEW: 2, NMH: 113, NMR: 1136, NMS: 4, NMT: 91, NOA: 142, NOL: 152, NOM: 16, NOS: 16
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 1 in 22970 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 2 in 11865 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 3 in 10896 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 4 in 10936 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.min	total-work.time.total	total-work.time.max	
+125	10089.53	1378.51	0	inf	0.000	-inf	
+Total time: 11468.04 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 h2o PASSED in 11468 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 797415102
+@startprocessedges: 85366354132485
+@stats_enabled: 0
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=16 MMTK_STRESS_FACTOR=134217728 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default h2o
+running-ng v0.3.6
+Tue Feb 14 11:29:52 AM UTC 2023
+
+ 11:29:52 up 23:49,  1 user,  load average: 3.99, 3.82, 3.96
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(2474).%0    Mon11    6:22m  2.95s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 59851252 275504 5100916    0    0     2    51    8   14  3  0 97  0  0
+ 0  0      0 59850748 275504 5100916    0    0     0     0   92   48  0  0 100  0  0
+
+top - 11:29:53 up 23:49,  1 user,  load average: 3.99, 3.82, 3.96
+Tasks: 373 total,   1 running, 372 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  64217.5 total,  58447.8 free,    519.3 used,   5250.4 buff/cache
+MiB Swap:  65536.0 total,  65536.0 free,      0.0 used.  63045.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165848  11328   8284 S   0.0   0.0   0:00.92 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 39924 22
+	SSH_CONNECTION=10.0.0.2 39924 10.0.0.80 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,2474,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=5
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux bear 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: AMD Ryzen 9 5950X 16-Core Processor
+number of cores: 32
+Frequency of cpu 0: 3.39 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 2.20 GHz
+Frequency of cpu 1: 3.39 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 2.20 GHz
+Frequency of cpu 2: 3.43 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 2.20 GHz
+Frequency of cpu 3: 3.37 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 2.20 GHz
+Frequency of cpu 4: 3.39 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 2.20 GHz
+Frequency of cpu 5: 3.35 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 2.20 GHz
+Frequency of cpu 6: 3.29 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 2.20 GHz
+Frequency of cpu 7: 3.33 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 2.20 GHz
+Frequency of cpu 8: 3.29 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 2.20 GHz
+Frequency of cpu 9: 3.39 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 2.20 GHz
+Frequency of cpu 10: 3.39 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 2.20 GHz
+Frequency of cpu 11: 3.38 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 2.20 GHz
+Frequency of cpu 12: 3.39 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 2.20 GHz
+Frequency of cpu 13: 3.38 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 2.20 GHz
+Frequency of cpu 14: 3.39 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 2.20 GHz
+Frequency of cpu 15: 3.33 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 2.20 GHz
+Frequency of cpu 16: 3.36 GHz
+Governor of cpu 16: performance
+Scaling_min_freq of cpu 16: 2.20 GHz
+Frequency of cpu 17: 3.36 GHz
+Governor of cpu 17: performance
+Scaling_min_freq of cpu 17: 2.20 GHz
+Frequency of cpu 18: 3.36 GHz
+Governor of cpu 18: performance
+Scaling_min_freq of cpu 18: 2.20 GHz
+Frequency of cpu 19: 3.36 GHz
+Governor of cpu 19: performance
+Scaling_min_freq of cpu 19: 2.20 GHz
+Frequency of cpu 20: 3.36 GHz
+Governor of cpu 20: performance
+Scaling_min_freq of cpu 20: 2.20 GHz
+Frequency of cpu 21: 3.35 GHz
+Governor of cpu 21: performance
+Scaling_min_freq of cpu 21: 2.20 GHz
+Frequency of cpu 22: 3.38 GHz
+Governor of cpu 22: performance
+Scaling_min_freq of cpu 22: 2.20 GHz
+Frequency of cpu 23: 3.36 GHz
+Governor of cpu 23: performance
+Scaling_min_freq of cpu 23: 2.20 GHz
+Frequency of cpu 24: 3.35 GHz
+Governor of cpu 24: performance
+Scaling_min_freq of cpu 24: 2.20 GHz
+Frequency of cpu 25: 3.35 GHz
+Governor of cpu 25: performance
+Scaling_min_freq of cpu 25: 2.20 GHz
+Frequency of cpu 26: 3.35 GHz
+Governor of cpu 26: performance
+Scaling_min_freq of cpu 26: 2.20 GHz
+Frequency of cpu 27: 3.34 GHz
+Governor of cpu 27: performance
+Scaling_min_freq of cpu 27: 2.20 GHz
+Frequency of cpu 28: 3.35 GHz
+Governor of cpu 28: performance
+Scaling_min_freq of cpu 28: 2.20 GHz
+Frequency of cpu 29: 3.35 GHz
+Governor of cpu 29: performance
+Scaling_min_freq of cpu 29: 2.20 GHz
+Frequency of cpu 30: 3.36 GHz
+Governor of cpu 30: performance
+Scaling_min_freq of cpu 30: 2.20 GHz
+Frequency of cpu 31: 3.35 GHz
+Governor of cpu 31: performance
+Scaling_min_freq of cpu 31: 2.20 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 32 processors detected, 32 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2o 3.38.0.3
+Nominal stats: NET: 10, NEW: 2, NMH: 113, NMR: 1136, NMS: 4, NMT: 91, NOA: 142, NOL: 152, NOM: 16, NOS: 16
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 1 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 1 in 23247 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 2 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 2 in 11826 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 3 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 3 in 11381 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting warmup 4 =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+===== DaCapo evaluation-git-0d047f55 h2o completed warmup 4 in 11291 msec =====
+===== DaCapo evaluation-git-0d047f55 h2o starting =====
+Importing file: citibiketripdata201908.csv......
+Parsing file: citibiketripdata201908.csv......
+Building model......
+Model built successfully
+Frames deleted
+H2O finished
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.count	total-work.time.total	total-work.time.min	total-work.time.max	
+117	9798.25	1324.36	0	0.000	inf	-inf	
+Total time: 11122.62 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 h2o PASSED in 11123 msec =====
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 780792628
+@startprocessedges: 85893304385913
+@stats_enabled: 0
