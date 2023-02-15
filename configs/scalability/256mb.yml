@@ -11,4 +11,4 @@ configs:
   - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-2|trace|no_add_rand|stress-268435456|large_heap"
   - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-4|trace|no_add_rand|stress-268435456|large_heap"
   - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-8|trace|no_add_rand|stress-268435456|large_heap"
-  - "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|trace|no_add_rand|stress-268435456|large_heap"
+  #- "mmtk|ms|s|c2|mmtk_gc-Immix|tph|probes_cp|probes|gc_threads-16|trace|no_add_rand|stress-268435456|large_heap"

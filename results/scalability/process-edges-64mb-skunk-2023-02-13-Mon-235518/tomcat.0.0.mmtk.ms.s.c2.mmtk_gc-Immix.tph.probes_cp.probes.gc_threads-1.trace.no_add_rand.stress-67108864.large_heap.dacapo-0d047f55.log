@@ -1,0 +1,177 @@
+
+-----
+mkdir -p PLOTTY_WORKAROUND; timedrun; MMTK_PLAN=Immix MMTK_THREADS=1 MMTK_STRESS_FACTOR=67108864 setarch x86_64 -R /home/claireh/builds/process_edges_scalability/bin/java -XX:MetaspaceSize=500M -XX:+DisableExplicitGC -server -XX:-TieredCompilation -Xcomp -XX:+UseThirdPartyHeap -Djava.library.path=/home/claireh/probes/out -Dprobes=RustMMTk -Xms10G -Xmx10G --add-exports java.base/jdk.internal.ref=ALL-UNNAMED -cp /usr/share/benchmarks/dacapo/dacapo-evaluation-git-0d047f55.jar:/home/claireh/probes/out:/home/claireh/probes/out/probes.jar Harness -c probe.DacapoChopinCallback -n 5 -s default tomcat
+running-ng v0.3.6
+Tue Feb 14 11:29:09 AM UTC 2023
+
+ 11:29:09 up 1 day,  8:41,  1 user,  load average: 11.50, 8.68, 7.89
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+claireh  pts/1    tmux(20580).%0   Mon11   11:33m  4.56s  0.00s /bin/sh -c w
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 119584688 520792 11353544    0    0     8    34    0    5  8  0 91  0  0
+ 0  0      0 119584688 520792 11353544    0    0     0     0   95   69  0  0 100  0  0
+
+top - 11:29:10 up 1 day,  8:41,  1 user,  load average: 10.58, 8.53, 7.85
+Tasks: 236 total,   1 running, 235 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128684.0 total, 116781.7 free,    306.3 used,  11596.0 buff/cache
+MiB Swap:  32768.0 total,  32768.0 free,      0.0 used. 127132.6 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  166152  11192   7992 S   0.0   0.0   0:01.74 /sbin/init
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.02 [kthreadd]
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_gp]
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [rcu_par_gp]
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 [slub_flushwq]
+
+Environment variables: 
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1239/bus
+	HOME=/home/claireh
+	LANG=en_US.UTF-8
+	LOGNAME=claireh
+	MOTD_SHOWN=pam
+	PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/claireh/.local/bin:/home/claireh/.local/bin:/home/claireh/.local/bin
+	PWD=/home/claireh
+	RUNNING_NG_PACKAGE_DATA=/usr/local/lib/python3.10/dist-packages/running/config
+	SHELL=/bin/bash
+	SHLVL=2
+	SSH_CLIENT=10.0.0.2 33500 22
+	SSH_CONNECTION=10.0.0.2 33500 10.0.0.68 22
+	SSH_TTY=/dev/pts/0
+	TERM=screen
+	TERM_PROGRAM=tmux
+	TERM_PROGRAM_VERSION=3.2a
+	TMUX=/tmp/tmux-1239/default,20580,0
+	TMUX_PANE=%0
+	USER=claireh
+	XDG_RUNTIME_DIR=/run/user/1239
+	XDG_SESSION_CLASS=user
+	XDG_SESSION_ID=12
+	XDG_SESSION_TYPE=tty
+	_=/usr/local/bin/running
+OS: Linux skunk 5.15.0-58-generic #64-Ubuntu SMP Thu Jan 5 11:43:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+CPU: model name	: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz
+number of cores: 16
+Frequency of cpu 0: 3.60 GHz
+Governor of cpu 0: performance
+Scaling_min_freq of cpu 0: 0.80 GHz
+Frequency of cpu 1: 3.60 GHz
+Governor of cpu 1: performance
+Scaling_min_freq of cpu 1: 0.80 GHz
+Frequency of cpu 2: 3.60 GHz
+Governor of cpu 2: performance
+Scaling_min_freq of cpu 2: 0.80 GHz
+Frequency of cpu 3: 3.60 GHz
+Governor of cpu 3: performance
+Scaling_min_freq of cpu 3: 0.80 GHz
+Frequency of cpu 4: 3.60 GHz
+Governor of cpu 4: performance
+Scaling_min_freq of cpu 4: 0.80 GHz
+Frequency of cpu 5: 3.60 GHz
+Governor of cpu 5: performance
+Scaling_min_freq of cpu 5: 0.80 GHz
+Frequency of cpu 6: 3.60 GHz
+Governor of cpu 6: performance
+Scaling_min_freq of cpu 6: 0.80 GHz
+Frequency of cpu 7: 3.55 GHz
+Governor of cpu 7: performance
+Scaling_min_freq of cpu 7: 0.80 GHz
+Frequency of cpu 8: 3.60 GHz
+Governor of cpu 8: performance
+Scaling_min_freq of cpu 8: 0.80 GHz
+Frequency of cpu 9: 3.60 GHz
+Governor of cpu 9: performance
+Scaling_min_freq of cpu 9: 0.80 GHz
+Frequency of cpu 10: 3.60 GHz
+Governor of cpu 10: performance
+Scaling_min_freq of cpu 10: 0.80 GHz
+Frequency of cpu 11: 3.60 GHz
+Governor of cpu 11: performance
+Scaling_min_freq of cpu 11: 0.80 GHz
+Frequency of cpu 12: 3.60 GHz
+Governor of cpu 12: performance
+Scaling_min_freq of cpu 12: 0.80 GHz
+Frequency of cpu 13: 3.53 GHz
+Governor of cpu 13: performance
+Scaling_min_freq of cpu 13: 0.80 GHz
+Frequency of cpu 14: 3.53 GHz
+Governor of cpu 14: performance
+Scaling_min_freq of cpu 14: 0.80 GHz
+Frequency of cpu 15: 3.60 GHz
+Governor of cpu 15: performance
+Scaling_min_freq of cpu 15: 0.80 GHz
+--------------------------------------------------------------------------------
+IMPORTANT NOTICE:  This is NOT a release build of the DaCapo suite.
+Since it is not an official release of the DaCapo suite, care must be taken when
+using the suite, and any use of the build must be sure to note that it is not an
+offical release, and should note the relevant git hash.
+
+Feedback is greatly appreciated.   The preferred mode of feedback is via github.
+Please use our github page to create an issue or a pull request.
+    https://github.com/dacapobench/dacapobench.
+--------------------------------------------------------------------------------
+
+Using scaled threading model. 16 processors detected, 16 threads used to drive the workload, in a possible range of [1,512]
+Version: tomcat 10.0.27
+Nominal stats: NAL: 1, NAS: 0, NEF: 10, NET: 14, NEW: 1, NGF: 65, NMH: 21, NML: 0, NMR: 1263, NMS: 9, NMT: 795, NOA: 77, NOL: 80, NOM: 32, NOS: 24, NPF: 18, NUB: 117, NUC: 17
+Server thread created
+===== DaCapo evaluation-git-0d047f55 tomcat starting warmup 1 =====
+Loading web application
+Starting 80000 requests...
+Completing requests: 5%Completing requests: 10%Completing requests: 15%Completing requests: 20%Completing requests: 25%Completing requests: 30%Completing requests: 35%Completing requests: 40%Completing requests: 45%Completing requests: 50%Completing requests: 55%Completing requests: 60%Completing requests: 65%Completing requests: 70%Completing requests: 75%Completing requests: 80%Completing requests: 85%Completing requests: 90%Completing requests: 95%Completing requests: 100%
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo evaluation-git-0d047f55 tomcat completed warmup 1 in 40106 msec =====
+===== DaCapo simple tail latency: 50% 1558 usec, 90% 1875 usec, 99% 54161 usec, 99.9% 618164 usec, 99.99% 14456442 usec, max 14467291 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 11466895 usec, 90% 20613005 usec, 99% 22501465 usec, 99.9% 22679178 usec, 99.99% 22693178 usec, max 22697865 usec, measured over 80000 events =====
+===== DaCapo evaluation-git-0d047f55 tomcat starting warmup 2 =====
+Loading web application
+Starting 80000 requests...
+Completing requests: 5%Completing requests: 10%Completing requests: 15%Completing requests: 20%Completing requests: 25%Completing requests: 30%Completing requests: 35%Completing requests: 40%Completing requests: 45%Completing requests: 50%Completing requests: 55%Completing requests: 60%Completing requests: 65%Completing requests: 70%Completing requests: 75%Completing requests: 80%Completing requests: 85%Completing requests: 90%Completing requests: 95%Completing requests: 100%
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo evaluation-git-0d047f55 tomcat completed warmup 2 in 15016 msec =====
+===== DaCapo simple tail latency: 50% 1554 usec, 90% 1873 usec, 99% 54027 usec, 99.9% 64427 usec, 99.99% 66717 usec, max 100552 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 120144 usec, 90% 193851 usec, 99% 224480 usec, 99.9% 234028 usec, 99.99% 243236 usec, max 252165 usec, measured over 80000 events =====
+===== DaCapo evaluation-git-0d047f55 tomcat starting warmup 3 =====
+Loading web application
+Starting 80000 requests...
+Completing requests: 5%Completing requests: 10%Completing requests: 15%Completing requests: 20%Completing requests: 25%Completing requests: 30%Completing requests: 35%Completing requests: 40%Completing requests: 45%Completing requests: 50%Completing requests: 55%Completing requests: 60%Completing requests: 65%Completing requests: 70%Completing requests: 75%Completing requests: 80%Completing requests: 85%Completing requests: 90%Completing requests: 95%Completing requests: 100%
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo evaluation-git-0d047f55 tomcat completed warmup 3 in 14722 msec =====
+===== DaCapo simple tail latency: 50% 1551 usec, 90% 1884 usec, 99% 55254 usec, 99.9% 66017 usec, 99.99% 68700 usec, max 99599 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 106333 usec, 90% 198613 usec, 99% 237162 usec, 99.9% 250098 usec, 99.99% 257987 usec, max 268850 usec, measured over 80000 events =====
+===== DaCapo evaluation-git-0d047f55 tomcat starting warmup 4 =====
+Loading web application
+Starting 80000 requests...
+Completing requests: 5%Completing requests: 10%Completing requests: 15%Completing requests: 20%Completing requests: 25%Completing requests: 30%Completing requests: 35%Completing requests: 40%Completing requests: 45%Completing requests: 50%Completing requests: 55%Completing requests: 60%Completing requests: 65%Completing requests: 70%Completing requests: 75%Completing requests: 80%Completing requests: 85%Completing requests: 90%Completing requests: 95%Completing requests: 100%
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo evaluation-git-0d047f55 tomcat completed warmup 4 in 14846 msec =====
+===== DaCapo simple tail latency: 50% 1552 usec, 90% 1895 usec, 99% 56770 usec, 99.9% 67859 usec, 99.99% 74872 usec, max 94815 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 118177 usec, 90% 195333 usec, 99% 222862 usec, 99.9% 235555 usec, 99.99% 239578 usec, max 241915 usec, measured over 80000 events =====
+===== DaCapo evaluation-git-0d047f55 tomcat starting =====
+Loading web application
+Starting 80000 requests...
+Completing requests: 5%Completing requests: 10%Completing requests: 15%Completing requests: 20%Completing requests: 25%Completing requests: 30%Completing requests: 35%Completing requests: 40%Completing requests: 45%Completing requests: 50%Completing requests: 55%Completing requests: 60%Completing requests: 65%Completing requests: 70%Completing requests: 75%Completing requests: 80%Completing requests: 85%Completing requests: 90%Completing requests: 95%Completing requests: 100%
+Completed requests
+Client threads complete ... unloading web application
+============================ MMTk Statistics Totals ============================
+GC	time.other	time.stw	total-work.time.max	total-work.count	total-work.time.total	total-work.time.min	
+99	9563.45	5481.65	-inf	0	0.000	inf	
+Total time: 15045.10 ms
+------------------------------ End MMTk Statistics -----------------------------
+===== DaCapo evaluation-git-0d047f55 tomcat PASSED in 15045 msec =====
+===== DaCapo simple tail latency: 50% 1553 usec, 90% 1903 usec, 99% 58192 usec, 99.9% 69307 usec, 99.99% 99467 usec, max 108876 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 122683 usec, 90% 213994 usec, 99% 249389 usec, 99.9% 258093 usec, 99.99% 265573 usec, max 270588 usec, measured over 80000 events =====
+Server stopped ... iteration complete
+*****
+Attaching 4 probes...
+^C
+
+@processedgestime: 5065429661
+@startprocessedges: 117834752394270
+@stats_enabled: 0
