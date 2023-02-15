@@ -5,7 +5,7 @@ CONFIG: !!python/object/apply:pathlib.PosixPath
 - ebpf
 - configs
 - scalability
-- 4mb.yml
+- 128mb.yml
 LOG_DIR: !!python/object/apply:pathlib.PosixPath
 - /
 - home
@@ -15,7 +15,7 @@ LOG_DIR: !!python/object/apply:pathlib.PosixPath
 - scalability
 N: null
 dry_run: false
-id_prefix: process-edges-4mb
+id_prefix: process-edges-128mb
 invocations: null
 minheap_multiplier: null
 n: []
